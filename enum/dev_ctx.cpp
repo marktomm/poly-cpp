@@ -1,15 +1,15 @@
 #include "dev_ctx.h"
-#include "dev_impl.h"
+#include "dev_algo.h"
 
-void statPorts(std::vector<std::unique_ptr<Port> > const& shapes)
+void statPorts(std::vector<std::unique_ptr<Port> > const& ports)
 {
-    for (auto const& s : shapes) {
-        switch (s->GetType()) {
+    for (auto const& p : ports) {
+        switch (p->GetType()) {
         case tcp:
-            stat(*static_cast<TcpPort const*>(s.get()));
+            stat(*static_cast<TcpPort const*>(p.get()));
             break;
         case serial:
-            stat(*static_cast<SerialPort const*>(s.get()));
+            stat(*static_cast<SerialPort const*>(p.get()));
             break;
         default:
             break;
