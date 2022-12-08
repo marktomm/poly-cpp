@@ -4,6 +4,9 @@ requirements: meson and a compiler
 
 ```
 meson build && cd build && ninja
+
+# list all executables (after prev command that cd'd into build)
+find -maxdepth 1 -executable -type f
 ```
 
 # generate documentaion
@@ -120,6 +123,10 @@ Requires specific ordering:
 1. finals are declared
 1. visitor acceptors are defined
 1. algorithms are defined
+
+# variant
+
+
 
 # Benchmarks
 

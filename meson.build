@@ -38,3 +38,12 @@ visitor_2_src,
 include_directories: visitor_2_inc,
 # dependencies: [bench, thread], 
 cpp_args: ['-std=c++17', '-O3'])
+
+variant_t_inc = include_directories( 'variant_t/' )
+variant_t_src = ['variant_t/user.cpp', 'variant_t/dev_impl.cpp', 'variant_t/dev_ctx.cpp', 'variant_t/dev_algo.cpp']
+
+executable('variant_t', 
+variant_t_src, 
+include_directories: variant_t_inc,
+# dependencies: [bench, thread], 
+cpp_args: ['-std=c++17', '-O3'])
