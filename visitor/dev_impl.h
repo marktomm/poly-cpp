@@ -8,7 +8,7 @@
 class TcpPort: public Port
 {
 public:
-    explicit TcpPort(std::string ip, uint16_t pn) : ip_(ip), port_{pn} {}
+    explicit TcpPort(std::string ip, uint16_t pn) : ip_{ip}, port_{pn} {}
     ~TcpPort() = default;
 
     void accept(Visitor const&) override;
@@ -35,11 +35,13 @@ private:
     std::string dev_;
 };
 
-class Stat: public Visitor
+class Port::Visitor
 {
 public:
-    void visit(TcpPort const&) const override;
-    void visit(SerialPort const&) const override;
+    virtual ~Visitor() = default;
+
+    virtual void visit(TcpPort const&) const = 0;
+    virtual void visit(SerialPort const&) const = 0;
 };
 
 #endif

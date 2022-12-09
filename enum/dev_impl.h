@@ -11,7 +11,7 @@ class TcpPort: public Port
 {
 public:
     explicit TcpPort(std::string ip, uint16_t pn)
-        : Port{tcp}, ip_(ip), port_{pn}
+        : Port{tcp}, ip_{ip}, port_{pn}
     {
     }
     ~TcpPort() = default;

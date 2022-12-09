@@ -1,5 +1,5 @@
-#ifndef _OOP_DEV_IMPL_H_
-#define _OOP_DEV_IMPL_H_
+#ifndef _STRATEGY_DEV_IMPL_H_
+#define _STRATEGY_DEV_IMPL_H_
 
 #include "dev_base.h"
 
@@ -8,7 +8,10 @@
 class TcpPort: public Port
 {
 public:
-    explicit TcpPort(std::string ip, uint16_t pn) : ip_{ip}, port_{pn} {}
+    explicit TcpPort(std::string ip, uint16_t pn, StatTcpPortStrategy strategy)
+        : ip_{ip}, port_{pn}, strategy_{strategy}
+    {
+    }
     ~TcpPort() = default;
 
     void read(std::string&) override;
@@ -21,12 +24,16 @@ public:
 private:
     std::string ip_;
     uint16_t port_;
+    StatTcpPortStrategy strategy_;
 };
 
 class SerialPort: public Port
 {
 public:
-    explicit SerialPort(std::string dev) : dev_{dev} {}
+    explicit SerialPort(std::string dev, StatSerialPortStrategy strategy)
+        : dev_{dev}, strategy_{strategy}
+    {
+    }
     ~SerialPort() = default;
 
     void read(std::string&) override;
@@ -37,6 +44,7 @@ public:
 
 private:
     std::string dev_;
+    StatSerialPortStrategy strategy_;
 };
 
 #endif

@@ -8,7 +8,7 @@
 class TcpPort
 {
 public:
-    explicit TcpPort(std::string ip, uint16_t pn) : ip_(ip), port_{pn} {}
+    explicit TcpPort(std::string ip, uint16_t pn) : ip_{ip}, port_{pn} {}
     ~TcpPort() = default;
 
     std::string GetIp() const;

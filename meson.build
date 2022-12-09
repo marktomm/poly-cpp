@@ -22,20 +22,11 @@ include_directories: oop_inc,
 cpp_args: ['-std=c++17', '-O3'])
 
 visitor_inc = include_directories( 'visitor/' )
-visitor_src = ['visitor/user.cpp', 'visitor/dev_impl.cpp', 'visitor/dev_ctx.cpp']
+visitor_src = ['visitor/user.cpp', 'visitor/dev_impl.cpp', 'visitor/dev_ctx.cpp', 'visitor/dev_algo.cpp']
 
 executable('visitor', 
 visitor_src, 
 include_directories: visitor_inc,
-# dependencies: [bench, thread], 
-cpp_args: ['-std=c++17', '-O3'])
-
-visitor_2_inc = include_directories( 'visitor_2/' )
-visitor_2_src = ['visitor_2/user.cpp', 'visitor_2/dev_impl.cpp', 'visitor_2/dev_ctx.cpp', 'visitor_2/dev_algo.cpp']
-
-executable('visitor_2', 
-visitor_2_src, 
-include_directories: visitor_2_inc,
 # dependencies: [bench, thread], 
 cpp_args: ['-std=c++17', '-O3'])
 
@@ -45,5 +36,14 @@ variant_t_src = ['variant_t/user.cpp', 'variant_t/dev_impl.cpp', 'variant_t/dev_
 executable('variant_t', 
 variant_t_src, 
 include_directories: variant_t_inc,
+# dependencies: [bench, thread], 
+cpp_args: ['-std=c++17', '-O3'])
+
+strategy_inc = include_directories( 'strategy/' )
+strategy_src = ['strategy/user.cpp', 'strategy/dev_impl.cpp', 'strategy/dev_ctx.cpp', 'strategy/dev_algo.cpp']
+
+executable('strategy', 
+strategy_src, 
+include_directories: strategy_inc,
 # dependencies: [bench, thread], 
 cpp_args: ['-std=c++17', '-O3'])

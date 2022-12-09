@@ -1,5 +1,5 @@
-#ifndef _VISITOR_DEV_EXT_H_
-#define _VISITOR_DEV_EXT_H_
+#ifndef _STRATEGY_DEV_EXT_H_
+#define _STRATEGY_DEV_EXT_H_
 
 #include "dev_base.h"
 
