@@ -1,7 +1,7 @@
 #ifndef _STRATEGY_DEV_ALGO_H_
 #define _STRATEGY_DEV_ALGO_H_
 
-#include "dev_base.h"
+#include "dev_impl.h"
 
 class SyslogStatTcpPortStrategy
 {

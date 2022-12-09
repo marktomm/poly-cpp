@@ -3,14 +3,6 @@
 
 #include <string>
 
-#include <functional>
-
-class TcpPort;
-class SerialPort;
-
-using StatTcpPortStrategy = std::function<void(TcpPort const&)>;
-using StatSerialPortStrategy = std::function<void(SerialPort const&)>;
-
 class Port
 {
 public:
