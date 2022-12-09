@@ -137,3 +137,10 @@ https://dawnofgiants.com/blog/runtime-concept-idiom
 K. Iglberger:
 * 100 random shapes, 2.5M updates each
 * Compilation flags: -std=c++17 -O3 -DNDEBUG
+
+# Notes
+
+```bash
+diff -u <(readelf --symbols -C enum  | sed 's/^ *[0-9]*://')  <(readelf --symbols -C enum_rtti | sed 's/^ *[0-9]*://')
+diff -u <(objdump -d enum) <(objdump -d enum_rtti)
+```

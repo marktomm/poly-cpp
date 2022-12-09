@@ -85,6 +85,6 @@ function doDocs(){
 
 set -e
 
-grep -F 'executable(' meson.build  | sed "s/.*'\(.*\)',/\1/" | while read -r line ; do
+grep -F 'executable(' meson.build | grep -v 'rtti' | sed "s/.*'\(.*\)',/\1/" | while read -r line ; do
     doDocs ${line}
 done
