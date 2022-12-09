@@ -21,19 +21,6 @@ function doDocs(){
 
         source_path=./
 
-        parse_src=
-        while getopts "r" opt; do
-        case $opt in
-            r)
-                parse_src=1
-            ;;
-            \?)
-                echo "Run script with -r argument if any .cpp or .h source files were added or removed" >&2
-                exit 0
-            ;;
-        esac
-        done
-
         temp_dir_path=./.docs/.temp/
 
         rm -fr ${temp_dir_path}
@@ -46,7 +33,7 @@ function doDocs(){
 
         doxygen -g ${conf_path}
 
-        [[ ! -f "${tmp_source_files}" ]] || [[ ! -z "${parse_src}" ]] && {
+        [[ ! -f "${tmp_source_files}" ]] && {
             SearchForSourceFiles
         }
 
@@ -54,7 +41,7 @@ function doDocs(){
 
         out_directory="./.docs/.temp/"
 
-        sed -e 's/^PROJECT_NAME *=.*/PROJECT_NAME = "C++ polymorphic approach"/g'  \
+        sed -e 's/^PROJECT_NAME *=.*/PROJECT_NAME = "'${project_root}'"/g'  \
             -e 's/^GENERATE_LATEX *=.*/GENERATE_LATEX = NO/g' \
             -e 's/^GENERATE_TREEVIEW *=.*/GENERATE_TREEVIEW = NO/g' \
             -e 's/^EXTRACT_ALL *=.*/EXTRACT_ALL = YES/g' \
@@ -63,6 +50,7 @@ function doDocs(){
             -e 's/^EXTRACT_PRIV_VIRTUAL *=.*/EXTRACT_PRIV_VIRTUAL = YES/g' \
             -e 's/^EXTRACT_LOCAL_METHODS *=.*/EXTRACT_LOCAL_METHODS = YES/g' \
             -e 's;^EXAMPLE_PATH *=.*;EXAMPLE_PATH = '${source_path}';g' \
+            -e 's;^EXCLUDE *=.*;EXCLUDE = "docexcl_examples/";g' \
             -e "s;^EXCLUDE_SYMBOLS *=.*;EXCLUDE_SYMBOLS = \.\*Lock \.\*Timer \.\*Node \.\*Logger;g" \
             -e 's/^HIDE_IN_BODY_DOCS *=.*/HIDE_IN_BODY_DOCS = YES/g' \
             -e 's/^SOURCE_BROWSER *=.*/SOURCE_BROWSER = YES/g' \
