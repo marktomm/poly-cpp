@@ -126,7 +126,11 @@ Requires specific ordering:
 
 # variant
 
+# type erasure
 
+https://stlab.cc/legacy/runtime-concepts.html
+https://www.stroustrup.com/oops08.pdf
+https://dawnofgiants.com/blog/runtime-concept-idiom
 
 # Benchmarks
 

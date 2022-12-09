@@ -19,7 +19,7 @@ function doDocs(){
             exit 1
         }
 
-        source_path=${project_root}
+        source_path=./
 
         parse_src=
         while getopts "r" opt; do
@@ -36,6 +36,7 @@ function doDocs(){
 
         temp_dir_path=./.docs/.temp/
 
+        rm -fr ${temp_dir_path}
         mkdir -p ${temp_dir_path}
 
         temp_conf_path=${temp_dir_path}/doxyconf.tmp

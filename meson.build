@@ -47,3 +47,12 @@ strategy_src,
 include_directories: strategy_inc,
 # dependencies: [bench, thread], 
 cpp_args: ['-std=c++17', '-O3'])
+
+type_erasure_up_inc = include_directories( 'type_erasure_up/' )
+type_erasure_up_src = ['type_erasure_up/user.cpp', 'type_erasure_up/dev_impl.cpp', 'type_erasure_up/dev_ctx.cpp', 'type_erasure_up/dev_algo.cpp']
+
+executable('type_erasure_up', 
+type_erasure_up_src, 
+include_directories: type_erasure_up_inc,
+# dependencies: [bench, thread], 
+cpp_args: ['-std=c++17', '-O3', '-g'])
