@@ -5,14 +5,6 @@
 
 #include <cstdint>
 
-#include <functional>
-
-class TcpPort;
-class SerialPort;
-
-using StatTcpPortStrategy = std::function<void(TcpPort const&)>;
-using StatSerialPortStrategy = std::function<void(SerialPort const&)>;
-
 class TcpPort: public Port
 {
 public:

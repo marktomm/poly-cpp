@@ -1,7 +1,7 @@
 project('c++ oop', 'cpp', default_options: ['strip=true'])
 
 enum_inc = include_directories( 'enum/' )
-enum_src = ['enum/user.cpp', 'enum/dev_impl.cpp', 'enum/dev_ctx.cpp', 'enum/dev_algo.cpp']
+enum_src = ['enum/user.cpp', 'enum/dev_impl.cpp', 'enum/dev_ctx.cpp', 'enum/dev_algo.cpp', 'enum/dev_factory.cpp']
 
 # bench = dependency('benchmark')
 # thread = dependency('threads')
@@ -21,7 +21,7 @@ cpp_args: ['-std=c++17', '-O3'],
 install : true)
 
 oop_inc = include_directories( 'oop/' )
-oop_src = ['oop/user.cpp', 'oop/dev_impl.cpp', 'oop/dev_ctx.cpp']
+oop_src = ['oop/user.cpp', 'oop/dev_impl.cpp', 'oop/dev_ctx.cpp', 'oop/dev_factory.cpp']
 
 executable('oop', 
 oop_src, 
@@ -38,7 +38,7 @@ cpp_args: ['-std=c++17', '-O3'],
 install : true)
 
 visitor_inc = include_directories( 'visitor/' )
-visitor_src = ['visitor/user.cpp', 'visitor/dev_impl.cpp', 'visitor/dev_ctx.cpp', 'visitor/dev_algo.cpp']
+visitor_src = ['visitor/user.cpp', 'visitor/dev_impl.cpp', 'visitor/dev_ctx.cpp', 'visitor/dev_algo.cpp', 'visitor/dev_factory.cpp']
 
 executable('visitor', 
 visitor_src, 
@@ -72,7 +72,7 @@ cpp_args: ['-std=c++17', '-O3'],
 install : true)
 
 strategy_inc = include_directories( 'strategy/' )
-strategy_src = ['strategy/user.cpp', 'strategy/dev_impl.cpp', 'strategy/dev_ctx.cpp', 'strategy/dev_algo.cpp']
+strategy_src = ['strategy/user.cpp', 'strategy/dev_impl.cpp', 'strategy/dev_ctx.cpp', 'strategy/dev_algo.cpp', 'strategy/dev_factory.cpp']
 
 executable('strategy', 
 strategy_src, 
@@ -89,7 +89,7 @@ cpp_args: ['-std=c++17', '-O3'],
 install : true)
 
 type_erasure_up_inc = include_directories( 'type_erasure_up/' )
-type_erasure_up_src = ['type_erasure_up/user.cpp', 'type_erasure_up/dev_impl.cpp', 'type_erasure_up/dev_ctx.cpp', 'type_erasure_up/dev_algo.cpp']
+type_erasure_up_src = ['type_erasure_up/user.cpp', 'type_erasure_up/dev_impl.cpp', 'type_erasure_up/dev_ctx.cpp', 'type_erasure_up/dev_algo.cpp', 'type_erasure_up/dev_factory.cpp']
 
 executable('type_erasure_up', 
 type_erasure_up_src, 

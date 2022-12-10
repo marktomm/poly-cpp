@@ -1,7 +1,14 @@
 #ifndef _STRATEGY_DEV_BASE_H_
 #define _STRATEGY_DEV_BASE_H_
 
+#include <functional>
 #include <string>
+
+class TcpPort;
+class SerialPort;
+
+using StatTcpPortStrategy = std::function<void(TcpPort const&)>;
+using StatSerialPortStrategy = std::function<void(SerialPort const&)>;
 
 class Port
 {
