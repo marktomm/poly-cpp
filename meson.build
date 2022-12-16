@@ -1,20 +1,36 @@
 project('c++ oop', 'cpp', default_options: ['strip=true'])
 
 enum_inc = include_directories( 'enum/' )
-enum_src = ['enum/user.cpp', 'enum/dev_impl.cpp', 'enum/dev_ctx.cpp', 'enum/dev_algo.cpp', 'enum/dev_factory.cpp']
+enum_main = ['enum/user.cpp']
+enum_simple = ['enum/user_simple.cpp']
+enum_src = ['enum/dev_impl.cpp', 'enum/dev_ctx.cpp', 'enum/dev_algo.cpp', 'enum/dev_factory.cpp']
 
 # bench = dependency('benchmark')
 # thread = dependency('threads')
 
 executable('enum', 
-enum_src, 
+[enum_main, enum_src], 
 include_directories: enum_inc,
 # dependencies: [bench, thread], 
 cpp_args: ['-std=c++17', '-O3', '-fno-rtti'],
 install : true)
 
 executable('enum_rtti', 
-enum_src, 
+[enum_main, enum_src], 
+include_directories: enum_inc,
+# dependencies: [bench, thread], 
+cpp_args: ['-std=c++17', '-O3'],
+install : true)
+
+executable('enum_simple', 
+[enum_simple, enum_src], 
+include_directories: enum_inc,
+# dependencies: [bench, thread], 
+cpp_args: ['-std=c++17', '-O3', '-fno-rtti'],
+install : true)
+
+executable('enum_simple_rtti', 
+[enum_simple, enum_src], 
 include_directories: enum_inc,
 # dependencies: [bench, thread], 
 cpp_args: ['-std=c++17', '-O3'],

@@ -144,3 +144,11 @@ K. Iglberger:
 diff -u <(readelf --symbols -C enum  | sed 's/^ *[0-9]*://')  <(readelf --symbols -C enum_rtti | sed 's/^ *[0-9]*://')
 diff -u <(objdump -d enum) <(objdump -d enum_rtti)
 ```
+
+# Users
+
+initial developer implements the mechanism that enables type use in polymorphic context
+
+"dependant developer"/"library extension developer" adds new types and functionality. Depending on the approach of "initial developer" extending types and/or functionality may require modifications/additions to initial source and recompile/relink. Ideally having read-only readers and shared library is sufficient.
+
+end-user uses factory methods to populate own data structures and uses API that hides polymorphic use

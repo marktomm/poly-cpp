@@ -8,4 +8,6 @@
 
 void statPorts(std::vector<std::unique_ptr<Port> > const& shapes);
 
+void statPort(std::unique_ptr<Port> const& port);
+
 #endif
