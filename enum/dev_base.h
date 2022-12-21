@@ -12,7 +12,7 @@ public:
     PortType GetType() const noexcept { return type_; }
 
 private:
-    PortType type_;
+    PortType const type_;
 };
 
 #endif
