@@ -4,7 +4,7 @@ dev_impl - User defined class code
 
 dev_ctx - Polymorphic context where User defined class code is used
 
-dev_algo - Behaviour procedures for User defined classes in Polymorphic context. MISSING in current approach, because behaviour is coupled with dev_impl
+dev_algo - Behaviour procedures for User defined classes in Polymorphic context.
 
 dev_factory - Functions that create User defined class instances for end user.
 
