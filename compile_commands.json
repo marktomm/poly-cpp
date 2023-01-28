@@ -1,0 +1,404 @@
+[
+  {
+    "directory": "/home/coder/Development/oopcpp/build",
+    "command": "c++ -Ienum@exe -I. -I.. -I../enum/ -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g -std=c++17 -O3 -fno-rtti -MD -MQ 'enum@exe/enum_user.cpp.o' -MF 'enum@exe/enum_user.cpp.o.d' -o 'enum@exe/enum_user.cpp.o' -c ../enum/user.cpp",
+    "file": "../enum/user.cpp",
+    "output": "enum@exe/enum_user.cpp.o"
+  },
+  {
+    "directory": "/home/coder/Development/oopcpp/build",
+    "command": "c++ -Ienum@exe -I. -I.. -I../enum/ -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g -std=c++17 -O3 -fno-rtti -MD -MQ 'enum@exe/enum_dev_impl.cpp.o' -MF 'enum@exe/enum_dev_impl.cpp.o.d' -o 'enum@exe/enum_dev_impl.cpp.o' -c ../enum/dev_impl.cpp",
+    "file": "../enum/dev_impl.cpp",
+    "output": "enum@exe/enum_dev_impl.cpp.o"
+  },
+  {
+    "directory": "/home/coder/Development/oopcpp/build",
+    "command": "c++ -Ienum@exe -I. -I.. -I../enum/ -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g -std=c++17 -O3 -fno-rtti -MD -MQ 'enum@exe/enum_dev_ctx.cpp.o' -MF 'enum@exe/enum_dev_ctx.cpp.o.d' -o 'enum@exe/enum_dev_ctx.cpp.o' -c ../enum/dev_ctx.cpp",
+    "file": "../enum/dev_ctx.cpp",
+    "output": "enum@exe/enum_dev_ctx.cpp.o"
+  },
+  {
+    "directory": "/home/coder/Development/oopcpp/build",
+    "command": "c++ -Ienum@exe -I. -I.. -I../enum/ -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g -std=c++17 -O3 -fno-rtti -MD -MQ 'enum@exe/enum_dev_algo.cpp.o' -MF 'enum@exe/enum_dev_algo.cpp.o.d' -o 'enum@exe/enum_dev_algo.cpp.o' -c ../enum/dev_algo.cpp",
+    "file": "../enum/dev_algo.cpp",
+    "output": "enum@exe/enum_dev_algo.cpp.o"
+  },
+  {
+    "directory": "/home/coder/Development/oopcpp/build",
+    "command": "c++ -Ienum@exe -I. -I.. -I../enum/ -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g -std=c++17 -O3 -fno-rtti -MD -MQ 'enum@exe/enum_dev_factory.cpp.o' -MF 'enum@exe/enum_dev_factory.cpp.o.d' -o 'enum@exe/enum_dev_factory.cpp.o' -c ../enum/dev_factory.cpp",
+    "file": "../enum/dev_factory.cpp",
+    "output": "enum@exe/enum_dev_factory.cpp.o"
+  },
+  {
+    "directory": "/home/coder/Development/oopcpp/build",
+    "command": "c++ -Ienum_rtti@exe -I. -I.. -I../enum/ -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g -std=c++17 -O3 -MD -MQ 'enum_rtti@exe/enum_user.cpp.o' -MF 'enum_rtti@exe/enum_user.cpp.o.d' -o 'enum_rtti@exe/enum_user.cpp.o' -c ../enum/user.cpp",
+    "file": "../enum/user.cpp",
+    "output": "enum_rtti@exe/enum_user.cpp.o"
+  },
+  {
+    "directory": "/home/coder/Development/oopcpp/build",
+    "command": "c++ -Ienum_rtti@exe -I. -I.. -I../enum/ -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g -std=c++17 -O3 -MD -MQ 'enum_rtti@exe/enum_dev_impl.cpp.o' -MF 'enum_rtti@exe/enum_dev_impl.cpp.o.d' -o 'enum_rtti@exe/enum_dev_impl.cpp.o' -c ../enum/dev_impl.cpp",
+    "file": "../enum/dev_impl.cpp",
+    "output": "enum_rtti@exe/enum_dev_impl.cpp.o"
+  },
+  {
+    "directory": "/home/coder/Development/oopcpp/build",
+    "command": "c++ -Ienum_rtti@exe -I. -I.. -I../enum/ -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g -std=c++17 -O3 -MD -MQ 'enum_rtti@exe/enum_dev_ctx.cpp.o' -MF 'enum_rtti@exe/enum_dev_ctx.cpp.o.d' -o 'enum_rtti@exe/enum_dev_ctx.cpp.o' -c ../enum/dev_ctx.cpp",
+    "file": "../enum/dev_ctx.cpp",
+    "output": "enum_rtti@exe/enum_dev_ctx.cpp.o"
+  },
+  {
+    "directory": "/home/coder/Development/oopcpp/build",
+    "command": "c++ -Ienum_rtti@exe -I. -I.. -I../enum/ -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g -std=c++17 -O3 -MD -MQ 'enum_rtti@exe/enum_dev_algo.cpp.o' -MF 'enum_rtti@exe/enum_dev_algo.cpp.o.d' -o 'enum_rtti@exe/enum_dev_algo.cpp.o' -c ../enum/dev_algo.cpp",
+    "file": "../enum/dev_algo.cpp",
+    "output": "enum_rtti@exe/enum_dev_algo.cpp.o"
+  },
+  {
+    "directory": "/home/coder/Development/oopcpp/build",
+    "command": "c++ -Ienum_rtti@exe -I. -I.. -I../enum/ -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g -std=c++17 -O3 -MD -MQ 'enum_rtti@exe/enum_dev_factory.cpp.o' -MF 'enum_rtti@exe/enum_dev_factory.cpp.o.d' -o 'enum_rtti@exe/enum_dev_factory.cpp.o' -c ../enum/dev_factory.cpp",
+    "file": "../enum/dev_factory.cpp",
+    "output": "enum_rtti@exe/enum_dev_factory.cpp.o"
+  },
+  {
+    "directory": "/home/coder/Development/oopcpp/build",
+    "command": "c++ -Ienum_simple@exe -I. -I.. -I../enum/ -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g -std=c++17 -O3 -fno-rtti -MD -MQ 'enum_simple@exe/enum_user_simple.cpp.o' -MF 'enum_simple@exe/enum_user_simple.cpp.o.d' -o 'enum_simple@exe/enum_user_simple.cpp.o' -c ../enum/user_simple.cpp",
+    "file": "../enum/user_simple.cpp",
+    "output": "enum_simple@exe/enum_user_simple.cpp.o"
+  },
+  {
+    "directory": "/home/coder/Development/oopcpp/build",
+    "command": "c++ -Ienum_simple@exe -I. -I.. -I../enum/ -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g -std=c++17 -O3 -fno-rtti -MD -MQ 'enum_simple@exe/enum_dev_impl.cpp.o' -MF 'enum_simple@exe/enum_dev_impl.cpp.o.d' -o 'enum_simple@exe/enum_dev_impl.cpp.o' -c ../enum/dev_impl.cpp",
+    "file": "../enum/dev_impl.cpp",
+    "output": "enum_simple@exe/enum_dev_impl.cpp.o"
+  },
+  {
+    "directory": "/home/coder/Development/oopcpp/build",
+    "command": "c++ -Ienum_simple@exe -I. -I.. -I../enum/ -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g -std=c++17 -O3 -fno-rtti -MD -MQ 'enum_simple@exe/enum_dev_ctx.cpp.o' -MF 'enum_simple@exe/enum_dev_ctx.cpp.o.d' -o 'enum_simple@exe/enum_dev_ctx.cpp.o' -c ../enum/dev_ctx.cpp",
+    "file": "../enum/dev_ctx.cpp",
+    "output": "enum_simple@exe/enum_dev_ctx.cpp.o"
+  },
+  {
+    "directory": "/home/coder/Development/oopcpp/build",
+    "command": "c++ -Ienum_simple@exe -I. -I.. -I../enum/ -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g -std=c++17 -O3 -fno-rtti -MD -MQ 'enum_simple@exe/enum_dev_algo.cpp.o' -MF 'enum_simple@exe/enum_dev_algo.cpp.o.d' -o 'enum_simple@exe/enum_dev_algo.cpp.o' -c ../enum/dev_algo.cpp",
+    "file": "../enum/dev_algo.cpp",
+    "output": "enum_simple@exe/enum_dev_algo.cpp.o"
+  },
+  {
+    "directory": "/home/coder/Development/oopcpp/build",
+    "command": "c++ -Ienum_simple@exe -I. -I.. -I../enum/ -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g -std=c++17 -O3 -fno-rtti -MD -MQ 'enum_simple@exe/enum_dev_factory.cpp.o' -MF 'enum_simple@exe/enum_dev_factory.cpp.o.d' -o 'enum_simple@exe/enum_dev_factory.cpp.o' -c ../enum/dev_factory.cpp",
+    "file": "../enum/dev_factory.cpp",
+    "output": "enum_simple@exe/enum_dev_factory.cpp.o"
+  },
+  {
+    "directory": "/home/coder/Development/oopcpp/build",
+    "command": "c++ -Ienum_simple_rtti@exe -I. -I.. -I../enum/ -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g -std=c++17 -O3 -MD -MQ 'enum_simple_rtti@exe/enum_user_simple.cpp.o' -MF 'enum_simple_rtti@exe/enum_user_simple.cpp.o.d' -o 'enum_simple_rtti@exe/enum_user_simple.cpp.o' -c ../enum/user_simple.cpp",
+    "file": "../enum/user_simple.cpp",
+    "output": "enum_simple_rtti@exe/enum_user_simple.cpp.o"
+  },
+  {
+    "directory": "/home/coder/Development/oopcpp/build",
+    "command": "c++ -Ienum_simple_rtti@exe -I. -I.. -I../enum/ -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g -std=c++17 -O3 -MD -MQ 'enum_simple_rtti@exe/enum_dev_impl.cpp.o' -MF 'enum_simple_rtti@exe/enum_dev_impl.cpp.o.d' -o 'enum_simple_rtti@exe/enum_dev_impl.cpp.o' -c ../enum/dev_impl.cpp",
+    "file": "../enum/dev_impl.cpp",
+    "output": "enum_simple_rtti@exe/enum_dev_impl.cpp.o"
+  },
+  {
+    "directory": "/home/coder/Development/oopcpp/build",
+    "command": "c++ -Ienum_simple_rtti@exe -I. -I.. -I../enum/ -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g -std=c++17 -O3 -MD -MQ 'enum_simple_rtti@exe/enum_dev_ctx.cpp.o' -MF 'enum_simple_rtti@exe/enum_dev_ctx.cpp.o.d' -o 'enum_simple_rtti@exe/enum_dev_ctx.cpp.o' -c ../enum/dev_ctx.cpp",
+    "file": "../enum/dev_ctx.cpp",
+    "output": "enum_simple_rtti@exe/enum_dev_ctx.cpp.o"
+  },
+  {
+    "directory": "/home/coder/Development/oopcpp/build",
+    "command": "c++ -Ienum_simple_rtti@exe -I. -I.. -I../enum/ -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g -std=c++17 -O3 -MD -MQ 'enum_simple_rtti@exe/enum_dev_algo.cpp.o' -MF 'enum_simple_rtti@exe/enum_dev_algo.cpp.o.d' -o 'enum_simple_rtti@exe/enum_dev_algo.cpp.o' -c ../enum/dev_algo.cpp",
+    "file": "../enum/dev_algo.cpp",
+    "output": "enum_simple_rtti@exe/enum_dev_algo.cpp.o"
+  },
+  {
+    "directory": "/home/coder/Development/oopcpp/build",
+    "command": "c++ -Ienum_simple_rtti@exe -I. -I.. -I../enum/ -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g -std=c++17 -O3 -MD -MQ 'enum_simple_rtti@exe/enum_dev_factory.cpp.o' -MF 'enum_simple_rtti@exe/enum_dev_factory.cpp.o.d' -o 'enum_simple_rtti@exe/enum_dev_factory.cpp.o' -c ../enum/dev_factory.cpp",
+    "file": "../enum/dev_factory.cpp",
+    "output": "enum_simple_rtti@exe/enum_dev_factory.cpp.o"
+  },
+  {
+    "directory": "/home/coder/Development/oopcpp/build",
+    "command": "c++ -Ienum_test@exe -I. -I.. -I../enum/ -I/usr/local/include -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g -pthread -std=c++17 -O3 -MD -MQ 'enum_test@exe/enum_benchmark.cpp.o' -MF 'enum_test@exe/enum_benchmark.cpp.o.d' -o 'enum_test@exe/enum_benchmark.cpp.o' -c ../enum/benchmark.cpp",
+    "file": "../enum/benchmark.cpp",
+    "output": "enum_test@exe/enum_benchmark.cpp.o"
+  },
+  {
+    "directory": "/home/coder/Development/oopcpp/build",
+    "command": "c++ -Ioop@exe -I. -I.. -I../oop/ -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g -std=c++17 -O3 -fno-rtti -MD -MQ 'oop@exe/oop_user.cpp.o' -MF 'oop@exe/oop_user.cpp.o.d' -o 'oop@exe/oop_user.cpp.o' -c ../oop/user.cpp",
+    "file": "../oop/user.cpp",
+    "output": "oop@exe/oop_user.cpp.o"
+  },
+  {
+    "directory": "/home/coder/Development/oopcpp/build",
+    "command": "c++ -Ioop@exe -I. -I.. -I../oop/ -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g -std=c++17 -O3 -fno-rtti -MD -MQ 'oop@exe/oop_dev_impl.cpp.o' -MF 'oop@exe/oop_dev_impl.cpp.o.d' -o 'oop@exe/oop_dev_impl.cpp.o' -c ../oop/dev_impl.cpp",
+    "file": "../oop/dev_impl.cpp",
+    "output": "oop@exe/oop_dev_impl.cpp.o"
+  },
+  {
+    "directory": "/home/coder/Development/oopcpp/build",
+    "command": "c++ -Ioop@exe -I. -I.. -I../oop/ -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g -std=c++17 -O3 -fno-rtti -MD -MQ 'oop@exe/oop_dev_ctx.cpp.o' -MF 'oop@exe/oop_dev_ctx.cpp.o.d' -o 'oop@exe/oop_dev_ctx.cpp.o' -c ../oop/dev_ctx.cpp",
+    "file": "../oop/dev_ctx.cpp",
+    "output": "oop@exe/oop_dev_ctx.cpp.o"
+  },
+  {
+    "directory": "/home/coder/Development/oopcpp/build",
+    "command": "c++ -Ioop@exe -I. -I.. -I../oop/ -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g -std=c++17 -O3 -fno-rtti -MD -MQ 'oop@exe/oop_dev_factory.cpp.o' -MF 'oop@exe/oop_dev_factory.cpp.o.d' -o 'oop@exe/oop_dev_factory.cpp.o' -c ../oop/dev_factory.cpp",
+    "file": "../oop/dev_factory.cpp",
+    "output": "oop@exe/oop_dev_factory.cpp.o"
+  },
+  {
+    "directory": "/home/coder/Development/oopcpp/build",
+    "command": "c++ -Ioop_rtti@exe -I. -I.. -I../oop/ -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g -std=c++17 -O3 -MD -MQ 'oop_rtti@exe/oop_user.cpp.o' -MF 'oop_rtti@exe/oop_user.cpp.o.d' -o 'oop_rtti@exe/oop_user.cpp.o' -c ../oop/user.cpp",
+    "file": "../oop/user.cpp",
+    "output": "oop_rtti@exe/oop_user.cpp.o"
+  },
+  {
+    "directory": "/home/coder/Development/oopcpp/build",
+    "command": "c++ -Ioop_rtti@exe -I. -I.. -I../oop/ -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g -std=c++17 -O3 -MD -MQ 'oop_rtti@exe/oop_dev_impl.cpp.o' -MF 'oop_rtti@exe/oop_dev_impl.cpp.o.d' -o 'oop_rtti@exe/oop_dev_impl.cpp.o' -c ../oop/dev_impl.cpp",
+    "file": "../oop/dev_impl.cpp",
+    "output": "oop_rtti@exe/oop_dev_impl.cpp.o"
+  },
+  {
+    "directory": "/home/coder/Development/oopcpp/build",
+    "command": "c++ -Ioop_rtti@exe -I. -I.. -I../oop/ -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g -std=c++17 -O3 -MD -MQ 'oop_rtti@exe/oop_dev_ctx.cpp.o' -MF 'oop_rtti@exe/oop_dev_ctx.cpp.o.d' -o 'oop_rtti@exe/oop_dev_ctx.cpp.o' -c ../oop/dev_ctx.cpp",
+    "file": "../oop/dev_ctx.cpp",
+    "output": "oop_rtti@exe/oop_dev_ctx.cpp.o"
+  },
+  {
+    "directory": "/home/coder/Development/oopcpp/build",
+    "command": "c++ -Ioop_rtti@exe -I. -I.. -I../oop/ -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g -std=c++17 -O3 -MD -MQ 'oop_rtti@exe/oop_dev_factory.cpp.o' -MF 'oop_rtti@exe/oop_dev_factory.cpp.o.d' -o 'oop_rtti@exe/oop_dev_factory.cpp.o' -c ../oop/dev_factory.cpp",
+    "file": "../oop/dev_factory.cpp",
+    "output": "oop_rtti@exe/oop_dev_factory.cpp.o"
+  },
+  {
+    "directory": "/home/coder/Development/oopcpp/build",
+    "command": "c++ -Ivisitor@exe -I. -I.. -I../visitor/ -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g -std=c++17 -O3 -fno-rtti -MD -MQ 'visitor@exe/visitor_user.cpp.o' -MF 'visitor@exe/visitor_user.cpp.o.d' -o 'visitor@exe/visitor_user.cpp.o' -c ../visitor/user.cpp",
+    "file": "../visitor/user.cpp",
+    "output": "visitor@exe/visitor_user.cpp.o"
+  },
+  {
+    "directory": "/home/coder/Development/oopcpp/build",
+    "command": "c++ -Ivisitor@exe -I. -I.. -I../visitor/ -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g -std=c++17 -O3 -fno-rtti -MD -MQ 'visitor@exe/visitor_dev_impl.cpp.o' -MF 'visitor@exe/visitor_dev_impl.cpp.o.d' -o 'visitor@exe/visitor_dev_impl.cpp.o' -c ../visitor/dev_impl.cpp",
+    "file": "../visitor/dev_impl.cpp",
+    "output": "visitor@exe/visitor_dev_impl.cpp.o"
+  },
+  {
+    "directory": "/home/coder/Development/oopcpp/build",
+    "command": "c++ -Ivisitor@exe -I. -I.. -I../visitor/ -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g -std=c++17 -O3 -fno-rtti -MD -MQ 'visitor@exe/visitor_dev_ctx.cpp.o' -MF 'visitor@exe/visitor_dev_ctx.cpp.o.d' -o 'visitor@exe/visitor_dev_ctx.cpp.o' -c ../visitor/dev_ctx.cpp",
+    "file": "../visitor/dev_ctx.cpp",
+    "output": "visitor@exe/visitor_dev_ctx.cpp.o"
+  },
+  {
+    "directory": "/home/coder/Development/oopcpp/build",
+    "command": "c++ -Ivisitor@exe -I. -I.. -I../visitor/ -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g -std=c++17 -O3 -fno-rtti -MD -MQ 'visitor@exe/visitor_dev_algo.cpp.o' -MF 'visitor@exe/visitor_dev_algo.cpp.o.d' -o 'visitor@exe/visitor_dev_algo.cpp.o' -c ../visitor/dev_algo.cpp",
+    "file": "../visitor/dev_algo.cpp",
+    "output": "visitor@exe/visitor_dev_algo.cpp.o"
+  },
+  {
+    "directory": "/home/coder/Development/oopcpp/build",
+    "command": "c++ -Ivisitor@exe -I. -I.. -I../visitor/ -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g -std=c++17 -O3 -fno-rtti -MD -MQ 'visitor@exe/visitor_dev_factory.cpp.o' -MF 'visitor@exe/visitor_dev_factory.cpp.o.d' -o 'visitor@exe/visitor_dev_factory.cpp.o' -c ../visitor/dev_factory.cpp",
+    "file": "../visitor/dev_factory.cpp",
+    "output": "visitor@exe/visitor_dev_factory.cpp.o"
+  },
+  {
+    "directory": "/home/coder/Development/oopcpp/build",
+    "command": "c++ -Ivisitor_rtti@exe -I. -I.. -I../visitor/ -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g -std=c++17 -O3 -MD -MQ 'visitor_rtti@exe/visitor_user.cpp.o' -MF 'visitor_rtti@exe/visitor_user.cpp.o.d' -o 'visitor_rtti@exe/visitor_user.cpp.o' -c ../visitor/user.cpp",
+    "file": "../visitor/user.cpp",
+    "output": "visitor_rtti@exe/visitor_user.cpp.o"
+  },
+  {
+    "directory": "/home/coder/Development/oopcpp/build",
+    "command": "c++ -Ivisitor_rtti@exe -I. -I.. -I../visitor/ -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g -std=c++17 -O3 -MD -MQ 'visitor_rtti@exe/visitor_dev_impl.cpp.o' -MF 'visitor_rtti@exe/visitor_dev_impl.cpp.o.d' -o 'visitor_rtti@exe/visitor_dev_impl.cpp.o' -c ../visitor/dev_impl.cpp",
+    "file": "../visitor/dev_impl.cpp",
+    "output": "visitor_rtti@exe/visitor_dev_impl.cpp.o"
+  },
+  {
+    "directory": "/home/coder/Development/oopcpp/build",
+    "command": "c++ -Ivisitor_rtti@exe -I. -I.. -I../visitor/ -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g -std=c++17 -O3 -MD -MQ 'visitor_rtti@exe/visitor_dev_ctx.cpp.o' -MF 'visitor_rtti@exe/visitor_dev_ctx.cpp.o.d' -o 'visitor_rtti@exe/visitor_dev_ctx.cpp.o' -c ../visitor/dev_ctx.cpp",
+    "file": "../visitor/dev_ctx.cpp",
+    "output": "visitor_rtti@exe/visitor_dev_ctx.cpp.o"
+  },
+  {
+    "directory": "/home/coder/Development/oopcpp/build",
+    "command": "c++ -Ivisitor_rtti@exe -I. -I.. -I../visitor/ -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g -std=c++17 -O3 -MD -MQ 'visitor_rtti@exe/visitor_dev_algo.cpp.o' -MF 'visitor_rtti@exe/visitor_dev_algo.cpp.o.d' -o 'visitor_rtti@exe/visitor_dev_algo.cpp.o' -c ../visitor/dev_algo.cpp",
+    "file": "../visitor/dev_algo.cpp",
+    "output": "visitor_rtti@exe/visitor_dev_algo.cpp.o"
+  },
+  {
+    "directory": "/home/coder/Development/oopcpp/build",
+    "command": "c++ -Ivisitor_rtti@exe -I. -I.. -I../visitor/ -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g -std=c++17 -O3 -MD -MQ 'visitor_rtti@exe/visitor_dev_factory.cpp.o' -MF 'visitor_rtti@exe/visitor_dev_factory.cpp.o.d' -o 'visitor_rtti@exe/visitor_dev_factory.cpp.o' -c ../visitor/dev_factory.cpp",
+    "file": "../visitor/dev_factory.cpp",
+    "output": "visitor_rtti@exe/visitor_dev_factory.cpp.o"
+  },
+  {
+    "directory": "/home/coder/Development/oopcpp/build",
+    "command": "c++ -Ivariant_t@exe -I. -I.. -I../variant_t/ -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g -std=c++17 -O3 -fno-rtti -MD -MQ 'variant_t@exe/variant_t_user.cpp.o' -MF 'variant_t@exe/variant_t_user.cpp.o.d' -o 'variant_t@exe/variant_t_user.cpp.o' -c ../variant_t/user.cpp",
+    "file": "../variant_t/user.cpp",
+    "output": "variant_t@exe/variant_t_user.cpp.o"
+  },
+  {
+    "directory": "/home/coder/Development/oopcpp/build",
+    "command": "c++ -Ivariant_t@exe -I. -I.. -I../variant_t/ -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g -std=c++17 -O3 -fno-rtti -MD -MQ 'variant_t@exe/variant_t_dev_impl.cpp.o' -MF 'variant_t@exe/variant_t_dev_impl.cpp.o.d' -o 'variant_t@exe/variant_t_dev_impl.cpp.o' -c ../variant_t/dev_impl.cpp",
+    "file": "../variant_t/dev_impl.cpp",
+    "output": "variant_t@exe/variant_t_dev_impl.cpp.o"
+  },
+  {
+    "directory": "/home/coder/Development/oopcpp/build",
+    "command": "c++ -Ivariant_t@exe -I. -I.. -I../variant_t/ -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g -std=c++17 -O3 -fno-rtti -MD -MQ 'variant_t@exe/variant_t_dev_ctx.cpp.o' -MF 'variant_t@exe/variant_t_dev_ctx.cpp.o.d' -o 'variant_t@exe/variant_t_dev_ctx.cpp.o' -c ../variant_t/dev_ctx.cpp",
+    "file": "../variant_t/dev_ctx.cpp",
+    "output": "variant_t@exe/variant_t_dev_ctx.cpp.o"
+  },
+  {
+    "directory": "/home/coder/Development/oopcpp/build",
+    "command": "c++ -Ivariant_t@exe -I. -I.. -I../variant_t/ -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g -std=c++17 -O3 -fno-rtti -MD -MQ 'variant_t@exe/variant_t_dev_algo.cpp.o' -MF 'variant_t@exe/variant_t_dev_algo.cpp.o.d' -o 'variant_t@exe/variant_t_dev_algo.cpp.o' -c ../variant_t/dev_algo.cpp",
+    "file": "../variant_t/dev_algo.cpp",
+    "output": "variant_t@exe/variant_t_dev_algo.cpp.o"
+  },
+  {
+    "directory": "/home/coder/Development/oopcpp/build",
+    "command": "c++ -Ivariant_t_rtti@exe -I. -I.. -I../variant_t/ -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g -std=c++17 -O3 -MD -MQ 'variant_t_rtti@exe/variant_t_user.cpp.o' -MF 'variant_t_rtti@exe/variant_t_user.cpp.o.d' -o 'variant_t_rtti@exe/variant_t_user.cpp.o' -c ../variant_t/user.cpp",
+    "file": "../variant_t/user.cpp",
+    "output": "variant_t_rtti@exe/variant_t_user.cpp.o"
+  },
+  {
+    "directory": "/home/coder/Development/oopcpp/build",
+    "command": "c++ -Ivariant_t_rtti@exe -I. -I.. -I../variant_t/ -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g -std=c++17 -O3 -MD -MQ 'variant_t_rtti@exe/variant_t_dev_impl.cpp.o' -MF 'variant_t_rtti@exe/variant_t_dev_impl.cpp.o.d' -o 'variant_t_rtti@exe/variant_t_dev_impl.cpp.o' -c ../variant_t/dev_impl.cpp",
+    "file": "../variant_t/dev_impl.cpp",
+    "output": "variant_t_rtti@exe/variant_t_dev_impl.cpp.o"
+  },
+  {
+    "directory": "/home/coder/Development/oopcpp/build",
+    "command": "c++ -Ivariant_t_rtti@exe -I. -I.. -I../variant_t/ -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g -std=c++17 -O3 -MD -MQ 'variant_t_rtti@exe/variant_t_dev_ctx.cpp.o' -MF 'variant_t_rtti@exe/variant_t_dev_ctx.cpp.o.d' -o 'variant_t_rtti@exe/variant_t_dev_ctx.cpp.o' -c ../variant_t/dev_ctx.cpp",
+    "file": "../variant_t/dev_ctx.cpp",
+    "output": "variant_t_rtti@exe/variant_t_dev_ctx.cpp.o"
+  },
+  {
+    "directory": "/home/coder/Development/oopcpp/build",
+    "command": "c++ -Ivariant_t_rtti@exe -I. -I.. -I../variant_t/ -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g -std=c++17 -O3 -MD -MQ 'variant_t_rtti@exe/variant_t_dev_algo.cpp.o' -MF 'variant_t_rtti@exe/variant_t_dev_algo.cpp.o.d' -o 'variant_t_rtti@exe/variant_t_dev_algo.cpp.o' -c ../variant_t/dev_algo.cpp",
+    "file": "../variant_t/dev_algo.cpp",
+    "output": "variant_t_rtti@exe/variant_t_dev_algo.cpp.o"
+  },
+  {
+    "directory": "/home/coder/Development/oopcpp/build",
+    "command": "c++ -Istrategy@exe -I. -I.. -I../strategy/ -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g -std=c++17 -O3 -fno-rtti -MD -MQ 'strategy@exe/strategy_user.cpp.o' -MF 'strategy@exe/strategy_user.cpp.o.d' -o 'strategy@exe/strategy_user.cpp.o' -c ../strategy/user.cpp",
+    "file": "../strategy/user.cpp",
+    "output": "strategy@exe/strategy_user.cpp.o"
+  },
+  {
+    "directory": "/home/coder/Development/oopcpp/build",
+    "command": "c++ -Istrategy@exe -I. -I.. -I../strategy/ -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g -std=c++17 -O3 -fno-rtti -MD -MQ 'strategy@exe/strategy_dev_impl.cpp.o' -MF 'strategy@exe/strategy_dev_impl.cpp.o.d' -o 'strategy@exe/strategy_dev_impl.cpp.o' -c ../strategy/dev_impl.cpp",
+    "file": "../strategy/dev_impl.cpp",
+    "output": "strategy@exe/strategy_dev_impl.cpp.o"
+  },
+  {
+    "directory": "/home/coder/Development/oopcpp/build",
+    "command": "c++ -Istrategy@exe -I. -I.. -I../strategy/ -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g -std=c++17 -O3 -fno-rtti -MD -MQ 'strategy@exe/strategy_dev_ctx.cpp.o' -MF 'strategy@exe/strategy_dev_ctx.cpp.o.d' -o 'strategy@exe/strategy_dev_ctx.cpp.o' -c ../strategy/dev_ctx.cpp",
+    "file": "../strategy/dev_ctx.cpp",
+    "output": "strategy@exe/strategy_dev_ctx.cpp.o"
+  },
+  {
+    "directory": "/home/coder/Development/oopcpp/build",
+    "command": "c++ -Istrategy@exe -I. -I.. -I../strategy/ -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g -std=c++17 -O3 -fno-rtti -MD -MQ 'strategy@exe/strategy_dev_algo.cpp.o' -MF 'strategy@exe/strategy_dev_algo.cpp.o.d' -o 'strategy@exe/strategy_dev_algo.cpp.o' -c ../strategy/dev_algo.cpp",
+    "file": "../strategy/dev_algo.cpp",
+    "output": "strategy@exe/strategy_dev_algo.cpp.o"
+  },
+  {
+    "directory": "/home/coder/Development/oopcpp/build",
+    "command": "c++ -Istrategy@exe -I. -I.. -I../strategy/ -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g -std=c++17 -O3 -fno-rtti -MD -MQ 'strategy@exe/strategy_dev_factory.cpp.o' -MF 'strategy@exe/strategy_dev_factory.cpp.o.d' -o 'strategy@exe/strategy_dev_factory.cpp.o' -c ../strategy/dev_factory.cpp",
+    "file": "../strategy/dev_factory.cpp",
+    "output": "strategy@exe/strategy_dev_factory.cpp.o"
+  },
+  {
+    "directory": "/home/coder/Development/oopcpp/build",
+    "command": "c++ -Istrategy_rtti@exe -I. -I.. -I../strategy/ -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g -std=c++17 -O3 -MD -MQ 'strategy_rtti@exe/strategy_user.cpp.o' -MF 'strategy_rtti@exe/strategy_user.cpp.o.d' -o 'strategy_rtti@exe/strategy_user.cpp.o' -c ../strategy/user.cpp",
+    "file": "../strategy/user.cpp",
+    "output": "strategy_rtti@exe/strategy_user.cpp.o"
+  },
+  {
+    "directory": "/home/coder/Development/oopcpp/build",
+    "command": "c++ -Istrategy_rtti@exe -I. -I.. -I../strategy/ -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g -std=c++17 -O3 -MD -MQ 'strategy_rtti@exe/strategy_dev_impl.cpp.o' -MF 'strategy_rtti@exe/strategy_dev_impl.cpp.o.d' -o 'strategy_rtti@exe/strategy_dev_impl.cpp.o' -c ../strategy/dev_impl.cpp",
+    "file": "../strategy/dev_impl.cpp",
+    "output": "strategy_rtti@exe/strategy_dev_impl.cpp.o"
+  },
+  {
+    "directory": "/home/coder/Development/oopcpp/build",
+    "command": "c++ -Istrategy_rtti@exe -I. -I.. -I../strategy/ -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g -std=c++17 -O3 -MD -MQ 'strategy_rtti@exe/strategy_dev_ctx.cpp.o' -MF 'strategy_rtti@exe/strategy_dev_ctx.cpp.o.d' -o 'strategy_rtti@exe/strategy_dev_ctx.cpp.o' -c ../strategy/dev_ctx.cpp",
+    "file": "../strategy/dev_ctx.cpp",
+    "output": "strategy_rtti@exe/strategy_dev_ctx.cpp.o"
+  },
+  {
+    "directory": "/home/coder/Development/oopcpp/build",
+    "command": "c++ -Istrategy_rtti@exe -I. -I.. -I../strategy/ -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g -std=c++17 -O3 -MD -MQ 'strategy_rtti@exe/strategy_dev_algo.cpp.o' -MF 'strategy_rtti@exe/strategy_dev_algo.cpp.o.d' -o 'strategy_rtti@exe/strategy_dev_algo.cpp.o' -c ../strategy/dev_algo.cpp",
+    "file": "../strategy/dev_algo.cpp",
+    "output": "strategy_rtti@exe/strategy_dev_algo.cpp.o"
+  },
+  {
+    "directory": "/home/coder/Development/oopcpp/build",
+    "command": "c++ -Istrategy_rtti@exe -I. -I.. -I../strategy/ -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g -std=c++17 -O3 -MD -MQ 'strategy_rtti@exe/strategy_dev_factory.cpp.o' -MF 'strategy_rtti@exe/strategy_dev_factory.cpp.o.d' -o 'strategy_rtti@exe/strategy_dev_factory.cpp.o' -c ../strategy/dev_factory.cpp",
+    "file": "../strategy/dev_factory.cpp",
+    "output": "strategy_rtti@exe/strategy_dev_factory.cpp.o"
+  },
+  {
+    "directory": "/home/coder/Development/oopcpp/build",
+    "command": "c++ -Itype_erasure_up@exe -I. -I.. -I../type_erasure_up/ -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g -std=c++17 -O3 -fno-rtti -MD -MQ 'type_erasure_up@exe/type_erasure_up_user.cpp.o' -MF 'type_erasure_up@exe/type_erasure_up_user.cpp.o.d' -o 'type_erasure_up@exe/type_erasure_up_user.cpp.o' -c ../type_erasure_up/user.cpp",
+    "file": "../type_erasure_up/user.cpp",
+    "output": "type_erasure_up@exe/type_erasure_up_user.cpp.o"
+  },
+  {
+    "directory": "/home/coder/Development/oopcpp/build",
+    "command": "c++ -Itype_erasure_up@exe -I. -I.. -I../type_erasure_up/ -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g -std=c++17 -O3 -fno-rtti -MD -MQ 'type_erasure_up@exe/type_erasure_up_dev_impl.cpp.o' -MF 'type_erasure_up@exe/type_erasure_up_dev_impl.cpp.o.d' -o 'type_erasure_up@exe/type_erasure_up_dev_impl.cpp.o' -c ../type_erasure_up/dev_impl.cpp",
+    "file": "../type_erasure_up/dev_impl.cpp",
+    "output": "type_erasure_up@exe/type_erasure_up_dev_impl.cpp.o"
+  },
+  {
+    "directory": "/home/coder/Development/oopcpp/build",
+    "command": "c++ -Itype_erasure_up@exe -I. -I.. -I../type_erasure_up/ -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g -std=c++17 -O3 -fno-rtti -MD -MQ 'type_erasure_up@exe/type_erasure_up_dev_ctx.cpp.o' -MF 'type_erasure_up@exe/type_erasure_up_dev_ctx.cpp.o.d' -o 'type_erasure_up@exe/type_erasure_up_dev_ctx.cpp.o' -c ../type_erasure_up/dev_ctx.cpp",
+    "file": "../type_erasure_up/dev_ctx.cpp",
+    "output": "type_erasure_up@exe/type_erasure_up_dev_ctx.cpp.o"
+  },
+  {
+    "directory": "/home/coder/Development/oopcpp/build",
+    "command": "c++ -Itype_erasure_up@exe -I. -I.. -I../type_erasure_up/ -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g -std=c++17 -O3 -fno-rtti -MD -MQ 'type_erasure_up@exe/type_erasure_up_dev_algo.cpp.o' -MF 'type_erasure_up@exe/type_erasure_up_dev_algo.cpp.o.d' -o 'type_erasure_up@exe/type_erasure_up_dev_algo.cpp.o' -c ../type_erasure_up/dev_algo.cpp",
+    "file": "../type_erasure_up/dev_algo.cpp",
+    "output": "type_erasure_up@exe/type_erasure_up_dev_algo.cpp.o"
+  },
+  {
+    "directory": "/home/coder/Development/oopcpp/build",
+    "command": "c++ -Itype_erasure_up@exe -I. -I.. -I../type_erasure_up/ -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g -std=c++17 -O3 -fno-rtti -MD -MQ 'type_erasure_up@exe/type_erasure_up_dev_factory.cpp.o' -MF 'type_erasure_up@exe/type_erasure_up_dev_factory.cpp.o.d' -o 'type_erasure_up@exe/type_erasure_up_dev_factory.cpp.o' -c ../type_erasure_up/dev_factory.cpp",
+    "file": "../type_erasure_up/dev_factory.cpp",
+    "output": "type_erasure_up@exe/type_erasure_up_dev_factory.cpp.o"
+  },
+  {
+    "directory": "/home/coder/Development/oopcpp/build",
+    "command": "c++ -Itype_erasure_up_rtti@exe -I. -I.. -I../type_erasure_up/ -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g -std=c++17 -O3 -MD -MQ 'type_erasure_up_rtti@exe/type_erasure_up_user.cpp.o' -MF 'type_erasure_up_rtti@exe/type_erasure_up_user.cpp.o.d' -o 'type_erasure_up_rtti@exe/type_erasure_up_user.cpp.o' -c ../type_erasure_up/user.cpp",
+    "file": "../type_erasure_up/user.cpp",
+    "output": "type_erasure_up_rtti@exe/type_erasure_up_user.cpp.o"
+  },
+  {
+    "directory": "/home/coder/Development/oopcpp/build",
+    "command": "c++ -Itype_erasure_up_rtti@exe -I. -I.. -I../type_erasure_up/ -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g -std=c++17 -O3 -MD -MQ 'type_erasure_up_rtti@exe/type_erasure_up_dev_impl.cpp.o' -MF 'type_erasure_up_rtti@exe/type_erasure_up_dev_impl.cpp.o.d' -o 'type_erasure_up_rtti@exe/type_erasure_up_dev_impl.cpp.o' -c ../type_erasure_up/dev_impl.cpp",
+    "file": "../type_erasure_up/dev_impl.cpp",
+    "output": "type_erasure_up_rtti@exe/type_erasure_up_dev_impl.cpp.o"
+  },
+  {
+    "directory": "/home/coder/Development/oopcpp/build",
+    "command": "c++ -Itype_erasure_up_rtti@exe -I. -I.. -I../type_erasure_up/ -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g -std=c++17 -O3 -MD -MQ 'type_erasure_up_rtti@exe/type_erasure_up_dev_ctx.cpp.o' -MF 'type_erasure_up_rtti@exe/type_erasure_up_dev_ctx.cpp.o.d' -o 'type_erasure_up_rtti@exe/type_erasure_up_dev_ctx.cpp.o' -c ../type_erasure_up/dev_ctx.cpp",
+    "file": "../type_erasure_up/dev_ctx.cpp",
+    "output": "type_erasure_up_rtti@exe/type_erasure_up_dev_ctx.cpp.o"
+  },
+  {
+    "directory": "/home/coder/Development/oopcpp/build",
+    "command": "c++ -Itype_erasure_up_rtti@exe -I. -I.. -I../type_erasure_up/ -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g -std=c++17 -O3 -MD -MQ 'type_erasure_up_rtti@exe/type_erasure_up_dev_algo.cpp.o' -MF 'type_erasure_up_rtti@exe/type_erasure_up_dev_algo.cpp.o.d' -o 'type_erasure_up_rtti@exe/type_erasure_up_dev_algo.cpp.o' -c ../type_erasure_up/dev_algo.cpp",
+    "file": "../type_erasure_up/dev_algo.cpp",
+    "output": "type_erasure_up_rtti@exe/type_erasure_up_dev_algo.cpp.o"
+  },
+  {
+    "directory": "/home/coder/Development/oopcpp/build",
+    "command": "c++ -Itype_erasure_up_rtti@exe -I. -I.. -I../type_erasure_up/ -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g -std=c++17 -O3 -MD -MQ 'type_erasure_up_rtti@exe/type_erasure_up_dev_factory.cpp.o' -MF 'type_erasure_up_rtti@exe/type_erasure_up_dev_factory.cpp.o.d' -o 'type_erasure_up_rtti@exe/type_erasure_up_dev_factory.cpp.o' -c ../type_erasure_up/dev_factory.cpp",
+    "file": "../type_erasure_up/dev_factory.cpp",
+    "output": "type_erasure_up_rtti@exe/type_erasure_up_dev_factory.cpp.o"
+  }
+]
