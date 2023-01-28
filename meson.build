@@ -5,8 +5,8 @@ enum_main = ['enum/user.cpp']
 enum_simple = ['enum/user_simple.cpp']
 enum_src = ['enum/dev_impl.cpp', 'enum/dev_ctx.cpp', 'enum/dev_algo.cpp', 'enum/dev_factory.cpp']
 
-# bench = dependency('benchmark')
-# thread = dependency('threads')
+bench = dependency('benchmark')
+thread = dependency('threads')
 
 executable('enum', 
 [enum_main, enum_src], 
@@ -35,6 +35,16 @@ include_directories: enum_inc,
 # dependencies: [bench, thread], 
 cpp_args: ['-std=c++17', '-O3'],
 install : true)
+
+enum_test = ['enum/benchmark.cpp']
+
+enum_test_exe = executable('enum_test', 
+[enum_test], 
+include_directories: enum_inc,
+dependencies: [bench, thread], 
+cpp_args: ['-std=c++17', '-O3'])
+
+test('enum benchmark', enum_test_exe, is_parallel : false)
 
 oop_inc = include_directories( 'oop/' )
 oop_src = ['oop/user.cpp', 'oop/dev_impl.cpp', 'oop/dev_ctx.cpp', 'oop/dev_factory.cpp']
