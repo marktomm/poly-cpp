@@ -38,28 +38,19 @@ include_directories: [enum_inc, common_inc],
 cpp_args: ['-std=c++17', '-O3'],
 install : true)
 
-enum_test = ['enum/benchmark.cpp']
-
-enum_test_exe = executable('enum_test', 
-[enum_test, enum_src], 
-include_directories: [enum_inc, common_inc],
-dependencies: [bench, thread], 
-cpp_args: ['-std=c++17', '-O3'])
-
-test('enum benchmark', enum_test_exe, is_parallel : false)
-
 oop_inc = include_directories( 'oop/' )
-oop_src = ['oop/user.cpp', 'oop/dev_impl.cpp', 'oop/dev_ctx.cpp', 'oop/dev_factory.cpp']
+oop_src = ['oop/dev_impl.cpp', 'oop/dev_ctx.cpp', 'oop/dev_factory.cpp']
+oop_main = 'oop/user.cpp'
 
 executable('oop', 
-oop_src, 
+[oop_src, oop_main], 
 include_directories: oop_inc,
 # dependencies: [bench, thread], 
 cpp_args: ['-std=c++17', '-O3', '-fno-rtti'],
 install : true)
 
 executable('oop_rtti', 
-oop_src, 
+[oop_src, oop_main], 
 include_directories: oop_inc,
 # dependencies: [bench, thread], 
 cpp_args: ['-std=c++17', '-O3'],
@@ -132,3 +123,13 @@ include_directories: type_erasure_up_inc,
 # dependencies: [bench, thread], 
 cpp_args: ['-std=c++17', '-O3'],
 install : true)
+
+benchmark_test = ['benchmark.cpp']
+
+benchmark_test_exe = executable('benchmark_test', 
+[benchmark_test, enum_src, oop_src], 
+include_directories: [enum_inc, common_inc, oop_inc],
+dependencies: [bench, thread], 
+cpp_args: ['-std=c++17', '-O3'])
+
+test('enum benchmark', benchmark_test_exe, is_parallel : false)

@@ -2,6 +2,8 @@
 
 #include "enum/dev_ctx.h"
 #include "enum/dev_factory.h"
+#include "oop/dev_ctx.h"
+#include "oop/dev_factory.h"
 
 #include <algorithm>
 #include <cstdint>
@@ -40,7 +42,39 @@ static std::vector<std::unique_ptr<Enum::Port> > EnumPortsInitInterleave()
     return ports;
 }
 
+static std::vector<uint32_t> setup()
+{
+    static bool setupDone = false;
+    static std::vector<uint32_t> v(100);
+    if (setupDone) {
+        return v;
+    }
+    std::random_device rd;
+    std::mt19937 generator(rd());
+    std::generate(v.begin(), v.end(), [n = 0]() mutable { return n++; });
+    std::shuffle(v.begin(), v.end(), generator);
+    setupDone = true;
+    return v;
+}
+
 static std::vector<std::unique_ptr<Enum::Port> > EnumPortsInitRandom()
+{
+    std::vector<uint32_t> v = setup();
+    using namespace Enum;
+    using Ports = std::vector<std::unique_ptr<Port> >;
+
+    Ports ports(100);
+    for (uint32_t i = 0; i < 50; ++i) {
+        ports[v[i]] = CreateTcpPort("localhost", 2404);
+    }
+    for (uint32_t i = 50; i < 100; ++i) {
+        ports[v[i]] = CreateSerialPort("/dev/ttyUSB0");
+    }
+
+    return ports;
+}
+
+static std::vector<std::unique_ptr<Oop::Port> > OopPortsInitRandom()
 {
     std::random_device rd;
     std::mt19937 generator(rd());
@@ -48,7 +82,7 @@ static std::vector<std::unique_ptr<Enum::Port> > EnumPortsInitRandom()
     std::generate(v.begin(), v.end(), [n = 0]() mutable { return n++; });
     std::shuffle(v.begin(), v.end(), generator);
 
-    using namespace Enum;
+    using namespace Oop;
     using Ports = std::vector<std::unique_ptr<Port> >;
 
     Ports ports(100);
@@ -151,12 +185,29 @@ static void BM_EnumRandom(benchmark::State& state)
     }
 }
 
+static void BM_OopRandom(benchmark::State& state)
+{
+    // Perform setup here
+    using namespace Oop;
+    using Ports = std::vector<std::unique_ptr<Port> >;
+    Ports ports = OopPortsInitRandom();
+    for (auto _ : state) {
+        // This code gets timed
+        benchmark::DoNotOptimize(ports.data());
+        for (uint32_t i = 0; i < roundCount; ++i) {
+            writePorts(ports, 0xFF);
+            benchmark::ClobberMemory();
+        }
+    }
+}
+
 // Register the function as a benchmark
-BENCHMARK(BM_Enum);
-BENCHMARK(BM_Enum2);
-BENCHMARK(BM_Enum3);
-BENCHMARK(BM_EnumInterleave);
-BENCHMARK(BM_EnumInterleave2);
+// BENCHMARK(BM_Enum);
+// BENCHMARK(BM_Enum2);
+// BENCHMARK(BM_Enum3);
+// BENCHMARK(BM_EnumInterleave);
+// BENCHMARK(BM_EnumInterleave2);
 BENCHMARK(BM_EnumRandom);
+BENCHMARK(BM_OopRandom);
 // Run the benchmark
 BENCHMARK_MAIN();
