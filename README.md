@@ -152,3 +152,27 @@ initial developer implements the mechanism that enables type use in polymorphic 
 "dependant developer"/"library extension developer" adds new types and functionality. Depending on the approach of "initial developer" extending types and/or functionality may require modifications/additions to initial source and recompile/relink. Ideally having read-only readers and shared library is sufficient.
 
 end-user uses factory methods to populate own data structures and uses API that hides polymorphic use
+
+# Benchmark notes
+
+```cpp
+#include <benchmark/benchmark.h>
+
+// DoNotOptimize
+static void escape(void* p) { asm volatile("" : : "g"(p) : "memory"); }
+
+// ClobberMemory
+static void clobber() { asm volatile("" : : : "memory"); }
+
+void SomeFunction()
+{
+    int a = 1;
+    int b = 2;
+    int c = 0;
+
+    // https://youtu.be/nXaxk27zwlk?t=2440
+    // https://github.com/google/benchmark/blob/v1.7.1/docs/user_guide.md
+    benchmark::DoNotOptimize(c = a + b);
+    benchmark::ClobberMemory();
+}
+```
