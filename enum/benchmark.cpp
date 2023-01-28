@@ -1,16 +1,13 @@
 #include <benchmark/benchmark.h>
 
 // DoNotOptimize
-static void escape(void *p) {
-    asm volatile("" : : "g"(p) : "memory");
-}
+static void escape(void* p) { asm volatile("" : : "g"(p) : "memory"); }
 
 // ClobberMemory
-static void clobber() {
-    asm volatile("" : : : "memory");
-}
+static void clobber() { asm volatile("" : : : "memory"); }
 
-void SomeFunction() {
+void SomeFunction()
+{
     int a = 1;
     int b = 2;
     int c = 0;
@@ -21,12 +18,13 @@ void SomeFunction() {
     benchmark::ClobberMemory();
 }
 
-static void BM_SomeFunction(benchmark::State& state) {
-  // Perform setup here
-  for (auto _ : state) {
-    // This code gets timed
-    SomeFunction();
-  }
+static void BM_SomeFunction(benchmark::State& state)
+{
+    // Perform setup here
+    for (auto _ : state) {
+        // This code gets timed
+        SomeFunction();
+    }
 }
 // Register the function as a benchmark
 BENCHMARK(BM_SomeFunction);
