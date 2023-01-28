@@ -7,33 +7,37 @@
 
 #include <cstdint>
 
-class TcpPort: public Port
+class TcpPort final: public Port
 {
 public:
     explicit TcpPort(std::string ip, uint16_t pn)
-        : Port{tcp}, ip_{ip}, port_{pn}
+        : Port{tcp}, ip_{ip}, port_{pn}, buf_{}
     {
     }
     ~TcpPort() = default;
 
-    std::string GetIp() const;
-    uint16_t GetPort() const;
+    std::string GetIp() const noexcept;
+    uint16_t GetPort() const noexcept;
+    void Write(BufferData const&) noexcept;
 
 private:
     std::string ip_;
     uint16_t port_;
+    MutableBuffer buf_;
 };
 
-class SerialPort: public Port
+class SerialPort final: public Port
 {
 public:
-    explicit SerialPort(std::string dev) : Port{serial}, dev_{dev} {}
+    explicit SerialPort(std::string dev) : Port{serial}, dev_{dev}, buf_{} {}
     ~SerialPort() = default;
 
-    std::string GetDev() const;
+    std::string GetDev() const noexcept;
+    void Write(BufferData const&) noexcept;
 
 private:
     std::string dev_;
+    MutableBuffer buf_;
 };
 
 #endif

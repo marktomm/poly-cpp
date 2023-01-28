@@ -3,6 +3,9 @@
 
 enum PortType { tcp, serial, end_ = 0xFFFFFFFF };
 
+using MutableBuffer = int;
+using BufferData = int;
+
 class Port
 {
 public:
