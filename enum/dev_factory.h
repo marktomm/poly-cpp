@@ -8,8 +8,12 @@
 
 #include <cstdint>
 
+namespace Enum {
+
 std::unique_ptr<Port> CreateTcpPort(std::string ip, uint16_t port);
 
 std::unique_ptr<Port> CreateSerialPort(std::string dev);
+
+} // namespace Enum
 
 #endif

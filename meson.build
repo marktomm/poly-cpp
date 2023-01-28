@@ -1,5 +1,7 @@
 project('c++ oop', 'cpp', default_options: ['strip=true'])
 
+common_inc = include_directories('common/')
+
 enum_inc = include_directories( 'enum/' )
 enum_main = ['enum/user.cpp']
 enum_simple = ['enum/user_simple.cpp']
@@ -10,28 +12,28 @@ thread = dependency('threads')
 
 executable('enum', 
 [enum_main, enum_src], 
-include_directories: enum_inc,
+include_directories: [enum_inc, common_inc],
 # dependencies: [bench, thread], 
 cpp_args: ['-std=c++17', '-O3', '-fno-rtti'],
 install : true)
 
 executable('enum_rtti', 
 [enum_main, enum_src], 
-include_directories: enum_inc,
+include_directories: [enum_inc, common_inc],
 # dependencies: [bench, thread], 
 cpp_args: ['-std=c++17', '-O3'],
 install : true)
 
 executable('enum_simple', 
 [enum_simple, enum_src], 
-include_directories: enum_inc,
+include_directories: [enum_inc, common_inc],
 # dependencies: [bench, thread], 
 cpp_args: ['-std=c++17', '-O3', '-fno-rtti'],
 install : true)
 
 executable('enum_simple_rtti', 
 [enum_simple, enum_src], 
-include_directories: enum_inc,
+include_directories: [enum_inc, common_inc],
 # dependencies: [bench, thread], 
 cpp_args: ['-std=c++17', '-O3'],
 install : true)
@@ -40,7 +42,7 @@ enum_test = ['enum/benchmark.cpp']
 
 enum_test_exe = executable('enum_test', 
 [enum_test, enum_src], 
-include_directories: enum_inc,
+include_directories: [enum_inc, common_inc],
 dependencies: [bench, thread], 
 cpp_args: ['-std=c++17', '-O3'])
 

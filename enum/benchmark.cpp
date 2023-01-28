@@ -8,26 +8,11 @@
 #include <random>
 #include <vector>
 
-// DoNotOptimize
-static void escape(void* p) { asm volatile("" : : "g"(p) : "memory"); }
+constexpr static uint32_t roundCount = 1;
 
-// ClobberMemory
-static void clobber() { asm volatile("" : : : "memory"); }
-
-void SomeFunction()
+static std::vector<std::unique_ptr<Enum::Port> > EnumPortsInit()
 {
-    int a = 1;
-    int b = 2;
-    int c = 0;
-
-    // https://youtu.be/nXaxk27zwlk?t=2440
-    // https://github.com/google/benchmark/blob/v1.7.1/docs/user_guide.md
-    benchmark::DoNotOptimize(c = a + b);
-    benchmark::ClobberMemory();
-}
-
-static std::vector<std::unique_ptr<Port> > EnumPortsInit()
-{
+    using namespace Enum;
     using Ports = std::vector<std::unique_ptr<Port> >;
 
     Ports ports;
@@ -41,8 +26,9 @@ static std::vector<std::unique_ptr<Port> > EnumPortsInit()
     return ports;
 }
 
-static std::vector<std::unique_ptr<Port> > EnumPortsInitInterleave()
+static std::vector<std::unique_ptr<Enum::Port> > EnumPortsInitInterleave()
 {
+    using namespace Enum;
     using Ports = std::vector<std::unique_ptr<Port> >;
 
     Ports ports;
@@ -54,13 +40,7 @@ static std::vector<std::unique_ptr<Port> > EnumPortsInitInterleave()
     return ports;
 }
 
-int f()
-{
-    static int i;
-    return i++;
-}
-
-static std::vector<std::unique_ptr<Port> > EnumPortsInitRandom()
+static std::vector<std::unique_ptr<Enum::Port> > EnumPortsInitRandom()
 {
     std::random_device rd;
     std::mt19937 generator(rd());
@@ -68,6 +48,7 @@ static std::vector<std::unique_ptr<Port> > EnumPortsInitRandom()
     std::generate(v.begin(), v.end(), [n = 0]() mutable { return n++; });
     std::shuffle(v.begin(), v.end(), generator);
 
+    using namespace Enum;
     using Ports = std::vector<std::unique_ptr<Port> >;
 
     Ports ports(100);
@@ -81,94 +62,89 @@ static std::vector<std::unique_ptr<Port> > EnumPortsInitRandom()
     return ports;
 }
 
-static void BM_SomeFunction(benchmark::State& state)
+static void BM_Enum(benchmark::State& state)
 {
     // Perform setup here
+    using namespace Enum;
     using Ports = std::vector<std::unique_ptr<Port> >;
     Ports ports = EnumPortsInit();
     for (auto _ : state) {
         // This code gets timed
-        for (uint32_t i = 0; i < 1000; ++i)
+        for (uint32_t i = 0; i < roundCount; ++i)
             writePorts(ports, 0xFF);
     }
 }
 
-static void BM_SomeFunction2(benchmark::State& state)
+static void BM_Enum2(benchmark::State& state)
 {
     // Perform setup here
-    using Ports = std::vector<std::unique_ptr<Port> >;
-    Ports ports = EnumPortsInitInterleave();
-    for (auto _ : state) {
-        // This code gets timed
-        for (uint32_t i = 0; i < 1000; ++i)
-            writePorts(ports, 0xFF);
-    }
-}
-
-static void BM_SomeFunction3(benchmark::State& state)
-{
-    // Perform setup here
+    using namespace Enum;
     using Ports = std::vector<std::unique_ptr<Port> >;
     Ports ports = EnumPortsInit();
     for (auto _ : state) {
         benchmark::DoNotOptimize(ports.data());
         // This code gets timed
-        for (uint32_t i = 0; i < 1000; ++i)
+        for (uint32_t i = 0; i < roundCount; ++i)
             writePorts(ports, 0xFF);
         benchmark::ClobberMemory();
     }
 }
 
-static void BM_SomeFunction4(benchmark::State& state)
+static void BM_Enum3(benchmark::State& state)
 {
     // Perform setup here
+    using namespace Enum;
     using Ports = std::vector<std::unique_ptr<Port> >;
-    Ports ports = EnumPortsInitInterleave();
+    Ports ports = EnumPortsInit();
     for (auto _ : state) {
-        // This code gets timed
         benchmark::DoNotOptimize(ports.data());
-        for (uint32_t i = 0; i < 1000; ++i) {
+        // This code gets timed
+        for (uint32_t i = 0; i < roundCount; ++i) {
             writePorts(ports, 0xFF);
             benchmark::ClobberMemory();
         }
     }
 }
 
-static void BM_SomeFunction5(benchmark::State& state)
+static void BM_EnumInterleave(benchmark::State& state)
 {
     // Perform setup here
+    using namespace Enum;
     using Ports = std::vector<std::unique_ptr<Port> >;
     Ports ports = EnumPortsInitInterleave();
+    for (auto _ : state) {
+        // This code gets timed
+        for (uint32_t i = 0; i < roundCount; ++i)
+            writePorts(ports, 0xFF);
+    }
+}
 
-    std::random_device rd;
-    std::mt19937 generator(rd());
-    std::vector<uint32_t> v(100);
-    std::generate(v.begin(), v.end(), [n = 0]() mutable { return n++; });
-    std::shuffle(v.begin(), v.end(), generator);
-
+static void BM_EnumInterleave2(benchmark::State& state)
+{
+    // Perform setup here
+    using namespace Enum;
+    using Ports = std::vector<std::unique_ptr<Port> >;
+    Ports ports = EnumPortsInitInterleave();
     for (auto _ : state) {
         // This code gets timed
         benchmark::DoNotOptimize(ports.data());
-        benchmark::DoNotOptimize(&v);
-        for (uint32_t i = 0; i < 1000; ++i) {
-            for (auto& it : v) {
-                writePort(ports[it], 0xFF);
-            }
-            // writePorts(ports, 0xFF);
+        for (uint32_t i = 0; i < roundCount; ++i) {
+            writePorts(ports, 0xFF);
             benchmark::ClobberMemory();
         }
     }
 }
 
-static void BM_SomeFunction6(benchmark::State& state)
+static void BM_EnumRandom(benchmark::State& state)
 {
     // Perform setup here
+    using namespace Enum;
     using Ports = std::vector<std::unique_ptr<Port> >;
     Ports ports = EnumPortsInitRandom();
     for (auto _ : state) {
         // This code gets timed
         benchmark::DoNotOptimize(ports.data());
-        for (uint32_t i = 0; i < 1000; ++i) {
+        for (uint32_t i = 0; i < roundCount; ++i) {
             writePorts(ports, 0xFF);
             benchmark::ClobberMemory();
         }
@@ -176,11 +152,11 @@ static void BM_SomeFunction6(benchmark::State& state)
 }
 
 // Register the function as a benchmark
-BENCHMARK(BM_SomeFunction);
-BENCHMARK(BM_SomeFunction2);
-BENCHMARK(BM_SomeFunction3);
-BENCHMARK(BM_SomeFunction4);
-BENCHMARK(BM_SomeFunction5);
-BENCHMARK(BM_SomeFunction6);
+BENCHMARK(BM_Enum);
+BENCHMARK(BM_Enum2);
+BENCHMARK(BM_Enum3);
+BENCHMARK(BM_EnumInterleave);
+BENCHMARK(BM_EnumInterleave2);
+BENCHMARK(BM_EnumRandom);
 // Run the benchmark
 BENCHMARK_MAIN();

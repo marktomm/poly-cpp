@@ -1,10 +1,11 @@
 #ifndef _DEV_BASE_H_
 #define _DEV_BASE_H_
 
-enum PortType { tcp, serial, end_ = 0xFFFFFFFF };
+#include "common/types.h"
 
-using MutableBuffer = int;
-using BufferData = int;
+namespace Enum {
+
+enum PortType { tcp, serial, end_ = 0xFFFFFFFF };
 
 class Port
 {
@@ -17,5 +18,7 @@ public:
 private:
     PortType const type_;
 };
+
+} // namespace Enum
 
 #endif

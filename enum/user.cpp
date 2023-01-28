@@ -3,6 +3,7 @@
 
 int main()
 {
+    using namespace Enum;
     using Ports = std::vector<std::unique_ptr<Port> >;
 
     Ports ports;

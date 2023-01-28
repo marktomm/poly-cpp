@@ -7,6 +7,8 @@
 
 #include <cstdint>
 
+namespace Enum {
+
 class TcpPort final: public Port
 {
 public:
@@ -39,5 +41,7 @@ private:
     std::string dev_;
     MutableBuffer buf_;
 };
+
+} // namespace Enum
 
 #endif

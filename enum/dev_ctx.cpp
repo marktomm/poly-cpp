@@ -1,6 +1,8 @@
 #include "dev_ctx.h"
 #include "dev_algo.h"
 
+namespace Enum {
+
 void statPorts(std::vector<std::unique_ptr<Port> > const& ports)
 {
     for (auto const& p : ports) {
@@ -43,3 +45,5 @@ void writePort(std::unique_ptr<Port>& port, BufferData const& data)
         break;
     }
 }
+
+} // namespace Enum
