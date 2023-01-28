@@ -16,6 +16,7 @@ void SomeFunction() {
     int c = 0;
 
     // https://youtu.be/nXaxk27zwlk?t=2440
+    // https://github.com/google/benchmark/blob/v1.7.1/docs/user_guide.md
     benchmark::DoNotOptimize(c = a + b);
     benchmark::ClobberMemory();
 }
