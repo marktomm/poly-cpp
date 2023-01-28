@@ -39,7 +39,7 @@ install : true)
 enum_test = ['enum/benchmark.cpp']
 
 enum_test_exe = executable('enum_test', 
-[enum_test], 
+[enum_test, enum_src], 
 include_directories: enum_inc,
 dependencies: [bench, thread], 
 cpp_args: ['-std=c++17', '-O3'])
