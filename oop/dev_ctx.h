@@ -6,6 +6,12 @@
 #include <memory>
 #include <vector>
 
-void statPorts(std::vector<std::unique_ptr<Port> > const& shapes);
+namespace Oop {
+
+void statPorts(std::vector<std::unique_ptr<Port> > const&);
+
+void writePorts(std::vector<std::unique_ptr<Port> >&, BufferData const&);
+
+} // namespace Oop
 
 #endif

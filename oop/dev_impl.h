@@ -5,6 +5,8 @@
 
 #include <cstdint>
 
+namespace Oop {
+
 class TcpPort: public Port
 {
 public:
@@ -12,7 +14,7 @@ public:
     ~TcpPort() = default;
 
     void read(std::string&) override;
-    void write(std::string const&) override;
+    void write(BufferData const&) override;
     void stat() const override;
 
     std::string GetIp() const;
@@ -21,6 +23,7 @@ public:
 private:
     std::string ip_;
     uint16_t port_;
+    MutableBuffer buf_;
 };
 
 class SerialPort: public Port
@@ -30,13 +33,16 @@ public:
     ~SerialPort() = default;
 
     void read(std::string&) override;
-    void write(std::string const&) override;
+    void write(BufferData const&) override;
     void stat() const override;
 
     std::string GetDev() const;
 
 private:
     std::string dev_;
+    MutableBuffer buf_;
 };
+
+} // namespace Oop
 
 #endif

@@ -8,8 +8,12 @@
 
 #include <cstdint>
 
+namespace Oop {
+
 std::unique_ptr<Port> CreateTcpPort(std::string ip, uint16_t port);
 
 std::unique_ptr<Port> CreateSerialPort(std::string dev);
+
+} // namespace Oop
 
 #endif

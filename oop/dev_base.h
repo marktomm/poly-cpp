@@ -1,7 +1,11 @@
 #ifndef _OOP_DEV_BASE_H_
 #define _OOP_DEV_BASE_H_
 
+#include "common/types.h"
+
 #include <string>
+
+namespace Oop {
 
 class Port
 {
@@ -10,8 +14,10 @@ public:
     virtual ~Port() = default;
 
     virtual void read(std::string&) = 0;
-    virtual void write(std::string const&) = 0;
+    virtual void write(BufferData const&) = 0;
     virtual void stat() const = 0;
 };
+
+} // namespace Oop
 
 #endif
