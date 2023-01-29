@@ -57,17 +57,18 @@ cpp_args: ['-std=c++17', '-O3'],
 install : true)
 
 visitor_inc = include_directories( 'visitor/' )
-visitor_src = ['visitor/user.cpp', 'visitor/dev_impl.cpp', 'visitor/dev_ctx.cpp', 'visitor/dev_algo.cpp', 'visitor/dev_factory.cpp']
+visitor_main = 'visitor/user.cpp'
+visitor_src = ['visitor/dev_impl.cpp', 'visitor/dev_ctx.cpp', 'visitor/dev_algo.cpp', 'visitor/dev_factory.cpp']
 
 executable('visitor', 
-visitor_src, 
+[visitor_main, visitor_src], 
 include_directories: visitor_inc,
 # dependencies: [bench, thread], 
 cpp_args: ['-std=c++17', '-O3', '-fno-rtti'],
 install : true)
 
 executable('visitor_rtti', 
-visitor_src, 
+[visitor_main, visitor_src], 
 include_directories: visitor_inc,
 # dependencies: [bench, thread], 
 cpp_args: ['-std=c++17', '-O3'],
@@ -127,8 +128,8 @@ install : true)
 benchmark_test = ['benchmark.cpp']
 
 benchmark_test_exe = executable('benchmark_test', 
-[benchmark_test, enum_src, oop_src], 
-include_directories: [enum_inc, common_inc, oop_inc],
+[benchmark_test, enum_src, oop_src, visitor_src], 
+include_directories: [enum_inc, common_inc, oop_inc, visitor_inc],
 dependencies: [bench, thread], 
 cpp_args: ['-std=c++17', '-O3'])
 

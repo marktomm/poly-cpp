@@ -1,9 +1,9 @@
 #include "dev_ctx.h"
 #include "dev_factory.h"
-#include "oop/dev_factory.h"
 
 int main()
 {
+    using namespace Visit;
     using Ports = std::vector<std::unique_ptr<Port> >;
 
     Ports ports;
