@@ -127,10 +127,18 @@ install : true)
 
 benchmark_test = ['benchmark.cpp']
 
-benchmark_test_exe = executable('benchmark_test', 
+benchmark_test_O3_exe = executable('benchmark_test_O3', 
 [benchmark_test, enum_src, oop_src, visitor_src], 
 include_directories: [enum_inc, common_inc, oop_inc, visitor_inc],
 dependencies: [bench, thread], 
 cpp_args: ['-std=c++17', '-O3'])
 
-test('enum benchmark', benchmark_test_exe, is_parallel : false)
+test('enum benchmark O3', benchmark_test_O3_exe, is_parallel : false)
+
+benchmark_test_O0_exe = executable('benchmark_test_O0', 
+[benchmark_test, enum_src, oop_src, visitor_src], 
+include_directories: [enum_inc, common_inc, oop_inc, visitor_inc],
+dependencies: [bench, thread], 
+cpp_args: ['-std=c++17', '-O0', '-g'])
+
+test('enum benchmark O0', benchmark_test_O0_exe, is_parallel : false)

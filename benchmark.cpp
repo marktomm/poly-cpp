@@ -44,6 +44,7 @@ constexpr static uint32_t roundCount = 1;
 //     return ports;
 // }
 
+// this function guarantees same randomness for all benchmark cases
 static std::vector<uint32_t> setup()
 {
     static bool setupDone = false;

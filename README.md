@@ -176,3 +176,7 @@ void SomeFunction()
     benchmark::ClobberMemory();
 }
 ```
+
+# objdump
+
+`objdump -DSsgCw --visualize-jumps -M intel`
