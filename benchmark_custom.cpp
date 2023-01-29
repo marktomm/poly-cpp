@@ -1,23 +1,3 @@
-static void doNotOptimize(void* p) { asm volatile("" : : "g"(p) : "memory"); }
-
-static void clobber() { asm volatile("" : : : "memory"); }
-
-#include <ctime>
-
-class TimeDur final
-{
-public:
-    TimeDur(const char* desc, clock_t tdur) : desc_{desc}, tdur_{tdur} {}
-    TimeDur() : desc_{0}, tdur_{0} {}
-
-    const char* GetDesc() const noexcept { return desc_; }
-    clock_t GetDur() const noexcept { return tdur_; }
-
-private:
-    const char* desc_;
-    clock_t tdur_;
-};
-
 #include "common/bench.h"
 
 #include <cstdint>
