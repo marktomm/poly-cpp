@@ -142,3 +142,13 @@ dependencies: [bench, thread],
 cpp_args: ['-std=c++17', '-O0', '-g'])
 
 test('enum benchmark O0', benchmark_test_O0_exe, is_parallel : false)
+
+benchmark_custom_test = ['benchmark_custom.cpp']
+
+benchmark_custom_test_03_exe = executable('benchmark_custom_test_O3', 
+[benchmark_custom_test, enum_src, oop_src, visitor_src], 
+include_directories: [enum_inc, common_inc, oop_inc, visitor_inc],
+dependencies: [bench, thread], 
+cpp_args: ['-std=c++17', '-O3', '-g'])
+
+test('enum benchmark custom O3', benchmark_custom_test_03_exe, is_parallel : false)
