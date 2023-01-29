@@ -149,7 +149,37 @@ benchmark_custom_test = ['benchmark_custom.cpp']
 benchmark_custom_test_03_exe = executable('benchmark_custom_test_O3', 
 [benchmark_custom_test, common_src, enum_src, oop_src, visitor_src], 
 include_directories: [enum_inc, common_inc, oop_inc, visitor_inc],
-dependencies: [bench, thread], 
+# dependencies: [bench, thread], 
 cpp_args: ['-std=c++17', '-O3', '-g'])
 
 test('enum benchmark custom O3', benchmark_custom_test_03_exe, is_parallel : false)
+
+benchmark_custom_enum_test = ['benchmark_custom_enum.cpp']
+
+benchmark_custom_enum_test_03_exe = executable('benchmark_custom_enum_test_O3', 
+[benchmark_custom_enum_test, common_src, enum_src, oop_src, visitor_src], 
+include_directories: [enum_inc, common_inc, oop_inc, visitor_inc],
+# dependencies: [bench, thread], 
+cpp_args: ['-std=c++17', '-O3', '-g'])
+
+test('enum benchmark custom O3 enum', benchmark_custom_enum_test_03_exe, is_parallel : false)
+
+benchmark_custom_oop_test = ['benchmark_custom_oop.cpp']
+
+benchmark_custom_oop_test_03_exe = executable('benchmark_custom_oop_test_O3', 
+[benchmark_custom_oop_test, common_src, enum_src, oop_src, visitor_src], 
+include_directories: [enum_inc, common_inc, oop_inc, visitor_inc],
+# dependencies: [bench, thread], 
+cpp_args: ['-std=c++17', '-O3', '-g'])
+
+test('enum benchmark custom O3 oop', benchmark_custom_oop_test_03_exe, is_parallel : false)
+
+benchmark_custom_visit_test = ['benchmark_custom_visit.cpp']
+
+benchmark_custom_visit_test_03_exe = executable('benchmark_custom_visit_test_O3', 
+[benchmark_custom_visit_test, common_src, enum_src, oop_src, visitor_src], 
+include_directories: [enum_inc, common_inc, oop_inc, visitor_inc],
+# dependencies: [bench, thread], 
+cpp_args: ['-std=c++17', '-O3', '-g'])
+
+test('enum benchmark custom O3 visit', benchmark_custom_visit_test_03_exe, is_parallel : false)
