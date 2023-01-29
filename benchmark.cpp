@@ -76,11 +76,7 @@ static std::vector<std::unique_ptr<Enum::Port> > EnumPortsInitRandom()
 
 static std::vector<std::unique_ptr<Oop::Port> > OopPortsInitRandom()
 {
-    std::random_device rd;
-    std::mt19937 generator(rd());
-    std::vector<uint32_t> v(100);
-    std::generate(v.begin(), v.end(), [n = 0]() mutable { return n++; });
-    std::shuffle(v.begin(), v.end(), generator);
+    std::vector<uint32_t> v = setup();
 
     using namespace Oop;
     using Ports = std::vector<std::unique_ptr<Port> >;
