@@ -1,5 +1,5 @@
-#ifndef _COMMON_BENCH_H_
-#define _COMMON_BENCH_H_
+#ifndef _COMMON_TYPES_H_
+#define _COMMON_TYPES_H_
 
 #include <cstdint>
 
