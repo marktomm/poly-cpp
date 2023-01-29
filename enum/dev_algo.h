@@ -5,13 +5,13 @@
 
 namespace Enum {
 
-void read(TcpPort&, std::string&);
-void write(TcpPort&, BufferData const&);
-void stat(TcpPort const&);
+void read(TcpPort&, std::string&) noexcept;
+void write(TcpPort&, BufferData const&) noexcept;
+void stat(TcpPort const&) noexcept;
 
-void read(SerialPort&, std::string&);
-void write(SerialPort&, BufferData const&);
-void stat(SerialPort const&);
+void read(SerialPort&, std::string&) noexcept;
+void write(SerialPort&, BufferData const&) noexcept;
+void stat(SerialPort const&) noexcept;
 
 } // namespace Enum
 
