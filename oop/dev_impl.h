@@ -7,18 +7,18 @@
 
 namespace Oop {
 
-class TcpPort: public Port
+class TcpPort final: public Port
 {
 public:
     explicit TcpPort(std::string ip, uint16_t pn) : ip_{ip}, port_{pn} {}
     ~TcpPort() = default;
 
-    void read(std::string&) override;
-    void write(BufferData const&) override;
-    void stat() const override;
+    void read(std::string&) noexcept override;
+    void write(BufferData const&) noexcept override;
+    void stat() const noexcept override;
 
-    std::string GetIp() const;
-    uint16_t GetPort() const;
+    std::string GetIp() const noexcept;
+    uint16_t GetPort() const noexcept;
 
 private:
     std::string ip_;
@@ -26,17 +26,17 @@ private:
     MutableBuffer buf_;
 };
 
-class SerialPort: public Port
+class SerialPort final: public Port
 {
 public:
     explicit SerialPort(std::string dev) : dev_{dev} {}
     ~SerialPort() = default;
 
-    void read(std::string&) override;
-    void write(BufferData const&) override;
-    void stat() const override;
+    void read(std::string&) noexcept override;
+    void write(BufferData const&) noexcept override;
+    void stat() const noexcept override;
 
-    std::string GetDev() const;
+    std::string GetDev() const noexcept;
 
 private:
     std::string dev_;
