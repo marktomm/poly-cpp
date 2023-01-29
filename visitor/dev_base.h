@@ -12,7 +12,7 @@ public:
     virtual ~Port() = default;
 
     class Visitor;
-    virtual void accept(Visitor const&) = 0;
+    virtual void accept(Visitor const&) const noexcept = 0;
 };
 
 } // namespace Visit

@@ -14,10 +14,10 @@ public:
     explicit TcpPort(std::string ip, uint16_t pn) : ip_{ip}, port_{pn} {}
     ~TcpPort() = default;
 
-    void accept(Visitor const&) override;
+    void accept(Visitor const&) const noexcept override;
 
-    std::string GetIp() const;
-    uint16_t GetPort() const;
+    std::string GetIp() const noexcept;
+    uint16_t GetPort() const noexcept;
     void Write(BufferData const&) const noexcept;
 
 private:
@@ -32,9 +32,9 @@ public:
     explicit SerialPort(std::string dev) : dev_{dev} {}
     ~SerialPort() = default;
 
-    void accept(Visitor const&) override;
+    void accept(Visitor const&) const noexcept override;
 
-    std::string GetDev() const;
+    std::string GetDev() const noexcept;
     void Write(BufferData const&) const noexcept;
 
 private:
@@ -47,8 +47,8 @@ class Port::Visitor
 public:
     virtual ~Visitor() = default;
 
-    virtual void visit(TcpPort const&) const = 0;
-    virtual void visit(SerialPort const&) const = 0;
+    virtual void visit(TcpPort const&) const noexcept = 0;
+    virtual void visit(SerialPort const&) const noexcept = 0;
 };
 
 } // namespace Visit

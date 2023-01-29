@@ -6,19 +6,19 @@
 
 namespace Visit {
 
-class Stat: public Port::Visitor
+class Stat final: public Port::Visitor
 {
 public:
-    void visit(TcpPort const&) const override;
-    void visit(SerialPort const&) const override;
+    void visit(TcpPort const&) const noexcept override;
+    void visit(SerialPort const&) const noexcept override;
 };
 
-class Write: public Port::Visitor
+class Write final: public Port::Visitor
 {
 public:
     Write(BufferData const& data) : data_{data} {}
-    void visit(TcpPort const&) const override;
-    void visit(SerialPort const&) const override;
+    void visit(TcpPort const&) const noexcept override;
+    void visit(SerialPort const&) const noexcept override;
 
 private:
     BufferData const& data_;
