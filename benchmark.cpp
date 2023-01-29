@@ -186,6 +186,14 @@ static std::vector<std::unique_ptr<Visit::Port> > VisitPortsInitRandom()
 //     }
 // }
 
+static void BM_Setup(benchmark::State& state)
+{
+    for (auto _ : state) {
+        std::vector<uint32_t> v = setup();
+        benchmark::DoNotOptimize(v.data());
+    }
+}
+
 static void BM_EnumRandom(benchmark::State& state)
 {
     // Perform setup here
@@ -240,6 +248,7 @@ static void BM_VisitorRandom(benchmark::State& state)
 // BENCHMARK(BM_Enum3);
 // BENCHMARK(BM_EnumInterleave);
 // BENCHMARK(BM_EnumInterleave2);
+BENCHMARK(BM_Setup);
 BENCHMARK(BM_EnumRandom);
 BENCHMARK(BM_OopRandom);
 BENCHMARK(BM_VisitorRandom);

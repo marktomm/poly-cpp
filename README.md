@@ -177,6 +177,15 @@ void SomeFunction()
 }
 ```
 
+```shell
+cd benchmark/tools 
+# ubuntu
+sudo apt install -y python3-pip
+pip3 install -r requirements.txt
+./compare.py benchmarks  ../../build/benchmark_test_O3 ../../build/benchmark_test_O3
+```
+
+
 # objdump
 
 `objdump -DSsgCw --visualize-jumps -M intel`
