@@ -1,7 +1,7 @@
 #ifndef _VISITOR_DEV_EXT_H_
 #define _VISITOR_DEV_EXT_H_
 
-#include "common/types.h"
+#include "types.h"
 #include "dev_base.h"
 
 #include <memory>

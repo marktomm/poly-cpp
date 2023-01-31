@@ -1,7 +1,7 @@
 #ifndef _DEV_BASE_H_
 #define _DEV_BASE_H_
 
-#include "common/types.h"
+#include "types.h"
 
 namespace Enum {
 

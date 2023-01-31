@@ -1,7 +1,7 @@
 #ifndef _OOP_DEV_BASE_H_
 #define _OOP_DEV_BASE_H_
 
-#include "common/types.h"
+#include "types.h"
 
 #include <string>
 

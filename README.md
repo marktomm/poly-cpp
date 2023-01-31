@@ -31,44 +31,51 @@ It is structure, but no behaviour - J. Lucas
 K. Iglberger:
 
 Addition of new types (structural OCP):
-* 1/9
-* base header requires changes: enum needs addition of new enum type
-* polymorphic context/zone/region requires changes: all switch statements need addition of new case.
+
+- 1/9
+- base header requires changes: enum needs addition of new enum type
+- polymorphic context/zone/region requires changes: all switch statements need addition of new case.
 
 Adding operations:
-* 7/9
-* adding free functions
+
+- 7/9
+- adding free functions
 
 SRP:
-* 5/9
+
+- 5/9
 
 Simplicity:
-* 5/9
-* client must use pointers
-* base class inheritance
-* base class ctor needs to be initialized with specific enum per new type
+
+- 5/9
+- client must use pointers
+- base class inheritance
+- base class ctor needs to be initialized with specific enum per new type
 
 dev impl:
+
 1. base has 1 necessary var `type_` (impl has optional `GetType`)
 1. base non-default ctor
 1. type must use inheritance
 
 poly ctx:
+
 1. ptr usage
 1. static_cast
 1. use `type_/GetType()`
 
 user:
+
 1. pointer semantics
 
 # oop
 
 J. Lucas
 
-* base class using pure virtual functions
-* (OCP - fnality) algorithms (methods) tightly coupled with type implementation classes
-* (OCP - fnality) if add new pure virtual function everything breaks until every existing implementation class is adjusted.
-* (OCP - structure) hierarchy remains open-ended even accross ABI boundaries, it is possible to add new types
+- base class using pure virtual functions
+- (OCP - fnality) algorithms (methods) tightly coupled with type implementation classes
+- (OCP - fnality) if add new pure virtual function everything breaks until every existing implementation class is adjusted.
+- (OCP - structure) hierarchy remains open-ended even accross ABI boundaries, it is possible to add new types
 
 K. Iglberger:
 
@@ -83,13 +90,16 @@ Simplicity:
 same as enum approach
 
 dev impl:
+
 1. base class abstract
 1. type must use inheritance
 
 poly ctx:
+
 1. ptr usage
 
 user:
+
 1. pointer semantics
 
 # Visitor
@@ -100,7 +110,7 @@ types are closed set
 
 types do not implement functionality
 
-visitor is kind of an operation 
+visitor is kind of an operation
 
 visitor knows all the types (closed set)
 
@@ -119,6 +129,7 @@ people working on the algorithms work in silos
 hierarchy is sealed, no possibility to extend it accross ABI boundaries, but it is possible to add algorithms. I.e. it is possible to extend the behavior but not types.
 
 Requires specific ordering:
+
 1. visitor is forward declared
 1. finals are declared
 1. visitor acceptors are defined
@@ -135,8 +146,9 @@ https://dawnofgiants.com/blog/runtime-concept-idiom
 # Benchmarks
 
 K. Iglberger:
-* 100 random shapes, 2.5M updates each
-* Compilation flags: -std=c++17 -O3 -DNDEBUG
+
+- 100 random shapes, 2.5M updates each
+- Compilation flags: -std=c++17 -O3 -DNDEBUG
 
 # Notes
 
@@ -178,14 +190,25 @@ void SomeFunction()
 ```
 
 ```shell
-cd benchmark/tools 
+cd benchmark/tools
 # ubuntu
 sudo apt install -y python3-pip
 pip3 install -r requirements.txt
 ./compare.py benchmarks  ../../build/benchmark_test_O3 ../../build/benchmark_test_O3
 ```
 
-
 # objdump
 
 `objdump -DSsgCw --visualize-jumps -M intel`
+
+# gcc shared compilation
+
+```bash
+#!/bin/bash
+
+g++ -g -ggdb -c shared.cpp -o shared.o
+g++ -shared -fPIC -o libshared.so shared.o
+
+g++ -g -ggdb -c main.cpp -o main.o
+g++ -g -ggdb -o main main.o -L. -lshared
+```

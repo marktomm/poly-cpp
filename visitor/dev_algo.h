@@ -1,7 +1,7 @@
 #ifndef _VISITOR_DEV_ALGO_H_
 #define _VISITOR_DEV_ALGO_H_
 
-#include "common/types.h"
+#include "types.h"
 #include "dev_impl.h"
 
 namespace Visit {
