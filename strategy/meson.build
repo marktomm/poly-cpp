@@ -1,15 +1,15 @@
-strategy_inc = include_directories('./')
+strategy_inc = include_directories('include')
+strategy_main = 'src/user.cpp'
 strategy_src = [
-    'user.cpp',
-    'dev_impl.cpp',
-    'dev_ctx.cpp',
-    'dev_algo.cpp',
-    'dev_factory.cpp',
+    'src/dev_impl.cpp',
+    'src/dev_ctx.cpp',
+    'src/dev_algo.cpp',
+    'src/dev_factory.cpp',
 ]
 
 executable(
     'strategy',
-    strategy_src,
+    [strategy_src, strategy_main],
     include_directories: strategy_inc,
     cpp_args: ['-std=c++17', '-O3', '-fno-rtti'],
     install: true,
@@ -17,7 +17,7 @@ executable(
 
 executable(
     'strategy_rtti',
-    strategy_src,
+    [strategy_src, strategy_main],
     include_directories: strategy_inc,
     cpp_args: ['-std=c++17', '-O3'],
     install: true,

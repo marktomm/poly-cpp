@@ -13,24 +13,6 @@ subdir('variant_t')
 subdir('strategy')
 subdir('type_erasure_up')
 
-enum_inc_o = enum_exe.extract_objects(
-    'dev_impl.cpp',
-    'dev_algo.cpp',
-    'dev_ctx.cpp',
-    'dev_factory.cpp',
-)
-oop_inc_o = oop_exe.extract_objects(
-    'dev_impl.cpp',
-    'dev_ctx.cpp',
-    'dev_factory.cpp',
-)
-visitor_inc_o = visitor_exe.extract_objects(
-    'dev_impl.cpp',
-    'dev_algo.cpp',
-    'dev_ctx.cpp',
-    'dev_factory.cpp',
-)
-
 if bench.found()
     benchmark_test = ['benchmark.cpp']
 
