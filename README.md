@@ -6,7 +6,7 @@ requirements: meson and a compiler
 meson build && cd build && ninja
 
 # list all executables (after prev command that cd'd into build)
-find -maxdepth 1 -executable -type f
+find -maxdepth 2 -executable -type f
 ```
 
 # generate documentaion
