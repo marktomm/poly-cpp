@@ -12,9 +12,7 @@ oop_exe = executable(
     install: true,
 )
 
-oop_inc_o = oop_exe.extract_objects(
-    oop_src
-)
+oop_inc_o = oop_exe.extract_objects(oop_src)
 
 executable(
     'oop_rtti',
