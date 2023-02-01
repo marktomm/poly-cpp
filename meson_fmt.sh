@@ -17,3 +17,4 @@ muon fmt -i visitor/meson.build
 muon fmt -i type_erasure_up/meson.build 
 muon fmt -i variant_t/meson.build 
 muon fmt -i strategy/meson.build 
+muon fmt -i benchmarks/meson.build 

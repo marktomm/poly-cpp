@@ -1,4 +1,4 @@
-#include "bench.h"
+#include "common.h"
 
 void doNotOptimize(void* p) { asm volatile("" : : "g"(p) : "memory"); }
 void clobber() { asm volatile("" : : : "memory"); }

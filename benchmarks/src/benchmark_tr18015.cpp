@@ -1,4 +1,4 @@
-#include "bench.h"
+#include "common.h"
 
 #include <cstdint>
 #include <iostream>

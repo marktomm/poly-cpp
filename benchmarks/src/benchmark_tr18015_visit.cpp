@@ -1,4 +1,4 @@
-#include "bench.h"
+#include "common.h"
 
 #include <cstdint>
 #include <iostream>
@@ -15,7 +15,7 @@ int main(int argc, char** argv)
     doNotOptimize(vr.data());
     vector<TimeDur> vtd;
 
-    using OopPorts = std::vector<std::unique_ptr<Oop::Port> >;
+    using VisitPorts = std::vector<std::unique_ptr<Visit::Port> >;
 
     clock_t c = clock();
     if (clock_t(-1) == c) {
@@ -23,15 +23,15 @@ int main(int argc, char** argv)
         exit(1);
     }
 
-    OopPorts oopPorts = OopPortsInitRandom(vr);
-    doNotOptimize(oopPorts.data());
+    VisitPorts visitPorts = VisitPortsInitRandom(vr);
+    doNotOptimize(visitPorts.data());
 
     c = clock();
     for (uint32_t i = 0; i < roundCount; ++i) {
-        Oop::writePorts(oopPorts, 0xFF);
+        Visit::writePorts(visitPorts, 0xFF);
         clobber();
     }
-    vtd.push_back(TimeDur{"Oop updates", clock() - c});
+    vtd.push_back(TimeDur{"Visit updates", clock() - c});
 
     for (auto& it : vtd) {
         out << it.GetDesc() << ": " << it.GetDur() << endl;
