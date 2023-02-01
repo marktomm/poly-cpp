@@ -7,12 +7,12 @@ std::string SerialPort::GetDev() const { return dev_; }
 
 void TcpPort::read(std::string&) {}
 
-void TcpPort::write(std::string const&) {}
+void TcpPort::write(BufferData const& data) { buf_ += data; }
 
 void TcpPort::stat() const { strategy_(*this); }
 
 void SerialPort::read(std::string&) {}
 
-void SerialPort::write(std::string const&) {}
+void SerialPort::write(BufferData const& data) { buf_ += data; }
 
 void SerialPort::stat() const { strategy_(*this); }

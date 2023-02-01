@@ -9,9 +9,9 @@
 #include <cstdint>
 
 std::unique_ptr<Port> CreateTcpPort(std::string ip, uint16_t port,
-                                    StatTcpPortStrategy strategy);
+                                    StatTcpPortStrategy, WriteTcpPortStrategy);
 
-std::unique_ptr<Port> CreateSerialPort(std::string dev,
-                                       StatSerialPortStrategy strategy);
+std::unique_ptr<Port> CreateSerialPort(std::string dev, StatSerialPortStrategy,
+                                       WriteSerialPortStrategy);
 
 #endif

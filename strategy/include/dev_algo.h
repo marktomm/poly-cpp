@@ -15,4 +15,16 @@ public:
     void operator()(SerialPort const&) const;
 };
 
+class SyncWriteTcpPortStrategy
+{
+public:
+    void operator()(TcpPort&, BufferData const&) const;
+};
+
+class SyncWriteSerialPortStrategy
+{
+public:
+    void operator()(SerialPort&, BufferData const&) const;
+};
+
 #endif

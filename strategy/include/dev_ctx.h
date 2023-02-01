@@ -2,10 +2,13 @@
 #define _STRATEGY_DEV_EXT_H_
 
 #include "dev_base.h"
+#include "types.h"
 
 #include <memory>
 #include <vector>
 
-void statPorts(std::vector<std::unique_ptr<Port> > const& shapes);
+void statPorts(std::vector<std::unique_ptr<Port> > const&);
+
+void writePorts(std::vector<std::unique_ptr<Port> > const&, BufferData const&);
 
 #endif
