@@ -137,6 +137,8 @@ Requires specific ordering:
 
 # variant
 
+https://www.cppstories.com/2018/09/visit-variants/
+
 # type erasure
 
 https://stlab.cc/legacy/runtime-concepts.html
