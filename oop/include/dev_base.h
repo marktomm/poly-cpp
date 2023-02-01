@@ -13,9 +13,9 @@ public:
     Port() = default;
     virtual ~Port() = default;
 
-    virtual void read(std::string&) noexcept = 0;
-    virtual void write(BufferData const&) noexcept = 0;
-    virtual void stat() const noexcept = 0;
+    virtual void Read(std::string&) noexcept = 0;
+    virtual void Write(BufferData const&) noexcept = 0;
+    virtual void Stat() const noexcept = 0;
 };
 
 } // namespace Oop

@@ -9,21 +9,21 @@ uint16_t TcpPort::GetPort() const noexcept { return port_; }
 
 std::string SerialPort::GetDev() const noexcept { return dev_; }
 
-void TcpPort::read(std::string&) noexcept {}
+void TcpPort::Read(std::string&) noexcept {}
 
-void TcpPort::write(BufferData const& data) noexcept { buf_ += data; }
+void TcpPort::Write(BufferData const& data) noexcept { buf_ += data; }
 
-void TcpPort::stat() const noexcept
+void TcpPort::Stat() const noexcept
 {
     using namespace std;
     cout << "tcp port stats\n";
 }
 
-void SerialPort::read(std::string&) noexcept {}
+void SerialPort::Read(std::string&) noexcept {}
 
-void SerialPort::write(BufferData const& data) noexcept { buf_ += data; }
+void SerialPort::Write(BufferData const& data) noexcept { buf_ += data; }
 
-void SerialPort::stat() const noexcept
+void SerialPort::Stat() const noexcept
 {
     using namespace std;
     cout << "serial port stats\n";

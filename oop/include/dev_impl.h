@@ -15,9 +15,9 @@ public:
     }
     ~TcpPort() = default;
 
-    void read(std::string&) noexcept override;
-    void write(BufferData const&) noexcept override;
-    void stat() const noexcept override;
+    void Read(std::string&) noexcept override;
+    void Write(BufferData const&) noexcept override;
+    void Stat() const noexcept override;
 
     std::string GetIp() const noexcept;
     uint16_t GetPort() const noexcept;
@@ -34,9 +34,9 @@ public:
     explicit SerialPort(std::string dev) : dev_{dev}, buf_{} {}
     ~SerialPort() = default;
 
-    void read(std::string&) noexcept override;
-    void write(BufferData const&) noexcept override;
-    void stat() const noexcept override;
+    void Read(std::string&) noexcept override;
+    void Write(BufferData const&) noexcept override;
+    void Stat() const noexcept override;
 
     std::string GetDev() const noexcept;
 
