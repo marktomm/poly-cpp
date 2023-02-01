@@ -4,6 +4,8 @@
 #include "dev_impl.h"
 #include "types.h"
 
+namespace VariantT {
+
 class Stat
 {
 public:
@@ -17,5 +19,7 @@ public:
     void operator()(TcpPort&, BufferData const&) const;
     void operator()(SerialPort&, BufferData const&) const;
 };
+
+} // namespace VariantT
 
 #endif

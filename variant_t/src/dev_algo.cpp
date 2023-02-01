@@ -3,6 +3,8 @@
 
 #include <iostream>
 
+namespace VariantT {
+
 void Stat::operator()(TcpPort const& p) const
 {
     using namespace std;
@@ -24,3 +26,5 @@ void Write::operator()(SerialPort& p, BufferData const& data) const
 {
     p.Write(data);
 }
+
+} // namespace VariantT

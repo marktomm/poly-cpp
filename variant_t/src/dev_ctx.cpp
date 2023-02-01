@@ -2,6 +2,8 @@
 #include "dev_algo.h"
 #include <vector>
 
+namespace VariantT {
+
 void statPorts(std::vector<Port> const& ports)
 {
     for (auto const& p : ports) {
@@ -15,3 +17,5 @@ void writePorts(std::vector<Port>& ports, WriteData const& data)
         std::visit(Write{}, p, data);
     }
 }
+
+} // namespace VariantT

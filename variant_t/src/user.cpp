@@ -3,6 +3,7 @@
 
 int main()
 {
+    using namespace VariantT;
     using Ports = std::vector<Port>;
 
     Ports ports;

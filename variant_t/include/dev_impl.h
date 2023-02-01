@@ -7,6 +7,8 @@
 
 #include <cstdint>
 
+namespace VariantT {
+
 class TcpPort
 {
 public:
@@ -38,5 +40,7 @@ private:
     std::string dev_;
     MutableBuffer buf_;
 };
+
+} // namespace VariantT
 
 #endif

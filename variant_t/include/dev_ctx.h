@@ -9,11 +9,15 @@
 #include <memory>
 #include <vector>
 
+namespace VariantT {
+
 using Port = std::variant<TcpPort, SerialPort>;
 using WriteData = std::variant<BufferData>;
 
 void statPorts(std::vector<Port> const&);
 
 void writePorts(std::vector<Port>&, WriteData const&);
+
+} // namespace VariantT
 
 #endif
