@@ -1,7 +1,7 @@
 #!/bin/bash
 
 function SearchForSourceFiles(){
-    find -name '*.cpp' -o -name '*.h' -not -path './cppcon14/*' > ${tmp_source_files}
+    find -name '*.cpp' -o -name '*.h' -not -path './cppcon14/*' -not -path './benchmark/*' > ${tmp_source_files}
 }
 
 function is-app-installed(){
@@ -85,6 +85,6 @@ function doDocs(){
 
 set -e
 
-grep -F 'executable(' meson.build | grep -v 'rtti' | sed "s/.*'\(.*\)',/\1/" | while read -r line ; do
+grep -F 'subdir' meson.build | sed "s/.*'\(.*\)'.*/\1/" | while read -r line ; do
     doDocs ${line}
 done
