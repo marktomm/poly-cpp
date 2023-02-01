@@ -24,6 +24,12 @@ private:
 #include "enum/include/dev_factory.h"
 #include "oop/include/dev_ctx.h"
 #include "oop/include/dev_factory.h"
+#include "strategy/include/dev_ctx.h"
+#include "strategy/include/dev_factory.h"
+#include "type_erasure_up/include/dev_ctx.h"
+#include "type_erasure_up/include/dev_factory.h"
+#include "variant_t/include/dev_ctx.h"
+#include "variant_t/include/dev_factory.h"
 #include "visitor/include/dev_ctx.h"
 #include "visitor/include/dev_factory.h"
 
@@ -41,5 +47,13 @@ OopPortsInitRandom(std::vector<uint32_t>& v);
 
 std::vector<std::unique_ptr<Visit::Port> >
 VisitPortsInitRandom(std::vector<uint32_t>& v);
+
+std::vector<std::unique_ptr<Strategy::Port> >
+StrategyPortsInitRandom(std::vector<uint32_t>& v);
+
+std::vector<VariantT::Port> VarianttPortsInitRandom(std::vector<uint32_t>& v);
+
+std::vector<TypeErasureUp::statable>
+TypeErasureUpPortsInitRandom(std::vector<uint32_t>& v);
 
 #endif

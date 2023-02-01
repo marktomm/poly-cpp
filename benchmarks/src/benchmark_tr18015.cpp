@@ -15,16 +15,13 @@ int main(int argc, char** argv)
     doNotOptimize(vr.data());
     vector<TimeDur> vtd;
 
-    using EnumPorts = std::vector<std::unique_ptr<Enum::Port> >;
-    using OopPorts = std::vector<std::unique_ptr<Oop::Port> >;
-    using VisitPorts = std::vector<std::unique_ptr<Visit::Port> >;
-
     clock_t c = clock();
     if (clock_t(-1) == c) {
         cerr << "clock fail" << endl;
         exit(1);
     }
 
+    using EnumPorts = std::vector<std::unique_ptr<Enum::Port> >;
     EnumPorts enumPorts = EnumPortsInitRandom(vr);
     doNotOptimize(enumPorts.data());
 
@@ -35,6 +32,7 @@ int main(int argc, char** argv)
     }
     vtd.push_back(TimeDur{"Enum updates", clock() - c});
 
+    using OopPorts = std::vector<std::unique_ptr<Oop::Port> >;
     OopPorts oopPorts = OopPortsInitRandom(vr);
     doNotOptimize(oopPorts.data());
 
@@ -45,6 +43,7 @@ int main(int argc, char** argv)
     }
     vtd.push_back(TimeDur{"Oop updates", clock() - c});
 
+    using VisitPorts = std::vector<std::unique_ptr<Visit::Port> >;
     VisitPorts visitPorts = VisitPortsInitRandom(vr);
     doNotOptimize(visitPorts.data());
 
@@ -54,6 +53,39 @@ int main(int argc, char** argv)
         clobber();
     }
     vtd.push_back(TimeDur{"Visit updates", clock() - c});
+
+    using StrategyPorts = std::vector<std::unique_ptr<Strategy::Port> >;
+    StrategyPorts strategyPorts = StrategyPortsInitRandom(vr);
+    doNotOptimize(strategyPorts.data());
+
+    c = clock();
+    for (uint32_t i = 0; i < roundCount; ++i) {
+        Strategy::writePorts(strategyPorts, 0xFF);
+        clobber();
+    }
+    vtd.push_back(TimeDur{"Strategy updates", clock() - c});
+
+    using VarianttPorts = std::vector<VariantT::Port>;
+    VarianttPorts varianttPorts = VarianttPortsInitRandom(vr);
+    doNotOptimize(varianttPorts.data());
+
+    c = clock();
+    for (uint32_t i = 0; i < roundCount; ++i) {
+        VariantT::writePorts(varianttPorts, static_cast<uint32_t>(0xFF));
+        clobber();
+    }
+    vtd.push_back(TimeDur{"Variantt updates", clock() - c});
+
+    using TypeErasureUpPorts = std::vector<TypeErasureUp::statable>;
+    TypeErasureUpPorts typeErasureUpPorts = TypeErasureUpPortsInitRandom(vr);
+    doNotOptimize(typeErasureUpPorts.data());
+
+    c = clock();
+    for (uint32_t i = 0; i < roundCount; ++i) {
+        TypeErasureUp::writePorts(typeErasureUpPorts, 0xFF);
+        clobber();
+    }
+    vtd.push_back(TimeDur{"TypeErasureUp updates", clock() - c});
 
     for (auto& it : vtd) {
         out << it.GetDesc() << ": " << it.GetDur() << endl;

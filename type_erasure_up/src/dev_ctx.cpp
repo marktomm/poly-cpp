@@ -24,4 +24,6 @@ void writePorts(std::vector<statable>& ports, BufferData const& data) noexcept
     write(ports, data);
 }
 
+void swap(statable& a, statable& b) { a.swap(b); }
+
 } // namespace TypeErasureUp

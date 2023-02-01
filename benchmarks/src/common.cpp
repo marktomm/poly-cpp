@@ -77,3 +77,76 @@ VisitPortsInitRandom(std::vector<uint32_t>& v)
 
     return ports;
 }
+
+#include "strategy/include/dev_algo.h"
+
+std::vector<std::unique_ptr<Strategy::Port> >
+StrategyPortsInitRandom(std::vector<uint32_t>& v)
+{
+    using namespace Strategy;
+    using Ports = std::vector<std::unique_ptr<Port> >;
+
+    Ports ports(100);
+    for (uint32_t i = 0; i < 50; ++i) {
+        ports[v[i]] =
+            createTcpPort("localhost", 2404, SyslogStatTcpPortStrategy{},
+                          SyncWriteTcpPortStrategy{});
+    }
+    for (uint32_t i = 50; i < 100; ++i) {
+        ports[v[i]] =
+            createSerialPort("/dev/ttyUSB0", SyslogStatSerialPortStrategy{},
+                             SyncWriteSerialPortStrategy{});
+    }
+
+    return ports;
+}
+
+template<class T>
+void rreorder(std::vector<T>& v, std::vector<uint32_t> const& order)
+{
+    for (uint32_t s = 1, d; s < order.size(); ++s) {
+        for (d = order[s]; d < s; d = order[d])
+            ;
+        if (d == s)
+            while (d = order[d], d != s)
+                swap(v[s], v[d]);
+    }
+}
+
+std::vector<VariantT::Port> VarianttPortsInitRandom(std::vector<uint32_t>& v)
+{
+    using namespace VariantT;
+    using Ports = std::vector<Port>;
+
+    Ports ports;
+    for (uint32_t i = 0; i < 50; ++i) {
+        ports.push_back(createTcpPort("localhost", 2404));
+    }
+    for (uint32_t i = 50; i < 100; ++i) {
+        ports.push_back(createSerialPort("/dev/ttyUSB0"));
+    }
+
+    rreorder(ports, v);
+
+    return ports;
+}
+
+std::vector<TypeErasureUp::statable>
+TypeErasureUpPortsInitRandom(std::vector<uint32_t>& v)
+{
+
+    using namespace TypeErasureUp;
+    using Ports = std::vector<statable>;
+
+    Ports ports;
+    for (uint32_t i = 0; i < 50; ++i) {
+        ports.push_back(createTcpPort("localhost", 2404));
+    }
+    for (uint32_t i = 50; i < 100; ++i) {
+        ports.push_back(createSerialPort("/dev/ttyUSB0"));
+    }
+
+    rreorder(ports, v);
+
+    return ports;
+}

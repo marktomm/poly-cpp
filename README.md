@@ -2,7 +2,7 @@
 
 requirements: meson and a compiler
 
-```
+```bash
 meson build && cd build && ninja
 
 # list all executables (after prev command that cd'd into build)

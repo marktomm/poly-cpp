@@ -7,13 +7,15 @@ type_erasure_up_src = [
     'src/dev_factory.cpp',
 ]
 
-executable(
+type_erasure_up_exe = executable(
     'type_erasure_up',
     [type_erasure_up_src, type_erasure_up_main],
     include_directories: [type_erasure_up_inc, common_inc],
     cpp_args: ['-std=c++17', '-O3', '-fno-rtti'],
     install: true,
 )
+
+type_erasure_up_o = type_erasure_up_exe.extract_objects(type_erasure_up_src)
 
 executable(
     'type_erasure_up_rtti',

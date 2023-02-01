@@ -29,6 +29,12 @@ public:
         item._self->_write(data);
     }
 
+    void swap(statable& rhs)
+    {
+        using std::swap;
+        swap(_self, rhs._self);
+    }
+
 private:
     struct concept_t {
         virtual ~concept_t() = default;
@@ -49,6 +55,8 @@ private:
     };
     std::unique_ptr<concept_t> _self;
 };
+
+void swap(statable& a, statable& b);
 
 } // namespace TypeErasureUp
 
