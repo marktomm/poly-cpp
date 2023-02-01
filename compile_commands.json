@@ -229,49 +229,49 @@
   },
   {
     "directory": "/home/mark/Documents/iacb-thesis/build",
-    "command": "c++ -Ivariant_t/variant_t.p -Ivariant_t -I../variant_t -I../variant_t/include -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -std=c++17 -O3 -fno-rtti -MD -MQ variant_t/variant_t.p/src_dev_impl.cpp.o -MF variant_t/variant_t.p/src_dev_impl.cpp.o.d -o variant_t/variant_t.p/src_dev_impl.cpp.o -c ../variant_t/src/dev_impl.cpp",
+    "command": "c++ -Ivariant_t/variant_t.p -Ivariant_t -I../variant_t -I../variant_t/include -I../common -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -std=c++17 -O3 -fno-rtti -MD -MQ variant_t/variant_t.p/src_dev_impl.cpp.o -MF variant_t/variant_t.p/src_dev_impl.cpp.o.d -o variant_t/variant_t.p/src_dev_impl.cpp.o -c ../variant_t/src/dev_impl.cpp",
     "file": "../variant_t/src/dev_impl.cpp",
     "output": "variant_t/variant_t.p/src_dev_impl.cpp.o"
   },
   {
     "directory": "/home/mark/Documents/iacb-thesis/build",
-    "command": "c++ -Ivariant_t/variant_t.p -Ivariant_t -I../variant_t -I../variant_t/include -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -std=c++17 -O3 -fno-rtti -MD -MQ variant_t/variant_t.p/src_dev_ctx.cpp.o -MF variant_t/variant_t.p/src_dev_ctx.cpp.o.d -o variant_t/variant_t.p/src_dev_ctx.cpp.o -c ../variant_t/src/dev_ctx.cpp",
+    "command": "c++ -Ivariant_t/variant_t.p -Ivariant_t -I../variant_t -I../variant_t/include -I../common -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -std=c++17 -O3 -fno-rtti -MD -MQ variant_t/variant_t.p/src_dev_ctx.cpp.o -MF variant_t/variant_t.p/src_dev_ctx.cpp.o.d -o variant_t/variant_t.p/src_dev_ctx.cpp.o -c ../variant_t/src/dev_ctx.cpp",
     "file": "../variant_t/src/dev_ctx.cpp",
     "output": "variant_t/variant_t.p/src_dev_ctx.cpp.o"
   },
   {
     "directory": "/home/mark/Documents/iacb-thesis/build",
-    "command": "c++ -Ivariant_t/variant_t.p -Ivariant_t -I../variant_t -I../variant_t/include -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -std=c++17 -O3 -fno-rtti -MD -MQ variant_t/variant_t.p/src_dev_algo.cpp.o -MF variant_t/variant_t.p/src_dev_algo.cpp.o.d -o variant_t/variant_t.p/src_dev_algo.cpp.o -c ../variant_t/src/dev_algo.cpp",
+    "command": "c++ -Ivariant_t/variant_t.p -Ivariant_t -I../variant_t -I../variant_t/include -I../common -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -std=c++17 -O3 -fno-rtti -MD -MQ variant_t/variant_t.p/src_dev_algo.cpp.o -MF variant_t/variant_t.p/src_dev_algo.cpp.o.d -o variant_t/variant_t.p/src_dev_algo.cpp.o -c ../variant_t/src/dev_algo.cpp",
     "file": "../variant_t/src/dev_algo.cpp",
     "output": "variant_t/variant_t.p/src_dev_algo.cpp.o"
   },
   {
     "directory": "/home/mark/Documents/iacb-thesis/build",
-    "command": "c++ -Ivariant_t/variant_t.p -Ivariant_t -I../variant_t -I../variant_t/include -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -std=c++17 -O3 -fno-rtti -MD -MQ variant_t/variant_t.p/src_user.cpp.o -MF variant_t/variant_t.p/src_user.cpp.o.d -o variant_t/variant_t.p/src_user.cpp.o -c ../variant_t/src/user.cpp",
+    "command": "c++ -Ivariant_t/variant_t.p -Ivariant_t -I../variant_t -I../variant_t/include -I../common -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -std=c++17 -O3 -fno-rtti -MD -MQ variant_t/variant_t.p/src_user.cpp.o -MF variant_t/variant_t.p/src_user.cpp.o.d -o variant_t/variant_t.p/src_user.cpp.o -c ../variant_t/src/user.cpp",
     "file": "../variant_t/src/user.cpp",
     "output": "variant_t/variant_t.p/src_user.cpp.o"
   },
   {
     "directory": "/home/mark/Documents/iacb-thesis/build",
-    "command": "c++ -Ivariant_t/variant_t_rtti.p -Ivariant_t -I../variant_t -I../variant_t/include -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -std=c++17 -O3 -MD -MQ variant_t/variant_t_rtti.p/src_dev_impl.cpp.o -MF variant_t/variant_t_rtti.p/src_dev_impl.cpp.o.d -o variant_t/variant_t_rtti.p/src_dev_impl.cpp.o -c ../variant_t/src/dev_impl.cpp",
+    "command": "c++ -Ivariant_t/variant_t_rtti.p -Ivariant_t -I../variant_t -I../variant_t/include -I../common -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -std=c++17 -O3 -MD -MQ variant_t/variant_t_rtti.p/src_dev_impl.cpp.o -MF variant_t/variant_t_rtti.p/src_dev_impl.cpp.o.d -o variant_t/variant_t_rtti.p/src_dev_impl.cpp.o -c ../variant_t/src/dev_impl.cpp",
     "file": "../variant_t/src/dev_impl.cpp",
     "output": "variant_t/variant_t_rtti.p/src_dev_impl.cpp.o"
   },
   {
     "directory": "/home/mark/Documents/iacb-thesis/build",
-    "command": "c++ -Ivariant_t/variant_t_rtti.p -Ivariant_t -I../variant_t -I../variant_t/include -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -std=c++17 -O3 -MD -MQ variant_t/variant_t_rtti.p/src_dev_ctx.cpp.o -MF variant_t/variant_t_rtti.p/src_dev_ctx.cpp.o.d -o variant_t/variant_t_rtti.p/src_dev_ctx.cpp.o -c ../variant_t/src/dev_ctx.cpp",
+    "command": "c++ -Ivariant_t/variant_t_rtti.p -Ivariant_t -I../variant_t -I../variant_t/include -I../common -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -std=c++17 -O3 -MD -MQ variant_t/variant_t_rtti.p/src_dev_ctx.cpp.o -MF variant_t/variant_t_rtti.p/src_dev_ctx.cpp.o.d -o variant_t/variant_t_rtti.p/src_dev_ctx.cpp.o -c ../variant_t/src/dev_ctx.cpp",
     "file": "../variant_t/src/dev_ctx.cpp",
     "output": "variant_t/variant_t_rtti.p/src_dev_ctx.cpp.o"
   },
   {
     "directory": "/home/mark/Documents/iacb-thesis/build",
-    "command": "c++ -Ivariant_t/variant_t_rtti.p -Ivariant_t -I../variant_t -I../variant_t/include -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -std=c++17 -O3 -MD -MQ variant_t/variant_t_rtti.p/src_dev_algo.cpp.o -MF variant_t/variant_t_rtti.p/src_dev_algo.cpp.o.d -o variant_t/variant_t_rtti.p/src_dev_algo.cpp.o -c ../variant_t/src/dev_algo.cpp",
+    "command": "c++ -Ivariant_t/variant_t_rtti.p -Ivariant_t -I../variant_t -I../variant_t/include -I../common -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -std=c++17 -O3 -MD -MQ variant_t/variant_t_rtti.p/src_dev_algo.cpp.o -MF variant_t/variant_t_rtti.p/src_dev_algo.cpp.o.d -o variant_t/variant_t_rtti.p/src_dev_algo.cpp.o -c ../variant_t/src/dev_algo.cpp",
     "file": "../variant_t/src/dev_algo.cpp",
     "output": "variant_t/variant_t_rtti.p/src_dev_algo.cpp.o"
   },
   {
     "directory": "/home/mark/Documents/iacb-thesis/build",
-    "command": "c++ -Ivariant_t/variant_t_rtti.p -Ivariant_t -I../variant_t -I../variant_t/include -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -std=c++17 -O3 -MD -MQ variant_t/variant_t_rtti.p/src_user.cpp.o -MF variant_t/variant_t_rtti.p/src_user.cpp.o.d -o variant_t/variant_t_rtti.p/src_user.cpp.o -c ../variant_t/src/user.cpp",
+    "command": "c++ -Ivariant_t/variant_t_rtti.p -Ivariant_t -I../variant_t -I../variant_t/include -I../common -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -std=c++17 -O3 -MD -MQ variant_t/variant_t_rtti.p/src_user.cpp.o -MF variant_t/variant_t_rtti.p/src_user.cpp.o.d -o variant_t/variant_t_rtti.p/src_user.cpp.o -c ../variant_t/src/user.cpp",
     "file": "../variant_t/src/user.cpp",
     "output": "variant_t/variant_t_rtti.p/src_user.cpp.o"
   },
