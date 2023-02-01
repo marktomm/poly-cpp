@@ -247,6 +247,12 @@
   },
   {
     "directory": "/home/mark/Documents/iacb-thesis/build",
+    "command": "c++ -Ivariant_t/variant_t.p -Ivariant_t -I../variant_t -I../variant_t/include -I../common -I. -I.. -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -std=c++17 -O3 -fno-rtti -MD -MQ variant_t/variant_t.p/src_dev_factory.cpp.o -MF variant_t/variant_t.p/src_dev_factory.cpp.o.d -o variant_t/variant_t.p/src_dev_factory.cpp.o -c ../variant_t/src/dev_factory.cpp",
+    "file": "../variant_t/src/dev_factory.cpp",
+    "output": "variant_t/variant_t.p/src_dev_factory.cpp.o"
+  },
+  {
+    "directory": "/home/mark/Documents/iacb-thesis/build",
     "command": "c++ -Ivariant_t/variant_t.p -Ivariant_t -I../variant_t -I../variant_t/include -I../common -I. -I.. -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -std=c++17 -O3 -fno-rtti -MD -MQ variant_t/variant_t.p/src_user.cpp.o -MF variant_t/variant_t.p/src_user.cpp.o.d -o variant_t/variant_t.p/src_user.cpp.o -c ../variant_t/src/user.cpp",
     "file": "../variant_t/src/user.cpp",
     "output": "variant_t/variant_t.p/src_user.cpp.o"
@@ -268,6 +274,12 @@
     "command": "c++ -Ivariant_t/variant_t_rtti.p -Ivariant_t -I../variant_t -I../variant_t/include -I../common -I. -I.. -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -std=c++17 -O3 -MD -MQ variant_t/variant_t_rtti.p/src_dev_algo.cpp.o -MF variant_t/variant_t_rtti.p/src_dev_algo.cpp.o.d -o variant_t/variant_t_rtti.p/src_dev_algo.cpp.o -c ../variant_t/src/dev_algo.cpp",
     "file": "../variant_t/src/dev_algo.cpp",
     "output": "variant_t/variant_t_rtti.p/src_dev_algo.cpp.o"
+  },
+  {
+    "directory": "/home/mark/Documents/iacb-thesis/build",
+    "command": "c++ -Ivariant_t/variant_t_rtti.p -Ivariant_t -I../variant_t -I../variant_t/include -I../common -I. -I.. -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -std=c++17 -O3 -MD -MQ variant_t/variant_t_rtti.p/src_dev_factory.cpp.o -MF variant_t/variant_t_rtti.p/src_dev_factory.cpp.o.d -o variant_t/variant_t_rtti.p/src_dev_factory.cpp.o -c ../variant_t/src/dev_factory.cpp",
+    "file": "../variant_t/src/dev_factory.cpp",
+    "output": "variant_t/variant_t_rtti.p/src_dev_factory.cpp.o"
   },
   {
     "directory": "/home/mark/Documents/iacb-thesis/build",
@@ -397,62 +409,62 @@
   },
   {
     "directory": "/home/mark/Documents/iacb-thesis/build",
-    "command": "c++ -Ibenchmarks/benchmark_test_O3.p -Ibenchmarks -I../benchmarks -I../enum/include -I../common -I. -I.. -I../oop/include -I../visitor/include -I../benchmarks/include -I/usr/local/include -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -pthread -std=c++17 -O3 -MD -MQ benchmarks/benchmark_test_O3.p/src_benchmark_google.cpp.o -MF benchmarks/benchmark_test_O3.p/src_benchmark_google.cpp.o.d -o benchmarks/benchmark_test_O3.p/src_benchmark_google.cpp.o -c ../benchmarks/src/benchmark_google.cpp",
+    "command": "c++ -Ibenchmarks/benchmark_google_opt.p -Ibenchmarks -I../benchmarks -I../enum/include -I../common -I. -I.. -I../oop/include -I../visitor/include -I../benchmarks/include -I/usr/local/include -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -pthread -std=c++17 -O3 -MD -MQ benchmarks/benchmark_google_opt.p/src_benchmark_google.cpp.o -MF benchmarks/benchmark_google_opt.p/src_benchmark_google.cpp.o.d -o benchmarks/benchmark_google_opt.p/src_benchmark_google.cpp.o -c ../benchmarks/src/benchmark_google.cpp",
     "file": "../benchmarks/src/benchmark_google.cpp",
-    "output": "benchmarks/benchmark_test_O3.p/src_benchmark_google.cpp.o"
+    "output": "benchmarks/benchmark_google_opt.p/src_benchmark_google.cpp.o"
   },
   {
     "directory": "/home/mark/Documents/iacb-thesis/build",
-    "command": "c++ -Ibenchmarks/benchmark_test_O0.p -Ibenchmarks -I../benchmarks -I../enum/include -I../common -I. -I.. -I../oop/include -I../visitor/include -I../benchmarks/include -I/usr/local/include -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -pthread -std=c++17 -O0 -g -MD -MQ benchmarks/benchmark_test_O0.p/src_benchmark_google.cpp.o -MF benchmarks/benchmark_test_O0.p/src_benchmark_google.cpp.o.d -o benchmarks/benchmark_test_O0.p/src_benchmark_google.cpp.o -c ../benchmarks/src/benchmark_google.cpp",
+    "command": "c++ -Ibenchmarks/benchmark_google_no_opt.p -Ibenchmarks -I../benchmarks -I../enum/include -I../common -I. -I.. -I../oop/include -I../visitor/include -I../benchmarks/include -I/usr/local/include -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -pthread -std=c++17 -O0 -g -MD -MQ benchmarks/benchmark_google_no_opt.p/src_benchmark_google.cpp.o -MF benchmarks/benchmark_google_no_opt.p/src_benchmark_google.cpp.o.d -o benchmarks/benchmark_google_no_opt.p/src_benchmark_google.cpp.o -c ../benchmarks/src/benchmark_google.cpp",
     "file": "../benchmarks/src/benchmark_google.cpp",
-    "output": "benchmarks/benchmark_test_O0.p/src_benchmark_google.cpp.o"
+    "output": "benchmarks/benchmark_google_no_opt.p/src_benchmark_google.cpp.o"
   },
   {
     "directory": "/home/mark/Documents/iacb-thesis/build",
-    "command": "c++ -Ibenchmarks/benchmark_tr18015_test_O3.p -Ibenchmarks -I../benchmarks -I../enum/include -I../common -I. -I.. -I../oop/include -I../visitor/include -I../benchmarks/include -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -std=c++17 -O3 -g -MD -MQ benchmarks/benchmark_tr18015_test_O3.p/src_benchmark_tr18015.cpp.o -MF benchmarks/benchmark_tr18015_test_O3.p/src_benchmark_tr18015.cpp.o.d -o benchmarks/benchmark_tr18015_test_O3.p/src_benchmark_tr18015.cpp.o -c ../benchmarks/src/benchmark_tr18015.cpp",
+    "command": "c++ -Ibenchmarks/benchmark_tr18015_opt.p -Ibenchmarks -I../benchmarks -I../enum/include -I../common -I. -I.. -I../oop/include -I../visitor/include -I../benchmarks/include -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -std=c++17 -O3 -g -MD -MQ benchmarks/benchmark_tr18015_opt.p/src_benchmark_tr18015.cpp.o -MF benchmarks/benchmark_tr18015_opt.p/src_benchmark_tr18015.cpp.o.d -o benchmarks/benchmark_tr18015_opt.p/src_benchmark_tr18015.cpp.o -c ../benchmarks/src/benchmark_tr18015.cpp",
     "file": "../benchmarks/src/benchmark_tr18015.cpp",
-    "output": "benchmarks/benchmark_tr18015_test_O3.p/src_benchmark_tr18015.cpp.o"
+    "output": "benchmarks/benchmark_tr18015_opt.p/src_benchmark_tr18015.cpp.o"
   },
   {
     "directory": "/home/mark/Documents/iacb-thesis/build",
-    "command": "c++ -Ibenchmarks/benchmark_tr18015_test_O3.p -Ibenchmarks -I../benchmarks -I../enum/include -I../common -I. -I.. -I../oop/include -I../visitor/include -I../benchmarks/include -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -std=c++17 -O3 -g -MD -MQ benchmarks/benchmark_tr18015_test_O3.p/src_common.cpp.o -MF benchmarks/benchmark_tr18015_test_O3.p/src_common.cpp.o.d -o benchmarks/benchmark_tr18015_test_O3.p/src_common.cpp.o -c ../benchmarks/src/common.cpp",
+    "command": "c++ -Ibenchmarks/benchmark_tr18015_opt.p -Ibenchmarks -I../benchmarks -I../enum/include -I../common -I. -I.. -I../oop/include -I../visitor/include -I../benchmarks/include -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -std=c++17 -O3 -g -MD -MQ benchmarks/benchmark_tr18015_opt.p/src_common.cpp.o -MF benchmarks/benchmark_tr18015_opt.p/src_common.cpp.o.d -o benchmarks/benchmark_tr18015_opt.p/src_common.cpp.o -c ../benchmarks/src/common.cpp",
     "file": "../benchmarks/src/common.cpp",
-    "output": "benchmarks/benchmark_tr18015_test_O3.p/src_common.cpp.o"
+    "output": "benchmarks/benchmark_tr18015_opt.p/src_common.cpp.o"
   },
   {
     "directory": "/home/mark/Documents/iacb-thesis/build",
-    "command": "c++ -Ibenchmarks/benchmark_tr18015_enum_test_O3.p -Ibenchmarks -I../benchmarks -I../enum/include -I../common -I. -I.. -I../oop/include -I../visitor/include -I../benchmarks/include -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -std=c++17 -O3 -g -MD -MQ benchmarks/benchmark_tr18015_enum_test_O3.p/src_benchmark_tr18015.cpp.o -MF benchmarks/benchmark_tr18015_enum_test_O3.p/src_benchmark_tr18015.cpp.o.d -o benchmarks/benchmark_tr18015_enum_test_O3.p/src_benchmark_tr18015.cpp.o -c ../benchmarks/src/benchmark_tr18015.cpp",
-    "file": "../benchmarks/src/benchmark_tr18015.cpp",
-    "output": "benchmarks/benchmark_tr18015_enum_test_O3.p/src_benchmark_tr18015.cpp.o"
+    "command": "c++ -Ibenchmarks/benchmark_tr18015_enum_opt.p -Ibenchmarks -I../benchmarks -I../enum/include -I../common -I. -I.. -I../oop/include -I../visitor/include -I../benchmarks/include -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -std=c++17 -O3 -g -MD -MQ benchmarks/benchmark_tr18015_enum_opt.p/src_benchmark_tr18015_enum.cpp.o -MF benchmarks/benchmark_tr18015_enum_opt.p/src_benchmark_tr18015_enum.cpp.o.d -o benchmarks/benchmark_tr18015_enum_opt.p/src_benchmark_tr18015_enum.cpp.o -c ../benchmarks/src/benchmark_tr18015_enum.cpp",
+    "file": "../benchmarks/src/benchmark_tr18015_enum.cpp",
+    "output": "benchmarks/benchmark_tr18015_enum_opt.p/src_benchmark_tr18015_enum.cpp.o"
   },
   {
     "directory": "/home/mark/Documents/iacb-thesis/build",
-    "command": "c++ -Ibenchmarks/benchmark_tr18015_enum_test_O3.p -Ibenchmarks -I../benchmarks -I../enum/include -I../common -I. -I.. -I../oop/include -I../visitor/include -I../benchmarks/include -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -std=c++17 -O3 -g -MD -MQ benchmarks/benchmark_tr18015_enum_test_O3.p/src_common.cpp.o -MF benchmarks/benchmark_tr18015_enum_test_O3.p/src_common.cpp.o.d -o benchmarks/benchmark_tr18015_enum_test_O3.p/src_common.cpp.o -c ../benchmarks/src/common.cpp",
+    "command": "c++ -Ibenchmarks/benchmark_tr18015_enum_opt.p -Ibenchmarks -I../benchmarks -I../enum/include -I../common -I. -I.. -I../oop/include -I../visitor/include -I../benchmarks/include -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -std=c++17 -O3 -g -MD -MQ benchmarks/benchmark_tr18015_enum_opt.p/src_common.cpp.o -MF benchmarks/benchmark_tr18015_enum_opt.p/src_common.cpp.o.d -o benchmarks/benchmark_tr18015_enum_opt.p/src_common.cpp.o -c ../benchmarks/src/common.cpp",
     "file": "../benchmarks/src/common.cpp",
-    "output": "benchmarks/benchmark_tr18015_enum_test_O3.p/src_common.cpp.o"
+    "output": "benchmarks/benchmark_tr18015_enum_opt.p/src_common.cpp.o"
   },
   {
     "directory": "/home/mark/Documents/iacb-thesis/build",
-    "command": "c++ -Ibenchmarks/benchmark_tr18015_oop_test_O3.p -Ibenchmarks -I../benchmarks -I../enum/include -I../common -I. -I.. -I../oop/include -I../visitor/include -I../benchmarks/include -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -std=c++17 -O3 -g -MD -MQ benchmarks/benchmark_tr18015_oop_test_O3.p/src_benchmark_tr18015_oop.cpp.o -MF benchmarks/benchmark_tr18015_oop_test_O3.p/src_benchmark_tr18015_oop.cpp.o.d -o benchmarks/benchmark_tr18015_oop_test_O3.p/src_benchmark_tr18015_oop.cpp.o -c ../benchmarks/src/benchmark_tr18015_oop.cpp",
+    "command": "c++ -Ibenchmarks/benchmark_tr18015_oop_opt.p -Ibenchmarks -I../benchmarks -I../enum/include -I../common -I. -I.. -I../oop/include -I../visitor/include -I../benchmarks/include -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -std=c++17 -O3 -g -MD -MQ benchmarks/benchmark_tr18015_oop_opt.p/src_benchmark_tr18015_oop.cpp.o -MF benchmarks/benchmark_tr18015_oop_opt.p/src_benchmark_tr18015_oop.cpp.o.d -o benchmarks/benchmark_tr18015_oop_opt.p/src_benchmark_tr18015_oop.cpp.o -c ../benchmarks/src/benchmark_tr18015_oop.cpp",
     "file": "../benchmarks/src/benchmark_tr18015_oop.cpp",
-    "output": "benchmarks/benchmark_tr18015_oop_test_O3.p/src_benchmark_tr18015_oop.cpp.o"
+    "output": "benchmarks/benchmark_tr18015_oop_opt.p/src_benchmark_tr18015_oop.cpp.o"
   },
   {
     "directory": "/home/mark/Documents/iacb-thesis/build",
-    "command": "c++ -Ibenchmarks/benchmark_tr18015_oop_test_O3.p -Ibenchmarks -I../benchmarks -I../enum/include -I../common -I. -I.. -I../oop/include -I../visitor/include -I../benchmarks/include -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -std=c++17 -O3 -g -MD -MQ benchmarks/benchmark_tr18015_oop_test_O3.p/src_common.cpp.o -MF benchmarks/benchmark_tr18015_oop_test_O3.p/src_common.cpp.o.d -o benchmarks/benchmark_tr18015_oop_test_O3.p/src_common.cpp.o -c ../benchmarks/src/common.cpp",
+    "command": "c++ -Ibenchmarks/benchmark_tr18015_oop_opt.p -Ibenchmarks -I../benchmarks -I../enum/include -I../common -I. -I.. -I../oop/include -I../visitor/include -I../benchmarks/include -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -std=c++17 -O3 -g -MD -MQ benchmarks/benchmark_tr18015_oop_opt.p/src_common.cpp.o -MF benchmarks/benchmark_tr18015_oop_opt.p/src_common.cpp.o.d -o benchmarks/benchmark_tr18015_oop_opt.p/src_common.cpp.o -c ../benchmarks/src/common.cpp",
     "file": "../benchmarks/src/common.cpp",
-    "output": "benchmarks/benchmark_tr18015_oop_test_O3.p/src_common.cpp.o"
+    "output": "benchmarks/benchmark_tr18015_oop_opt.p/src_common.cpp.o"
   },
   {
     "directory": "/home/mark/Documents/iacb-thesis/build",
-    "command": "c++ -Ibenchmarks/benchmark_tr18015_visit_test_O3.p -Ibenchmarks -I../benchmarks -I../enum/include -I../common -I. -I.. -I../oop/include -I../visitor/include -I../benchmarks/include -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -std=c++17 -O3 -g -MD -MQ benchmarks/benchmark_tr18015_visit_test_O3.p/src_benchmark_tr18015_visit.cpp.o -MF benchmarks/benchmark_tr18015_visit_test_O3.p/src_benchmark_tr18015_visit.cpp.o.d -o benchmarks/benchmark_tr18015_visit_test_O3.p/src_benchmark_tr18015_visit.cpp.o -c ../benchmarks/src/benchmark_tr18015_visit.cpp",
+    "command": "c++ -Ibenchmarks/benchmark_tr18015_visit_opt.p -Ibenchmarks -I../benchmarks -I../enum/include -I../common -I. -I.. -I../oop/include -I../visitor/include -I../benchmarks/include -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -std=c++17 -O3 -g -MD -MQ benchmarks/benchmark_tr18015_visit_opt.p/src_benchmark_tr18015_visit.cpp.o -MF benchmarks/benchmark_tr18015_visit_opt.p/src_benchmark_tr18015_visit.cpp.o.d -o benchmarks/benchmark_tr18015_visit_opt.p/src_benchmark_tr18015_visit.cpp.o -c ../benchmarks/src/benchmark_tr18015_visit.cpp",
     "file": "../benchmarks/src/benchmark_tr18015_visit.cpp",
-    "output": "benchmarks/benchmark_tr18015_visit_test_O3.p/src_benchmark_tr18015_visit.cpp.o"
+    "output": "benchmarks/benchmark_tr18015_visit_opt.p/src_benchmark_tr18015_visit.cpp.o"
   },
   {
     "directory": "/home/mark/Documents/iacb-thesis/build",
-    "command": "c++ -Ibenchmarks/benchmark_tr18015_visit_test_O3.p -Ibenchmarks -I../benchmarks -I../enum/include -I../common -I. -I.. -I../oop/include -I../visitor/include -I../benchmarks/include -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -std=c++17 -O3 -g -MD -MQ benchmarks/benchmark_tr18015_visit_test_O3.p/src_common.cpp.o -MF benchmarks/benchmark_tr18015_visit_test_O3.p/src_common.cpp.o.d -o benchmarks/benchmark_tr18015_visit_test_O3.p/src_common.cpp.o -c ../benchmarks/src/common.cpp",
+    "command": "c++ -Ibenchmarks/benchmark_tr18015_visit_opt.p -Ibenchmarks -I../benchmarks -I../enum/include -I../common -I. -I.. -I../oop/include -I../visitor/include -I../benchmarks/include -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -std=c++17 -O3 -g -MD -MQ benchmarks/benchmark_tr18015_visit_opt.p/src_common.cpp.o -MF benchmarks/benchmark_tr18015_visit_opt.p/src_common.cpp.o.d -o benchmarks/benchmark_tr18015_visit_opt.p/src_common.cpp.o -c ../benchmarks/src/common.cpp",
     "file": "../benchmarks/src/common.cpp",
-    "output": "benchmarks/benchmark_tr18015_visit_test_O3.p/src_common.cpp.o"
+    "output": "benchmarks/benchmark_tr18015_visit_opt.p/src_common.cpp.o"
   }
 ]
