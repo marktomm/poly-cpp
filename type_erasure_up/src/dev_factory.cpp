@@ -4,9 +4,13 @@
 
 #include <memory>
 
+namespace TypeErasureUp {
+
 statable CreateTcpPort(std::string ip, uint16_t port)
 {
     return TcpPort(ip, port);
 }
 
 statable CreateSerialPort(std::string dev) { return SerialPort(dev); }
+
+} // namespace TypeErasureUp

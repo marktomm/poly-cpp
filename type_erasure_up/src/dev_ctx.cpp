@@ -1,6 +1,8 @@
 #include "dev_ctx.h"
 #include "types.h"
 
+namespace TypeErasureUp {
+
 void stat(std::vector<statable> const& doc)
 {
     for (auto const& it : doc) {
@@ -21,3 +23,5 @@ void writePorts(std::vector<statable>& ports, BufferData const& data)
 {
     write(ports, data);
 }
+
+} // namespace TypeErasureUp

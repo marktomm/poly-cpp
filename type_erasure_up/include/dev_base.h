@@ -4,6 +4,8 @@
 #include "types.h"
 #include <memory>
 
+namespace TypeErasureUp {
+
 class statable
 {
 public:
@@ -44,5 +46,7 @@ private:
     };
     std::unique_ptr<concept_t> _self;
 };
+
+} // namespace TypeErasureUp
 
 #endif

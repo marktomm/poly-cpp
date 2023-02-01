@@ -8,8 +8,12 @@
 
 #include <cstdint>
 
+namespace TypeErasureUp {
+
 statable CreateTcpPort(std::string ip, uint16_t port);
 
 statable CreateSerialPort(std::string dev);
+
+} // namespace TypeErasureUp
 
 #endif

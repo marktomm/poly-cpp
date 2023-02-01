@@ -7,8 +7,12 @@
 #include <memory>
 #include <vector>
 
+namespace TypeErasureUp {
+
 void statPorts(std::vector<statable> const&);
 
 void writePorts(std::vector<statable>&, BufferData const&);
+
+} // namespace TypeErasureUp
 
 #endif

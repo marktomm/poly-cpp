@@ -2,6 +2,8 @@
 
 #include <iostream>
 
+namespace TypeErasureUp {
+
 void read(TcpPort&, std::string&) {}
 void write(TcpPort& p, BufferData const& data) { p.Write(data); }
 void stat(TcpPort const& port)
@@ -17,3 +19,5 @@ void stat(SerialPort const& port)
     using namespace std;
     cout << "serial port stats " << port.GetDev() << "\n";
 }
+
+} // namespace TypeErasureUp

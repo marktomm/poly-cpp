@@ -3,6 +3,7 @@
 
 int main()
 {
+    using namespace TypeErasureUp;
     using Ports = std::vector<statable>;
 
     Ports ports;

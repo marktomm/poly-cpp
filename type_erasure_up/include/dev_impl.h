@@ -8,6 +8,8 @@
 
 #include <cstdint>
 
+namespace TypeErasureUp {
+
 class TcpPort
 {
 public:
@@ -39,5 +41,7 @@ private:
     std::string dev_;
     MutableBuffer buf_;
 };
+
+} // namespace TypeErasureUp
 
 #endif

@@ -4,6 +4,8 @@
 #include "dev_impl.h"
 #include "types.h"
 
+namespace TypeErasureUp {
+
 void read(TcpPort&, std::string&);
 void write(TcpPort&, BufferData const&);
 void stat(TcpPort const&);
@@ -11,5 +13,7 @@ void stat(TcpPort const&);
 void read(SerialPort&, std::string&);
 void write(SerialPort&, BufferData const&);
 void stat(SerialPort const&);
+
+} // namespace TypeErasureUp
 
 #endif
