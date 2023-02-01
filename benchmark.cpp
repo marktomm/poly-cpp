@@ -21,10 +21,10 @@ constexpr static uint32_t roundCount = 1;
 
 //     Ports ports;
 //     for (uint32_t i = 0; i < 50; ++i) {
-//         ports.push_back(CreateTcpPort("localhost", 2404));
+//         ports.push_back(createTcpPort("localhost", 2404));
 //     }
 //     for (uint32_t i = 0; i < 50; ++i) {
-//         ports.push_back(CreateSerialPort("/dev/ttyUSB0"));
+//         ports.push_back(createSerialPort("/dev/ttyUSB0"));
 //     }
 
 //     return ports;
@@ -37,8 +37,8 @@ constexpr static uint32_t roundCount = 1;
 
 //     Ports ports;
 //     for (uint32_t i = 0; i < 50; ++i) {
-//         ports.push_back(CreateTcpPort("localhost", 2404));
-//         ports.push_back(CreateSerialPort("/dev/ttyUSB0"));
+//         ports.push_back(createTcpPort("localhost", 2404));
+//         ports.push_back(createSerialPort("/dev/ttyUSB0"));
 //     }
 
 //     return ports;
@@ -68,10 +68,10 @@ static std::vector<std::unique_ptr<Enum::Port> > EnumPortsInitRandom()
 
     Ports ports(100);
     for (uint32_t i = 0; i < 50; ++i) {
-        ports[v[i]] = CreateTcpPort("localhost", 2404);
+        ports[v[i]] = createTcpPort("localhost", 2404);
     }
     for (uint32_t i = 50; i < 100; ++i) {
-        ports[v[i]] = CreateSerialPort("/dev/ttyUSB0");
+        ports[v[i]] = createSerialPort("/dev/ttyUSB0");
     }
 
     return ports;
@@ -86,10 +86,10 @@ static std::vector<std::unique_ptr<Oop::Port> > OopPortsInitRandom()
 
     Ports ports(100);
     for (uint32_t i = 0; i < 50; ++i) {
-        ports[v[i]] = CreateTcpPort("localhost", 2404);
+        ports[v[i]] = createTcpPort("localhost", 2404);
     }
     for (uint32_t i = 50; i < 100; ++i) {
-        ports[v[i]] = CreateSerialPort("/dev/ttyUSB0");
+        ports[v[i]] = createSerialPort("/dev/ttyUSB0");
     }
 
     return ports;
@@ -104,10 +104,10 @@ static std::vector<std::unique_ptr<Visit::Port> > VisitPortsInitRandom()
 
     Ports ports(100);
     for (uint32_t i = 0; i < 50; ++i) {
-        ports[v[i]] = CreateTcpPort("localhost", 2404);
+        ports[v[i]] = createTcpPort("localhost", 2404);
     }
     for (uint32_t i = 50; i < 100; ++i) {
-        ports[v[i]] = CreateSerialPort("/dev/ttyUSB0");
+        ports[v[i]] = createSerialPort("/dev/ttyUSB0");
     }
 
     return ports;

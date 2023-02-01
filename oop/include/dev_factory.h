@@ -10,9 +10,9 @@
 
 namespace Oop {
 
-std::unique_ptr<Port> CreateTcpPort(std::string ip, uint16_t port);
+std::unique_ptr<Port> createTcpPort(std::string ip, uint16_t port);
 
-std::unique_ptr<Port> CreateSerialPort(std::string dev);
+std::unique_ptr<Port> createSerialPort(std::string dev);
 
 } // namespace Oop
 

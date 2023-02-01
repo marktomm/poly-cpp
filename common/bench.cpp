@@ -35,10 +35,10 @@ EnumPortsInitRandom(std::vector<uint32_t>& v)
 
     Ports ports(100);
     for (uint32_t i = 0; i < 50; ++i) {
-        ports[v[i]] = CreateTcpPort("localhost", 2404);
+        ports[v[i]] = createTcpPort("localhost", 2404);
     }
     for (uint32_t i = 50; i < 100; ++i) {
-        ports[v[i]] = CreateSerialPort("/dev/ttyUSB0");
+        ports[v[i]] = createSerialPort("/dev/ttyUSB0");
     }
 
     return ports;
@@ -52,10 +52,10 @@ OopPortsInitRandom(std::vector<uint32_t>& v)
 
     Ports ports(100);
     for (uint32_t i = 0; i < 50; ++i) {
-        ports[v[i]] = CreateTcpPort("localhost", 2404);
+        ports[v[i]] = createTcpPort("localhost", 2404);
     }
     for (uint32_t i = 50; i < 100; ++i) {
-        ports[v[i]] = CreateSerialPort("/dev/ttyUSB0");
+        ports[v[i]] = createSerialPort("/dev/ttyUSB0");
     }
 
     return ports;
@@ -69,10 +69,10 @@ VisitPortsInitRandom(std::vector<uint32_t>& v)
 
     Ports ports(100);
     for (uint32_t i = 0; i < 50; ++i) {
-        ports[v[i]] = CreateTcpPort("localhost", 2404);
+        ports[v[i]] = createTcpPort("localhost", 2404);
     }
     for (uint32_t i = 50; i < 100; ++i) {
-        ports[v[i]] = CreateSerialPort("/dev/ttyUSB0");
+        ports[v[i]] = createSerialPort("/dev/ttyUSB0");
     }
 
     return ports;

@@ -6,11 +6,11 @@
 
 namespace TypeErasureUp {
 
-statable CreateTcpPort(std::string ip, uint16_t port)
+statable createTcpPort(std::string ip, uint16_t port)
 {
     return TcpPort(ip, port);
 }
 
-statable CreateSerialPort(std::string dev) { return SerialPort(dev); }
+statable createSerialPort(std::string dev) { return SerialPort(dev); }
 
 } // namespace TypeErasureUp

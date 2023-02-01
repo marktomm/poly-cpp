@@ -4,7 +4,7 @@
 int main()
 {
     using namespace Enum;
-    std::unique_ptr<Port> port(CreateTcpPort("localhost", 2404));
+    std::unique_ptr<Port> port(createTcpPort("localhost", 2404));
     statPort(port);
     return 0;
 }
