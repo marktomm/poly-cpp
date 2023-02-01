@@ -2,6 +2,7 @@
 #define _DEV_IMPL_H_
 
 #include "dev_base.h"
+#include "types.h"
 
 #include <string>
 

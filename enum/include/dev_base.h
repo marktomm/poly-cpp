@@ -1,8 +1,5 @@
 #ifndef _DEV_BASE_H_
 #define _DEV_BASE_H_
-
-#include "types.h"
-
 namespace Enum {
 
 enum PortType { tcp, serial, end_ = 0xFFFFFFFF };

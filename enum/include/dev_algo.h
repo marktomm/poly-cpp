@@ -2,6 +2,7 @@
 #define _ENUM_DEV_ALGO_H_
 
 #include "dev_impl.h"
+#include "types.h"
 
 namespace Enum {
 
