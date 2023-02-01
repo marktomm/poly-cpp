@@ -1,6 +1,7 @@
 #ifndef _TYPE_ERASURE_DEV_BASE_H_
 #define _TYPE_ERASURE_DEV_BASE_H_
 
+#include "types.h"
 #include <memory>
 
 class statable
@@ -21,18 +22,24 @@ public:
     statable& operator=(statable&&) noexcept = default;
 
     friend void stat(statable const& item) { item._self->_stat(); }
+    friend void write(statable& item, BufferData const& data)
+    {
+        item._self->_write(data);
+    }
 
 private:
     struct concept_t {
         virtual ~concept_t() = default;
         virtual concept_t* _copy() const = 0;
         virtual void _stat() const = 0;
+        virtual void _write(BufferData const&) = 0;
     };
     template<typename T>
     struct model final: concept_t {
         model(T x) : _data(std::move(x)) {}
         concept_t* _copy() const override { return new model(*this); }
         void _stat() const override { stat(_data); }
+        void _write(BufferData const& data) override { write(_data, data); }
         T _data;
     };
     std::unique_ptr<concept_t> _self;

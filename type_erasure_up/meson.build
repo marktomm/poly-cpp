@@ -10,7 +10,7 @@ type_erasure_up_src = [
 executable(
     'type_erasure_up',
     [type_erasure_up_src, type_erasure_up_main],
-    include_directories: type_erasure_up_inc,
+    include_directories: [type_erasure_up_inc, common_inc],
     cpp_args: ['-std=c++17', '-O3', '-fno-rtti'],
     install: true,
 )
@@ -18,7 +18,7 @@ executable(
 executable(
     'type_erasure_up_rtti',
     [type_erasure_up_src, type_erasure_up_main],
-    include_directories: type_erasure_up_inc,
+    include_directories: [type_erasure_up_inc, common_inc],
     cpp_args: ['-std=c++17', '-O3'],
     install: true,
 )

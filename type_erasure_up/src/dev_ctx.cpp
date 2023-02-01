@@ -1,4 +1,5 @@
 #include "dev_ctx.h"
+#include "types.h"
 
 void stat(std::vector<statable> const& doc)
 {
@@ -7,4 +8,16 @@ void stat(std::vector<statable> const& doc)
     }
 }
 
+void write(std::vector<statable>& doc, BufferData const& data)
+{
+    for (auto& it : doc) {
+        write(it, data);
+    }
+}
+
 void statPorts(std::vector<statable> const& ports) { stat(ports); }
+
+void writePorts(std::vector<statable>& ports, BufferData const& data)
+{
+    write(ports, data);
+}

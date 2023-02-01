@@ -3,7 +3,7 @@
 #include <iostream>
 
 void read(TcpPort&, std::string&) {}
-void write(TcpPort&, std::string const&) {}
+void write(TcpPort& p, BufferData const& data) { p.Write(data); }
 void stat(TcpPort const& port)
 {
     using namespace std;
@@ -11,7 +11,7 @@ void stat(TcpPort const& port)
 }
 
 void read(SerialPort&, std::string&) {}
-void write(SerialPort&, std::string const&) {}
+void write(SerialPort& p, BufferData const& data) { p.Write(data); }
 void stat(SerialPort const& port)
 {
     using namespace std;
