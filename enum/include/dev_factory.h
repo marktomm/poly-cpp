@@ -10,9 +10,9 @@
 
 namespace Enum {
 
-std::unique_ptr<Port> createTcpPort(std::string ip, uint16_t port);
+std::unique_ptr<Port> createTcpPort(std::string ip, uint16_t port) noexcept;
 
-std::unique_ptr<Port> createSerialPort(std::string dev);
+std::unique_ptr<Port> createSerialPort(std::string dev) noexcept;
 
 } // namespace Enum
 

@@ -12,18 +12,21 @@ class TcpPort: public Port
 {
 public:
     explicit TcpPort(std::string ip, uint16_t pn, StatTcpPortStrategy strategy,
-                     WriteTcpPortStrategy wStrat)
-        : ip_{ip}, port_{pn}, strategy_{strategy}, wStrat_{wStrat}, buf_{}
+                     WriteTcpPortStrategy wStrat) noexcept: ip_{ip},
+                                                            port_{pn},
+                                                            strategy_{strategy},
+                                                            wStrat_{wStrat},
+                                                            buf_{}
     {
     }
     ~TcpPort() = default;
 
-    void read(std::string&) override;
-    void write(BufferData const&) override;
-    void stat() const override;
+    void read(std::string&) noexcept override;
+    void write(BufferData const&) noexcept override;
+    void stat() const noexcept override;
 
-    std::string GetIp() const;
-    uint16_t GetPort() const;
+    std::string GetIp() const noexcept;
+    uint16_t GetPort() const noexcept;
 
 private:
     std::string ip_;
@@ -37,17 +40,20 @@ class SerialPort: public Port
 {
 public:
     explicit SerialPort(std::string dev, StatSerialPortStrategy strategy,
-                        WriteSerialPortStrategy wStrat)
-        : dev_{dev}, strategy_{strategy}, wStrat_{wStrat}, buf_{}
+                        WriteSerialPortStrategy wStrat) noexcept
+        : dev_{dev},
+          strategy_{strategy},
+          wStrat_{wStrat},
+          buf_{}
     {
     }
     ~SerialPort() = default;
 
-    void read(std::string&) override;
-    void write(BufferData const&) override;
-    void stat() const override;
+    void read(std::string&) noexcept override;
+    void write(BufferData const&) noexcept override;
+    void stat() const noexcept override;
 
-    std::string GetDev() const;
+    std::string GetDev() const noexcept;
 
 private:
     std::string dev_;

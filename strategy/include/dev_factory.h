@@ -11,10 +11,11 @@
 namespace Strategy {
 
 std::unique_ptr<Port> createTcpPort(std::string ip, uint16_t port,
-                                    StatTcpPortStrategy, WriteTcpPortStrategy);
+                                    StatTcpPortStrategy,
+                                    WriteTcpPortStrategy) noexcept;
 
 std::unique_ptr<Port> createSerialPort(std::string dev, StatSerialPortStrategy,
-                                       WriteSerialPortStrategy);
+                                       WriteSerialPortStrategy) noexcept;
 
 } // namespace Strategy
 

@@ -3,7 +3,7 @@
 
 namespace Visit {
 
-void statPorts(std::vector<std::unique_ptr<Port> > const& ports)
+void statPorts(std::vector<std::unique_ptr<Port> > const& ports) noexcept
 {
     for (auto const& p : ports) {
         p->accept(Stat{});
@@ -11,7 +11,7 @@ void statPorts(std::vector<std::unique_ptr<Port> > const& ports)
 }
 
 void writePorts(std::vector<std::unique_ptr<Port> >& ports,
-                BufferData const& data)
+                BufferData const& data) noexcept
 {
     for (auto& p : ports) {
         p->accept(Write{data});

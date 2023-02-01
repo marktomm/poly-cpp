@@ -8,9 +8,10 @@
 
 namespace Oop {
 
-void statPorts(std::vector<std::unique_ptr<Port> > const&);
+void statPorts(std::vector<std::unique_ptr<Port> > const&) noexcept;
 
-void writePorts(std::vector<std::unique_ptr<Port> >&, BufferData const&);
+void writePorts(std::vector<std::unique_ptr<Port> >&,
+                BufferData const&) noexcept;
 
 } // namespace Oop
 

@@ -14,9 +14,9 @@ namespace VariantT {
 using Port = std::variant<TcpPort, SerialPort>;
 using WriteData = std::variant<BufferData>;
 
-void statPorts(std::vector<Port> const&);
+void statPorts(std::vector<Port> const&) noexcept;
 
-void writePorts(std::vector<Port>&, WriteData const&);
+void writePorts(std::vector<Port>&, WriteData const&) noexcept;
 
 } // namespace VariantT
 

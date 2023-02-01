@@ -10,7 +10,9 @@ namespace Oop {
 class TcpPort final: public Port
 {
 public:
-    explicit TcpPort(std::string ip, uint16_t pn) : ip_{ip}, port_{pn}, buf_{}
+    explicit TcpPort(std::string ip, uint16_t pn) noexcept: ip_{ip},
+                                                            port_{pn},
+                                                            buf_{}
     {
     }
     ~TcpPort() = default;
@@ -31,7 +33,7 @@ private:
 class SerialPort final: public Port
 {
 public:
-    explicit SerialPort(std::string dev) : dev_{dev}, buf_{} {}
+    explicit SerialPort(std::string dev) noexcept: dev_{dev}, buf_{} {}
     ~SerialPort() = default;
 
     void Read(std::string&) noexcept override;

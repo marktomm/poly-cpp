@@ -2,13 +2,13 @@
 
 namespace VariantT {
 
-std::string TcpPort::GetIp() const { return ip_; }
-uint16_t TcpPort::GetPort() const { return port_; }
+std::string TcpPort::GetIp() const noexcept { return ip_; }
+uint16_t TcpPort::GetPort() const noexcept { return port_; }
 
-void TcpPort::Write(const BufferData& data) { buf_ += data; }
+void TcpPort::Write(BufferData const& data) noexcept { buf_ += data; }
 
-std::string SerialPort::GetDev() const { return dev_; }
+std::string SerialPort::GetDev() const noexcept { return dev_; }
 
-void SerialPort::Write(const BufferData& data) { buf_ += data; }
+void SerialPort::Write(BufferData const& data) noexcept { buf_ += data; }
 
 } // namespace VariantT

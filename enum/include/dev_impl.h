@@ -13,8 +13,10 @@ namespace Enum {
 class TcpPort final: public Port
 {
 public:
-    explicit TcpPort(std::string ip, uint16_t pn)
-        : Port{tcp}, ip_{ip}, port_{pn}, buf_{}
+    explicit TcpPort(std::string ip, uint16_t pn) noexcept: Port{tcp},
+                                                            ip_{ip},
+                                                            port_{pn},
+                                                            buf_{}
     {
     }
     ~TcpPort() = default;
@@ -32,7 +34,11 @@ private:
 class SerialPort final: public Port
 {
 public:
-    explicit SerialPort(std::string dev) : Port{serial}, dev_{dev}, buf_{} {}
+    explicit SerialPort(std::string dev) noexcept: Port{serial},
+                                                   dev_{dev},
+                                                   buf_{}
+    {
+    }
     ~SerialPort() = default;
 
     std::string GetDev() const noexcept;

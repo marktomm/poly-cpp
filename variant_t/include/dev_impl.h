@@ -12,14 +12,16 @@ namespace VariantT {
 class TcpPort
 {
 public:
-    explicit TcpPort(std::string ip, uint16_t pn) : ip_{ip}, port_{pn}, buf_{}
+    explicit TcpPort(std::string ip, uint16_t pn) noexcept: ip_{ip},
+                                                            port_{pn},
+                                                            buf_{}
     {
     }
     ~TcpPort() = default;
 
-    std::string GetIp() const;
-    uint16_t GetPort() const;
-    void Write(BufferData const&);
+    std::string GetIp() const noexcept;
+    uint16_t GetPort() const noexcept;
+    void Write(BufferData const&) noexcept;
 
 private:
     std::string ip_;
@@ -30,11 +32,11 @@ private:
 class SerialPort
 {
 public:
-    explicit SerialPort(std::string dev) : dev_{dev}, buf_{} {}
+    explicit SerialPort(std::string dev) noexcept: dev_{dev}, buf_{} {}
     ~SerialPort() = default;
 
-    std::string GetDev() const;
-    void Write(BufferData const&);
+    std::string GetDev() const noexcept;
+    void Write(BufferData const&) noexcept;
 
 private:
     std::string dev_;

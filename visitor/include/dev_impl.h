@@ -1,8 +1,8 @@
 #ifndef _VISITOR_DEV_IMPL_H_
 #define _VISITOR_DEV_IMPL_H_
 
-#include "types.h"
 #include "dev_base.h"
+#include "types.h"
 
 #include <cstdint>
 
@@ -11,7 +11,9 @@ namespace Visit {
 class TcpPort final: public Port
 {
 public:
-    explicit TcpPort(std::string ip, uint16_t pn) : ip_{ip}, port_{pn}, buf_{}
+    explicit TcpPort(std::string ip, uint16_t pn) noexcept: ip_{ip},
+                                                            port_{pn},
+                                                            buf_{}
     {
     }
     ~TcpPort() = default;
@@ -31,7 +33,7 @@ private:
 class SerialPort final: public Port
 {
 public:
-    explicit SerialPort(std::string dev) : dev_{dev}, buf_{} {}
+    explicit SerialPort(std::string dev) noexcept: dev_{dev}, buf_{} {}
     ~SerialPort() = default;
 
     void accept(Visitor const&) const noexcept override;

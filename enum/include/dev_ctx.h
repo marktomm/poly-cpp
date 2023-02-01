@@ -9,13 +9,14 @@
 
 namespace Enum {
 
-void statPorts(std::vector<std::unique_ptr<Port> > const&);
+void statPorts(std::vector<std::unique_ptr<Port> > const&) noexcept;
 
-void statPort(std::unique_ptr<Port> const&);
+void statPort(std::unique_ptr<Port> const&) noexcept;
 
-void writePorts(std::vector<std::unique_ptr<Port> >&, BufferData const&);
+void writePorts(std::vector<std::unique_ptr<Port> >&,
+                BufferData const&) noexcept;
 
-void writePort(std::unique_ptr<Port>&, BufferData const&);
+void writePort(std::unique_ptr<Port>&, BufferData const&) noexcept;
 
 } // namespace Enum
 

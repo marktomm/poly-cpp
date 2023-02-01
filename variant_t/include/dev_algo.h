@@ -9,15 +9,15 @@ namespace VariantT {
 class Stat
 {
 public:
-    void operator()(TcpPort const&) const;
-    void operator()(SerialPort const&) const;
+    void operator()(TcpPort const&) const noexcept;
+    void operator()(SerialPort const&) const noexcept;
 };
 
 class Write
 {
 public:
-    void operator()(TcpPort&, BufferData const&) const;
-    void operator()(SerialPort&, BufferData const&) const;
+    void operator()(TcpPort&, BufferData const&) const noexcept;
+    void operator()(SerialPort&, BufferData const&) const noexcept;
 };
 
 } // namespace VariantT

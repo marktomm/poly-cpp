@@ -9,9 +9,10 @@
 
 namespace Strategy {
 
-void statPorts(std::vector<std::unique_ptr<Port> > const&);
+void statPorts(std::vector<std::unique_ptr<Port> > const&) noexcept;
 
-void writePorts(std::vector<std::unique_ptr<Port> > const&, BufferData const&);
+void writePorts(std::vector<std::unique_ptr<Port> > const&,
+                BufferData const&) noexcept;
 
 } // namespace Strategy
 
