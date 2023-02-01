@@ -3,6 +3,8 @@
 
 #include "dev_base.h"
 
+namespace Strategy {
+
 class SyslogStatTcpPortStrategy
 {
 public:
@@ -26,5 +28,7 @@ class SyncWriteSerialPortStrategy
 public:
     void operator()(SerialPort&, BufferData const&) const;
 };
+
+} // namespace Strategy
 
 #endif

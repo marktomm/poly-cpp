@@ -1,5 +1,7 @@
 #include "dev_ctx.h"
 
+namespace Strategy {
+
 void statPorts(std::vector<std::unique_ptr<Port> > const& ports)
 {
     for (auto const& p : ports) {
@@ -14,3 +16,5 @@ void writePorts(std::vector<std::unique_ptr<Port> > const& ports,
         p->write(data);
     }
 }
+
+} // namespace Strategy

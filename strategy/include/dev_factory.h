@@ -8,10 +8,14 @@
 
 #include <cstdint>
 
+namespace Strategy {
+
 std::unique_ptr<Port> CreateTcpPort(std::string ip, uint16_t port,
                                     StatTcpPortStrategy, WriteTcpPortStrategy);
 
 std::unique_ptr<Port> CreateSerialPort(std::string dev, StatSerialPortStrategy,
                                        WriteSerialPortStrategy);
+
+} // namespace Strategy
 
 #endif

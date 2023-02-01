@@ -6,12 +6,14 @@
 
 #include <cstdint>
 
+namespace Strategy {
+
 class TcpPort: public Port
 {
 public:
     explicit TcpPort(std::string ip, uint16_t pn, StatTcpPortStrategy strategy,
                      WriteTcpPortStrategy wStrat)
-        : ip_{ip}, port_{pn}, strategy_{strategy}, wStrat_{wStrat}
+        : ip_{ip}, port_{pn}, strategy_{strategy}, wStrat_{wStrat}, buf_{}
     {
     }
     ~TcpPort() = default;
@@ -36,7 +38,7 @@ class SerialPort: public Port
 public:
     explicit SerialPort(std::string dev, StatSerialPortStrategy strategy,
                         WriteSerialPortStrategy wStrat)
-        : dev_{dev}, strategy_{strategy}, wStrat_{wStrat}
+        : dev_{dev}, strategy_{strategy}, wStrat_{wStrat}, buf_{}
     {
     }
     ~SerialPort() = default;
@@ -53,5 +55,7 @@ private:
     WriteSerialPortStrategy wStrat_;
     MutableBuffer buf_;
 };
+
+} // namespace Strategy
 
 #endif

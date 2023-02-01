@@ -3,6 +3,8 @@
 
 #include <iostream>
 
+namespace Strategy {
+
 void SyslogStatTcpPortStrategy::operator()(TcpPort const& p) const
 {
     using namespace std;
@@ -26,3 +28,5 @@ void SyncWriteSerialPortStrategy::operator()(SerialPort& p,
 {
     p.write(data);
 }
+
+} // namespace Strategy

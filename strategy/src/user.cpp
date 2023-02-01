@@ -4,6 +4,7 @@
 
 int main()
 {
+    using namespace Strategy;
     using Ports = std::vector<std::unique_ptr<Port> >;
 
     Ports ports;

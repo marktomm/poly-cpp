@@ -1,5 +1,7 @@
 #include "dev_impl.h"
 
+namespace Strategy {
+
 std::string TcpPort::GetIp() const { return ip_; }
 uint16_t TcpPort::GetPort() const { return port_; }
 
@@ -16,3 +18,5 @@ void SerialPort::read(std::string&) {}
 void SerialPort::write(BufferData const& data) { buf_ += data; }
 
 void SerialPort::stat() const { strategy_(*this); }
+
+} // namespace Strategy
