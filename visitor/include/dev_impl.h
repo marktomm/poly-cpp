@@ -19,15 +19,16 @@ public:
     ~TcpPort() = default;
 
     void accept(Visitor const&) const noexcept override;
+    void accept(Visitor const&) noexcept override;
 
     std::string GetIp() const noexcept;
     uint16_t GetPort() const noexcept;
-    void Write(BufferData const&) const noexcept;
+    void Write(BufferData const&) noexcept;
 
 private:
     std::string ip_;
     uint16_t port_;
-    mutable MutableBuffer buf_;
+    MutableBuffer buf_;
 };
 
 class SerialPort final: public Port
@@ -37,13 +38,14 @@ public:
     ~SerialPort() = default;
 
     void accept(Visitor const&) const noexcept override;
+    void accept(Visitor const&) noexcept override;
 
     std::string GetDev() const noexcept;
-    void Write(BufferData const&) const noexcept;
+    void Write(BufferData const&) noexcept;
 
 private:
     std::string dev_;
-    mutable MutableBuffer buf_;
+    MutableBuffer buf_;
 };
 
 class Port::Visitor
@@ -53,6 +55,9 @@ public:
 
     virtual void visit(TcpPort const&) const noexcept = 0;
     virtual void visit(SerialPort const&) const noexcept = 0;
+
+    virtual void visit(TcpPort&) const noexcept = 0;
+    virtual void visit(SerialPort&) const noexcept = 0;
 };
 
 } // namespace Visit

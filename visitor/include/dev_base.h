@@ -13,6 +13,7 @@ public:
 
     class Visitor;
     virtual void accept(Visitor const&) const noexcept = 0;
+    virtual void accept(Visitor const&) noexcept = 0;
 };
 
 } // namespace Visit

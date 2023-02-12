@@ -104,6 +104,8 @@ user:
 
 # Visitor
 
+There are other ways to implement double dispatch in C++. Item 31 of Scott Meyer's "More Effective C++" treats this subject in depth.
+
 K. Iglberger: Allow to easily add new functionality.
 
 types are closed set
