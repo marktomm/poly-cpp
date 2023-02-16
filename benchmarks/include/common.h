@@ -37,6 +37,9 @@ private:
 #include <memory>
 #include <vector>
 
+/**
+ * Generate random static vector of indices 
+ */
 std::vector<uint32_t> setup();
 
 std::vector<std::unique_ptr<Enum::Port> >
