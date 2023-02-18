@@ -11,17 +11,9 @@ variant_t_exe = executable(
     'variant_t',
     [variant_t_src, variant_t_main],
     include_directories: [variant_t_inc, common_inc],
-    cpp_args: ['-std=c++17', '-O3', '-fno-rtti'],
+    cpp_args: ['-std=c++17', '-O3'],
     install: true,
 )
 
 
 variant_t_o = variant_t_exe.extract_objects(variant_t_src)
-
-executable(
-    'variant_t_rtti',
-    [variant_t_src, variant_t_main],
-    include_directories: [variant_t_inc, common_inc],
-    cpp_args: ['-std=c++17', '-O3'],
-    install: true,
-)
