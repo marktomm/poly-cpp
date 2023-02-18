@@ -1,8 +1,7 @@
 #include "dev_ctx.h"
 #include "types.h"
 
-int main()
-{
+int main() {
     using namespace VariantT;
     using Ports = std::vector<Port>;
 

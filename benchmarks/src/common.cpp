@@ -12,8 +12,7 @@ clock_t TimeDur::GetDur() const noexcept { return tdur_; }
 #include <algorithm>
 #include <random>
 
-std::vector<uint32_t> setup()
-{
+std::vector<uint32_t> setup() {
     static bool setupDone = false;
     static std::vector<uint32_t> v(100);
     if (setupDone) {
@@ -28,8 +27,7 @@ std::vector<uint32_t> setup()
 }
 
 std::vector<std::unique_ptr<Enum::Port> >
-EnumPortsInitRandom(std::vector<uint32_t>& v)
-{
+EnumPortsInitRandom(std::vector<uint32_t>& v) {
     using namespace Enum;
     using Ports = std::vector<std::unique_ptr<Port> >;
 
@@ -45,8 +43,7 @@ EnumPortsInitRandom(std::vector<uint32_t>& v)
 }
 
 std::vector<std::unique_ptr<Oop::Port> >
-OopPortsInitRandom(std::vector<uint32_t>& v)
-{
+OopPortsInitRandom(std::vector<uint32_t>& v) {
     using namespace Oop;
     using Ports = std::vector<std::unique_ptr<Port> >;
 
@@ -62,8 +59,7 @@ OopPortsInitRandom(std::vector<uint32_t>& v)
 }
 
 std::vector<std::unique_ptr<Visit::Port> >
-VisitPortsInitRandom(std::vector<uint32_t>& v)
-{
+VisitPortsInitRandom(std::vector<uint32_t>& v) {
     using namespace Visit;
     using Ports = std::vector<std::unique_ptr<Port> >;
 
@@ -81,8 +77,7 @@ VisitPortsInitRandom(std::vector<uint32_t>& v)
 #include "strategy/include/dev_algo.h"
 
 std::vector<std::unique_ptr<Strategy::Port> >
-StrategyPortsInitRandom(std::vector<uint32_t>& v)
-{
+StrategyPortsInitRandom(std::vector<uint32_t>& v) {
     using namespace Strategy;
     using Ports = std::vector<std::unique_ptr<Port> >;
 
@@ -102,8 +97,7 @@ StrategyPortsInitRandom(std::vector<uint32_t>& v)
 }
 
 template<class T>
-void rreorder(std::vector<T>& v, std::vector<uint32_t> const& order)
-{
+void rreorder(std::vector<T>& v, std::vector<uint32_t> const& order) {
     for (uint32_t s = 1, d; s < order.size(); ++s) {
         for (d = order[s]; d < s; d = order[d])
             ;
@@ -113,8 +107,7 @@ void rreorder(std::vector<T>& v, std::vector<uint32_t> const& order)
     }
 }
 
-std::vector<VariantT::Port> VarianttPortsInitRandom(std::vector<uint32_t>& v)
-{
+std::vector<VariantT::Port> VarianttPortsInitRandom(std::vector<uint32_t>& v) {
     using namespace VariantT;
     using Ports = std::vector<Port>;
 
@@ -132,8 +125,7 @@ std::vector<VariantT::Port> VarianttPortsInitRandom(std::vector<uint32_t>& v)
 }
 
 std::vector<TypeErasureUp::statable>
-TypeErasureUpPortsInitRandom(std::vector<uint32_t>& v)
-{
+TypeErasureUpPortsInitRandom(std::vector<uint32_t>& v) {
 
     using namespace TypeErasureUp;
     using Ports = std::vector<statable>;

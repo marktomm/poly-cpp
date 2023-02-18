@@ -3,15 +3,13 @@
 
 namespace Enum {
 
-void statPorts(std::vector<std::unique_ptr<Port> > const& ports) noexcept
-{
+void statPorts(std::vector<std::unique_ptr<Port> > const& ports) noexcept {
     for (auto const& p : ports) {
         statPort(p);
     }
 }
 
-void statPort(std::unique_ptr<Port> const& port) noexcept
-{
+void statPort(std::unique_ptr<Port> const& port) noexcept {
     switch (port->GetType()) {
     case tcp:
         stat(*static_cast<TcpPort const*>(port.get()));
@@ -25,15 +23,13 @@ void statPort(std::unique_ptr<Port> const& port) noexcept
 }
 
 void writePorts(std::vector<std::unique_ptr<Port> >& ports,
-                BufferData const& data) noexcept
-{
+                BufferData const& data) noexcept {
     for (auto& p : ports) {
         writePort(p, data);
     }
 }
 
-void writePort(std::unique_ptr<Port>& port, BufferData const& data) noexcept
-{
+void writePort(std::unique_ptr<Port>& port, BufferData const& data) noexcept {
     switch (port->GetType()) {
     case tcp:
         write(*static_cast<TcpPort*>(port.get()), data);

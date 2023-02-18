@@ -1,8 +1,7 @@
 #include "dev_ctx.h"
 #include "dev_factory.h"
 
-int main()
-{
+int main() {
     using namespace Oop;
     using Ports = std::vector<std::unique_ptr<Port> >;
 

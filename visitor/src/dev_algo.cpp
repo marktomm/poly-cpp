@@ -4,52 +4,42 @@
 
 namespace Visit {
 
-void Stat::visit(TcpPort const& p) const noexcept
-{
+void Stat::visit(TcpPort const&) const noexcept {
     using namespace std;
     cout << "tcp port stats\n";
 }
 
-void Stat::visit(SerialPort const& p) const noexcept
-{
+void Stat::visit(SerialPort const& p) const noexcept {
     using namespace std;
     cout << "serial port stats " << p.GetDev() << "\n";
 }
 
-void Stat::visit(TcpPort& p) const noexcept
-{
+void Stat::visit(TcpPort&) const noexcept {
     using namespace std;
-    throw std::runtime_error("do not read from non const TcpPort");
+    // unused
 }
 
-void Stat::visit(SerialPort& p) const noexcept
-{
+void Stat::visit(SerialPort&) const noexcept {
     using namespace std;
-    throw std::runtime_error("do not read from non const Serial");
+    // unused
 }
 
-void Write::visit(TcpPort const& p) const noexcept
-{
+void Write::visit(TcpPort const&) const noexcept {
     using namespace std;
-    throw std::runtime_error("cannot write to const TcpPort");
-    // p.Write(data_);
+    // unused
 }
 
-void Write::visit(SerialPort const& p) const noexcept
-{
+void Write::visit(SerialPort const&) const noexcept {
     using namespace std;
-    throw std::runtime_error("cannot write to const SerialPort");
-    // p.Write(data_);
+    // unused
 }
 
-void Write::visit(TcpPort& p) const noexcept
-{
+void Write::visit(TcpPort& p) const noexcept {
     using namespace std;
     p.Write(data_);
 }
 
-void Write::visit(SerialPort& p) const noexcept
-{
+void Write::visit(SerialPort& p) const noexcept {
     using namespace std;
     p.Write(data_);
 }

@@ -7,8 +7,7 @@
 
 namespace Oop {
 
-class Port
-{
+class Port {
 public:
     Port() = default;
     virtual ~Port() = default;

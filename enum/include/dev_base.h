@@ -3,9 +3,7 @@
 namespace Enum {
 
 enum PortType { tcp, serial, end_ = 0xFFFFFFFF };
-
-class Port
-{
+class Port {
 public:
     explicit Port(PortType pt) noexcept: type_{pt} {}
     virtual ~Port() = default;
@@ -13,7 +11,7 @@ public:
     PortType GetType() const noexcept { return type_; }
 
 private:
-    PortType const type_;
+    PortType type_;
 };
 
 } // namespace Enum

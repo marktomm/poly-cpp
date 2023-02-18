@@ -5,8 +5,7 @@
 
 namespace VariantT {
 
-Port createTcpPort(std::string ip, uint16_t port) noexcept
-{
+Port createTcpPort(std::string ip, uint16_t port) noexcept {
     return TcpPort(ip, port);
 }
 

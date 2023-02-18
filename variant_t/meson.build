@@ -11,7 +11,6 @@ variant_t_exe = executable(
     'variant_t',
     [variant_t_src, variant_t_main],
     include_directories: [variant_t_inc, common_inc],
-    cpp_args: ['-std=c++17', '-O3'],
     install: true,
 )
 

@@ -8,7 +8,6 @@ oop_exe = executable(
     'oop',
     [oop_src, oop_main],
     include_directories: [oop_inc, common_inc],
-    cpp_args: ['-std=c++17', '-O3'],
     install: true,
 )
 

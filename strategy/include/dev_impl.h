@@ -8,17 +8,14 @@
 
 namespace Strategy {
 
-class TcpPort: public Port
-{
+class TcpPort: public Port {
 public:
     explicit TcpPort(std::string ip, uint16_t pn, StatTcpPortStrategy strategy,
                      WriteTcpPortStrategy wStrat) noexcept: ip_{ip},
                                                             port_{pn},
                                                             strategy_{strategy},
                                                             wStrat_{wStrat},
-                                                            buf_{}
-    {
-    }
+                                                            buf_{} {}
     ~TcpPort() = default;
 
     void read(std::string&) noexcept override;
@@ -36,17 +33,14 @@ private:
     MutableBuffer buf_;
 };
 
-class SerialPort: public Port
-{
+class SerialPort: public Port {
 public:
     explicit SerialPort(std::string dev, StatSerialPortStrategy strategy,
                         WriteSerialPortStrategy wStrat) noexcept
         : dev_{dev},
           strategy_{strategy},
           wStrat_{wStrat},
-          buf_{}
-    {
-    }
+          buf_{} {}
     ~SerialPort() = default;
 
     void read(std::string&) noexcept override;

@@ -6,8 +6,7 @@
 
 namespace TypeErasureUp {
 
-statable createTcpPort(std::string ip, uint16_t port) noexcept
-{
+statable createTcpPort(std::string ip, uint16_t port) noexcept {
     return TcpPort(ip, port);
 }
 

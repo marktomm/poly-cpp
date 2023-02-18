@@ -6,17 +6,13 @@
 
 namespace TypeErasureUp {
 
-class statable
-{
+class statable {
 public:
     template<typename T>
-    statable(T x) noexcept: _self(std::make_unique<model<T> >(std::move(x)))
-    {
-    }
+    statable(T x) noexcept: _self(std::make_unique<model<T> >(std::move(x))) {}
     statable(statable const& rhs) : _self(rhs._self->_copy()) {}
     statable(statable&&) noexcept = default;
-    statable& operator=(statable const& rhs)
-    {
+    statable& operator=(statable const& rhs) {
         statable tmp(rhs);
         *this = std::move(tmp);
         return *this;
@@ -24,13 +20,11 @@ public:
     statable& operator=(statable&&) noexcept = default;
 
     friend void stat(statable const& item) noexcept { item._self->_stat(); }
-    friend void write(statable& item, BufferData const& data) noexcept
-    {
+    friend void write(statable& item, BufferData const& data) noexcept {
         item._self->_write(data);
     }
 
-    void swap(statable& rhs)
-    {
+    void swap(statable& rhs) {
         using std::swap;
         swap(_self, rhs._self);
     }
@@ -47,8 +41,7 @@ private:
         model(T x) : _data(std::move(x)) {}
         concept_t* _copy() const override { return new model(*this); }
         void _stat() const noexcept override { stat(_data); }
-        void _write(BufferData const& data) noexcept override
-        {
+        void _write(BufferData const& data) noexcept override {
             write(_data, data);
         }
         T _data;

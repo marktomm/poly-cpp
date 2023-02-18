@@ -5,8 +5,7 @@
 
 namespace Visit {
 
-class Port
-{
+class Port {
 public:
     Port() = default;
     virtual ~Port() = default;

@@ -10,15 +10,12 @@
 
 namespace Enum {
 
-class TcpPort final: public Port
-{
+class TcpPort final: public Port {
 public:
     explicit TcpPort(std::string ip, uint16_t pn) noexcept: Port{tcp},
                                                             ip_{ip},
                                                             port_{pn},
-                                                            buf_{}
-    {
-    }
+                                                            buf_{} {}
     ~TcpPort() = default;
 
     std::string GetIp() const noexcept;
@@ -31,14 +28,11 @@ private:
     MutableBuffer buf_;
 };
 
-class SerialPort final: public Port
-{
+class SerialPort final: public Port {
 public:
     explicit SerialPort(std::string dev) noexcept: Port{serial},
                                                    dev_{dev},
-                                                   buf_{}
-    {
-    }
+                                                   buf_{} {}
     ~SerialPort() = default;
 
     std::string GetDev() const noexcept;

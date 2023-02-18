@@ -11,7 +11,6 @@ strategy_exe = executable(
     'strategy',
     [strategy_src, strategy_main],
     include_directories: [strategy_inc, common_inc],
-    cpp_args: ['-std=c++17', '-O3'],
     install: true,
 )
 

@@ -4,10 +4,10 @@
 # find -iname  *.h -o -iname *.cpp ! -iname settingdescriptions.cpp  | xargs clang-format -i -style=file
 BasedOnStyle: LLVM
 IndentWidth: 4
-BreakBeforeBraces: Custom
-BraceWrapping:
-  AfterClass:      true
-  AfterFunction:   true
+#BreakBeforeBraces: Custom
+#BraceWrapping:
+#  AfterClass:      true
+#  AfterFunction:   true
 PointerAlignment: Left
 AccessModifierOffset: -4
 AlwaysBreakTemplateDeclarations: Yes

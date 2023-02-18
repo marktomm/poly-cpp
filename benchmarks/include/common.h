@@ -6,8 +6,7 @@ void clobber();
 
 #include <ctime>
 
-class TimeDur final
-{
+class TimeDur final {
 public:
     TimeDur(const char* desc, clock_t tdur);
     TimeDur();
@@ -38,7 +37,7 @@ private:
 #include <vector>
 
 /**
- * Generate random static vector of indices 
+ * Generate random static vector of indices
  */
 std::vector<uint32_t> setup();
 

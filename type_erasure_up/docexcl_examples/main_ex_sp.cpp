@@ -7,13 +7,10 @@ void draw(int i);
 struct my_class;
 void draw(my_class const&);
 
-class drawable
-{
+class drawable {
 public:
     template<typename T>
-    drawable(T x) : _self(std::make_shared<model<T> >(std::move(x)))
-    {
-    }
+    drawable(T x) : _self(std::make_shared<model<T> >(std::move(x))) {}
     drawable(drawable const&) = default;
     drawable(drawable&&) noexcept = default;
     drawable& operator=(drawable const&) = default;
@@ -37,22 +34,19 @@ private:
 
 void draw(int i) { std::cout << "draw int " << i << std::endl; }
 
-struct my_class {
-};
+struct my_class {};
 
 void draw(my_class const&) { std::cout << "my_class" << std::endl; }
 
 using drawables = std::vector<drawable>;
 
-void draw(drawables const& doc)
-{
+void draw(drawables const& doc) {
     for (auto const& it : doc) {
         draw(it);
     }
 }
 
-int main()
-{
+int main() {
     drawables doc;
     doc.push_back(35);
     doc.push_back(325);

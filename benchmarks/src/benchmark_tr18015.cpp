@@ -4,8 +4,7 @@
 #include <iostream>
 #include <vector>
 
-int main(int argc, char** argv)
-{
+int main(int argc, char** argv) {
     uint32_t roundCount = (1 < argc) ? atoi(argv[1]) : 2500000;
 
     using namespace std;

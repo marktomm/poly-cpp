@@ -18,8 +18,7 @@ using WriteTcpPortStrategy = std::function<void(TcpPort&, BufferData const&)>;
 using WriteSerialPortStrategy =
     std::function<void(SerialPort&, BufferData const&)>;
 
-class Port
-{
+class Port {
 public:
     Port() = default;
     virtual ~Port() = default;

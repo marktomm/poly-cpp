@@ -6,15 +6,13 @@
 
 namespace VariantT {
 
-class Stat
-{
+class Stat {
 public:
     void operator()(TcpPort const&) const noexcept;
     void operator()(SerialPort const&) const noexcept;
 };
 
-class Write
-{
+class Write {
 public:
     void operator()(TcpPort&, BufferData const&) const noexcept;
     void operator()(SerialPort&, BufferData const&) const noexcept;

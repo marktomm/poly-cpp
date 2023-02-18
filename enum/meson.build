@@ -12,7 +12,6 @@ enum_exe = executable(
     'enum',
     [enum_main, enum_src],
     include_directories: [enum_inc, common_inc],
-    cpp_args: ['-std=c++17', '-O3'],
     install: true,
 )
 
@@ -23,6 +22,5 @@ executable(
     [enum_simple],
     objects: [enum_inc_o],
     include_directories: [enum_inc, common_inc],
-    cpp_args: ['-std=c++17', '-O3'],
     install: true,
 )

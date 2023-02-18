@@ -9,14 +9,11 @@
 
 namespace VariantT {
 
-class TcpPort
-{
+class TcpPort {
 public:
     explicit TcpPort(std::string ip, uint16_t pn) noexcept: ip_{ip},
                                                             port_{pn},
-                                                            buf_{}
-    {
-    }
+                                                            buf_{} {}
     ~TcpPort() = default;
 
     std::string GetIp() const noexcept;
@@ -29,8 +26,7 @@ private:
     MutableBuffer buf_;
 };
 
-class SerialPort
-{
+class SerialPort {
 public:
     explicit SerialPort(std::string dev) noexcept: dev_{dev}, buf_{} {}
     ~SerialPort() = default;

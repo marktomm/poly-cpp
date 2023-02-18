@@ -24,7 +24,6 @@ if bench.found()
             benchmarks_inc,
         ],
         dependencies: [bench, thread],
-        cpp_args: ['-std=c++17', '-O3'],
     )
 
     test('benchmark_google_opt', benchmark_google_opt_exe, is_parallel: false)
@@ -48,7 +47,7 @@ if bench.found()
             benchmarks_inc,
         ],
         dependencies: [bench, thread],
-        cpp_args: ['-std=c++17', '-O0', '-g'],
+        cpp_args: ['-O0', '-g'],
     )
 
     test(
@@ -78,7 +77,6 @@ benchmark_tr18015_opt_exe = executable(
         visitor_inc,
         benchmarks_inc,
     ],
-    cpp_args: ['-std=c++17', '-O3', '-g'],
 )
 
 test(

@@ -1,8 +1,7 @@
 #include "dev_ctx.h"
 #include "dev_factory.h"
 
-int main()
-{
+int main() {
     using namespace TypeErasureUp;
     using Ports = std::vector<statable>;
 

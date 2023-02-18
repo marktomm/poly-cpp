@@ -11,7 +11,6 @@ visitor_exe = executable(
     'visitor',
     [visitor_main, visitor_src],
     include_directories: [visitor_inc, common_inc],
-    cpp_args: ['-std=c++17', '-O3'],
     install: true,
 )
 

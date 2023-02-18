@@ -4,17 +4,13 @@
 
 void draw(int i);
 
-class drawable
-{
+class drawable {
 public:
     template<typename T>
-    drawable(T x) : _self(std::make_unique<model<T> >(std::move(x)))
-    {
-    }
+    drawable(T x) : _self(std::make_unique<model<T> >(std::move(x))) {}
     drawable(drawable const& rhs) : _self(rhs._self->_copy()) {}
     drawable(drawable&&) noexcept = default;
-    drawable& operator=(drawable const& rhs)
-    {
+    drawable& operator=(drawable const& rhs) {
         drawable tmp(rhs);
         *this = std::move(tmp);
         return *this;
@@ -41,22 +37,19 @@ private:
 
 void draw(int i) { std::cout << "draw int " << i << std::endl; }
 
-struct my_class {
-};
+struct my_class {};
 
 void draw(my_class const&) { std::cout << "my_class" << std::endl; }
 
 using drawables = std::vector<drawable>;
 
-void draw(drawables const& doc)
-{
+void draw(drawables const& doc) {
     for (auto const& it : doc) {
         draw(it);
     }
 }
 
-int main()
-{
+int main() {
     drawables doc;
     doc.push_back(35);
     doc.push_back(325);
