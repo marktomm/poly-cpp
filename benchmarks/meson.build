@@ -7,7 +7,7 @@ if bench.found()
 
     benchmark_google_opt_exe = executable(
         'benchmark_google_opt',
-        [benchmark_test],
+        [benchmark_test, common_src],
         objects: [
             enum_inc_o,
             oop_inc_o,
@@ -31,7 +31,7 @@ if bench.found()
 
     benchmark_google_no_opt_exe = executable(
         'benchmark_google_no_opt',
-        [benchmark_test],
+        [benchmark_test, common_src],
         objects: [
             enum_inc_o,
             oop_inc_o,
