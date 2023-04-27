@@ -5,14 +5,12 @@
 
 namespace VariantT {
 
-void Stat::operator()(TcpPort const&) const noexcept {
-    using namespace std;
-    cout << "tcp port stats\n";
+void Read::operator()(TcpPort const& p, BufferData& output) const noexcept {
+    p.Read(output);
 }
 
-void Stat::operator()(SerialPort const& p) const noexcept {
-    using namespace std;
-    cout << "serial port stats " << p.GetDev() << "\n";
+void Read::operator()(SerialPort const& p, BufferData& output) const noexcept {
+    p.Read(output);
 }
 
 void Write::operator()(TcpPort& p, BufferData const& data) const noexcept {

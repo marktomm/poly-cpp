@@ -1,12 +1,13 @@
 #include "dev_ctx.h"
 #include "dev_algo.h"
+#include "types.h"
 #include <vector>
 
 namespace VariantT {
 
-void statPorts(std::vector<Port> const& ports) noexcept {
+void readPorts(std::vector<Port> const& ports, ReadData& output) noexcept {
     for (auto const& p : ports) {
-        std::visit(Stat{}, p);
+        std::visit(Read{}, p, output);
     }
 }
 

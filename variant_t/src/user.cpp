@@ -8,7 +8,8 @@ int main() {
     Ports ports;
     ports.push_back(TcpPort{"localhost", 2404});
     ports.push_back(SerialPort{"/dev/ttyUSB0"});
-    statPorts(ports);
+    ReadData data;
+    readPorts(ports, data);
     writePorts(ports, BufferData{10});
 
     return 0;
