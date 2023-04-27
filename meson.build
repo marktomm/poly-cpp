@@ -9,7 +9,7 @@ project(
         'warning_level=3',
         'werror=true',
         'cpp_args=-Wshadow -Wconversion -Wpedantic',
-        'debug=false'
+        'debug=false',
     ],
 )
 
