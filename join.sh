@@ -13,7 +13,7 @@ test -d $1 || {
 APP_ROOT=.
 SUB=$1
 OUTPUT=${SUB}/amalgamation.cpp
-REGEX='"dev.*\.h\|common\/.*\.h\|include.*types.h"'
+REGEX='"dev.*\.h\|common/.*\.h\|include.*types.h"'
 
 test -f ${APP_ROOT}/common/types.h && cat $_ > ${OUTPUT}
 test -f ${SUB}/include/dev_base.h && grep -v ${REGEX} $_ >> ${OUTPUT}
