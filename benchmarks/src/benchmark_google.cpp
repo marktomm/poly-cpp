@@ -87,7 +87,7 @@ static void BM_Variant(benchmark::State& state) {
 static void BM_TypeErasure(benchmark::State& state) {
     // Perform setup here
     using namespace TypeErasureUp;
-    using Ports = std::vector<statable>;
+    using Ports = std::vector<Readable>;
     auto randomVector = setup();
     Ports ports = TypeErasureUpPortsInitRandom(randomVector);
     for (auto _ : state) {

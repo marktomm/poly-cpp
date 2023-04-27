@@ -76,7 +76,7 @@ int main(int argc, char** argv) {
     }
     vtd.push_back(TimeDur{"Variantt updates", clock() - c});
 
-    using TypeErasureUpPorts = std::vector<TypeErasureUp::statable>;
+    using TypeErasureUpPorts = std::vector<TypeErasureUp::Readable>;
     TypeErasureUpPorts typeErasureUpPorts = TypeErasureUpPortsInitRandom(vr);
     doNotOptimize(typeErasureUpPorts.data());
 

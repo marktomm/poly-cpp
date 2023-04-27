@@ -6,25 +6,25 @@
 
 namespace TypeErasureUp {
 
-class statable {
+class Readable {
 public:
     template<typename T>
-    statable(T x) noexcept: _self(std::make_unique<model<T> >(std::move(x))) {}
-    statable(statable const& rhs) : _self(rhs._self->_copy()) {}
-    statable(statable&&) noexcept = default;
-    statable& operator=(statable const& rhs) {
-        statable tmp(rhs);
+    Readable(T x) noexcept: _self(std::make_unique<model<T> >(std::move(x))) {}
+    Readable(Readable const& rhs) : _self(rhs._self->_copy()) {}
+    Readable(Readable&&) noexcept = default;
+    Readable& operator=(Readable const& rhs) {
+        Readable tmp(rhs);
         *this = std::move(tmp);
         return *this;
     }
-    statable& operator=(statable&&) noexcept = default;
+    Readable& operator=(Readable&&) noexcept = default;
 
-    friend void stat(statable const& item) noexcept { item._self->_stat(); }
-    friend void write(statable& item, BufferData const& data) noexcept {
+    friend void stat(Readable const& item) noexcept { item._self->_stat(); }
+    friend void write(Readable& item, BufferData const& data) noexcept {
         item._self->_write(data);
     }
 
-    void swap(statable& rhs) {
+    void swap(Readable& rhs) {
         using std::swap;
         swap(_self, rhs._self);
     }
@@ -49,7 +49,7 @@ private:
     std::unique_ptr<concept_t> _self;
 };
 
-void swap(statable& a, statable& b);
+void swap(Readable& a, Readable& b);
 
 } // namespace TypeErasureUp
 

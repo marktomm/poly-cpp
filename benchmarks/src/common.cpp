@@ -84,12 +84,12 @@ StrategyPortsInitRandom(std::vector<uint32_t>& v) {
     Ports ports(100);
     for (uint32_t i = 0; i < 50; ++i) {
         ports[v[i]] =
-            createTcpPort("localhost", 2404, SyslogStatTcpPortStrategy{},
+            createTcpPort("localhost", 2404, SyslogReadTcpPortStrategy{},
                           SyncWriteTcpPortStrategy{});
     }
     for (uint32_t i = 50; i < 100; ++i) {
         ports[v[i]] =
-            createSerialPort("/dev/ttyUSB0", SyslogStatSerialPortStrategy{},
+            createSerialPort("/dev/ttyUSB0", SyslogReadSerialPortStrategy{},
                              SyncWriteSerialPortStrategy{});
     }
 
@@ -124,11 +124,11 @@ std::vector<VariantT::Port> VarianttPortsInitRandom(std::vector<uint32_t>& v) {
     return ports;
 }
 
-std::vector<TypeErasureUp::statable>
+std::vector<TypeErasureUp::Readable>
 TypeErasureUpPortsInitRandom(std::vector<uint32_t>& v) {
 
     using namespace TypeErasureUp;
-    using Ports = std::vector<statable>;
+    using Ports = std::vector<Readable>;
 
     Ports ports;
     for (uint32_t i = 0; i < 50; ++i) {

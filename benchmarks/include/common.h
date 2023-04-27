@@ -55,7 +55,7 @@ StrategyPortsInitRandom(std::vector<uint32_t>& v);
 
 std::vector<VariantT::Port> VarianttPortsInitRandom(std::vector<uint32_t>& v);
 
-std::vector<TypeErasureUp::statable>
+std::vector<TypeErasureUp::Readable>
 TypeErasureUpPortsInitRandom(std::vector<uint32_t>& v);
 
 #endif

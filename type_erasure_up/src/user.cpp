@@ -3,7 +3,7 @@
 
 int main() {
     using namespace TypeErasureUp;
-    using Ports = std::vector<statable>;
+    using Ports = std::vector<Readable>;
 
     Ports ports;
     ports.emplace_back(createTcpPort("localhost", 2404));

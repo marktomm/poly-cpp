@@ -9,9 +9,9 @@
 
 namespace TypeErasureUp {
 
-void statPorts(std::vector<statable> const&) noexcept;
+void statPorts(std::vector<Readable> const&) noexcept;
 
-void writePorts(std::vector<statable>&, BufferData const&) noexcept;
+void writePorts(std::vector<Readable>&, BufferData const&) noexcept;
 
 } // namespace TypeErasureUp
 

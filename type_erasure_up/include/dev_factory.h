@@ -10,9 +10,9 @@
 
 namespace TypeErasureUp {
 
-statable createTcpPort(std::string ip, uint16_t port) noexcept;
+Readable createTcpPort(std::string ip, uint16_t port) noexcept;
 
-statable createSerialPort(std::string dev) noexcept;
+Readable createSerialPort(std::string dev) noexcept;
 
 } // namespace TypeErasureUp
 
