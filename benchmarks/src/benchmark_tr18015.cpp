@@ -5,7 +5,8 @@
 #include <vector>
 
 int main(int argc, char** argv) {
-    uint32_t roundCount = (1 < argc) ? atoi(argv[1]) : 2500000;
+    uint32_t roundCount =
+        (1 < argc) ? static_cast<uint32_t>(atoi(argv[1])) : 2500000;
 
     using namespace std;
     ostream& out = cout;
