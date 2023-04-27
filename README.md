@@ -13,7 +13,7 @@ A hand full of popular approaches to achieving polymorphism in C++ with benchmar
 
 requirements: meson and a compiler
 
-```bash
+```shell
 meson setup builddir && ninja test -C builddir
 
 # list all executables (after prev command that cd'd into build)
@@ -24,7 +24,7 @@ find builddir -maxdepth 2 -executable -type f
 
 requirements: doxygen and graphviz
 
-```
+```shell
 # run with -r argument if any .h or .cpp files were changed
 ./generate_docs.sh
 
@@ -32,6 +32,16 @@ requirements: doxygen and graphviz
 # substitue webbrowser for chromium or what you got
 webbrowser enum/.docs/.temp/html/index.html
 ```
+
+# amalgamation
+
+script to join an example.
+
+```shell
+./join.sh enum # or oop, or ...
+```
+
+to create enum/amalgamation.cpp which is all files in one for enum/src and enum/inc and it compiles.
 
 # enum
 
