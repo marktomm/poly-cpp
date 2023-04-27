@@ -9,9 +9,9 @@
 
 namespace Enum {
 
-void statPorts(std::vector<std::unique_ptr<Port> > const&) noexcept;
+void readPorts(std::vector<std::unique_ptr<Port> > const&) noexcept;
 
-void statPort(std::unique_ptr<Port> const&) noexcept;
+void readPort(std::unique_ptr<Port> const&) noexcept;
 
 void writePorts(std::vector<std::unique_ptr<Port> >&,
                 BufferData const&) noexcept;

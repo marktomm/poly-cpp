@@ -18,13 +18,12 @@ public:
                                                             buf_{} {}
     ~TcpPort() = default;
 
-    std::string GetIp() const noexcept;
-    uint16_t GetPort() const noexcept;
+    void Read(BufferData const&) const noexcept;
     void Write(BufferData const&) noexcept;
 
 private:
-    std::string ip_;
-    uint16_t port_;
+    std::string ip_; // unused
+    uint16_t port_;  // unused
     MutableBuffer buf_;
 };
 
@@ -35,11 +34,11 @@ public:
                                                    buf_{} {}
     ~SerialPort() = default;
 
-    std::string GetDev() const noexcept;
+    void Read(BufferData const&) const noexcept;
     void Write(BufferData const&) noexcept;
 
 private:
-    std::string dev_;
+    std::string dev_; // unused
     MutableBuffer buf_;
 };
 

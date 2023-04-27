@@ -3,19 +3,19 @@
 
 namespace Enum {
 
-void statPorts(std::vector<std::unique_ptr<Port> > const& ports) noexcept {
+void readPorts(std::vector<std::unique_ptr<Port> > const& ports) noexcept {
     for (auto const& p : ports) {
-        statPort(p);
+        readPort(p);
     }
 }
 
-void statPort(std::unique_ptr<Port> const& port) noexcept {
+void readPort(std::unique_ptr<Port> const& port, BufferData& output) noexcept {
     switch (port->GetType()) {
     case tcp:
-        stat(*static_cast<TcpPort const*>(port.get()));
+        read(*static_cast<TcpPort const*>(port.get()), output);
         break;
     case serial:
-        stat(*static_cast<SerialPort const*>(port.get()));
+        read(*static_cast<SerialPort const*>(port.get()), output);
         break;
     default:
         break;
