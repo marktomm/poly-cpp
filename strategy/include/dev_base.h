@@ -11,8 +11,9 @@ namespace Strategy {
 class TcpPort;
 class SerialPort;
 
-using StatTcpPortStrategy = std::function<void(TcpPort const&)>;
-using StatSerialPortStrategy = std::function<void(SerialPort const&)>;
+using ReadTcpPortStrategy = std::function<void(TcpPort const&, BufferData&)>;
+using ReadSerialPortStrategy =
+    std::function<void(SerialPort const&, BufferData&)>;
 
 using WriteTcpPortStrategy = std::function<void(TcpPort&, BufferData const&)>;
 using WriteSerialPortStrategy =
@@ -23,9 +24,8 @@ public:
     Port() = default;
     virtual ~Port() = default;
 
-    virtual void read(std::string&) noexcept = 0;
-    virtual void write(BufferData const&) noexcept = 0;
-    virtual void stat() const noexcept = 0;
+    virtual void Read(BufferData&) const noexcept = 0;
+    virtual void Write(BufferData const&) noexcept = 0;
 };
 
 } // namespace Strategy

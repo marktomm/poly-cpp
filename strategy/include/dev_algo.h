@@ -5,14 +5,14 @@
 
 namespace Strategy {
 
-class SyslogStatTcpPortStrategy {
+class SyslogReadTcpPortStrategy {
 public:
-    void operator()(TcpPort const&) const noexcept;
+    void operator()(TcpPort const&, BufferData&) const noexcept;
 };
 
-class SyslogStatSerialPortStrategy {
+class SyslogReadSerialPortStrategy {
 public:
-    void operator()(SerialPort const&) const noexcept;
+    void operator()(SerialPort const&, BufferData&) const noexcept;
 };
 
 class SyncWriteTcpPortStrategy {

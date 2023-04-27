@@ -5,25 +5,24 @@
 
 namespace Strategy {
 
-void SyslogStatTcpPortStrategy::operator()(TcpPort const& p) const noexcept {
-    using namespace std;
-    cout << "tcpport to syslog " << p.GetIp() << ":" << p.GetPort() << endl;
+void SyslogReadTcpPortStrategy::operator()(TcpPort const& p,
+                                           BufferData& output) const noexcept {
+    p.Read(output);
 }
 
-void SyslogStatSerialPortStrategy::operator()(
-    SerialPort const& p) const noexcept {
-    using namespace std;
-    cout << "serialport to syslog " << p.GetDev() << endl;
+void SyslogReadSerialPortStrategy::operator()(
+    SerialPort const& p, BufferData& output) const noexcept {
+    p.Read(output);
 }
 
 void SyncWriteTcpPortStrategy::operator()(
     TcpPort& p, BufferData const& data) const noexcept {
-    p.write(data);
+    p.Write(data);
 }
 
 void SyncWriteSerialPortStrategy::operator()(
     SerialPort& p, BufferData const& data) const noexcept {
-    p.write(data);
+    p.Write(data);
 }
 
 } // namespace Strategy
