@@ -14,7 +14,8 @@ A hand full of popular approaches to achieving polymorphism in C++ with benchmar
 requirements: meson and a compiler
 
 ```shell
-meson setup builddir && ninja test -C builddir
+meson setup builddir
+meson compile -C builddir
 
 # list all executables (after prev command that cd'd into build)
 find builddir -maxdepth 2 -executable -type f
@@ -42,6 +43,13 @@ script to join an example.
 ```
 
 to create enum/amalgamation.cpp which is all files in one for enum/src and enum/inc and it compiles.
+
+# run benchmarks
+
+```shell
+meson test -C builddir
+cat builddir/meson-logs/testlog.txt
+```
 
 # enum
 
