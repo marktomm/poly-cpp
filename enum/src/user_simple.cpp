@@ -4,6 +4,7 @@
 int main() {
     using namespace Enum;
     std::unique_ptr<Port> port(createTcpPort("localhost", 2404));
-    readPort(port);
+    BufferData data;
+    readPort(port, data);
     return 0;
 }

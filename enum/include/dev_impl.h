@@ -18,7 +18,7 @@ public:
                                                             buf_{} {}
     ~TcpPort() = default;
 
-    void Read(BufferData const&) const noexcept;
+    void Read(BufferData&) const noexcept;
     void Write(BufferData const&) noexcept;
 
 private:
@@ -34,7 +34,7 @@ public:
                                                    buf_{} {}
     ~SerialPort() = default;
 
-    void Read(BufferData const&) const noexcept;
+    void Read(BufferData&) const noexcept;
     void Write(BufferData const&) noexcept;
 
 private:

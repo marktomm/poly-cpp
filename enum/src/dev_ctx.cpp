@@ -3,9 +3,10 @@
 
 namespace Enum {
 
-void readPorts(std::vector<std::unique_ptr<Port> > const& ports) noexcept {
+void readPorts(std::vector<std::unique_ptr<Port> > const& ports,
+               BufferData& output) noexcept {
     for (auto const& p : ports) {
-        readPort(p);
+        readPort(p, output);
     }
 }
 
