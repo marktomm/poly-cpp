@@ -1,470 +1,218 @@
 [
   {
-    "directory": "/home/mark/Documents/iacb-thesis/build",
-    "command": "c++ -Ienum/enum.p -Ienum -I../enum -I../enum/include -I../common -I. -I.. -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -std=c++17 -O3 -fno-rtti -MD -MQ enum/enum.p/src_user.cpp.o -MF enum/enum.p/src_user.cpp.o.d -o enum/enum.p/src_user.cpp.o -c ../enum/src/user.cpp",
+    "directory": "/home/mark/Documents/Development/bachelor_thesis/poly-cpp/builddir",
+    "command": "c++ -Ienum/enum.p -Ienum -I../enum -I../enum/include -I../common -I. -I.. -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wextra -Wpedantic -Werror -std=c++17 -O3 -Wshadow -Wconversion -Wpedantic -MD -MQ enum/enum.p/src_user.cpp.o -MF enum/enum.p/src_user.cpp.o.d -o enum/enum.p/src_user.cpp.o -c ../enum/src/user.cpp",
     "file": "../enum/src/user.cpp",
     "output": "enum/enum.p/src_user.cpp.o"
   },
   {
-    "directory": "/home/mark/Documents/iacb-thesis/build",
-    "command": "c++ -Ienum/enum.p -Ienum -I../enum -I../enum/include -I../common -I. -I.. -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -std=c++17 -O3 -fno-rtti -MD -MQ enum/enum.p/src_dev_impl.cpp.o -MF enum/enum.p/src_dev_impl.cpp.o.d -o enum/enum.p/src_dev_impl.cpp.o -c ../enum/src/dev_impl.cpp",
+    "directory": "/home/mark/Documents/Development/bachelor_thesis/poly-cpp/builddir",
+    "command": "c++ -Ienum/enum.p -Ienum -I../enum -I../enum/include -I../common -I. -I.. -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wextra -Wpedantic -Werror -std=c++17 -O3 -Wshadow -Wconversion -Wpedantic -MD -MQ enum/enum.p/src_dev_impl.cpp.o -MF enum/enum.p/src_dev_impl.cpp.o.d -o enum/enum.p/src_dev_impl.cpp.o -c ../enum/src/dev_impl.cpp",
     "file": "../enum/src/dev_impl.cpp",
     "output": "enum/enum.p/src_dev_impl.cpp.o"
   },
   {
-    "directory": "/home/mark/Documents/iacb-thesis/build",
-    "command": "c++ -Ienum/enum.p -Ienum -I../enum -I../enum/include -I../common -I. -I.. -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -std=c++17 -O3 -fno-rtti -MD -MQ enum/enum.p/src_dev_ctx.cpp.o -MF enum/enum.p/src_dev_ctx.cpp.o.d -o enum/enum.p/src_dev_ctx.cpp.o -c ../enum/src/dev_ctx.cpp",
+    "directory": "/home/mark/Documents/Development/bachelor_thesis/poly-cpp/builddir",
+    "command": "c++ -Ienum/enum.p -Ienum -I../enum -I../enum/include -I../common -I. -I.. -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wextra -Wpedantic -Werror -std=c++17 -O3 -Wshadow -Wconversion -Wpedantic -MD -MQ enum/enum.p/src_dev_ctx.cpp.o -MF enum/enum.p/src_dev_ctx.cpp.o.d -o enum/enum.p/src_dev_ctx.cpp.o -c ../enum/src/dev_ctx.cpp",
     "file": "../enum/src/dev_ctx.cpp",
     "output": "enum/enum.p/src_dev_ctx.cpp.o"
   },
   {
-    "directory": "/home/mark/Documents/iacb-thesis/build",
-    "command": "c++ -Ienum/enum.p -Ienum -I../enum -I../enum/include -I../common -I. -I.. -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -std=c++17 -O3 -fno-rtti -MD -MQ enum/enum.p/src_dev_algo.cpp.o -MF enum/enum.p/src_dev_algo.cpp.o.d -o enum/enum.p/src_dev_algo.cpp.o -c ../enum/src/dev_algo.cpp",
+    "directory": "/home/mark/Documents/Development/bachelor_thesis/poly-cpp/builddir",
+    "command": "c++ -Ienum/enum.p -Ienum -I../enum -I../enum/include -I../common -I. -I.. -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wextra -Wpedantic -Werror -std=c++17 -O3 -Wshadow -Wconversion -Wpedantic -MD -MQ enum/enum.p/src_dev_algo.cpp.o -MF enum/enum.p/src_dev_algo.cpp.o.d -o enum/enum.p/src_dev_algo.cpp.o -c ../enum/src/dev_algo.cpp",
     "file": "../enum/src/dev_algo.cpp",
     "output": "enum/enum.p/src_dev_algo.cpp.o"
   },
   {
-    "directory": "/home/mark/Documents/iacb-thesis/build",
-    "command": "c++ -Ienum/enum.p -Ienum -I../enum -I../enum/include -I../common -I. -I.. -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -std=c++17 -O3 -fno-rtti -MD -MQ enum/enum.p/src_dev_factory.cpp.o -MF enum/enum.p/src_dev_factory.cpp.o.d -o enum/enum.p/src_dev_factory.cpp.o -c ../enum/src/dev_factory.cpp",
+    "directory": "/home/mark/Documents/Development/bachelor_thesis/poly-cpp/builddir",
+    "command": "c++ -Ienum/enum.p -Ienum -I../enum -I../enum/include -I../common -I. -I.. -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wextra -Wpedantic -Werror -std=c++17 -O3 -Wshadow -Wconversion -Wpedantic -MD -MQ enum/enum.p/src_dev_factory.cpp.o -MF enum/enum.p/src_dev_factory.cpp.o.d -o enum/enum.p/src_dev_factory.cpp.o -c ../enum/src/dev_factory.cpp",
     "file": "../enum/src/dev_factory.cpp",
     "output": "enum/enum.p/src_dev_factory.cpp.o"
   },
   {
-    "directory": "/home/mark/Documents/iacb-thesis/build",
-    "command": "c++ -Ienum/enum_rtti.p -Ienum -I../enum -I../enum/include -I../common -I. -I.. -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -std=c++17 -O3 -MD -MQ enum/enum_rtti.p/src_user.cpp.o -MF enum/enum_rtti.p/src_user.cpp.o.d -o enum/enum_rtti.p/src_user.cpp.o -c ../enum/src/user.cpp",
-    "file": "../enum/src/user.cpp",
-    "output": "enum/enum_rtti.p/src_user.cpp.o"
-  },
-  {
-    "directory": "/home/mark/Documents/iacb-thesis/build",
-    "command": "c++ -Ienum/enum_rtti.p -Ienum -I../enum -I../enum/include -I../common -I. -I.. -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -std=c++17 -O3 -MD -MQ enum/enum_rtti.p/src_dev_impl.cpp.o -MF enum/enum_rtti.p/src_dev_impl.cpp.o.d -o enum/enum_rtti.p/src_dev_impl.cpp.o -c ../enum/src/dev_impl.cpp",
-    "file": "../enum/src/dev_impl.cpp",
-    "output": "enum/enum_rtti.p/src_dev_impl.cpp.o"
-  },
-  {
-    "directory": "/home/mark/Documents/iacb-thesis/build",
-    "command": "c++ -Ienum/enum_rtti.p -Ienum -I../enum -I../enum/include -I../common -I. -I.. -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -std=c++17 -O3 -MD -MQ enum/enum_rtti.p/src_dev_ctx.cpp.o -MF enum/enum_rtti.p/src_dev_ctx.cpp.o.d -o enum/enum_rtti.p/src_dev_ctx.cpp.o -c ../enum/src/dev_ctx.cpp",
-    "file": "../enum/src/dev_ctx.cpp",
-    "output": "enum/enum_rtti.p/src_dev_ctx.cpp.o"
-  },
-  {
-    "directory": "/home/mark/Documents/iacb-thesis/build",
-    "command": "c++ -Ienum/enum_rtti.p -Ienum -I../enum -I../enum/include -I../common -I. -I.. -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -std=c++17 -O3 -MD -MQ enum/enum_rtti.p/src_dev_algo.cpp.o -MF enum/enum_rtti.p/src_dev_algo.cpp.o.d -o enum/enum_rtti.p/src_dev_algo.cpp.o -c ../enum/src/dev_algo.cpp",
-    "file": "../enum/src/dev_algo.cpp",
-    "output": "enum/enum_rtti.p/src_dev_algo.cpp.o"
-  },
-  {
-    "directory": "/home/mark/Documents/iacb-thesis/build",
-    "command": "c++ -Ienum/enum_rtti.p -Ienum -I../enum -I../enum/include -I../common -I. -I.. -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -std=c++17 -O3 -MD -MQ enum/enum_rtti.p/src_dev_factory.cpp.o -MF enum/enum_rtti.p/src_dev_factory.cpp.o.d -o enum/enum_rtti.p/src_dev_factory.cpp.o -c ../enum/src/dev_factory.cpp",
-    "file": "../enum/src/dev_factory.cpp",
-    "output": "enum/enum_rtti.p/src_dev_factory.cpp.o"
-  },
-  {
-    "directory": "/home/mark/Documents/iacb-thesis/build",
-    "command": "c++ -Ienum/enum_simple.p -Ienum -I../enum -I../enum/include -I../common -I. -I.. -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -std=c++17 -O3 -fno-rtti -MD -MQ enum/enum_simple.p/src_user_simple.cpp.o -MF enum/enum_simple.p/src_user_simple.cpp.o.d -o enum/enum_simple.p/src_user_simple.cpp.o -c ../enum/src/user_simple.cpp",
+    "directory": "/home/mark/Documents/Development/bachelor_thesis/poly-cpp/builddir",
+    "command": "c++ -Ienum/enum_simple.p -Ienum -I../enum -I../enum/include -I../common -I. -I.. -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wextra -Wpedantic -Werror -std=c++17 -O3 -Wshadow -Wconversion -Wpedantic -MD -MQ enum/enum_simple.p/src_user_simple.cpp.o -MF enum/enum_simple.p/src_user_simple.cpp.o.d -o enum/enum_simple.p/src_user_simple.cpp.o -c ../enum/src/user_simple.cpp",
     "file": "../enum/src/user_simple.cpp",
     "output": "enum/enum_simple.p/src_user_simple.cpp.o"
   },
   {
-    "directory": "/home/mark/Documents/iacb-thesis/build",
-    "command": "c++ -Ienum/enum_simple.p -Ienum -I../enum -I../enum/include -I../common -I. -I.. -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -std=c++17 -O3 -fno-rtti -MD -MQ enum/enum_simple.p/src_dev_impl.cpp.o -MF enum/enum_simple.p/src_dev_impl.cpp.o.d -o enum/enum_simple.p/src_dev_impl.cpp.o -c ../enum/src/dev_impl.cpp",
-    "file": "../enum/src/dev_impl.cpp",
-    "output": "enum/enum_simple.p/src_dev_impl.cpp.o"
-  },
-  {
-    "directory": "/home/mark/Documents/iacb-thesis/build",
-    "command": "c++ -Ienum/enum_simple.p -Ienum -I../enum -I../enum/include -I../common -I. -I.. -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -std=c++17 -O3 -fno-rtti -MD -MQ enum/enum_simple.p/src_dev_ctx.cpp.o -MF enum/enum_simple.p/src_dev_ctx.cpp.o.d -o enum/enum_simple.p/src_dev_ctx.cpp.o -c ../enum/src/dev_ctx.cpp",
-    "file": "../enum/src/dev_ctx.cpp",
-    "output": "enum/enum_simple.p/src_dev_ctx.cpp.o"
-  },
-  {
-    "directory": "/home/mark/Documents/iacb-thesis/build",
-    "command": "c++ -Ienum/enum_simple.p -Ienum -I../enum -I../enum/include -I../common -I. -I.. -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -std=c++17 -O3 -fno-rtti -MD -MQ enum/enum_simple.p/src_dev_algo.cpp.o -MF enum/enum_simple.p/src_dev_algo.cpp.o.d -o enum/enum_simple.p/src_dev_algo.cpp.o -c ../enum/src/dev_algo.cpp",
-    "file": "../enum/src/dev_algo.cpp",
-    "output": "enum/enum_simple.p/src_dev_algo.cpp.o"
-  },
-  {
-    "directory": "/home/mark/Documents/iacb-thesis/build",
-    "command": "c++ -Ienum/enum_simple.p -Ienum -I../enum -I../enum/include -I../common -I. -I.. -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -std=c++17 -O3 -fno-rtti -MD -MQ enum/enum_simple.p/src_dev_factory.cpp.o -MF enum/enum_simple.p/src_dev_factory.cpp.o.d -o enum/enum_simple.p/src_dev_factory.cpp.o -c ../enum/src/dev_factory.cpp",
-    "file": "../enum/src/dev_factory.cpp",
-    "output": "enum/enum_simple.p/src_dev_factory.cpp.o"
-  },
-  {
-    "directory": "/home/mark/Documents/iacb-thesis/build",
-    "command": "c++ -Ienum/enum_simple_rtti.p -Ienum -I../enum -I../enum/include -I../common -I. -I.. -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -std=c++17 -O3 -MD -MQ enum/enum_simple_rtti.p/src_user_simple.cpp.o -MF enum/enum_simple_rtti.p/src_user_simple.cpp.o.d -o enum/enum_simple_rtti.p/src_user_simple.cpp.o -c ../enum/src/user_simple.cpp",
-    "file": "../enum/src/user_simple.cpp",
-    "output": "enum/enum_simple_rtti.p/src_user_simple.cpp.o"
-  },
-  {
-    "directory": "/home/mark/Documents/iacb-thesis/build",
-    "command": "c++ -Ienum/enum_simple_rtti.p -Ienum -I../enum -I../enum/include -I../common -I. -I.. -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -std=c++17 -O3 -MD -MQ enum/enum_simple_rtti.p/src_dev_impl.cpp.o -MF enum/enum_simple_rtti.p/src_dev_impl.cpp.o.d -o enum/enum_simple_rtti.p/src_dev_impl.cpp.o -c ../enum/src/dev_impl.cpp",
-    "file": "../enum/src/dev_impl.cpp",
-    "output": "enum/enum_simple_rtti.p/src_dev_impl.cpp.o"
-  },
-  {
-    "directory": "/home/mark/Documents/iacb-thesis/build",
-    "command": "c++ -Ienum/enum_simple_rtti.p -Ienum -I../enum -I../enum/include -I../common -I. -I.. -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -std=c++17 -O3 -MD -MQ enum/enum_simple_rtti.p/src_dev_ctx.cpp.o -MF enum/enum_simple_rtti.p/src_dev_ctx.cpp.o.d -o enum/enum_simple_rtti.p/src_dev_ctx.cpp.o -c ../enum/src/dev_ctx.cpp",
-    "file": "../enum/src/dev_ctx.cpp",
-    "output": "enum/enum_simple_rtti.p/src_dev_ctx.cpp.o"
-  },
-  {
-    "directory": "/home/mark/Documents/iacb-thesis/build",
-    "command": "c++ -Ienum/enum_simple_rtti.p -Ienum -I../enum -I../enum/include -I../common -I. -I.. -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -std=c++17 -O3 -MD -MQ enum/enum_simple_rtti.p/src_dev_algo.cpp.o -MF enum/enum_simple_rtti.p/src_dev_algo.cpp.o.d -o enum/enum_simple_rtti.p/src_dev_algo.cpp.o -c ../enum/src/dev_algo.cpp",
-    "file": "../enum/src/dev_algo.cpp",
-    "output": "enum/enum_simple_rtti.p/src_dev_algo.cpp.o"
-  },
-  {
-    "directory": "/home/mark/Documents/iacb-thesis/build",
-    "command": "c++ -Ienum/enum_simple_rtti.p -Ienum -I../enum -I../enum/include -I../common -I. -I.. -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -std=c++17 -O3 -MD -MQ enum/enum_simple_rtti.p/src_dev_factory.cpp.o -MF enum/enum_simple_rtti.p/src_dev_factory.cpp.o.d -o enum/enum_simple_rtti.p/src_dev_factory.cpp.o -c ../enum/src/dev_factory.cpp",
-    "file": "../enum/src/dev_factory.cpp",
-    "output": "enum/enum_simple_rtti.p/src_dev_factory.cpp.o"
-  },
-  {
-    "directory": "/home/mark/Documents/iacb-thesis/build",
-    "command": "c++ -Ioop/oop.p -Ioop -I../oop -I../oop/include -I../common -I. -I.. -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -std=c++17 -O3 -fno-rtti -MD -MQ oop/oop.p/src_dev_impl.cpp.o -MF oop/oop.p/src_dev_impl.cpp.o.d -o oop/oop.p/src_dev_impl.cpp.o -c ../oop/src/dev_impl.cpp",
+    "directory": "/home/mark/Documents/Development/bachelor_thesis/poly-cpp/builddir",
+    "command": "c++ -Ioop/oop.p -Ioop -I../oop -I../oop/include -I../common -I. -I.. -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wextra -Wpedantic -Werror -std=c++17 -O3 -Wshadow -Wconversion -Wpedantic -MD -MQ oop/oop.p/src_dev_impl.cpp.o -MF oop/oop.p/src_dev_impl.cpp.o.d -o oop/oop.p/src_dev_impl.cpp.o -c ../oop/src/dev_impl.cpp",
     "file": "../oop/src/dev_impl.cpp",
     "output": "oop/oop.p/src_dev_impl.cpp.o"
   },
   {
-    "directory": "/home/mark/Documents/iacb-thesis/build",
-    "command": "c++ -Ioop/oop.p -Ioop -I../oop -I../oop/include -I../common -I. -I.. -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -std=c++17 -O3 -fno-rtti -MD -MQ oop/oop.p/src_dev_ctx.cpp.o -MF oop/oop.p/src_dev_ctx.cpp.o.d -o oop/oop.p/src_dev_ctx.cpp.o -c ../oop/src/dev_ctx.cpp",
+    "directory": "/home/mark/Documents/Development/bachelor_thesis/poly-cpp/builddir",
+    "command": "c++ -Ioop/oop.p -Ioop -I../oop -I../oop/include -I../common -I. -I.. -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wextra -Wpedantic -Werror -std=c++17 -O3 -Wshadow -Wconversion -Wpedantic -MD -MQ oop/oop.p/src_dev_ctx.cpp.o -MF oop/oop.p/src_dev_ctx.cpp.o.d -o oop/oop.p/src_dev_ctx.cpp.o -c ../oop/src/dev_ctx.cpp",
     "file": "../oop/src/dev_ctx.cpp",
     "output": "oop/oop.p/src_dev_ctx.cpp.o"
   },
   {
-    "directory": "/home/mark/Documents/iacb-thesis/build",
-    "command": "c++ -Ioop/oop.p -Ioop -I../oop -I../oop/include -I../common -I. -I.. -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -std=c++17 -O3 -fno-rtti -MD -MQ oop/oop.p/src_dev_factory.cpp.o -MF oop/oop.p/src_dev_factory.cpp.o.d -o oop/oop.p/src_dev_factory.cpp.o -c ../oop/src/dev_factory.cpp",
+    "directory": "/home/mark/Documents/Development/bachelor_thesis/poly-cpp/builddir",
+    "command": "c++ -Ioop/oop.p -Ioop -I../oop -I../oop/include -I../common -I. -I.. -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wextra -Wpedantic -Werror -std=c++17 -O3 -Wshadow -Wconversion -Wpedantic -MD -MQ oop/oop.p/src_dev_factory.cpp.o -MF oop/oop.p/src_dev_factory.cpp.o.d -o oop/oop.p/src_dev_factory.cpp.o -c ../oop/src/dev_factory.cpp",
     "file": "../oop/src/dev_factory.cpp",
     "output": "oop/oop.p/src_dev_factory.cpp.o"
   },
   {
-    "directory": "/home/mark/Documents/iacb-thesis/build",
-    "command": "c++ -Ioop/oop.p -Ioop -I../oop -I../oop/include -I../common -I. -I.. -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -std=c++17 -O3 -fno-rtti -MD -MQ oop/oop.p/src_user.cpp.o -MF oop/oop.p/src_user.cpp.o.d -o oop/oop.p/src_user.cpp.o -c ../oop/src/user.cpp",
+    "directory": "/home/mark/Documents/Development/bachelor_thesis/poly-cpp/builddir",
+    "command": "c++ -Ioop/oop.p -Ioop -I../oop -I../oop/include -I../common -I. -I.. -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wextra -Wpedantic -Werror -std=c++17 -O3 -Wshadow -Wconversion -Wpedantic -MD -MQ oop/oop.p/src_user.cpp.o -MF oop/oop.p/src_user.cpp.o.d -o oop/oop.p/src_user.cpp.o -c ../oop/src/user.cpp",
     "file": "../oop/src/user.cpp",
     "output": "oop/oop.p/src_user.cpp.o"
   },
   {
-    "directory": "/home/mark/Documents/iacb-thesis/build",
-    "command": "c++ -Ioop/oop_rtti.p -Ioop -I../oop -I../oop/include -I../common -I. -I.. -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -std=c++17 -O3 -MD -MQ oop/oop_rtti.p/src_dev_impl.cpp.o -MF oop/oop_rtti.p/src_dev_impl.cpp.o.d -o oop/oop_rtti.p/src_dev_impl.cpp.o -c ../oop/src/dev_impl.cpp",
-    "file": "../oop/src/dev_impl.cpp",
-    "output": "oop/oop_rtti.p/src_dev_impl.cpp.o"
-  },
-  {
-    "directory": "/home/mark/Documents/iacb-thesis/build",
-    "command": "c++ -Ioop/oop_rtti.p -Ioop -I../oop -I../oop/include -I../common -I. -I.. -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -std=c++17 -O3 -MD -MQ oop/oop_rtti.p/src_dev_ctx.cpp.o -MF oop/oop_rtti.p/src_dev_ctx.cpp.o.d -o oop/oop_rtti.p/src_dev_ctx.cpp.o -c ../oop/src/dev_ctx.cpp",
-    "file": "../oop/src/dev_ctx.cpp",
-    "output": "oop/oop_rtti.p/src_dev_ctx.cpp.o"
-  },
-  {
-    "directory": "/home/mark/Documents/iacb-thesis/build",
-    "command": "c++ -Ioop/oop_rtti.p -Ioop -I../oop -I../oop/include -I../common -I. -I.. -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -std=c++17 -O3 -MD -MQ oop/oop_rtti.p/src_dev_factory.cpp.o -MF oop/oop_rtti.p/src_dev_factory.cpp.o.d -o oop/oop_rtti.p/src_dev_factory.cpp.o -c ../oop/src/dev_factory.cpp",
-    "file": "../oop/src/dev_factory.cpp",
-    "output": "oop/oop_rtti.p/src_dev_factory.cpp.o"
-  },
-  {
-    "directory": "/home/mark/Documents/iacb-thesis/build",
-    "command": "c++ -Ioop/oop_rtti.p -Ioop -I../oop -I../oop/include -I../common -I. -I.. -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -std=c++17 -O3 -MD -MQ oop/oop_rtti.p/src_user.cpp.o -MF oop/oop_rtti.p/src_user.cpp.o.d -o oop/oop_rtti.p/src_user.cpp.o -c ../oop/src/user.cpp",
-    "file": "../oop/src/user.cpp",
-    "output": "oop/oop_rtti.p/src_user.cpp.o"
-  },
-  {
-    "directory": "/home/mark/Documents/iacb-thesis/build",
-    "command": "c++ -Ivisitor/visitor.p -Ivisitor -I../visitor -I../visitor/include -I../common -I. -I.. -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -std=c++17 -O3 -fno-rtti -MD -MQ visitor/visitor.p/src_user.cpp.o -MF visitor/visitor.p/src_user.cpp.o.d -o visitor/visitor.p/src_user.cpp.o -c ../visitor/src/user.cpp",
+    "directory": "/home/mark/Documents/Development/bachelor_thesis/poly-cpp/builddir",
+    "command": "c++ -Ivisitor/visitor.p -Ivisitor -I../visitor -I../visitor/include -I../common -I. -I.. -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wextra -Wpedantic -Werror -std=c++17 -O3 -Wshadow -Wconversion -Wpedantic -MD -MQ visitor/visitor.p/src_user.cpp.o -MF visitor/visitor.p/src_user.cpp.o.d -o visitor/visitor.p/src_user.cpp.o -c ../visitor/src/user.cpp",
     "file": "../visitor/src/user.cpp",
     "output": "visitor/visitor.p/src_user.cpp.o"
   },
   {
-    "directory": "/home/mark/Documents/iacb-thesis/build",
-    "command": "c++ -Ivisitor/visitor.p -Ivisitor -I../visitor -I../visitor/include -I../common -I. -I.. -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -std=c++17 -O3 -fno-rtti -MD -MQ visitor/visitor.p/src_dev_impl.cpp.o -MF visitor/visitor.p/src_dev_impl.cpp.o.d -o visitor/visitor.p/src_dev_impl.cpp.o -c ../visitor/src/dev_impl.cpp",
+    "directory": "/home/mark/Documents/Development/bachelor_thesis/poly-cpp/builddir",
+    "command": "c++ -Ivisitor/visitor.p -Ivisitor -I../visitor -I../visitor/include -I../common -I. -I.. -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wextra -Wpedantic -Werror -std=c++17 -O3 -Wshadow -Wconversion -Wpedantic -MD -MQ visitor/visitor.p/src_dev_impl.cpp.o -MF visitor/visitor.p/src_dev_impl.cpp.o.d -o visitor/visitor.p/src_dev_impl.cpp.o -c ../visitor/src/dev_impl.cpp",
     "file": "../visitor/src/dev_impl.cpp",
     "output": "visitor/visitor.p/src_dev_impl.cpp.o"
   },
   {
-    "directory": "/home/mark/Documents/iacb-thesis/build",
-    "command": "c++ -Ivisitor/visitor.p -Ivisitor -I../visitor -I../visitor/include -I../common -I. -I.. -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -std=c++17 -O3 -fno-rtti -MD -MQ visitor/visitor.p/src_dev_ctx.cpp.o -MF visitor/visitor.p/src_dev_ctx.cpp.o.d -o visitor/visitor.p/src_dev_ctx.cpp.o -c ../visitor/src/dev_ctx.cpp",
+    "directory": "/home/mark/Documents/Development/bachelor_thesis/poly-cpp/builddir",
+    "command": "c++ -Ivisitor/visitor.p -Ivisitor -I../visitor -I../visitor/include -I../common -I. -I.. -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wextra -Wpedantic -Werror -std=c++17 -O3 -Wshadow -Wconversion -Wpedantic -MD -MQ visitor/visitor.p/src_dev_ctx.cpp.o -MF visitor/visitor.p/src_dev_ctx.cpp.o.d -o visitor/visitor.p/src_dev_ctx.cpp.o -c ../visitor/src/dev_ctx.cpp",
     "file": "../visitor/src/dev_ctx.cpp",
     "output": "visitor/visitor.p/src_dev_ctx.cpp.o"
   },
   {
-    "directory": "/home/mark/Documents/iacb-thesis/build",
-    "command": "c++ -Ivisitor/visitor.p -Ivisitor -I../visitor -I../visitor/include -I../common -I. -I.. -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -std=c++17 -O3 -fno-rtti -MD -MQ visitor/visitor.p/src_dev_algo.cpp.o -MF visitor/visitor.p/src_dev_algo.cpp.o.d -o visitor/visitor.p/src_dev_algo.cpp.o -c ../visitor/src/dev_algo.cpp",
+    "directory": "/home/mark/Documents/Development/bachelor_thesis/poly-cpp/builddir",
+    "command": "c++ -Ivisitor/visitor.p -Ivisitor -I../visitor -I../visitor/include -I../common -I. -I.. -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wextra -Wpedantic -Werror -std=c++17 -O3 -Wshadow -Wconversion -Wpedantic -MD -MQ visitor/visitor.p/src_dev_algo.cpp.o -MF visitor/visitor.p/src_dev_algo.cpp.o.d -o visitor/visitor.p/src_dev_algo.cpp.o -c ../visitor/src/dev_algo.cpp",
     "file": "../visitor/src/dev_algo.cpp",
     "output": "visitor/visitor.p/src_dev_algo.cpp.o"
   },
   {
-    "directory": "/home/mark/Documents/iacb-thesis/build",
-    "command": "c++ -Ivisitor/visitor.p -Ivisitor -I../visitor -I../visitor/include -I../common -I. -I.. -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -std=c++17 -O3 -fno-rtti -MD -MQ visitor/visitor.p/src_dev_factory.cpp.o -MF visitor/visitor.p/src_dev_factory.cpp.o.d -o visitor/visitor.p/src_dev_factory.cpp.o -c ../visitor/src/dev_factory.cpp",
+    "directory": "/home/mark/Documents/Development/bachelor_thesis/poly-cpp/builddir",
+    "command": "c++ -Ivisitor/visitor.p -Ivisitor -I../visitor -I../visitor/include -I../common -I. -I.. -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wextra -Wpedantic -Werror -std=c++17 -O3 -Wshadow -Wconversion -Wpedantic -MD -MQ visitor/visitor.p/src_dev_factory.cpp.o -MF visitor/visitor.p/src_dev_factory.cpp.o.d -o visitor/visitor.p/src_dev_factory.cpp.o -c ../visitor/src/dev_factory.cpp",
     "file": "../visitor/src/dev_factory.cpp",
     "output": "visitor/visitor.p/src_dev_factory.cpp.o"
   },
   {
-    "directory": "/home/mark/Documents/iacb-thesis/build",
-    "command": "c++ -Ivisitor/visitor_rtti.p -Ivisitor -I../visitor -I../visitor/include -I../common -I. -I.. -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -std=c++17 -O3 -MD -MQ visitor/visitor_rtti.p/src_user.cpp.o -MF visitor/visitor_rtti.p/src_user.cpp.o.d -o visitor/visitor_rtti.p/src_user.cpp.o -c ../visitor/src/user.cpp",
-    "file": "../visitor/src/user.cpp",
-    "output": "visitor/visitor_rtti.p/src_user.cpp.o"
-  },
-  {
-    "directory": "/home/mark/Documents/iacb-thesis/build",
-    "command": "c++ -Ivisitor/visitor_rtti.p -Ivisitor -I../visitor -I../visitor/include -I../common -I. -I.. -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -std=c++17 -O3 -MD -MQ visitor/visitor_rtti.p/src_dev_impl.cpp.o -MF visitor/visitor_rtti.p/src_dev_impl.cpp.o.d -o visitor/visitor_rtti.p/src_dev_impl.cpp.o -c ../visitor/src/dev_impl.cpp",
-    "file": "../visitor/src/dev_impl.cpp",
-    "output": "visitor/visitor_rtti.p/src_dev_impl.cpp.o"
-  },
-  {
-    "directory": "/home/mark/Documents/iacb-thesis/build",
-    "command": "c++ -Ivisitor/visitor_rtti.p -Ivisitor -I../visitor -I../visitor/include -I../common -I. -I.. -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -std=c++17 -O3 -MD -MQ visitor/visitor_rtti.p/src_dev_ctx.cpp.o -MF visitor/visitor_rtti.p/src_dev_ctx.cpp.o.d -o visitor/visitor_rtti.p/src_dev_ctx.cpp.o -c ../visitor/src/dev_ctx.cpp",
-    "file": "../visitor/src/dev_ctx.cpp",
-    "output": "visitor/visitor_rtti.p/src_dev_ctx.cpp.o"
-  },
-  {
-    "directory": "/home/mark/Documents/iacb-thesis/build",
-    "command": "c++ -Ivisitor/visitor_rtti.p -Ivisitor -I../visitor -I../visitor/include -I../common -I. -I.. -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -std=c++17 -O3 -MD -MQ visitor/visitor_rtti.p/src_dev_algo.cpp.o -MF visitor/visitor_rtti.p/src_dev_algo.cpp.o.d -o visitor/visitor_rtti.p/src_dev_algo.cpp.o -c ../visitor/src/dev_algo.cpp",
-    "file": "../visitor/src/dev_algo.cpp",
-    "output": "visitor/visitor_rtti.p/src_dev_algo.cpp.o"
-  },
-  {
-    "directory": "/home/mark/Documents/iacb-thesis/build",
-    "command": "c++ -Ivisitor/visitor_rtti.p -Ivisitor -I../visitor -I../visitor/include -I../common -I. -I.. -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -std=c++17 -O3 -MD -MQ visitor/visitor_rtti.p/src_dev_factory.cpp.o -MF visitor/visitor_rtti.p/src_dev_factory.cpp.o.d -o visitor/visitor_rtti.p/src_dev_factory.cpp.o -c ../visitor/src/dev_factory.cpp",
-    "file": "../visitor/src/dev_factory.cpp",
-    "output": "visitor/visitor_rtti.p/src_dev_factory.cpp.o"
-  },
-  {
-    "directory": "/home/mark/Documents/iacb-thesis/build",
-    "command": "c++ -Ivariant_t/variant_t.p -Ivariant_t -I../variant_t -I../variant_t/include -I../common -I. -I.. -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -std=c++17 -O3 -fno-rtti -MD -MQ variant_t/variant_t.p/src_dev_impl.cpp.o -MF variant_t/variant_t.p/src_dev_impl.cpp.o.d -o variant_t/variant_t.p/src_dev_impl.cpp.o -c ../variant_t/src/dev_impl.cpp",
+    "directory": "/home/mark/Documents/Development/bachelor_thesis/poly-cpp/builddir",
+    "command": "c++ -Ivariant_t/variant_t.p -Ivariant_t -I../variant_t -I../variant_t/include -I../common -I. -I.. -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wextra -Wpedantic -Werror -std=c++17 -O3 -Wshadow -Wconversion -Wpedantic -MD -MQ variant_t/variant_t.p/src_dev_impl.cpp.o -MF variant_t/variant_t.p/src_dev_impl.cpp.o.d -o variant_t/variant_t.p/src_dev_impl.cpp.o -c ../variant_t/src/dev_impl.cpp",
     "file": "../variant_t/src/dev_impl.cpp",
     "output": "variant_t/variant_t.p/src_dev_impl.cpp.o"
   },
   {
-    "directory": "/home/mark/Documents/iacb-thesis/build",
-    "command": "c++ -Ivariant_t/variant_t.p -Ivariant_t -I../variant_t -I../variant_t/include -I../common -I. -I.. -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -std=c++17 -O3 -fno-rtti -MD -MQ variant_t/variant_t.p/src_dev_ctx.cpp.o -MF variant_t/variant_t.p/src_dev_ctx.cpp.o.d -o variant_t/variant_t.p/src_dev_ctx.cpp.o -c ../variant_t/src/dev_ctx.cpp",
+    "directory": "/home/mark/Documents/Development/bachelor_thesis/poly-cpp/builddir",
+    "command": "c++ -Ivariant_t/variant_t.p -Ivariant_t -I../variant_t -I../variant_t/include -I../common -I. -I.. -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wextra -Wpedantic -Werror -std=c++17 -O3 -Wshadow -Wconversion -Wpedantic -MD -MQ variant_t/variant_t.p/src_dev_ctx.cpp.o -MF variant_t/variant_t.p/src_dev_ctx.cpp.o.d -o variant_t/variant_t.p/src_dev_ctx.cpp.o -c ../variant_t/src/dev_ctx.cpp",
     "file": "../variant_t/src/dev_ctx.cpp",
     "output": "variant_t/variant_t.p/src_dev_ctx.cpp.o"
   },
   {
-    "directory": "/home/mark/Documents/iacb-thesis/build",
-    "command": "c++ -Ivariant_t/variant_t.p -Ivariant_t -I../variant_t -I../variant_t/include -I../common -I. -I.. -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -std=c++17 -O3 -fno-rtti -MD -MQ variant_t/variant_t.p/src_dev_algo.cpp.o -MF variant_t/variant_t.p/src_dev_algo.cpp.o.d -o variant_t/variant_t.p/src_dev_algo.cpp.o -c ../variant_t/src/dev_algo.cpp",
+    "directory": "/home/mark/Documents/Development/bachelor_thesis/poly-cpp/builddir",
+    "command": "c++ -Ivariant_t/variant_t.p -Ivariant_t -I../variant_t -I../variant_t/include -I../common -I. -I.. -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wextra -Wpedantic -Werror -std=c++17 -O3 -Wshadow -Wconversion -Wpedantic -MD -MQ variant_t/variant_t.p/src_dev_algo.cpp.o -MF variant_t/variant_t.p/src_dev_algo.cpp.o.d -o variant_t/variant_t.p/src_dev_algo.cpp.o -c ../variant_t/src/dev_algo.cpp",
     "file": "../variant_t/src/dev_algo.cpp",
     "output": "variant_t/variant_t.p/src_dev_algo.cpp.o"
   },
   {
-    "directory": "/home/mark/Documents/iacb-thesis/build",
-    "command": "c++ -Ivariant_t/variant_t.p -Ivariant_t -I../variant_t -I../variant_t/include -I../common -I. -I.. -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -std=c++17 -O3 -fno-rtti -MD -MQ variant_t/variant_t.p/src_dev_factory.cpp.o -MF variant_t/variant_t.p/src_dev_factory.cpp.o.d -o variant_t/variant_t.p/src_dev_factory.cpp.o -c ../variant_t/src/dev_factory.cpp",
+    "directory": "/home/mark/Documents/Development/bachelor_thesis/poly-cpp/builddir",
+    "command": "c++ -Ivariant_t/variant_t.p -Ivariant_t -I../variant_t -I../variant_t/include -I../common -I. -I.. -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wextra -Wpedantic -Werror -std=c++17 -O3 -Wshadow -Wconversion -Wpedantic -MD -MQ variant_t/variant_t.p/src_dev_factory.cpp.o -MF variant_t/variant_t.p/src_dev_factory.cpp.o.d -o variant_t/variant_t.p/src_dev_factory.cpp.o -c ../variant_t/src/dev_factory.cpp",
     "file": "../variant_t/src/dev_factory.cpp",
     "output": "variant_t/variant_t.p/src_dev_factory.cpp.o"
   },
   {
-    "directory": "/home/mark/Documents/iacb-thesis/build",
-    "command": "c++ -Ivariant_t/variant_t.p -Ivariant_t -I../variant_t -I../variant_t/include -I../common -I. -I.. -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -std=c++17 -O3 -fno-rtti -MD -MQ variant_t/variant_t.p/src_user.cpp.o -MF variant_t/variant_t.p/src_user.cpp.o.d -o variant_t/variant_t.p/src_user.cpp.o -c ../variant_t/src/user.cpp",
+    "directory": "/home/mark/Documents/Development/bachelor_thesis/poly-cpp/builddir",
+    "command": "c++ -Ivariant_t/variant_t.p -Ivariant_t -I../variant_t -I../variant_t/include -I../common -I. -I.. -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wextra -Wpedantic -Werror -std=c++17 -O3 -Wshadow -Wconversion -Wpedantic -MD -MQ variant_t/variant_t.p/src_user.cpp.o -MF variant_t/variant_t.p/src_user.cpp.o.d -o variant_t/variant_t.p/src_user.cpp.o -c ../variant_t/src/user.cpp",
     "file": "../variant_t/src/user.cpp",
     "output": "variant_t/variant_t.p/src_user.cpp.o"
   },
   {
-    "directory": "/home/mark/Documents/iacb-thesis/build",
-    "command": "c++ -Ivariant_t/variant_t_rtti.p -Ivariant_t -I../variant_t -I../variant_t/include -I../common -I. -I.. -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -std=c++17 -O3 -MD -MQ variant_t/variant_t_rtti.p/src_dev_impl.cpp.o -MF variant_t/variant_t_rtti.p/src_dev_impl.cpp.o.d -o variant_t/variant_t_rtti.p/src_dev_impl.cpp.o -c ../variant_t/src/dev_impl.cpp",
-    "file": "../variant_t/src/dev_impl.cpp",
-    "output": "variant_t/variant_t_rtti.p/src_dev_impl.cpp.o"
-  },
-  {
-    "directory": "/home/mark/Documents/iacb-thesis/build",
-    "command": "c++ -Ivariant_t/variant_t_rtti.p -Ivariant_t -I../variant_t -I../variant_t/include -I../common -I. -I.. -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -std=c++17 -O3 -MD -MQ variant_t/variant_t_rtti.p/src_dev_ctx.cpp.o -MF variant_t/variant_t_rtti.p/src_dev_ctx.cpp.o.d -o variant_t/variant_t_rtti.p/src_dev_ctx.cpp.o -c ../variant_t/src/dev_ctx.cpp",
-    "file": "../variant_t/src/dev_ctx.cpp",
-    "output": "variant_t/variant_t_rtti.p/src_dev_ctx.cpp.o"
-  },
-  {
-    "directory": "/home/mark/Documents/iacb-thesis/build",
-    "command": "c++ -Ivariant_t/variant_t_rtti.p -Ivariant_t -I../variant_t -I../variant_t/include -I../common -I. -I.. -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -std=c++17 -O3 -MD -MQ variant_t/variant_t_rtti.p/src_dev_algo.cpp.o -MF variant_t/variant_t_rtti.p/src_dev_algo.cpp.o.d -o variant_t/variant_t_rtti.p/src_dev_algo.cpp.o -c ../variant_t/src/dev_algo.cpp",
-    "file": "../variant_t/src/dev_algo.cpp",
-    "output": "variant_t/variant_t_rtti.p/src_dev_algo.cpp.o"
-  },
-  {
-    "directory": "/home/mark/Documents/iacb-thesis/build",
-    "command": "c++ -Ivariant_t/variant_t_rtti.p -Ivariant_t -I../variant_t -I../variant_t/include -I../common -I. -I.. -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -std=c++17 -O3 -MD -MQ variant_t/variant_t_rtti.p/src_dev_factory.cpp.o -MF variant_t/variant_t_rtti.p/src_dev_factory.cpp.o.d -o variant_t/variant_t_rtti.p/src_dev_factory.cpp.o -c ../variant_t/src/dev_factory.cpp",
-    "file": "../variant_t/src/dev_factory.cpp",
-    "output": "variant_t/variant_t_rtti.p/src_dev_factory.cpp.o"
-  },
-  {
-    "directory": "/home/mark/Documents/iacb-thesis/build",
-    "command": "c++ -Ivariant_t/variant_t_rtti.p -Ivariant_t -I../variant_t -I../variant_t/include -I../common -I. -I.. -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -std=c++17 -O3 -MD -MQ variant_t/variant_t_rtti.p/src_user.cpp.o -MF variant_t/variant_t_rtti.p/src_user.cpp.o.d -o variant_t/variant_t_rtti.p/src_user.cpp.o -c ../variant_t/src/user.cpp",
-    "file": "../variant_t/src/user.cpp",
-    "output": "variant_t/variant_t_rtti.p/src_user.cpp.o"
-  },
-  {
-    "directory": "/home/mark/Documents/iacb-thesis/build",
-    "command": "c++ -Istrategy/strategy.p -Istrategy -I../strategy -I../strategy/include -I../common -I. -I.. -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -std=c++17 -O3 -fno-rtti -MD -MQ strategy/strategy.p/src_dev_impl.cpp.o -MF strategy/strategy.p/src_dev_impl.cpp.o.d -o strategy/strategy.p/src_dev_impl.cpp.o -c ../strategy/src/dev_impl.cpp",
+    "directory": "/home/mark/Documents/Development/bachelor_thesis/poly-cpp/builddir",
+    "command": "c++ -Istrategy/strategy.p -Istrategy -I../strategy -I../strategy/include -I../common -I. -I.. -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wextra -Wpedantic -Werror -std=c++17 -O3 -Wshadow -Wconversion -Wpedantic -MD -MQ strategy/strategy.p/src_dev_impl.cpp.o -MF strategy/strategy.p/src_dev_impl.cpp.o.d -o strategy/strategy.p/src_dev_impl.cpp.o -c ../strategy/src/dev_impl.cpp",
     "file": "../strategy/src/dev_impl.cpp",
     "output": "strategy/strategy.p/src_dev_impl.cpp.o"
   },
   {
-    "directory": "/home/mark/Documents/iacb-thesis/build",
-    "command": "c++ -Istrategy/strategy.p -Istrategy -I../strategy -I../strategy/include -I../common -I. -I.. -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -std=c++17 -O3 -fno-rtti -MD -MQ strategy/strategy.p/src_dev_ctx.cpp.o -MF strategy/strategy.p/src_dev_ctx.cpp.o.d -o strategy/strategy.p/src_dev_ctx.cpp.o -c ../strategy/src/dev_ctx.cpp",
+    "directory": "/home/mark/Documents/Development/bachelor_thesis/poly-cpp/builddir",
+    "command": "c++ -Istrategy/strategy.p -Istrategy -I../strategy -I../strategy/include -I../common -I. -I.. -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wextra -Wpedantic -Werror -std=c++17 -O3 -Wshadow -Wconversion -Wpedantic -MD -MQ strategy/strategy.p/src_dev_ctx.cpp.o -MF strategy/strategy.p/src_dev_ctx.cpp.o.d -o strategy/strategy.p/src_dev_ctx.cpp.o -c ../strategy/src/dev_ctx.cpp",
     "file": "../strategy/src/dev_ctx.cpp",
     "output": "strategy/strategy.p/src_dev_ctx.cpp.o"
   },
   {
-    "directory": "/home/mark/Documents/iacb-thesis/build",
-    "command": "c++ -Istrategy/strategy.p -Istrategy -I../strategy -I../strategy/include -I../common -I. -I.. -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -std=c++17 -O3 -fno-rtti -MD -MQ strategy/strategy.p/src_dev_algo.cpp.o -MF strategy/strategy.p/src_dev_algo.cpp.o.d -o strategy/strategy.p/src_dev_algo.cpp.o -c ../strategy/src/dev_algo.cpp",
+    "directory": "/home/mark/Documents/Development/bachelor_thesis/poly-cpp/builddir",
+    "command": "c++ -Istrategy/strategy.p -Istrategy -I../strategy -I../strategy/include -I../common -I. -I.. -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wextra -Wpedantic -Werror -std=c++17 -O3 -Wshadow -Wconversion -Wpedantic -MD -MQ strategy/strategy.p/src_dev_algo.cpp.o -MF strategy/strategy.p/src_dev_algo.cpp.o.d -o strategy/strategy.p/src_dev_algo.cpp.o -c ../strategy/src/dev_algo.cpp",
     "file": "../strategy/src/dev_algo.cpp",
     "output": "strategy/strategy.p/src_dev_algo.cpp.o"
   },
   {
-    "directory": "/home/mark/Documents/iacb-thesis/build",
-    "command": "c++ -Istrategy/strategy.p -Istrategy -I../strategy -I../strategy/include -I../common -I. -I.. -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -std=c++17 -O3 -fno-rtti -MD -MQ strategy/strategy.p/src_dev_factory.cpp.o -MF strategy/strategy.p/src_dev_factory.cpp.o.d -o strategy/strategy.p/src_dev_factory.cpp.o -c ../strategy/src/dev_factory.cpp",
+    "directory": "/home/mark/Documents/Development/bachelor_thesis/poly-cpp/builddir",
+    "command": "c++ -Istrategy/strategy.p -Istrategy -I../strategy -I../strategy/include -I../common -I. -I.. -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wextra -Wpedantic -Werror -std=c++17 -O3 -Wshadow -Wconversion -Wpedantic -MD -MQ strategy/strategy.p/src_dev_factory.cpp.o -MF strategy/strategy.p/src_dev_factory.cpp.o.d -o strategy/strategy.p/src_dev_factory.cpp.o -c ../strategy/src/dev_factory.cpp",
     "file": "../strategy/src/dev_factory.cpp",
     "output": "strategy/strategy.p/src_dev_factory.cpp.o"
   },
   {
-    "directory": "/home/mark/Documents/iacb-thesis/build",
-    "command": "c++ -Istrategy/strategy.p -Istrategy -I../strategy -I../strategy/include -I../common -I. -I.. -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -std=c++17 -O3 -fno-rtti -MD -MQ strategy/strategy.p/src_user.cpp.o -MF strategy/strategy.p/src_user.cpp.o.d -o strategy/strategy.p/src_user.cpp.o -c ../strategy/src/user.cpp",
+    "directory": "/home/mark/Documents/Development/bachelor_thesis/poly-cpp/builddir",
+    "command": "c++ -Istrategy/strategy.p -Istrategy -I../strategy -I../strategy/include -I../common -I. -I.. -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wextra -Wpedantic -Werror -std=c++17 -O3 -Wshadow -Wconversion -Wpedantic -MD -MQ strategy/strategy.p/src_user.cpp.o -MF strategy/strategy.p/src_user.cpp.o.d -o strategy/strategy.p/src_user.cpp.o -c ../strategy/src/user.cpp",
     "file": "../strategy/src/user.cpp",
     "output": "strategy/strategy.p/src_user.cpp.o"
   },
   {
-    "directory": "/home/mark/Documents/iacb-thesis/build",
-    "command": "c++ -Istrategy/strategy_rtti.p -Istrategy -I../strategy -I../strategy/include -I../common -I. -I.. -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -std=c++17 -O3 -MD -MQ strategy/strategy_rtti.p/src_dev_impl.cpp.o -MF strategy/strategy_rtti.p/src_dev_impl.cpp.o.d -o strategy/strategy_rtti.p/src_dev_impl.cpp.o -c ../strategy/src/dev_impl.cpp",
-    "file": "../strategy/src/dev_impl.cpp",
-    "output": "strategy/strategy_rtti.p/src_dev_impl.cpp.o"
-  },
-  {
-    "directory": "/home/mark/Documents/iacb-thesis/build",
-    "command": "c++ -Istrategy/strategy_rtti.p -Istrategy -I../strategy -I../strategy/include -I../common -I. -I.. -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -std=c++17 -O3 -MD -MQ strategy/strategy_rtti.p/src_dev_ctx.cpp.o -MF strategy/strategy_rtti.p/src_dev_ctx.cpp.o.d -o strategy/strategy_rtti.p/src_dev_ctx.cpp.o -c ../strategy/src/dev_ctx.cpp",
-    "file": "../strategy/src/dev_ctx.cpp",
-    "output": "strategy/strategy_rtti.p/src_dev_ctx.cpp.o"
-  },
-  {
-    "directory": "/home/mark/Documents/iacb-thesis/build",
-    "command": "c++ -Istrategy/strategy_rtti.p -Istrategy -I../strategy -I../strategy/include -I../common -I. -I.. -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -std=c++17 -O3 -MD -MQ strategy/strategy_rtti.p/src_dev_algo.cpp.o -MF strategy/strategy_rtti.p/src_dev_algo.cpp.o.d -o strategy/strategy_rtti.p/src_dev_algo.cpp.o -c ../strategy/src/dev_algo.cpp",
-    "file": "../strategy/src/dev_algo.cpp",
-    "output": "strategy/strategy_rtti.p/src_dev_algo.cpp.o"
-  },
-  {
-    "directory": "/home/mark/Documents/iacb-thesis/build",
-    "command": "c++ -Istrategy/strategy_rtti.p -Istrategy -I../strategy -I../strategy/include -I../common -I. -I.. -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -std=c++17 -O3 -MD -MQ strategy/strategy_rtti.p/src_dev_factory.cpp.o -MF strategy/strategy_rtti.p/src_dev_factory.cpp.o.d -o strategy/strategy_rtti.p/src_dev_factory.cpp.o -c ../strategy/src/dev_factory.cpp",
-    "file": "../strategy/src/dev_factory.cpp",
-    "output": "strategy/strategy_rtti.p/src_dev_factory.cpp.o"
-  },
-  {
-    "directory": "/home/mark/Documents/iacb-thesis/build",
-    "command": "c++ -Istrategy/strategy_rtti.p -Istrategy -I../strategy -I../strategy/include -I../common -I. -I.. -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -std=c++17 -O3 -MD -MQ strategy/strategy_rtti.p/src_user.cpp.o -MF strategy/strategy_rtti.p/src_user.cpp.o.d -o strategy/strategy_rtti.p/src_user.cpp.o -c ../strategy/src/user.cpp",
-    "file": "../strategy/src/user.cpp",
-    "output": "strategy/strategy_rtti.p/src_user.cpp.o"
-  },
-  {
-    "directory": "/home/mark/Documents/iacb-thesis/build",
-    "command": "c++ -Itype_erasure_up/type_erasure_up.p -Itype_erasure_up -I../type_erasure_up -I../type_erasure_up/include -I../common -I. -I.. -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -std=c++17 -O3 -fno-rtti -MD -MQ type_erasure_up/type_erasure_up.p/src_dev_impl.cpp.o -MF type_erasure_up/type_erasure_up.p/src_dev_impl.cpp.o.d -o type_erasure_up/type_erasure_up.p/src_dev_impl.cpp.o -c ../type_erasure_up/src/dev_impl.cpp",
+    "directory": "/home/mark/Documents/Development/bachelor_thesis/poly-cpp/builddir",
+    "command": "c++ -Itype_erasure_up/type_erasure_up.p -Itype_erasure_up -I../type_erasure_up -I../type_erasure_up/include -I../common -I. -I.. -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wextra -Wpedantic -Werror -std=c++17 -O3 -Wshadow -Wconversion -Wpedantic -MD -MQ type_erasure_up/type_erasure_up.p/src_dev_impl.cpp.o -MF type_erasure_up/type_erasure_up.p/src_dev_impl.cpp.o.d -o type_erasure_up/type_erasure_up.p/src_dev_impl.cpp.o -c ../type_erasure_up/src/dev_impl.cpp",
     "file": "../type_erasure_up/src/dev_impl.cpp",
     "output": "type_erasure_up/type_erasure_up.p/src_dev_impl.cpp.o"
   },
   {
-    "directory": "/home/mark/Documents/iacb-thesis/build",
-    "command": "c++ -Itype_erasure_up/type_erasure_up.p -Itype_erasure_up -I../type_erasure_up -I../type_erasure_up/include -I../common -I. -I.. -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -std=c++17 -O3 -fno-rtti -MD -MQ type_erasure_up/type_erasure_up.p/src_dev_ctx.cpp.o -MF type_erasure_up/type_erasure_up.p/src_dev_ctx.cpp.o.d -o type_erasure_up/type_erasure_up.p/src_dev_ctx.cpp.o -c ../type_erasure_up/src/dev_ctx.cpp",
+    "directory": "/home/mark/Documents/Development/bachelor_thesis/poly-cpp/builddir",
+    "command": "c++ -Itype_erasure_up/type_erasure_up.p -Itype_erasure_up -I../type_erasure_up -I../type_erasure_up/include -I../common -I. -I.. -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wextra -Wpedantic -Werror -std=c++17 -O3 -Wshadow -Wconversion -Wpedantic -MD -MQ type_erasure_up/type_erasure_up.p/src_dev_ctx.cpp.o -MF type_erasure_up/type_erasure_up.p/src_dev_ctx.cpp.o.d -o type_erasure_up/type_erasure_up.p/src_dev_ctx.cpp.o -c ../type_erasure_up/src/dev_ctx.cpp",
     "file": "../type_erasure_up/src/dev_ctx.cpp",
     "output": "type_erasure_up/type_erasure_up.p/src_dev_ctx.cpp.o"
   },
   {
-    "directory": "/home/mark/Documents/iacb-thesis/build",
-    "command": "c++ -Itype_erasure_up/type_erasure_up.p -Itype_erasure_up -I../type_erasure_up -I../type_erasure_up/include -I../common -I. -I.. -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -std=c++17 -O3 -fno-rtti -MD -MQ type_erasure_up/type_erasure_up.p/src_dev_algo.cpp.o -MF type_erasure_up/type_erasure_up.p/src_dev_algo.cpp.o.d -o type_erasure_up/type_erasure_up.p/src_dev_algo.cpp.o -c ../type_erasure_up/src/dev_algo.cpp",
+    "directory": "/home/mark/Documents/Development/bachelor_thesis/poly-cpp/builddir",
+    "command": "c++ -Itype_erasure_up/type_erasure_up.p -Itype_erasure_up -I../type_erasure_up -I../type_erasure_up/include -I../common -I. -I.. -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wextra -Wpedantic -Werror -std=c++17 -O3 -Wshadow -Wconversion -Wpedantic -MD -MQ type_erasure_up/type_erasure_up.p/src_dev_algo.cpp.o -MF type_erasure_up/type_erasure_up.p/src_dev_algo.cpp.o.d -o type_erasure_up/type_erasure_up.p/src_dev_algo.cpp.o -c ../type_erasure_up/src/dev_algo.cpp",
     "file": "../type_erasure_up/src/dev_algo.cpp",
     "output": "type_erasure_up/type_erasure_up.p/src_dev_algo.cpp.o"
   },
   {
-    "directory": "/home/mark/Documents/iacb-thesis/build",
-    "command": "c++ -Itype_erasure_up/type_erasure_up.p -Itype_erasure_up -I../type_erasure_up -I../type_erasure_up/include -I../common -I. -I.. -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -std=c++17 -O3 -fno-rtti -MD -MQ type_erasure_up/type_erasure_up.p/src_dev_factory.cpp.o -MF type_erasure_up/type_erasure_up.p/src_dev_factory.cpp.o.d -o type_erasure_up/type_erasure_up.p/src_dev_factory.cpp.o -c ../type_erasure_up/src/dev_factory.cpp",
+    "directory": "/home/mark/Documents/Development/bachelor_thesis/poly-cpp/builddir",
+    "command": "c++ -Itype_erasure_up/type_erasure_up.p -Itype_erasure_up -I../type_erasure_up -I../type_erasure_up/include -I../common -I. -I.. -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wextra -Wpedantic -Werror -std=c++17 -O3 -Wshadow -Wconversion -Wpedantic -MD -MQ type_erasure_up/type_erasure_up.p/src_dev_factory.cpp.o -MF type_erasure_up/type_erasure_up.p/src_dev_factory.cpp.o.d -o type_erasure_up/type_erasure_up.p/src_dev_factory.cpp.o -c ../type_erasure_up/src/dev_factory.cpp",
     "file": "../type_erasure_up/src/dev_factory.cpp",
     "output": "type_erasure_up/type_erasure_up.p/src_dev_factory.cpp.o"
   },
   {
-    "directory": "/home/mark/Documents/iacb-thesis/build",
-    "command": "c++ -Itype_erasure_up/type_erasure_up.p -Itype_erasure_up -I../type_erasure_up -I../type_erasure_up/include -I../common -I. -I.. -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -std=c++17 -O3 -fno-rtti -MD -MQ type_erasure_up/type_erasure_up.p/src_user.cpp.o -MF type_erasure_up/type_erasure_up.p/src_user.cpp.o.d -o type_erasure_up/type_erasure_up.p/src_user.cpp.o -c ../type_erasure_up/src/user.cpp",
+    "directory": "/home/mark/Documents/Development/bachelor_thesis/poly-cpp/builddir",
+    "command": "c++ -Itype_erasure_up/type_erasure_up.p -Itype_erasure_up -I../type_erasure_up -I../type_erasure_up/include -I../common -I. -I.. -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wextra -Wpedantic -Werror -std=c++17 -O3 -Wshadow -Wconversion -Wpedantic -MD -MQ type_erasure_up/type_erasure_up.p/src_user.cpp.o -MF type_erasure_up/type_erasure_up.p/src_user.cpp.o.d -o type_erasure_up/type_erasure_up.p/src_user.cpp.o -c ../type_erasure_up/src/user.cpp",
     "file": "../type_erasure_up/src/user.cpp",
     "output": "type_erasure_up/type_erasure_up.p/src_user.cpp.o"
   },
   {
-    "directory": "/home/mark/Documents/iacb-thesis/build",
-    "command": "c++ -Itype_erasure_up/type_erasure_up_rtti.p -Itype_erasure_up -I../type_erasure_up -I../type_erasure_up/include -I../common -I. -I.. -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -std=c++17 -O3 -MD -MQ type_erasure_up/type_erasure_up_rtti.p/src_dev_impl.cpp.o -MF type_erasure_up/type_erasure_up_rtti.p/src_dev_impl.cpp.o.d -o type_erasure_up/type_erasure_up_rtti.p/src_dev_impl.cpp.o -c ../type_erasure_up/src/dev_impl.cpp",
-    "file": "../type_erasure_up/src/dev_impl.cpp",
-    "output": "type_erasure_up/type_erasure_up_rtti.p/src_dev_impl.cpp.o"
-  },
-  {
-    "directory": "/home/mark/Documents/iacb-thesis/build",
-    "command": "c++ -Itype_erasure_up/type_erasure_up_rtti.p -Itype_erasure_up -I../type_erasure_up -I../type_erasure_up/include -I../common -I. -I.. -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -std=c++17 -O3 -MD -MQ type_erasure_up/type_erasure_up_rtti.p/src_dev_ctx.cpp.o -MF type_erasure_up/type_erasure_up_rtti.p/src_dev_ctx.cpp.o.d -o type_erasure_up/type_erasure_up_rtti.p/src_dev_ctx.cpp.o -c ../type_erasure_up/src/dev_ctx.cpp",
-    "file": "../type_erasure_up/src/dev_ctx.cpp",
-    "output": "type_erasure_up/type_erasure_up_rtti.p/src_dev_ctx.cpp.o"
-  },
-  {
-    "directory": "/home/mark/Documents/iacb-thesis/build",
-    "command": "c++ -Itype_erasure_up/type_erasure_up_rtti.p -Itype_erasure_up -I../type_erasure_up -I../type_erasure_up/include -I../common -I. -I.. -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -std=c++17 -O3 -MD -MQ type_erasure_up/type_erasure_up_rtti.p/src_dev_algo.cpp.o -MF type_erasure_up/type_erasure_up_rtti.p/src_dev_algo.cpp.o.d -o type_erasure_up/type_erasure_up_rtti.p/src_dev_algo.cpp.o -c ../type_erasure_up/src/dev_algo.cpp",
-    "file": "../type_erasure_up/src/dev_algo.cpp",
-    "output": "type_erasure_up/type_erasure_up_rtti.p/src_dev_algo.cpp.o"
-  },
-  {
-    "directory": "/home/mark/Documents/iacb-thesis/build",
-    "command": "c++ -Itype_erasure_up/type_erasure_up_rtti.p -Itype_erasure_up -I../type_erasure_up -I../type_erasure_up/include -I../common -I. -I.. -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -std=c++17 -O3 -MD -MQ type_erasure_up/type_erasure_up_rtti.p/src_dev_factory.cpp.o -MF type_erasure_up/type_erasure_up_rtti.p/src_dev_factory.cpp.o.d -o type_erasure_up/type_erasure_up_rtti.p/src_dev_factory.cpp.o -c ../type_erasure_up/src/dev_factory.cpp",
-    "file": "../type_erasure_up/src/dev_factory.cpp",
-    "output": "type_erasure_up/type_erasure_up_rtti.p/src_dev_factory.cpp.o"
-  },
-  {
-    "directory": "/home/mark/Documents/iacb-thesis/build",
-    "command": "c++ -Itype_erasure_up/type_erasure_up_rtti.p -Itype_erasure_up -I../type_erasure_up -I../type_erasure_up/include -I../common -I. -I.. -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -std=c++17 -O3 -MD -MQ type_erasure_up/type_erasure_up_rtti.p/src_user.cpp.o -MF type_erasure_up/type_erasure_up_rtti.p/src_user.cpp.o.d -o type_erasure_up/type_erasure_up_rtti.p/src_user.cpp.o -c ../type_erasure_up/src/user.cpp",
-    "file": "../type_erasure_up/src/user.cpp",
-    "output": "type_erasure_up/type_erasure_up_rtti.p/src_user.cpp.o"
-  },
-  {
-    "directory": "/home/mark/Documents/iacb-thesis/build",
-    "command": "c++ -Ibenchmarks/benchmark_google_opt.p -Ibenchmarks -I../benchmarks -I../enum/include -I../common -I. -I.. -I../oop/include -I../visitor/include -I../benchmarks/include -I/usr/local/include -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -pthread -std=c++17 -O3 -MD -MQ benchmarks/benchmark_google_opt.p/src_benchmark_google.cpp.o -MF benchmarks/benchmark_google_opt.p/src_benchmark_google.cpp.o.d -o benchmarks/benchmark_google_opt.p/src_benchmark_google.cpp.o -c ../benchmarks/src/benchmark_google.cpp",
+    "directory": "/home/mark/Documents/Development/bachelor_thesis/poly-cpp/builddir",
+    "command": "c++ -Ibenchmarks/benchmark_google_opt.p -Ibenchmarks -I../benchmarks -I../enum/include -I../common -I. -I.. -I../oop/include -I../visitor/include -I../benchmarks/include -I/usr/local/include -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wextra -Wpedantic -Werror -std=c++17 -O3 -Wshadow -Wconversion -Wpedantic -pthread -MD -MQ benchmarks/benchmark_google_opt.p/src_benchmark_google.cpp.o -MF benchmarks/benchmark_google_opt.p/src_benchmark_google.cpp.o.d -o benchmarks/benchmark_google_opt.p/src_benchmark_google.cpp.o -c ../benchmarks/src/benchmark_google.cpp",
     "file": "../benchmarks/src/benchmark_google.cpp",
     "output": "benchmarks/benchmark_google_opt.p/src_benchmark_google.cpp.o"
   },
   {
-    "directory": "/home/mark/Documents/iacb-thesis/build",
-    "command": "c++ -Ibenchmarks/benchmark_google_no_opt.p -Ibenchmarks -I../benchmarks -I../enum/include -I../common -I. -I.. -I../oop/include -I../visitor/include -I../benchmarks/include -I/usr/local/include -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -pthread -std=c++17 -O0 -g -MD -MQ benchmarks/benchmark_google_no_opt.p/src_benchmark_google.cpp.o -MF benchmarks/benchmark_google_no_opt.p/src_benchmark_google.cpp.o.d -o benchmarks/benchmark_google_no_opt.p/src_benchmark_google.cpp.o -c ../benchmarks/src/benchmark_google.cpp",
+    "directory": "/home/mark/Documents/Development/bachelor_thesis/poly-cpp/builddir",
+    "command": "c++ -Ibenchmarks/benchmark_google_opt.p -Ibenchmarks -I../benchmarks -I../enum/include -I../common -I. -I.. -I../oop/include -I../visitor/include -I../benchmarks/include -I/usr/local/include -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wextra -Wpedantic -Werror -std=c++17 -O3 -Wshadow -Wconversion -Wpedantic -pthread -MD -MQ benchmarks/benchmark_google_opt.p/src_common.cpp.o -MF benchmarks/benchmark_google_opt.p/src_common.cpp.o.d -o benchmarks/benchmark_google_opt.p/src_common.cpp.o -c ../benchmarks/src/common.cpp",
+    "file": "../benchmarks/src/common.cpp",
+    "output": "benchmarks/benchmark_google_opt.p/src_common.cpp.o"
+  },
+  {
+    "directory": "/home/mark/Documents/Development/bachelor_thesis/poly-cpp/builddir",
+    "command": "c++ -Ibenchmarks/benchmark_google_no_opt.p -Ibenchmarks -I../benchmarks -I../enum/include -I../common -I. -I.. -I../oop/include -I../visitor/include -I../benchmarks/include -I/usr/local/include -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wextra -Wpedantic -Werror -std=c++17 -O3 -Wshadow -Wconversion -Wpedantic -pthread -O0 -g -MD -MQ benchmarks/benchmark_google_no_opt.p/src_benchmark_google.cpp.o -MF benchmarks/benchmark_google_no_opt.p/src_benchmark_google.cpp.o.d -o benchmarks/benchmark_google_no_opt.p/src_benchmark_google.cpp.o -c ../benchmarks/src/benchmark_google.cpp",
     "file": "../benchmarks/src/benchmark_google.cpp",
     "output": "benchmarks/benchmark_google_no_opt.p/src_benchmark_google.cpp.o"
   },
   {
-    "directory": "/home/mark/Documents/iacb-thesis/build",
-    "command": "c++ -Ibenchmarks/benchmark_tr18015_opt.p -Ibenchmarks -I../benchmarks -I../enum/include -I../common -I. -I.. -I../oop/include -I../visitor/include -I../benchmarks/include -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -std=c++17 -O3 -g -MD -MQ benchmarks/benchmark_tr18015_opt.p/src_benchmark_tr18015.cpp.o -MF benchmarks/benchmark_tr18015_opt.p/src_benchmark_tr18015.cpp.o.d -o benchmarks/benchmark_tr18015_opt.p/src_benchmark_tr18015.cpp.o -c ../benchmarks/src/benchmark_tr18015.cpp",
+    "directory": "/home/mark/Documents/Development/bachelor_thesis/poly-cpp/builddir",
+    "command": "c++ -Ibenchmarks/benchmark_google_no_opt.p -Ibenchmarks -I../benchmarks -I../enum/include -I../common -I. -I.. -I../oop/include -I../visitor/include -I../benchmarks/include -I/usr/local/include -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wextra -Wpedantic -Werror -std=c++17 -O3 -Wshadow -Wconversion -Wpedantic -pthread -O0 -g -MD -MQ benchmarks/benchmark_google_no_opt.p/src_common.cpp.o -MF benchmarks/benchmark_google_no_opt.p/src_common.cpp.o.d -o benchmarks/benchmark_google_no_opt.p/src_common.cpp.o -c ../benchmarks/src/common.cpp",
+    "file": "../benchmarks/src/common.cpp",
+    "output": "benchmarks/benchmark_google_no_opt.p/src_common.cpp.o"
+  },
+  {
+    "directory": "/home/mark/Documents/Development/bachelor_thesis/poly-cpp/builddir",
+    "command": "c++ -Ibenchmarks/benchmark_tr18015_opt.p -Ibenchmarks -I../benchmarks -I../enum/include -I../common -I. -I.. -I../oop/include -I../visitor/include -I../benchmarks/include -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wextra -Wpedantic -Werror -std=c++17 -O3 -Wshadow -Wconversion -Wpedantic -MD -MQ benchmarks/benchmark_tr18015_opt.p/src_benchmark_tr18015.cpp.o -MF benchmarks/benchmark_tr18015_opt.p/src_benchmark_tr18015.cpp.o.d -o benchmarks/benchmark_tr18015_opt.p/src_benchmark_tr18015.cpp.o -c ../benchmarks/src/benchmark_tr18015.cpp",
     "file": "../benchmarks/src/benchmark_tr18015.cpp",
     "output": "benchmarks/benchmark_tr18015_opt.p/src_benchmark_tr18015.cpp.o"
   },
   {
-    "directory": "/home/mark/Documents/iacb-thesis/build",
-    "command": "c++ -Ibenchmarks/benchmark_tr18015_opt.p -Ibenchmarks -I../benchmarks -I../enum/include -I../common -I. -I.. -I../oop/include -I../visitor/include -I../benchmarks/include -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -std=c++17 -O3 -g -MD -MQ benchmarks/benchmark_tr18015_opt.p/src_common.cpp.o -MF benchmarks/benchmark_tr18015_opt.p/src_common.cpp.o.d -o benchmarks/benchmark_tr18015_opt.p/src_common.cpp.o -c ../benchmarks/src/common.cpp",
+    "directory": "/home/mark/Documents/Development/bachelor_thesis/poly-cpp/builddir",
+    "command": "c++ -Ibenchmarks/benchmark_tr18015_opt.p -Ibenchmarks -I../benchmarks -I../enum/include -I../common -I. -I.. -I../oop/include -I../visitor/include -I../benchmarks/include -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wextra -Wpedantic -Werror -std=c++17 -O3 -Wshadow -Wconversion -Wpedantic -MD -MQ benchmarks/benchmark_tr18015_opt.p/src_common.cpp.o -MF benchmarks/benchmark_tr18015_opt.p/src_common.cpp.o.d -o benchmarks/benchmark_tr18015_opt.p/src_common.cpp.o -c ../benchmarks/src/common.cpp",
     "file": "../benchmarks/src/common.cpp",
     "output": "benchmarks/benchmark_tr18015_opt.p/src_common.cpp.o"
-  },
-  {
-    "directory": "/home/mark/Documents/iacb-thesis/build",
-    "command": "c++ -Ibenchmarks/benchmark_tr18015_enum_opt.p -Ibenchmarks -I../benchmarks -I../enum/include -I../common -I. -I.. -I../oop/include -I../visitor/include -I../benchmarks/include -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -std=c++17 -O3 -g -MD -MQ benchmarks/benchmark_tr18015_enum_opt.p/src_benchmark_tr18015_enum.cpp.o -MF benchmarks/benchmark_tr18015_enum_opt.p/src_benchmark_tr18015_enum.cpp.o.d -o benchmarks/benchmark_tr18015_enum_opt.p/src_benchmark_tr18015_enum.cpp.o -c ../benchmarks/src/benchmark_tr18015_enum.cpp",
-    "file": "../benchmarks/src/benchmark_tr18015_enum.cpp",
-    "output": "benchmarks/benchmark_tr18015_enum_opt.p/src_benchmark_tr18015_enum.cpp.o"
-  },
-  {
-    "directory": "/home/mark/Documents/iacb-thesis/build",
-    "command": "c++ -Ibenchmarks/benchmark_tr18015_enum_opt.p -Ibenchmarks -I../benchmarks -I../enum/include -I../common -I. -I.. -I../oop/include -I../visitor/include -I../benchmarks/include -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -std=c++17 -O3 -g -MD -MQ benchmarks/benchmark_tr18015_enum_opt.p/src_common.cpp.o -MF benchmarks/benchmark_tr18015_enum_opt.p/src_common.cpp.o.d -o benchmarks/benchmark_tr18015_enum_opt.p/src_common.cpp.o -c ../benchmarks/src/common.cpp",
-    "file": "../benchmarks/src/common.cpp",
-    "output": "benchmarks/benchmark_tr18015_enum_opt.p/src_common.cpp.o"
-  },
-  {
-    "directory": "/home/mark/Documents/iacb-thesis/build",
-    "command": "c++ -Ibenchmarks/benchmark_tr18015_oop_opt.p -Ibenchmarks -I../benchmarks -I../enum/include -I../common -I. -I.. -I../oop/include -I../visitor/include -I../benchmarks/include -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -std=c++17 -O3 -g -MD -MQ benchmarks/benchmark_tr18015_oop_opt.p/src_benchmark_tr18015_oop.cpp.o -MF benchmarks/benchmark_tr18015_oop_opt.p/src_benchmark_tr18015_oop.cpp.o.d -o benchmarks/benchmark_tr18015_oop_opt.p/src_benchmark_tr18015_oop.cpp.o -c ../benchmarks/src/benchmark_tr18015_oop.cpp",
-    "file": "../benchmarks/src/benchmark_tr18015_oop.cpp",
-    "output": "benchmarks/benchmark_tr18015_oop_opt.p/src_benchmark_tr18015_oop.cpp.o"
-  },
-  {
-    "directory": "/home/mark/Documents/iacb-thesis/build",
-    "command": "c++ -Ibenchmarks/benchmark_tr18015_oop_opt.p -Ibenchmarks -I../benchmarks -I../enum/include -I../common -I. -I.. -I../oop/include -I../visitor/include -I../benchmarks/include -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -std=c++17 -O3 -g -MD -MQ benchmarks/benchmark_tr18015_oop_opt.p/src_common.cpp.o -MF benchmarks/benchmark_tr18015_oop_opt.p/src_common.cpp.o.d -o benchmarks/benchmark_tr18015_oop_opt.p/src_common.cpp.o -c ../benchmarks/src/common.cpp",
-    "file": "../benchmarks/src/common.cpp",
-    "output": "benchmarks/benchmark_tr18015_oop_opt.p/src_common.cpp.o"
-  },
-  {
-    "directory": "/home/mark/Documents/iacb-thesis/build",
-    "command": "c++ -Ibenchmarks/benchmark_tr18015_visit_opt.p -Ibenchmarks -I../benchmarks -I../enum/include -I../common -I. -I.. -I../oop/include -I../visitor/include -I../benchmarks/include -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -std=c++17 -O3 -g -MD -MQ benchmarks/benchmark_tr18015_visit_opt.p/src_benchmark_tr18015_visit.cpp.o -MF benchmarks/benchmark_tr18015_visit_opt.p/src_benchmark_tr18015_visit.cpp.o.d -o benchmarks/benchmark_tr18015_visit_opt.p/src_benchmark_tr18015_visit.cpp.o -c ../benchmarks/src/benchmark_tr18015_visit.cpp",
-    "file": "../benchmarks/src/benchmark_tr18015_visit.cpp",
-    "output": "benchmarks/benchmark_tr18015_visit_opt.p/src_benchmark_tr18015_visit.cpp.o"
-  },
-  {
-    "directory": "/home/mark/Documents/iacb-thesis/build",
-    "command": "c++ -Ibenchmarks/benchmark_tr18015_visit_opt.p -Ibenchmarks -I../benchmarks -I../enum/include -I../common -I. -I.. -I../oop/include -I../visitor/include -I../benchmarks/include -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -std=c++17 -O3 -g -MD -MQ benchmarks/benchmark_tr18015_visit_opt.p/src_common.cpp.o -MF benchmarks/benchmark_tr18015_visit_opt.p/src_common.cpp.o.d -o benchmarks/benchmark_tr18015_visit_opt.p/src_common.cpp.o -c ../benchmarks/src/common.cpp",
-    "file": "../benchmarks/src/common.cpp",
-    "output": "benchmarks/benchmark_tr18015_visit_opt.p/src_common.cpp.o"
   }
 ]
