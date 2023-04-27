@@ -1,12 +1,23 @@
+# poly-cpp
+
+A hand full of popular approaches to achieving polymorphism in C++ with benchmarks
+
+1. enum
+1. oop
+1. strategy - using std::function
+1. visitor
+1. variant_t - using std::variant
+1. type_erasure_up - "Runtime concept" or "Type erasure" using uniqute_ptr to non-const type
+
 # install
 
 requirements: meson and a compiler
 
 ```bash
-meson build && cd build && ninja
+meson setup builddir && ninja test -C builddir
 
 # list all executables (after prev command that cd'd into build)
-find -maxdepth 2 -executable -type f
+find builddir -maxdepth 2 -executable -type f
 ```
 
 # generate documentaion
