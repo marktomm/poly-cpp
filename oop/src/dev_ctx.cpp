@@ -2,9 +2,10 @@
 
 namespace Oop {
 
-void statPorts(std::vector<std::unique_ptr<Port> > const& ports) noexcept {
+void readPorts(std::vector<std::unique_ptr<Port> > const& ports,
+               BufferData& data) noexcept {
     for (auto const& p : ports) {
-        p->Stat();
+        p->Read(data);
     }
 }
 

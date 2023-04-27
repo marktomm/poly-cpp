@@ -2,13 +2,15 @@
 #define _OOP_DEV_EXT_H_
 
 #include "dev_base.h"
+#include "types.h"
 
 #include <memory>
 #include <vector>
 
 namespace Oop {
 
-void statPorts(std::vector<std::unique_ptr<Port> > const&) noexcept;
+void readPorts(std::vector<std::unique_ptr<Port> > const&,
+               BufferData&) noexcept;
 
 void writePorts(std::vector<std::unique_ptr<Port> >&,
                 BufferData const&) noexcept;
