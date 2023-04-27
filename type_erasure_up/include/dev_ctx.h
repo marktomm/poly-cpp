@@ -9,7 +9,7 @@
 
 namespace TypeErasureUp {
 
-void statPorts(std::vector<Readable> const&) noexcept;
+void readPorts(std::vector<Readable> const&, BufferData&) noexcept;
 
 void writePorts(std::vector<Readable>&, BufferData const&) noexcept;
 

@@ -17,8 +17,7 @@ public:
                                                             buf_{} {}
     ~TcpPort() = default;
 
-    std::string GetIp() const noexcept;
-    uint16_t GetPort() const noexcept;
+    void Read(BufferData&) const noexcept;
     void Write(BufferData const&) noexcept;
 
 private:
@@ -32,7 +31,7 @@ public:
     explicit SerialPort(std::string dev) noexcept: dev_{dev}, buf_{} {}
     ~SerialPort() = default;
 
-    std::string GetDev() const noexcept;
+    void Read(BufferData&) const noexcept;
     void Write(BufferData const&) noexcept;
 
 private:

@@ -19,7 +19,9 @@ public:
     }
     Readable& operator=(Readable&&) noexcept = default;
 
-    friend void stat(Readable const& item) noexcept { item._self->_stat(); }
+    friend void read(Readable const& item, BufferData& output) noexcept {
+        item._self->_read(output);
+    }
     friend void write(Readable& item, BufferData const& data) noexcept {
         item._self->_write(data);
     }
@@ -33,14 +35,16 @@ private:
     struct concept_t {
         virtual ~concept_t() = default;
         virtual concept_t* _copy() const = 0;
-        virtual void _stat() const noexcept = 0;
+        virtual void _read(BufferData&) const noexcept = 0;
         virtual void _write(BufferData const&) noexcept = 0;
     };
     template<typename T>
     struct model final: concept_t {
         model(T x) : _data(std::move(x)) {}
         concept_t* _copy() const override { return new model(*this); }
-        void _stat() const noexcept override { stat(_data); }
+        void _read(BufferData& output) const noexcept override {
+            read(_data, output);
+        }
         void _write(BufferData const& data) noexcept override {
             write(_data, data);
         }

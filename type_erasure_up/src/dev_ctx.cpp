@@ -3,9 +3,9 @@
 
 namespace TypeErasureUp {
 
-void stat(std::vector<Readable> const& doc) noexcept {
+void read(std::vector<Readable> const& doc, BufferData& output) noexcept {
     for (auto const& it : doc) {
-        stat(it);
+        read(it, output);
     }
 }
 
@@ -15,7 +15,10 @@ void write(std::vector<Readable>& doc, BufferData const& data) noexcept {
     }
 }
 
-void statPorts(std::vector<Readable> const& ports) noexcept { stat(ports); }
+void readPorts(std::vector<Readable> const& ports,
+               BufferData& output) noexcept {
+    read(ports, output);
+}
 
 void writePorts(std::vector<Readable>& ports, BufferData const& data) noexcept {
     write(ports, data);

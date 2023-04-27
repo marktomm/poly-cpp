@@ -6,13 +6,11 @@
 
 namespace TypeErasureUp {
 
-void read(TcpPort&, std::string&) noexcept;
+void read(TcpPort const&, BufferData&) noexcept;
 void write(TcpPort&, BufferData const&) noexcept;
-void stat(TcpPort const&) noexcept;
 
-void read(SerialPort&, std::string&) noexcept;
+void read(SerialPort const&, BufferData&) noexcept;
 void write(SerialPort&, BufferData const&) noexcept;
-void stat(SerialPort const&) noexcept;
 
 } // namespace TypeErasureUp
 

@@ -1,5 +1,6 @@
 #include "dev_ctx.h"
 #include "dev_factory.h"
+#include "types.h"
 
 int main() {
     using namespace TypeErasureUp;
@@ -8,7 +9,8 @@ int main() {
     Ports ports;
     ports.emplace_back(createTcpPort("localhost", 2404));
     ports.emplace_back(createSerialPort("/dev/ttyUSB0"));
-    statPorts(ports);
+    BufferData data;
+    readPorts(ports, data);
 
     return 0;
 }
