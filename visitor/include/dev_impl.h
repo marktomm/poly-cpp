@@ -18,8 +18,7 @@ public:
     void accept(Visitor const&) const noexcept override;
     void accept(Visitor const&) noexcept override;
 
-    std::string GetIp() const noexcept;
-    uint16_t GetPort() const noexcept;
+    void Read(BufferData&) const noexcept;
     void Write(BufferData const&) noexcept;
 
 private:
@@ -36,7 +35,7 @@ public:
     void accept(Visitor const&) const noexcept override;
     void accept(Visitor const&) noexcept override;
 
-    std::string GetDev() const noexcept;
+    void Read(BufferData&) const noexcept;
     void Write(BufferData const&) noexcept;
 
 private:

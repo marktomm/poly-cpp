@@ -9,7 +9,8 @@
 
 namespace Visit {
 
-void statPorts(std::vector<std::unique_ptr<Port> > const&) noexcept;
+void readPorts(std::vector<std::unique_ptr<Port> > const&,
+               BufferData&) noexcept;
 
 void writePorts(std::vector<std::unique_ptr<Port> >&,
                 BufferData const&) noexcept;

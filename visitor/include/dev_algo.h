@@ -6,12 +6,16 @@
 
 namespace Visit {
 
-class Stat final: public Port::Visitor {
+class Read final: public Port::Visitor {
 public:
+    Read(BufferData& output) : data_{output} {}
     void visit(TcpPort const&) const noexcept override;
     void visit(SerialPort const&) const noexcept override;
     void visit(TcpPort&) const noexcept override;
     void visit(SerialPort&) const noexcept override;
+
+private:
+    BufferData& data_;
 };
 
 class Write final: public Port::Visitor {

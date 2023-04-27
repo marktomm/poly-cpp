@@ -4,44 +4,28 @@
 
 namespace Visit {
 
-void Stat::visit(TcpPort const&) const noexcept {
-    using namespace std;
-    cout << "tcp port stats\n";
-}
+void Read::visit(TcpPort const& p) const noexcept { p.Read(data_); }
 
-void Stat::visit(SerialPort const& p) const noexcept {
-    using namespace std;
-    cout << "serial port stats " << p.GetDev() << "\n";
-}
+void Read::visit(SerialPort const& p) const noexcept { p.Read(data_); }
 
-void Stat::visit(TcpPort&) const noexcept {
-    using namespace std;
+void Read::visit(TcpPort&) const noexcept {
     // unused
 }
 
-void Stat::visit(SerialPort&) const noexcept {
-    using namespace std;
+void Read::visit(SerialPort&) const noexcept {
     // unused
 }
 
 void Write::visit(TcpPort const&) const noexcept {
-    using namespace std;
     // unused
 }
 
 void Write::visit(SerialPort const&) const noexcept {
-    using namespace std;
     // unused
 }
 
-void Write::visit(TcpPort& p) const noexcept {
-    using namespace std;
-    p.Write(data_);
-}
+void Write::visit(TcpPort& p) const noexcept { p.Write(data_); }
 
-void Write::visit(SerialPort& p) const noexcept {
-    using namespace std;
-    p.Write(data_);
-}
+void Write::visit(SerialPort& p) const noexcept { p.Write(data_); }
 
 } // namespace Visit
