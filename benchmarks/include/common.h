@@ -19,8 +19,8 @@ private:
     clock_t tdur_;
 };
 
-#include "enum/include/dev_ctx.h"
-#include "enum/include/dev_factory.h"
+#include "enum_type/include/dev_ctx.h"
+#include "enum_type/include/dev_factory.h"
 #include "oop/include/dev_ctx.h"
 #include "oop/include/dev_factory.h"
 #include "strategy/include/dev_ctx.h"

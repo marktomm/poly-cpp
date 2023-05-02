@@ -1,17 +1,29 @@
-common_src = ['src/common.cpp']
+benchmarks_common_src = ['src/common.cpp']
 
 benchmarks_inc = include_directories('include')
 
-objectsArray = [
-    enum_inc_o,
+objectsArrayOpt = [
+    enum_type_inc_o,
     oop_inc_o,
     visitor_inc_o,
     strategy_inc_o,
     variant_t_o,
     type_erasure_up_o,
 ]
+
+# objectsArrayNoOpt = [
+#     enum_type_inc_no_opt_o,
+#     oop_inc_no_opt_o,
+#     visitor_no_opt_o,
+#     strategy_no_opt_o,
+#     variant_no_opt_o,
+#     type_erasure_no_opt_o,
+# ]
+
+objectsArrayNoOpt = objectsArrayOpt
+
 includesArray = [
-    enum_inc,
+    enum_type_inc,
     common_inc,
     oop_inc,
     visitor_inc,
@@ -23,8 +35,8 @@ if bench.found()
 
     benchmark_google_opt_exe = executable(
         'benchmark_google_opt',
-        [benchmark_test, common_src],
-        objects: objectsArray,
+        [benchmark_test, benchmarks_common_src],
+        objects: objectsArrayOpt,
         include_directories: includesArray,
         dependencies: [bench, thread],
     )
@@ -33,8 +45,8 @@ if bench.found()
 
     benchmark_google_no_opt_exe = executable(
         'benchmark_google_no_opt',
-        [benchmark_test, common_src],
-        objects: objectsArray,
+        [benchmark_test, benchmarks_common_src],
+        objects: objectsArrayOpt,
         include_directories: includesArray,
         dependencies: [bench, thread],
         cpp_args: ['-O0', '-g'],
@@ -51,8 +63,8 @@ benchmark_tr18015_test = ['src/benchmark_tr18015.cpp']
 
 benchmark_tr18015_opt_exe = executable(
     'benchmark_tr18015_opt',
-    [benchmark_tr18015_test, common_src],
-    objects: objectsArray,
+    [benchmark_tr18015_test, benchmarks_common_src],
+    objects: objectsArrayOpt,
     include_directories: includesArray,
 )
 
