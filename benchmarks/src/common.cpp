@@ -42,9 +42,9 @@ EnumPortsInitRandom(std::vector<uint32_t>& v) {
     return ports;
 }
 
-std::vector<std::unique_ptr<Oop::Port> >
+std::vector<std::unique_ptr<oop::Port> >
 OopPortsInitRandom(std::vector<uint32_t>& v) {
-    using namespace Oop;
+    using namespace oop;
     using Ports = std::vector<std::unique_ptr<Port> >;
 
     Ports ports(100);

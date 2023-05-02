@@ -5,7 +5,7 @@
 
 #include <string>
 
-namespace Oop {
+namespace oop {
 
 class Port {
 public:
@@ -16,6 +16,6 @@ public:
     virtual void Write(BufferData const&) noexcept = 0;
 };
 
-} // namespace Oop
+} // namespace oop
 
 #endif

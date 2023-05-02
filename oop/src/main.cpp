@@ -1,6 +1,9 @@
-#include "dev_ctx.h"
-#include "dev_factory.h"
-#include "types.h"
+// oop/src/user.cpp
+#include "lib.h"
+#include <vector>
+
+using namespace std;
+using namespace oop;
 
 int main() {
     using namespace oop;
@@ -14,3 +17,4 @@ int main() {
 
     return 0;
 }
+// oop/src/user.cpp end

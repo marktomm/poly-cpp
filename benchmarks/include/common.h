@@ -44,7 +44,7 @@ std::vector<uint32_t> setup();
 std::vector<std::unique_ptr<Enum::Port> >
 EnumPortsInitRandom(std::vector<uint32_t>& v);
 
-std::vector<std::unique_ptr<Oop::Port> >
+std::vector<std::unique_ptr<oop::Port> >
 OopPortsInitRandom(std::vector<uint32_t>& v);
 
 std::vector<std::unique_ptr<Visit::Port> >

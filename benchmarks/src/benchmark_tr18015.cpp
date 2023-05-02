@@ -32,13 +32,13 @@ int main(int argc, char** argv) {
     }
     vtd.push_back(TimeDur{"Enum updates", clock() - c});
 
-    using OopPorts = std::vector<std::unique_ptr<Oop::Port> >;
+    using OopPorts = std::vector<std::unique_ptr<oop::Port> >;
     OopPorts oopPorts = OopPortsInitRandom(vr);
     doNotOptimize(oopPorts.data());
 
     c = clock();
     for (uint32_t i = 0; i < roundCount; ++i) {
-        Oop::writePorts(oopPorts, 0xFF);
+        oop::writePorts(oopPorts, 0xFF);
         clobber();
     }
     vtd.push_back(TimeDur{"Oop updates", clock() - c});

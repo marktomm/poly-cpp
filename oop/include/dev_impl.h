@@ -5,7 +5,7 @@
 
 #include <cstdint>
 
-namespace Oop {
+namespace oop {
 
 class TcpPort final: public Port {
 public:
@@ -41,6 +41,6 @@ private:
     MutableBuffer buf_;
 };
 
-} // namespace Oop
+} // namespace oop
 
 #endif

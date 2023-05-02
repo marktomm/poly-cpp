@@ -1,6 +1,6 @@
 #include "dev_ctx.h"
 
-namespace Oop {
+namespace oop {
 
 void readPorts(std::vector<std::unique_ptr<Port> > const& ports,
                BufferData& data) noexcept {
@@ -16,4 +16,4 @@ void writePorts(std::vector<std::unique_ptr<Port> >& ports,
     }
 }
 
-} // namespace Oop
+} // namespace oop

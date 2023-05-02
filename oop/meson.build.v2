@@ -1,0 +1,178 @@
+
+rootdir = '..'
+currentdir = '.'
+rootinc = join_paths(rootdir, 'include/')
+currentinc = join_paths(currentdir, 'include/')
+oop_inc = include_directories(currentinc)
+oop_main = ['src/main.cpp']
+# oop_simple = ['src/user_simple.cpp']
+oop_src = [
+    'src/lib.cpp',
+]
+
+oop_exe = executable(
+    'oop_opt',
+    [oop_main, oop_src],
+    include_directories: [oop_inc, common_inc],
+    dependencies: [bench, thread],
+    install: true,
+)
+
+oop_exe_no_opt = executable(
+    'oop_no_opt',
+    [oop_main, oop_src],
+    include_directories: [oop_inc, common_inc],
+    dependencies: [bench, thread],
+    install: true,
+    cpp_args: ['-O0', '-g'],
+)
+
+oop_inc_opt_o = oop_exe.extract_objects(
+    oop_src,
+)
+
+oop_inc_o = oop_inc_opt_o
+
+oop_inc_no_opt_o = oop_exe_no_opt.extract_objects(
+    oop_src,
+)
+
+asandep = cpp.find_library('asan', dirs: '/usr/lib/x86_64-linux-gnu')
+
+oop_exe_sanitize = executable(
+    'oop_opt_sanitize',
+    [oop_main, oop_src],
+    include_directories: [oop_inc, common_inc],
+    install: true,
+    cpp_args: ['-O3', '-fsanitize=address'],
+    dependencies: [asandep, bench, thread],
+    link_args: ['-Wl,--start-group', '-lasan', '-Wl,--end-group'],
+    # objects: [ oop_inc_opt_o ],
+)
+
+oop_exe_no_opt_sanitize = executable(
+    'oop_no_opt_sanitize',
+    [oop_main, oop_src],
+    include_directories: [oop_inc, common_inc],
+    install: true,
+    cpp_args: ['-O0', '-g', '-fsanitize=address'],
+    dependencies: [asandep, bench, thread],
+    link_args: ['-Wl,--start-group', '-lasan', '-Wl,--end-group'],
+    # objects: [ oop_inc_opt_o ],
+)
+
+# executable(
+#     'oop_simple',
+#     [oop_simple],
+#     objects: [oop_inc_opt_o],
+#     include_directories: [oop_inc, common_inc],
+#     install: true,
+# )
+
+if bench.found()
+    oop_benchmark_test = ['bench.cpp']
+
+    oop_benchmark_google_opt_exe = executable(
+        'oop_benchmark_google_opt',
+        [oop_benchmark_test, common_src],
+        objects: oop_inc_opt_o,
+        include_directories: [ oop_inc, common_inc ],
+        dependencies: [bench, thread],
+    )
+
+    benchmark(
+        'oop_benchmark_google_opt',
+        oop_benchmark_google_opt_exe,
+        suite: 'oop',
+        timeout: 0,
+    )
+
+    oop_benchmark_google_no_opt_exe = executable(
+        'oop_benchmark_google_no_opt',
+        [oop_benchmark_test, common_src],
+        objects: oop_inc_no_opt_o,
+        include_directories: [ oop_inc, common_inc ],
+        dependencies: [bench, thread],
+        cpp_args: ['-O0', '-g'],
+    )
+
+    benchmark(
+        'oop_benchmark_google_no_opt',
+        oop_benchmark_google_no_opt_exe,
+        suite: 'oop',
+        timeout: 0,
+    )
+
+    custom_target(
+        'bench_oop',
+        command: [
+            'sh',
+            '-c', 'meson test --benchmark -C @BUILD_ROOT@ --suite oop && cat @BUILD_ROOT@/meson-logs/testlog.txt',
+        ],
+        depends: [
+            oop_benchmark_google_no_opt_exe,
+            oop_benchmark_google_opt_exe,
+        ],
+        output: 'dummy_output.txt',
+    )
+endif
+
+gen_asm = custom_target(
+    'gen_asm_no_opt',
+    input: oop_main,
+    output: 'oop_main_no_opt.s',
+    command: [
+        cpp_prog,
+        '-I' + meson.current_source_dir() + '/include/',
+        '-S',
+        '-masm=intel',
+        '-o', '@OUTPUT@',
+        '@INPUT@',
+    ],
+    build_by_default: true,
+)
+
+gen_asm_opt = custom_target(
+    'gen_asm_opt',
+    input: oop_main,
+    output: 'oop_main_opt.s',
+    command: [
+        cpp_prog,
+        '-O3', '-I' + meson.current_source_dir() + '/include/',
+        '-S',
+        '-masm=intel',
+        '-o', '@OUTPUT@',
+        '@INPUT@',
+    ],
+    build_by_default: true,
+)
+
+gen_asm_lib = custom_target(
+    'gen_asm_lib_no_opt',
+    input: oop_src,
+    output: 'oop_lib_no_opt.s',
+    command: [
+        cpp_prog,
+        '-I' + meson.current_source_dir() + '/include/',
+        '-S',
+        '-masm=intel',
+        '-o', '@OUTPUT@',
+        '@INPUT@',
+    ],
+    build_by_default: true,
+)
+
+gen_asm_lib_opt = custom_target(
+    'gen_asm_lib_opt',
+    input: oop_src,
+    output: 'oop_lib_opt.s',
+    command: [
+        cpp_prog,
+        '-O3', '-I' + meson.current_source_dir() + '/include/',
+        '-S',
+        '-masm=intel',
+        '-o', '@OUTPUT@',
+        '@INPUT@',
+    ],
+    build_by_default: true,
+)

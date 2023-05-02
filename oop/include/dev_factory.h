@@ -8,12 +8,12 @@
 
 #include <cstdint>
 
-namespace Oop {
+namespace oop {
 
 std::unique_ptr<Port> createTcpPort(std::string ip, uint16_t port) noexcept;
 
 std::unique_ptr<Port> createSerialPort(std::string dev) noexcept;
 
-} // namespace Oop
+} // namespace oop
 
 #endif

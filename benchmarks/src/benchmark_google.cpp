@@ -22,7 +22,7 @@ static void BM_Enum(benchmark::State& state) {
 
 static void BM_Oop(benchmark::State& state) {
     // Perform setup here
-    using namespace Oop;
+    using namespace oop;
     using Ports = std::vector<std::unique_ptr<Port> >;
     auto randomVector = setup();
     Ports ports = OopPortsInitRandom(randomVector);
