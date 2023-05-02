@@ -53,7 +53,7 @@ VisitPortsInitRandom(std::vector<uint32_t>& v);
 std::vector<std::unique_ptr<strategy::Port> >
 StrategyPortsInitRandom(std::vector<uint32_t>& v);
 
-std::vector<VariantT::Port> VarianttPortsInitRandom(std::vector<uint32_t>& v);
+std::vector<variant_t::Port> VarianttPortsInitRandom(std::vector<uint32_t>& v);
 
 std::vector<TypeErasureUp::Readable>
 TypeErasureUpPortsInitRandom(std::vector<uint32_t>& v);

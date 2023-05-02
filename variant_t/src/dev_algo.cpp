@@ -3,7 +3,7 @@
 
 #include <iostream>
 
-namespace VariantT {
+namespace variant_t {
 
 void Read::operator()(TcpPort const& p, BufferData& output) const noexcept {
     p.Read(output);
@@ -21,4 +21,4 @@ void Write::operator()(SerialPort& p, BufferData const& data) const noexcept {
     p.Write(data);
 }
 
-} // namespace VariantT
+} // namespace variant_t

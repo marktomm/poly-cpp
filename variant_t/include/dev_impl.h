@@ -7,7 +7,7 @@
 
 #include <cstdint>
 
-namespace VariantT {
+namespace variant_t {
 
 class TcpPort {
 public:
@@ -38,6 +38,6 @@ private:
     MutableBuffer buf_;
 };
 
-} // namespace VariantT
+} // namespace variant_t
 
 #endif

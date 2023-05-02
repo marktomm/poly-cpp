@@ -8,12 +8,12 @@
 
 #include <cstdint>
 
-namespace VariantT {
+namespace variant_t {
 
 Port createTcpPort(std::string ip, uint16_t port) noexcept;
 
 Port createSerialPort(std::string dev) noexcept;
 
-} // namespace VariantT
+} // namespace variant_t
 
 #endif

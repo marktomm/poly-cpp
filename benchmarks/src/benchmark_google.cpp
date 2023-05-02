@@ -70,7 +70,7 @@ static void BM_Strategy(benchmark::State& state) {
 
 static void BM_Variant(benchmark::State& state) {
     // Perform setup here
-    using namespace VariantT;
+    using namespace variant_t;
     using Ports = std::vector<Port>;
     auto randomVector = setup();
     Ports ports = VarianttPortsInitRandom(randomVector);

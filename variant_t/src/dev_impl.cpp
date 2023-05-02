@@ -1,6 +1,6 @@
 #include "dev_impl.h"
 
-namespace VariantT {
+namespace variant_t {
 
 void TcpPort::Read(BufferData& data) const noexcept { data = buf_; }
 
@@ -10,4 +10,4 @@ void SerialPort::Read(BufferData& data) const noexcept { data = buf_; }
 
 void SerialPort::Write(BufferData const& data) noexcept { buf_ += data; }
 
-} // namespace VariantT
+} // namespace variant_t

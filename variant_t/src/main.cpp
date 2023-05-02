@@ -1,5 +1,7 @@
-#include "dev_ctx.h"
-#include "types.h"
+#include "lib.h"
+using namespace std;
+using namespace variant_t;
+// variant_t/src/user.cpp
 
 int main() {
     using namespace variant_t;
@@ -14,3 +16,4 @@ int main() {
 
     return 0;
 }
+// variant_t/src/user.cpp end

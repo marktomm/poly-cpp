@@ -3,7 +3,7 @@
 #include "types.h"
 #include <vector>
 
-namespace VariantT {
+namespace variant_t {
 
 void readPorts(std::vector<Port> const& ports, ReadData& output) noexcept {
     for (auto const& p : ports) {
@@ -17,4 +17,4 @@ void writePorts(std::vector<Port>& ports, WriteData const& data) noexcept {
     }
 }
 
-} // namespace VariantT
+} // namespace variant_t

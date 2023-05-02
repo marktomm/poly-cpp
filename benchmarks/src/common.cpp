@@ -107,8 +107,8 @@ void rreorder(std::vector<T>& v, std::vector<uint32_t> const& order) {
     }
 }
 
-std::vector<VariantT::Port> VarianttPortsInitRandom(std::vector<uint32_t>& v) {
-    using namespace VariantT;
+std::vector<variant_t::Port> VarianttPortsInitRandom(std::vector<uint32_t>& v) {
+    using namespace variant_t;
     using Ports = std::vector<Port>;
 
     Ports ports;

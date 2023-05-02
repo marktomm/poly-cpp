@@ -9,7 +9,7 @@
 #include <memory>
 #include <vector>
 
-namespace VariantT {
+namespace variant_t {
 
 using Port = std::variant<TcpPort, SerialPort>;
 using WriteData = std::variant<BufferData>;
@@ -19,6 +19,6 @@ void readPorts(std::vector<Port> const&, ReadData&) noexcept;
 
 void writePorts(std::vector<Port>&, WriteData const&) noexcept;
 
-} // namespace VariantT
+} // namespace variant_t
 
 #endif

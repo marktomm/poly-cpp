@@ -4,7 +4,7 @@
 #include "dev_impl.h"
 #include "types.h"
 
-namespace VariantT {
+namespace variant_t {
 
 class Read {
 public:
@@ -18,6 +18,6 @@ public:
     void operator()(SerialPort&, BufferData const&) const noexcept;
 };
 
-} // namespace VariantT
+} // namespace variant_t
 
 #endif

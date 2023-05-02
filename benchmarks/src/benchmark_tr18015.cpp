@@ -65,13 +65,13 @@ int main(int argc, char** argv) {
     }
     vtd.push_back(TimeDur{"Strategy updates", clock() - c});
 
-    using VarianttPorts = std::vector<VariantT::Port>;
+    using VarianttPorts = std::vector<variant_t::Port>;
     VarianttPorts varianttPorts = VarianttPortsInitRandom(vr);
     doNotOptimize(varianttPorts.data());
 
     c = clock();
     for (uint32_t i = 0; i < roundCount; ++i) {
-        VariantT::writePorts(varianttPorts, static_cast<uint32_t>(0xFF));
+        variant_t::writePorts(varianttPorts, static_cast<uint32_t>(0xFF));
         clobber();
     }
     vtd.push_back(TimeDur{"Variantt updates", clock() - c});

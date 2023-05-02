@@ -3,7 +3,7 @@
 
 #include <memory>
 
-namespace VariantT {
+namespace variant_t {
 
 Port createTcpPort(std::string ip, uint16_t port) noexcept {
     return TcpPort(ip, port);
@@ -11,4 +11,4 @@ Port createTcpPort(std::string ip, uint16_t port) noexcept {
 
 Port createSerialPort(std::string dev) noexcept { return SerialPort(dev); }
 
-} // namespace VariantT
+} // namespace variant_t
