@@ -76,7 +76,7 @@ if bench.found()
         'enum_type_benchmark_google_opt',
         [enum_type_benchmark_test, common_src],
         objects: enum_type_inc_opt_o,
-        include_directories: [ enum_type_inc, common_inc ],
+        include_directories: [enum_type_inc, common_inc],
         dependencies: [bench, thread],
     )
 
@@ -91,7 +91,7 @@ if bench.found()
         'enum_type_benchmark_google_no_opt',
         [enum_type_benchmark_test, common_src],
         objects: enum_type_inc_no_opt_o,
-        include_directories: [ enum_type_inc, common_inc ],
+        include_directories: [enum_type_inc, common_inc],
         dependencies: [bench, thread],
         cpp_args: ['-O0', '-g'],
     )

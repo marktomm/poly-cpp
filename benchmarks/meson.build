@@ -11,14 +11,14 @@ objectsArrayOpt = [
     type_erasure_up_inc_o,
 ]
 
-# objectsArrayNoOpt = [
-#     enum_type_inc_no_opt_o,
-#     oop_inc_inc_no_opt_o,
-#     visitor_inc_no_opt_o,
-#     strategy_inc_no_opt_o,
-#     variant_t_inc_no_opt_o,
-#     type_erasure_up_inc_no_opt_o,
-# ]
+objectsArrayNoOpt = [
+    enum_type_inc_no_opt_o,
+    oop_inc_no_opt_o,
+    visitor_inc_no_opt_o,
+    strategy_inc_no_opt_o,
+    variant_t_inc_no_opt_o,
+    type_erasure_up_inc_no_opt_o,
+]
 
 objectsArrayNoOpt = objectsArrayOpt
 
@@ -46,7 +46,7 @@ if bench.found()
     benchmark_google_no_opt_exe = executable(
         'benchmark_google_no_opt',
         [benchmark_test, benchmarks_common_src],
-        objects: objectsArrayOpt,
+        objects: objectsArrayNoOpt,
         include_directories: includesArray,
         dependencies: [bench, thread],
         cpp_args: ['-O0', '-g'],
@@ -55,7 +55,7 @@ if bench.found()
     benchmark(
         'benchmark_google_no_opt',
         benchmark_google_no_opt_exe,
-        timeout: 0
+        timeout: 0,
     )
 endif
 
@@ -68,8 +68,13 @@ benchmark_tr18015_opt_exe = executable(
     include_directories: includesArray,
 )
 
-benchmark(
-    'benchmark_tr18015_opt',
-    benchmark_tr18015_opt_exe, 
-    timeout: 0
+benchmark('benchmark_tr18015_opt', benchmark_tr18015_opt_exe, timeout: 0)
+
+benchmark_tr18015_no_opt_exe = executable(
+    'benchmark_tr18015_no_opt',
+    [benchmark_tr18015_test, benchmarks_common_src],
+    objects: objectsArrayOpt,
+    include_directories: includesArray,
 )
+
+benchmark('benchmark_tr18015_no_opt', benchmark_tr18015_no_opt_exe, timeout: 0)
