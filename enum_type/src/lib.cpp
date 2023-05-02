@@ -1,17 +1,34 @@
 #include "lib.h"
 
+using namespace std;
+using namespace enum_type;
+
 namespace enum_type {} // namespace enum_type
 // enum_type/src/dev_impl.cpp
 
+static void escape(void* p) { asm volatile("" : : "g"(p) : "memory"); }
+
 namespace Enum {
 
-void TcpPort::Read(BufferData& data) const noexcept { data = buf_; }
+void TcpPort::Read(BufferData& data) const noexcept {
+    data = buf_;
+    escape(&data); // this has no effect here and below 3
+}
 
-void TcpPort::Write(BufferData const& data) noexcept { buf_ += data; }
+void TcpPort::Write(BufferData const& data) noexcept {
+    buf_ += data;
+    escape(&buf_);
+}
 
-void SerialPort::Read(BufferData& data) const noexcept { data = buf_; };
+void SerialPort::Read(BufferData& data) const noexcept {
+    data = buf_;
+    escape(&data);
+};
 
-void SerialPort::Write(BufferData const& data) noexcept { buf_ += data; }
+void SerialPort::Write(BufferData const& data) noexcept {
+    buf_ += data;
+    escape(&buf_);
+}
 
 } // namespace Enum
 // enum_type/src/dev_impl.cpp end
@@ -37,14 +54,14 @@ void write(SerialPort& port, BufferData const& data) noexcept {
 
 namespace Enum {
 
-void readPorts(std::vector<std::unique_ptr<Port> > const& ports,
+void readPorts(vector<unique_ptr<Port> > const& ports,
                BufferData& output) noexcept {
     for (auto const& p : ports) {
         readPort(p, output);
     }
 }
 
-void readPort(std::unique_ptr<Port> const& port, BufferData& output) noexcept {
+void readPort(unique_ptr<Port> const& port, BufferData& output) noexcept {
     switch (port->GetType()) {
     case tcp:
         read(*static_cast<TcpPort const*>(port.get()), output);
@@ -57,14 +74,14 @@ void readPort(std::unique_ptr<Port> const& port, BufferData& output) noexcept {
     }
 }
 
-void writePorts(std::vector<std::unique_ptr<Port> >& ports,
+void writePorts(vector<unique_ptr<Port> >& ports,
                 BufferData const& data) noexcept {
     for (auto& p : ports) {
         writePort(p, data);
     }
 }
 
-void writePort(std::unique_ptr<Port>& port, BufferData const& data) noexcept {
+void writePort(unique_ptr<Port>& port, BufferData const& data) noexcept {
     switch (port->GetType()) {
     case tcp:
         write(*static_cast<TcpPort*>(port.get()), data);
@@ -98,13 +115,49 @@ void writePort(Port* port, BufferData const& data) noexcept {
 
 namespace Enum {
 
-std::unique_ptr<Port> createTcpPort(std::string ip, uint16_t port) noexcept {
-    return std::make_unique<TcpPort>(ip, port);
+unique_ptr<Port> createTcpPort(string ip, uint16_t port) noexcept {
+    return make_unique<TcpPort>(ip, port);
 }
 
-std::unique_ptr<Port> createSerialPort(std::string dev) noexcept {
-    return std::make_unique<SerialPort>(dev);
+unique_ptr<Port> createSerialPort(string dev) noexcept {
+    return make_unique<SerialPort>(dev);
 }
 
 } // namespace Enum
 // enum_type/src/dev_factory.cpp end
+
+#include <algorithm>
+#include <random>
+
+namespace enum_type {
+
+vector<uint32_t> setup() {
+    static bool setupDone = false;
+    static vector<uint32_t> v(100);
+    if (setupDone) {
+        return v;
+    }
+    random_device rd;
+    mt19937 generator(rd());
+    generate(v.begin(), v.end(), [n = 0]() mutable { return n++; });
+    shuffle(v.begin(), v.end(), generator);
+    setupDone = true;
+    return v;
+}
+
+vector<unique_ptr<Enum::Port> > EnumPortsInitRandom(vector<uint32_t>& v) {
+    using namespace Enum;
+    using Ports = vector<unique_ptr<Port> >;
+
+    Ports ports(100);
+    for (uint32_t i = 0; i < 50; ++i) {
+        ports[v[i]] = createTcpPort("localhost", 2404);
+    }
+    for (uint32_t i = 50; i < 100; ++i) {
+        ports[v[i]] = createSerialPort("/dev/ttyUSB0");
+    }
+
+    return ports;
+}
+
+} // namespace enum_type

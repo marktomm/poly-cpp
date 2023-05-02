@@ -4,6 +4,7 @@
 #include <chrono>
 
 using namespace Enum;
+using namespace enum_type;
 using namespace std;
 
 // GEN_PROTO_BEGIN
@@ -14,6 +15,7 @@ static void BM_03_RelativeEmptyFnInt(benchmark::State& state);
 static void BM_04_RelativePauseResume(benchmark::State& state);
 static void BM_05_RelativeManual(benchmark::State& state);
 static void BM_06_RelativeManualBatch(benchmark::State& state);
+static void BM_07_RelativeVectorAccess(benchmark::State& state);
 static void BM_A1_EnumTcpPortStack(benchmark::State& state);
 static void BM_A2_EnumTcpPortHeap(benchmark::State& state);
 static void BM_A3_EnumTcpPortHeapCtorManual(benchmark::State& state);
@@ -83,6 +85,14 @@ static void BM_06_RelativeManualBatch(benchmark::State& state) {
             chrono::duration_cast<chrono::nanoseconds>(end - start).count();
 
         state.SetIterationTime(static_cast<double>(elapsed) / 1e9);
+    }
+}
+
+static void BM_07_RelativeVectorAccess(benchmark::State& state) {
+    auto v = setup();
+    for (auto _ : state) {
+        auto x = v[0];
+        benchmark::DoNotOptimize(x);
     }
 }
 
@@ -206,6 +216,7 @@ BENCHMARK(BM_03_RelativeEmptyFnInt);
 BENCHMARK(BM_04_RelativePauseResume);
 BENCHMARK(BM_05_RelativeManual)->UseManualTime();
 BENCHMARK(BM_06_RelativeManualBatch)->UseManualTime();
+BENCHMARK(BM_07_RelativeVectorAccess);
 BENCHMARK(BM_A1_EnumTcpPortStack);
 BENCHMARK(BM_A2_EnumTcpPortHeap);
 BENCHMARK(BM_A3_EnumTcpPortHeapCtorManual)->UseManualTime();

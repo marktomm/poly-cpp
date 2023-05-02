@@ -135,3 +135,15 @@ std::unique_ptr<Port> createSerialPort(std::string dev) noexcept;
 
 #endif
 // enum_type/include/dev_factory.h end
+
+#ifndef _MACRO_enum_type_LIB_H_
+#define _MACRO_enum_type_LIB_H_
+namespace enum_type {
+std::vector<uint32_t> setup();
+
+std::vector<std::unique_ptr<Enum::Port> >
+EnumPortsInitRandom(std::vector<uint32_t>& v);
+
+} // namespace enum_type
+
+#endif
