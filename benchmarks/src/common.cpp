@@ -74,7 +74,7 @@ VisitPortsInitRandom(std::vector<uint32_t>& v) {
     return ports;
 }
 
-#include "strategy/include/dev_algo.h_"
+#include "strategy/include/lib.h"
 
 std::vector<std::unique_ptr<strategy::Port> >
 StrategyPortsInitRandom(std::vector<uint32_t>& v) {

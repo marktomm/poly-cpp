@@ -19,18 +19,12 @@ private:
     clock_t tdur_;
 };
 
-#include "enum_type/include/dev_ctx.h_"
-#include "enum_type/include/dev_factory.h_"
-#include "oop/include/dev_ctx.h_"
-#include "oop/include/dev_factory.h_"
-#include "strategy/include/dev_ctx.h_"
-#include "strategy/include/dev_factory.h_"
-#include "type_erasure_up/include/dev_ctx.h_"
-#include "type_erasure_up/include/dev_factory.h_"
-#include "variant_t/include/dev_ctx.h_"
-#include "variant_t/include/dev_factory.h_"
-#include "visitor/include/dev_ctx.h_"
-#include "visitor/include/dev_factory.h_"
+#include "enum_type/include/lib.h"
+#include "oop/include/lib.h"
+#include "strategy/include/lib.h"
+#include "type_erasure_up/include/lib.h"
+#include "variant_t/include/lib.h"
+#include "visitor/include/lib.h"
 
 #include <cstdint>
 #include <memory>
