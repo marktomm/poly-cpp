@@ -296,4 +296,4 @@ public:
 EOF
 ) > ${ARG1}/include/lib.h
 
-echo "subdir('${ARG1}')" >> meson.build
+! onlyLibAndBenchFunc && echo "subdir('${ARG1}')" >> meson.build

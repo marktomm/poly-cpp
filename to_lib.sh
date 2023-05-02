@@ -60,5 +60,8 @@ fn ${SUB}/include/dev_ctx.h ${outputApi}
 fn ${SUB}/src/dev_ctx.cpp ${outputLib}
 fn ${SUB}/include/dev_factory.h ${outputApi}
 fn ${SUB}/src/dev_factory.cpp ${outputLib}
+echo '#include "lib.h"' >> ${SUB}/src/user.cpp
+echo 'using namespace std;' >> ${SUB}/src/user.cpp
+echo 'using namespace '"${SUB}"';' >> ${SUB}/src/user.cpp
 fn ${SUB}/src/user.cpp ${outputMain}
 
