@@ -1,8 +1,6 @@
 #include "lib.h"
 
-namespace enum_type {
-
-} // namespace enum_type
+namespace enum_type {} // namespace enum_type
 // enum_type/src/dev_impl.cpp
 
 namespace Enum {
@@ -18,7 +16,6 @@ void SerialPort::Write(BufferData const& data) noexcept { buf_ += data; }
 } // namespace Enum
 // enum_type/src/dev_impl.cpp end
 // enum_type/src/dev_algo.cpp
-
 
 #include <iostream>
 
@@ -74,6 +71,19 @@ void writePort(std::unique_ptr<Port>& port, BufferData const& data) noexcept {
         break;
     case serial:
         write(*static_cast<SerialPort*>(port.get()), data);
+        break;
+    default:
+        break;
+    }
+}
+
+void writePort(Port* port, BufferData const& data) noexcept {
+    switch (port->GetType()) {
+    case tcp:
+        write(*static_cast<TcpPort*>(port), data);
+        break;
+    case serial:
+        write(*static_cast<SerialPort*>(port), data);
         break;
     default:
         break;

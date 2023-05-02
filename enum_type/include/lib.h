@@ -34,7 +34,6 @@ private:
 #ifndef _DEV_IMPL_H_
 #define _DEV_IMPL_H_
 
-
 #include <string>
 
 #include <cstdint>
@@ -81,7 +80,6 @@ private:
 #ifndef _ENUM_DEV_ALGO_H_
 #define _ENUM_DEV_ALGO_H_
 
-
 namespace Enum {
 
 void read(TcpPort const&, BufferData&) noexcept;
@@ -98,7 +96,6 @@ void write(SerialPort&, BufferData const&) noexcept;
 #ifndef _DEV_EXT_H_
 #define _DEV_EXT_H_
 
-
 #include <memory>
 #include <vector>
 
@@ -113,6 +110,7 @@ void writePorts(std::vector<std::unique_ptr<Port> >&,
                 BufferData const&) noexcept;
 
 void writePort(std::unique_ptr<Port>&, BufferData const&) noexcept;
+void writePort(Port*, BufferData const&) noexcept;
 
 } // namespace Enum
 
@@ -121,7 +119,6 @@ void writePort(std::unique_ptr<Port>&, BufferData const&) noexcept;
 // enum_type/include/dev_factory.h
 #ifndef _ENUM_DEV_FACTORY_H_
 #define _ENUM_DEV_FACTORY_H_
-
 
 #include <memory>
 #include <string>
