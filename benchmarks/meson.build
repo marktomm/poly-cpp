@@ -41,7 +41,7 @@ if bench.found()
         dependencies: [bench, thread],
     )
 
-    test('benchmark_google_opt', benchmark_google_opt_exe, is_parallel: false)
+    benchmark('benchmark_google_opt', benchmark_google_opt_exe, timeout: 0)
 
     benchmark_google_no_opt_exe = executable(
         'benchmark_google_no_opt',
@@ -52,10 +52,10 @@ if bench.found()
         cpp_args: ['-O0', '-g'],
     )
 
-    test(
+    benchmark(
         'benchmark_google_no_opt',
         benchmark_google_no_opt_exe,
-        is_parallel: false,
+        timeout: 0
     )
 endif
 
@@ -68,8 +68,8 @@ benchmark_tr18015_opt_exe = executable(
     include_directories: includesArray,
 )
 
-test(
+benchmark(
     'benchmark_tr18015_opt',
-    benchmark_tr18015_opt_exe,
-    is_parallel: false,
+    benchmark_tr18015_opt_exe, 
+    timeout: 0
 )
