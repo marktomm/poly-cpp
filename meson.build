@@ -13,15 +13,21 @@ project(
     ],
 )
 
-common_inc = include_directories('common/', './')
+cpp = meson.get_compiler('cpp')
+cpp_prog = find_program(cpp.get_id())
 
 bench = dependency('benchmark', required: false)
 thread = dependency('threads')
 
-subdir('enum')
+common_inc = include_directories('common/', './')
+common_src = []
+
 subdir('oop')
 subdir('visitor')
 subdir('variant_t')
 subdir('strategy')
 subdir('type_erasure_up')
+
+subdir('enum_type')
+
 subdir('benchmarks')
