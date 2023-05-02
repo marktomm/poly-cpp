@@ -124,10 +124,10 @@ std::vector<variant_t::Port> VarianttPortsInitRandom(std::vector<uint32_t>& v) {
     return ports;
 }
 
-std::vector<TypeErasureUp::Readable>
+std::vector<type_erasure_up::Readable>
 TypeErasureUpPortsInitRandom(std::vector<uint32_t>& v) {
 
-    using namespace TypeErasureUp;
+    using namespace type_erasure_up;
     using Ports = std::vector<Readable>;
 
     Ports ports;

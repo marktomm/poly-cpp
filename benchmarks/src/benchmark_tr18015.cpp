@@ -76,13 +76,13 @@ int main(int argc, char** argv) {
     }
     vtd.push_back(TimeDur{"Variantt updates", clock() - c});
 
-    using TypeErasureUpPorts = std::vector<TypeErasureUp::Readable>;
+    using TypeErasureUpPorts = std::vector<type_erasure_up::Readable>;
     TypeErasureUpPorts typeErasureUpPorts = TypeErasureUpPortsInitRandom(vr);
     doNotOptimize(typeErasureUpPorts.data());
 
     c = clock();
     for (uint32_t i = 0; i < roundCount; ++i) {
-        TypeErasureUp::writePorts(typeErasureUpPorts, 0xFF);
+        type_erasure_up::writePorts(typeErasureUpPorts, 0xFF);
         clobber();
     }
     vtd.push_back(TimeDur{"TypeErasureUp updates", clock() - c});

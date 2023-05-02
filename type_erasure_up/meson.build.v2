@@ -1,0 +1,178 @@
+
+rootdir = '..'
+currentdir = '.'
+rootinc = join_paths(rootdir, 'include/')
+currentinc = join_paths(currentdir, 'include/')
+type_erasure_up_inc = include_directories(currentinc)
+type_erasure_up_main = ['src/main.cpp']
+# type_erasure_up_simple = ['src/user_simple.cpp']
+type_erasure_up_src = [
+    'src/lib.cpp',
+]
+
+type_erasure_up_exe = executable(
+    'type_erasure_up_opt',
+    [type_erasure_up_main, type_erasure_up_src],
+    include_directories: [type_erasure_up_inc, common_inc],
+    dependencies: [bench, thread],
+    install: true,
+)
+
+type_erasure_up_exe_no_opt = executable(
+    'type_erasure_up_no_opt',
+    [type_erasure_up_main, type_erasure_up_src],
+    include_directories: [type_erasure_up_inc, common_inc],
+    dependencies: [bench, thread],
+    install: true,
+    cpp_args: ['-O0', '-g'],
+)
+
+type_erasure_up_inc_opt_o = type_erasure_up_exe.extract_objects(
+    type_erasure_up_src,
+)
+
+type_erasure_up_inc_o = type_erasure_up_inc_opt_o
+
+type_erasure_up_inc_no_opt_o = type_erasure_up_exe_no_opt.extract_objects(
+    type_erasure_up_src,
+)
+
+asandep = cpp.find_library('asan', dirs: '/usr/lib/x86_64-linux-gnu')
+
+type_erasure_up_exe_sanitize = executable(
+    'type_erasure_up_opt_sanitize',
+    [type_erasure_up_main, type_erasure_up_src],
+    include_directories: [type_erasure_up_inc, common_inc],
+    install: true,
+    cpp_args: ['-O3', '-fsanitize=address'],
+    dependencies: [asandep, bench, thread],
+    link_args: ['-Wl,--start-group', '-lasan', '-Wl,--end-group'],
+    # objects: [ type_erasure_up_inc_opt_o ],
+)
+
+type_erasure_up_exe_no_opt_sanitize = executable(
+    'type_erasure_up_no_opt_sanitize',
+    [type_erasure_up_main, type_erasure_up_src],
+    include_directories: [type_erasure_up_inc, common_inc],
+    install: true,
+    cpp_args: ['-O0', '-g', '-fsanitize=address'],
+    dependencies: [asandep, bench, thread],
+    link_args: ['-Wl,--start-group', '-lasan', '-Wl,--end-group'],
+    # objects: [ type_erasure_up_inc_opt_o ],
+)
+
+# executable(
+#     'type_erasure_up_simple',
+#     [type_erasure_up_simple],
+#     objects: [type_erasure_up_inc_opt_o],
+#     include_directories: [type_erasure_up_inc, common_inc],
+#     install: true,
+# )
+
+if bench.found()
+    type_erasure_up_benchmark_test = ['bench.cpp']
+
+    type_erasure_up_benchmark_google_opt_exe = executable(
+        'type_erasure_up_benchmark_google_opt',
+        [type_erasure_up_benchmark_test, common_src],
+        objects: type_erasure_up_inc_opt_o,
+        include_directories: [ type_erasure_up_inc, common_inc ],
+        dependencies: [bench, thread],
+    )
+
+    benchmark(
+        'type_erasure_up_benchmark_google_opt',
+        type_erasure_up_benchmark_google_opt_exe,
+        suite: 'type_erasure_up',
+        timeout: 0,
+    )
+
+    type_erasure_up_benchmark_google_no_opt_exe = executable(
+        'type_erasure_up_benchmark_google_no_opt',
+        [type_erasure_up_benchmark_test, common_src],
+        objects: type_erasure_up_inc_no_opt_o,
+        include_directories: [ type_erasure_up_inc, common_inc ],
+        dependencies: [bench, thread],
+        cpp_args: ['-O0', '-g'],
+    )
+
+    benchmark(
+        'type_erasure_up_benchmark_google_no_opt',
+        type_erasure_up_benchmark_google_no_opt_exe,
+        suite: 'type_erasure_up',
+        timeout: 0,
+    )
+
+    custom_target(
+        'bench_type_erasure_up',
+        command: [
+            'sh',
+            '-c', 'meson test --benchmark -C @BUILD_ROOT@ --suite type_erasure_up && cat @BUILD_ROOT@/meson-logs/testlog.txt',
+        ],
+        depends: [
+            type_erasure_up_benchmark_google_no_opt_exe,
+            type_erasure_up_benchmark_google_opt_exe,
+        ],
+        output: 'dummy_output.txt',
+    )
+endif
+
+gen_asm = custom_target(
+    'gen_asm_no_opt',
+    input: type_erasure_up_main,
+    output: 'type_erasure_up_main_no_opt.s',
+    command: [
+        cpp_prog,
+        '-I' + meson.current_source_dir() + '/include/',
+        '-S',
+        '-masm=intel',
+        '-o', '@OUTPUT@',
+        '@INPUT@',
+    ],
+    build_by_default: true,
+)
+
+gen_asm_opt = custom_target(
+    'gen_asm_opt',
+    input: type_erasure_up_main,
+    output: 'type_erasure_up_main_opt.s',
+    command: [
+        cpp_prog,
+        '-O3', '-I' + meson.current_source_dir() + '/include/',
+        '-S',
+        '-masm=intel',
+        '-o', '@OUTPUT@',
+        '@INPUT@',
+    ],
+    build_by_default: true,
+)
+
+gen_asm_lib = custom_target(
+    'gen_asm_lib_no_opt',
+    input: type_erasure_up_src,
+    output: 'type_erasure_up_lib_no_opt.s',
+    command: [
+        cpp_prog,
+        '-I' + meson.current_source_dir() + '/include/',
+        '-S',
+        '-masm=intel',
+        '-o', '@OUTPUT@',
+        '@INPUT@',
+    ],
+    build_by_default: true,
+)
+
+gen_asm_lib_opt = custom_target(
+    'gen_asm_lib_opt',
+    input: type_erasure_up_src,
+    output: 'type_erasure_up_lib_opt.s',
+    command: [
+        cpp_prog,
+        '-O3', '-I' + meson.current_source_dir() + '/include/',
+        '-S',
+        '-masm=intel',
+        '-o', '@OUTPUT@',
+        '@INPUT@',
+    ],
+    build_by_default: true,
+)

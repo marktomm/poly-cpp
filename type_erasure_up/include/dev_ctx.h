@@ -7,12 +7,12 @@
 #include <memory>
 #include <vector>
 
-namespace TypeErasureUp {
+namespace type_erasure_up {
 
 void readPorts(std::vector<Readable> const&, BufferData&) noexcept;
 
 void writePorts(std::vector<Readable>&, BufferData const&) noexcept;
 
-} // namespace TypeErasureUp
+} // namespace type_erasure_up
 
 #endif

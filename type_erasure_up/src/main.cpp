@@ -1,6 +1,7 @@
-#include "dev_ctx.h"
-#include "dev_factory.h"
-#include "types.h"
+#include "lib.h"
+using namespace std;
+using namespace type_erasure_up;
+// type_erasure_up/src/user.cpp
 
 int main() {
     using namespace type_erasure_up;
@@ -14,3 +15,4 @@ int main() {
 
     return 0;
 }
+// type_erasure_up/src/user.cpp end

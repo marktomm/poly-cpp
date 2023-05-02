@@ -1,7 +1,7 @@
 #include "dev_ctx.h"
 #include "types.h"
 
-namespace TypeErasureUp {
+namespace type_erasure_up {
 
 void read(std::vector<Readable> const& doc, BufferData& output) noexcept {
     for (auto const& it : doc) {
@@ -26,4 +26,4 @@ void writePorts(std::vector<Readable>& ports, BufferData const& data) noexcept {
 
 void swap(Readable& a, Readable& b) { a.swap(b); }
 
-} // namespace TypeErasureUp
+} // namespace type_erasure_up

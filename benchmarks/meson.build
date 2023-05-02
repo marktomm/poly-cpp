@@ -8,16 +8,16 @@ objectsArrayOpt = [
     visitor_inc_o,
     strategy_inc_o,
     variant_t_inc_o,
-    type_erasure_up_o,
+    type_erasure_up_inc_o,
 ]
 
 # objectsArrayNoOpt = [
 #     enum_type_inc_no_opt_o,
-#     oop_inc_no_opt_o,
-#     visitor_no_opt_o,
-#     strategy_no_opt_o,
-#     variant_t_no_opt_o,
-#     type_erasure_no_opt_o,
+#     oop_inc_inc_no_opt_o,
+#     visitor_inc_no_opt_o,
+#     strategy_inc_no_opt_o,
+#     variant_t_inc_no_opt_o,
+#     type_erasure_up_inc_no_opt_o,
 # ]
 
 objectsArrayNoOpt = objectsArrayOpt

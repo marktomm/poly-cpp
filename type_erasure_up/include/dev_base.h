@@ -4,7 +4,7 @@
 #include "types.h"
 #include <memory>
 
-namespace TypeErasureUp {
+namespace type_erasure_up {
 
 // templated ctor
 // non-virtual iface
@@ -72,6 +72,6 @@ private:
 
 void swap(Readable& a, Readable& b);
 
-} // namespace TypeErasureUp
+} // namespace type_erasure_up
 
 #endif

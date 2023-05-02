@@ -4,7 +4,7 @@
 
 #include <memory>
 
-namespace TypeErasureUp {
+namespace type_erasure_up {
 
 Readable createTcpPort(std::string ip, uint16_t port) noexcept {
     return TcpPort(ip, port);
@@ -12,4 +12,4 @@ Readable createTcpPort(std::string ip, uint16_t port) noexcept {
 
 Readable createSerialPort(std::string dev) noexcept { return SerialPort(dev); }
 
-} // namespace TypeErasureUp
+} // namespace type_erasure_up

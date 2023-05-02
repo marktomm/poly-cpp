@@ -8,12 +8,12 @@
 
 #include <cstdint>
 
-namespace TypeErasureUp {
+namespace type_erasure_up {
 
 Readable createTcpPort(std::string ip, uint16_t port) noexcept;
 
 Readable createSerialPort(std::string dev) noexcept;
 
-} // namespace TypeErasureUp
+} // namespace type_erasure_up
 
 #endif
