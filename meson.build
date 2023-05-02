@@ -1,5 +1,5 @@
 project(
-    'benchmark-type-erasure',
+    'poly-cpp',
     'cpp',
     default_options: [
         'strip=true',
