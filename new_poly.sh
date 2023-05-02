@@ -45,7 +45,7 @@ ${ARG1}_src = [
 ${ARG1}_exe = executable(
     '${ARG1}_opt',
     [${ARG1}_main, ${ARG1}_src],
-    include_directories: [ ${ARG1}_inc, common_inc ],
+    include_directories: [${ARG1}_inc, common_inc],
     dependencies: [bench, thread],
     install: true,
 )
@@ -53,7 +53,7 @@ ${ARG1}_exe = executable(
 ${ARG1}_exe_no_opt = executable(
     '${ARG1}_no_opt',
     [${ARG1}_main, ${ARG1}_src],
-    include_directories: [ ${ARG1}_inc, common_inc ],
+    include_directories: [${ARG1}_inc, common_inc],
     dependencies: [bench, thread],
     install: true,
     cpp_args: ['-O0', '-g'],
@@ -108,7 +108,7 @@ if bench.found()
         '${ARG1}_benchmark_google_opt',
         [${ARG1}_benchmark_test, common_src],
         objects: ${ARG1}_inc_opt_o,
-        include_directories: [ ${ARG1}_inc, common_inc ],
+        include_directories: [${ARG1}_inc, common_inc],
         dependencies: [bench, thread],
     )
 
@@ -123,7 +123,7 @@ if bench.found()
         '${ARG1}_benchmark_google_no_opt',
         [${ARG1}_benchmark_test, common_src],
         objects: ${ARG1}_inc_no_opt_o,
-        include_directories: [ ${ARG1}_inc, common_inc ],
+        include_directories: [${ARG1}_inc, common_inc],
         dependencies: [bench, thread],
         cpp_args: ['-O0', '-g'],
     )
