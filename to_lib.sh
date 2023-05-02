@@ -20,6 +20,7 @@ test -d $1 || {
 
 APP_ROOT=.
 SUB=$(trimFwdSlashes ${1})
+ARG2=$2
 outputMain=${SUB}/src/main.cpp
 outputLib=${SUB}/src/lib.cpp
 outputBench=${SUB}/bench.h
@@ -60,8 +61,7 @@ fn ${SUB}/include/dev_ctx.h ${outputApi}
 fn ${SUB}/src/dev_ctx.cpp ${outputLib}
 fn ${SUB}/include/dev_factory.h ${outputApi}
 fn ${SUB}/src/dev_factory.cpp ${outputLib}
-echo '#include "lib.h"' >> ${SUB}/src/user.cpp
-echo 'using namespace std;' >> ${SUB}/src/user.cpp
-echo 'using namespace '"${SUB}"';' >> ${SUB}/src/user.cpp
+echo '#include "lib.h"' >> ${outputMain}
+echo 'using namespace std;' >> ${outputMain}
+echo 'using namespace '"${SUB}"';' >> ${outputMain}
 fn ${SUB}/src/user.cpp ${outputMain}
-

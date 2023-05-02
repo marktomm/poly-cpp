@@ -3,7 +3,7 @@
 
 #include "dev_base.h"
 
-namespace Strategy {
+namespace strategy {
 
 class SyslogReadTcpPortStrategy {
 public:
@@ -25,6 +25,6 @@ public:
     void operator()(SerialPort&, BufferData const&) const noexcept;
 };
 
-} // namespace Strategy
+} // namespace strategy
 
 #endif

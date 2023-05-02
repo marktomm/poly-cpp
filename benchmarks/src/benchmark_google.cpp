@@ -54,7 +54,7 @@ static void BM_Visitor(benchmark::State& state) {
 
 static void BM_Strategy(benchmark::State& state) {
     // Perform setup here
-    using namespace Strategy;
+    using namespace strategy;
     using Ports = std::vector<std::unique_ptr<Port> >;
     auto randomVector = setup();
     Ports ports = StrategyPortsInitRandom(randomVector);

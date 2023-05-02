@@ -6,7 +6,7 @@
 #include <functional>
 #include <string>
 
-namespace Strategy {
+namespace strategy {
 
 class TcpPort;
 class SerialPort;
@@ -28,6 +28,6 @@ public:
     virtual void Write(BufferData const&) noexcept = 0;
 };
 
-} // namespace Strategy
+} // namespace strategy
 
 #endif

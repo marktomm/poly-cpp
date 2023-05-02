@@ -76,9 +76,9 @@ VisitPortsInitRandom(std::vector<uint32_t>& v) {
 
 #include "strategy/include/dev_algo.h"
 
-std::vector<std::unique_ptr<Strategy::Port> >
+std::vector<std::unique_ptr<strategy::Port> >
 StrategyPortsInitRandom(std::vector<uint32_t>& v) {
-    using namespace Strategy;
+    using namespace strategy;
     using Ports = std::vector<std::unique_ptr<Port> >;
 
     Ports ports(100);

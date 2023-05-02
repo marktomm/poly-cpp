@@ -7,7 +7,7 @@
 #include <memory>
 #include <vector>
 
-namespace Strategy {
+namespace strategy {
 
 void readPorts(std::vector<std::unique_ptr<Port> > const&,
                BufferData&) noexcept;
@@ -15,6 +15,6 @@ void readPorts(std::vector<std::unique_ptr<Port> > const&,
 void writePorts(std::vector<std::unique_ptr<Port> > const&,
                 BufferData const&) noexcept;
 
-} // namespace Strategy
+} // namespace strategy
 
 #endif

@@ -6,7 +6,7 @@
 
 #include <cstdint>
 
-namespace Strategy {
+namespace strategy {
 
 class TcpPort: public Port {
 public:
@@ -49,6 +49,6 @@ private:
     MutableBuffer buf_;
 };
 
-} // namespace Strategy
+} // namespace strategy
 
 #endif

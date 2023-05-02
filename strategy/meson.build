@@ -1,17 +1,1 @@
-strategy_inc = include_directories('include')
-strategy_main = 'src/user.cpp'
-strategy_src = [
-    'src/dev_impl.cpp',
-    'src/dev_ctx.cpp',
-    'src/dev_algo.cpp',
-    'src/dev_factory.cpp',
-]
-
-strategy_exe = executable(
-    'strategy',
-    [strategy_src, strategy_main],
-    include_directories: [strategy_inc, common_inc],
-    install: true,
-)
-
-strategy_inc_o = strategy_exe.extract_objects(strategy_src)
+meson.build.v2

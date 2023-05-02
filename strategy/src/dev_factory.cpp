@@ -3,7 +3,7 @@
 
 #include <memory>
 
-namespace Strategy {
+namespace strategy {
 
 std::unique_ptr<Port> createTcpPort(std::string ip, uint16_t port,
                                     ReadTcpPortStrategy strategy,
@@ -17,4 +17,4 @@ createSerialPort(std::string dev, ReadSerialPortStrategy strategy,
     return std::make_unique<SerialPort>(dev, strategy, wStrat);
 }
 
-} // namespace Strategy
+} // namespace strategy

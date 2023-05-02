@@ -54,13 +54,13 @@ int main(int argc, char** argv) {
     }
     vtd.push_back(TimeDur{"Visit updates", clock() - c});
 
-    using StrategyPorts = std::vector<std::unique_ptr<Strategy::Port> >;
+    using StrategyPorts = std::vector<std::unique_ptr<strategy::Port> >;
     StrategyPorts strategyPorts = StrategyPortsInitRandom(vr);
     doNotOptimize(strategyPorts.data());
 
     c = clock();
     for (uint32_t i = 0; i < roundCount; ++i) {
-        Strategy::writePorts(strategyPorts, 0xFF);
+        strategy::writePorts(strategyPorts, 0xFF);
         clobber();
     }
     vtd.push_back(TimeDur{"Strategy updates", clock() - c});

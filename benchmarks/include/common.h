@@ -50,7 +50,7 @@ OopPortsInitRandom(std::vector<uint32_t>& v);
 std::vector<std::unique_ptr<Visit::Port> >
 VisitPortsInitRandom(std::vector<uint32_t>& v);
 
-std::vector<std::unique_ptr<Strategy::Port> >
+std::vector<std::unique_ptr<strategy::Port> >
 StrategyPortsInitRandom(std::vector<uint32_t>& v);
 
 std::vector<VariantT::Port> VarianttPortsInitRandom(std::vector<uint32_t>& v);

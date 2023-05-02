@@ -3,14 +3,14 @@
 
 #include <iostream>
 
-namespace Strategy {
+namespace strategy {
 
 void SyslogReadTcpPortStrategy::operator()(TcpPort const& p,
                                            BufferData& output) const noexcept {
     p.Read(output);
 }
 
-void SyslogReadSerialPortStrategy::operator()(
+void SyslogReadSerialPortstrategy::operator()(
     SerialPort const& p, BufferData& output) const noexcept {
     p.Read(output);
 }
@@ -25,4 +25,4 @@ void SyncWriteSerialPortStrategy::operator()(
     p.Write(data);
 }
 
-} // namespace Strategy
+} // namespace strategy

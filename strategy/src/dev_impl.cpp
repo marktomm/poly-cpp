@@ -1,6 +1,6 @@
 #include "dev_impl.h"
 
-namespace Strategy {
+namespace strategy {
 
 void TcpPort::Read(BufferData& output) const noexcept { output = buf_; }
 
@@ -10,4 +10,4 @@ void SerialPort::Read(BufferData& output) const noexcept { output = buf_; }
 
 void SerialPort::Write(BufferData const& data) noexcept { buf_ += data; }
 
-} // namespace Strategy
+} // namespace strategy

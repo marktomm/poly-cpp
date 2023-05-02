@@ -1,6 +1,6 @@
 #include "dev_ctx.h"
 
-namespace Strategy {
+namespace strategy {
 
 void readPorts(std::vector<std::unique_ptr<Port> > const& ports,
                BufferData& output) noexcept {
@@ -16,4 +16,4 @@ void writePorts(std::vector<std::unique_ptr<Port> > const& ports,
     }
 }
 
-} // namespace Strategy
+} // namespace strategy
