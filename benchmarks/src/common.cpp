@@ -58,9 +58,9 @@ OopPortsInitRandom(std::vector<uint32_t>& v) {
     return ports;
 }
 
-std::vector<std::unique_ptr<Visit::Port> >
+std::vector<std::unique_ptr<visitor::Port> >
 VisitPortsInitRandom(std::vector<uint32_t>& v) {
-    using namespace Visit;
+    using namespace visitor;
     using Ports = std::vector<std::unique_ptr<Port> >;
 
     Ports ports(100);

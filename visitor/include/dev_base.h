@@ -3,7 +3,7 @@
 
 #include <string>
 
-namespace Visit {
+namespace visitor {
 
 class Port {
 public:
@@ -15,6 +15,6 @@ public:
     virtual void accept(Visitor const&) noexcept = 0;
 };
 
-} // namespace Visit
+} // namespace visitor
 
 #endif

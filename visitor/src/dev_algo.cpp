@@ -2,7 +2,7 @@
 
 #include <iostream>
 
-namespace Visit {
+namespace visitor {
 
 void Read::visit(TcpPort const& p) const noexcept { p.Read(data_); }
 
@@ -28,4 +28,4 @@ void Write::visit(TcpPort& p) const noexcept { p.Write(data_); }
 
 void Write::visit(SerialPort& p) const noexcept { p.Write(data_); }
 
-} // namespace Visit
+} // namespace visitor

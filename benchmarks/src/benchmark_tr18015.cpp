@@ -43,13 +43,13 @@ int main(int argc, char** argv) {
     }
     vtd.push_back(TimeDur{"Oop updates", clock() - c});
 
-    using VisitPorts = std::vector<std::unique_ptr<Visit::Port> >;
+    using VisitPorts = std::vector<std::unique_ptr<visitor::Port> >;
     VisitPorts visitPorts = VisitPortsInitRandom(vr);
     doNotOptimize(visitPorts.data());
 
     c = clock();
     for (uint32_t i = 0; i < roundCount; ++i) {
-        Visit::writePorts(visitPorts, 0xFF);
+        visitor::writePorts(visitPorts, 0xFF);
         clobber();
     }
     vtd.push_back(TimeDur{"Visit updates", clock() - c});

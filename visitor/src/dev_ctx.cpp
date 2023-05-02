@@ -2,7 +2,7 @@
 #include "dev_algo.h"
 #include "types.h"
 
-namespace Visit {
+namespace visitor {
 
 void readPorts(std::vector<std::unique_ptr<Port> > const& ports,
                BufferData& output) noexcept {
@@ -18,4 +18,4 @@ void writePorts(std::vector<std::unique_ptr<Port> >& ports,
     }
 }
 
-} // namespace Visit
+} // namespace visitor

@@ -4,7 +4,7 @@
 #include "dev_impl.h"
 #include "types.h"
 
-namespace Visit {
+namespace visitor {
 
 class Read final: public Port::Visitor {
 public:
@@ -30,6 +30,6 @@ private:
     BufferData const& data_;
 };
 
-} // namespace Visit
+} // namespace visitor
 
 #endif

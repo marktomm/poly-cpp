@@ -6,7 +6,7 @@
 
 #include <cstdint>
 
-namespace Visit {
+namespace visitor {
 
 class TcpPort final: public Port {
 public:
@@ -54,6 +54,6 @@ public:
     virtual void visit(SerialPort&) const noexcept = 0;
 };
 
-} // namespace Visit
+} // namespace visitor
 
 #endif

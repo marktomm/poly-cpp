@@ -38,7 +38,7 @@ static void BM_Oop(benchmark::State& state) {
 
 static void BM_Visitor(benchmark::State& state) {
     // Perform setup here
-    using namespace Visit;
+    using namespace visitor;
     using Ports = std::vector<std::unique_ptr<Port> >;
     auto randomVector = setup();
     Ports ports = VisitPortsInitRandom(randomVector);

@@ -8,12 +8,12 @@
 
 #include <cstdint>
 
-namespace Visit {
+namespace visitor {
 
 std::unique_ptr<Port> createTcpPort(std::string ip, uint16_t port) noexcept;
 
 std::unique_ptr<Port> createSerialPort(std::string dev) noexcept;
 
-} // namespace Visit
+} // namespace visitor
 
 #endif

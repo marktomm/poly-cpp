@@ -47,7 +47,7 @@ EnumPortsInitRandom(std::vector<uint32_t>& v);
 std::vector<std::unique_ptr<oop::Port> >
 OopPortsInitRandom(std::vector<uint32_t>& v);
 
-std::vector<std::unique_ptr<Visit::Port> >
+std::vector<std::unique_ptr<visitor::Port> >
 VisitPortsInitRandom(std::vector<uint32_t>& v);
 
 std::vector<std::unique_ptr<strategy::Port> >

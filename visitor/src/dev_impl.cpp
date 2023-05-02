@@ -1,6 +1,6 @@
 #include "dev_impl.h"
 
-namespace Visit {
+namespace visitor {
 
 void TcpPort::Read(BufferData& data) const noexcept { data = buf_; }
 
@@ -18,4 +18,4 @@ void TcpPort::accept(Visitor const& v) noexcept { v.visit(*this); }
 
 void SerialPort::accept(Visitor const& v) noexcept { v.visit(*this); }
 
-} // namespace Visit
+} // namespace visitor

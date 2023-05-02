@@ -1,6 +1,7 @@
-#include "dev_ctx.h"
-#include "dev_factory.h"
-#include "types.h"
+#include "lib.h"
+using namespace std;
+using namespace visitor;
+// visitor/src/user.cpp
 
 int main() {
     using namespace visitor;
@@ -14,3 +15,4 @@ int main() {
 
     return 0;
 }
+// visitor/src/user.cpp end
