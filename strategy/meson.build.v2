@@ -31,34 +31,40 @@ strategy_inc_opt_o = strategy_exe.extract_objects(
     strategy_src,
 )
 
+strategy_main_opt_o = strategy_exe.extract_objects(
+    strategy_main,
+)
+
 strategy_inc_o = strategy_inc_opt_o
 
 strategy_inc_no_opt_o = strategy_exe_no_opt.extract_objects(
     strategy_src,
 )
 
+strategy_main_no_opt_o = strategy_exe_no_opt.extract_objects(
+    strategy_main,
+)
+
 asandep = cpp.find_library('asan', dirs: '/usr/lib/x86_64-linux-gnu')
 
 strategy_exe_sanitize = executable(
     'strategy_opt_sanitize',
-    [strategy_main, strategy_src],
     include_directories: [strategy_inc, common_inc],
     install: true,
     cpp_args: ['-O3', '-fsanitize=address'],
     dependencies: [asandep, bench, thread],
     link_args: ['-Wl,--start-group', '-lasan', '-Wl,--end-group'],
-    # objects: [ strategy_inc_opt_o ],
+    objects: [strategy_main_opt_o, strategy_inc_opt_o],
 )
 
 strategy_exe_no_opt_sanitize = executable(
     'strategy_no_opt_sanitize',
-    [strategy_main, strategy_src],
     include_directories: [strategy_inc, common_inc],
     install: true,
     cpp_args: ['-O0', '-g', '-fsanitize=address'],
     dependencies: [asandep, bench, thread],
     link_args: ['-Wl,--start-group', '-lasan', '-Wl,--end-group'],
-    # objects: [ strategy_inc_opt_o ],
+    objects: [strategy_main_no_opt_o, strategy_inc_no_opt_o],
 )
 
 # executable(

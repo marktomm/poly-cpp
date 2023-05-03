@@ -31,34 +31,40 @@ type_erasure_up_inc_opt_o = type_erasure_up_exe.extract_objects(
     type_erasure_up_src,
 )
 
+type_erasure_up_main_opt_o = type_erasure_up_exe.extract_objects(
+    type_erasure_up_main,
+)
+
 type_erasure_up_inc_o = type_erasure_up_inc_opt_o
 
 type_erasure_up_inc_no_opt_o = type_erasure_up_exe_no_opt.extract_objects(
     type_erasure_up_src,
 )
 
+type_erasure_up_main_no_opt_o = type_erasure_up_exe_no_opt.extract_objects(
+    type_erasure_up_main,
+)
+
 asandep = cpp.find_library('asan', dirs: '/usr/lib/x86_64-linux-gnu')
 
 type_erasure_up_exe_sanitize = executable(
     'type_erasure_up_opt_sanitize',
-    [type_erasure_up_main, type_erasure_up_src],
     include_directories: [type_erasure_up_inc, common_inc],
     install: true,
     cpp_args: ['-O3', '-fsanitize=address'],
     dependencies: [asandep, bench, thread],
     link_args: ['-Wl,--start-group', '-lasan', '-Wl,--end-group'],
-    # objects: [ type_erasure_up_inc_opt_o ],
+    objects: [type_erasure_up_main_opt_o, type_erasure_up_inc_opt_o],
 )
 
 type_erasure_up_exe_no_opt_sanitize = executable(
     'type_erasure_up_no_opt_sanitize',
-    [type_erasure_up_main, type_erasure_up_src],
     include_directories: [type_erasure_up_inc, common_inc],
     install: true,
     cpp_args: ['-O0', '-g', '-fsanitize=address'],
     dependencies: [asandep, bench, thread],
     link_args: ['-Wl,--start-group', '-lasan', '-Wl,--end-group'],
-    # objects: [ type_erasure_up_inc_opt_o ],
+    objects: [type_erasure_up_main_no_opt_o, type_erasure_up_inc_no_opt_o],
 )
 
 # executable(

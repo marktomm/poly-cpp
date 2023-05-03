@@ -31,34 +31,40 @@ visitor_inc_opt_o = visitor_exe.extract_objects(
     visitor_src,
 )
 
+visitor_main_opt_o = visitor_exe.extract_objects(
+    visitor_main,
+)
+
 visitor_inc_o = visitor_inc_opt_o
 
 visitor_inc_no_opt_o = visitor_exe_no_opt.extract_objects(
     visitor_src,
 )
 
+visitor_main_no_opt_o = visitor_exe_no_opt.extract_objects(
+    visitor_main,
+)
+
 asandep = cpp.find_library('asan', dirs: '/usr/lib/x86_64-linux-gnu')
 
 visitor_exe_sanitize = executable(
     'visitor_opt_sanitize',
-    [visitor_main, visitor_src],
     include_directories: [visitor_inc, common_inc],
     install: true,
     cpp_args: ['-O3', '-fsanitize=address'],
     dependencies: [asandep, bench, thread],
     link_args: ['-Wl,--start-group', '-lasan', '-Wl,--end-group'],
-    # objects: [ visitor_inc_opt_o ],
+    objects: [visitor_main_opt_o, visitor_inc_opt_o],
 )
 
 visitor_exe_no_opt_sanitize = executable(
     'visitor_no_opt_sanitize',
-    [visitor_main, visitor_src],
     include_directories: [visitor_inc, common_inc],
     install: true,
     cpp_args: ['-O0', '-g', '-fsanitize=address'],
     dependencies: [asandep, bench, thread],
     link_args: ['-Wl,--start-group', '-lasan', '-Wl,--end-group'],
-    # objects: [ visitor_inc_opt_o ],
+    objects: [visitor_main_no_opt_o, visitor_inc_no_opt_o],
 )
 
 # executable(

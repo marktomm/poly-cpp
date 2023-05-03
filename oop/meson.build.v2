@@ -31,34 +31,40 @@ oop_inc_opt_o = oop_exe.extract_objects(
     oop_src,
 )
 
+oop_main_opt_o = oop_exe.extract_objects(
+    oop_main,
+)
+
 oop_inc_o = oop_inc_opt_o
 
 oop_inc_no_opt_o = oop_exe_no_opt.extract_objects(
     oop_src,
 )
 
+oop_main_no_opt_o = oop_exe_no_opt.extract_objects(
+    oop_main,
+)
+
 asandep = cpp.find_library('asan', dirs: '/usr/lib/x86_64-linux-gnu')
 
 oop_exe_sanitize = executable(
     'oop_opt_sanitize',
-    [oop_main, oop_src],
     include_directories: [oop_inc, common_inc],
     install: true,
     cpp_args: ['-O3', '-fsanitize=address'],
     dependencies: [asandep, bench, thread],
     link_args: ['-Wl,--start-group', '-lasan', '-Wl,--end-group'],
-    # objects: [ oop_inc_opt_o ],
+    objects: [oop_main_opt_o, oop_inc_opt_o],
 )
 
 oop_exe_no_opt_sanitize = executable(
     'oop_no_opt_sanitize',
-    [oop_main, oop_src],
     include_directories: [oop_inc, common_inc],
     install: true,
     cpp_args: ['-O0', '-g', '-fsanitize=address'],
     dependencies: [asandep, bench, thread],
     link_args: ['-Wl,--start-group', '-lasan', '-Wl,--end-group'],
-    # objects: [ oop_inc_opt_o ],
+    objects: [oop_main_no_opt_o, oop_inc_no_opt_o],
 )
 
 # executable(

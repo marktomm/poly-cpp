@@ -31,34 +31,40 @@ enum_type_inc_opt_o = enum_type_exe.extract_objects(
     enum_type_src,
 )
 
+enum_type_main_opt_o = enum_type_exe.extract_objects(
+    enum_type_main,
+)
+
 enum_type_inc_o = enum_type_inc_opt_o
 
 enum_type_inc_no_opt_o = enum_type_exe_no_opt.extract_objects(
     enum_type_src,
 )
 
+enum_type_main_no_opt_o = enum_type_exe_no_opt.extract_objects(
+    enum_type_main,
+)
+
 asandep = cpp.find_library('asan', dirs: '/usr/lib/x86_64-linux-gnu')
 
 enum_type_exe_sanitize = executable(
     'enum_type_opt_sanitize',
-    [enum_type_main, enum_type_src],
     include_directories: [enum_type_inc, common_inc],
     install: true,
     cpp_args: ['-O3', '-fsanitize=address'],
     dependencies: [asandep, bench, thread],
     link_args: ['-Wl,--start-group', '-lasan', '-Wl,--end-group'],
-    # objects: [ enum_type_inc_opt_o ],
+    objects: [enum_type_main_opt_o, enum_type_inc_opt_o],
 )
 
 enum_type_exe_no_opt_sanitize = executable(
     'enum_type_no_opt_sanitize',
-    [enum_type_main, enum_type_src],
     include_directories: [enum_type_inc, common_inc],
     install: true,
     cpp_args: ['-O0', '-g', '-fsanitize=address'],
     dependencies: [asandep, bench, thread],
     link_args: ['-Wl,--start-group', '-lasan', '-Wl,--end-group'],
-    # objects: [ enum_type_inc_opt_o ],
+    objects: [enum_type_main_no_opt_o, enum_type_inc_no_opt_o],
 )
 
 # executable(

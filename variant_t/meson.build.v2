@@ -31,34 +31,40 @@ variant_t_inc_opt_o = variant_t_exe.extract_objects(
     variant_t_src,
 )
 
+variant_t_main_opt_o = variant_t_exe.extract_objects(
+    variant_t_main,
+)
+
 variant_t_inc_o = variant_t_inc_opt_o
 
 variant_t_inc_no_opt_o = variant_t_exe_no_opt.extract_objects(
     variant_t_src,
 )
 
+variant_t_main_no_opt_o = variant_t_exe_no_opt.extract_objects(
+    variant_t_main,
+)
+
 asandep = cpp.find_library('asan', dirs: '/usr/lib/x86_64-linux-gnu')
 
 variant_t_exe_sanitize = executable(
     'variant_t_opt_sanitize',
-    [variant_t_main, variant_t_src],
     include_directories: [variant_t_inc, common_inc],
     install: true,
     cpp_args: ['-O3', '-fsanitize=address'],
     dependencies: [asandep, bench, thread],
     link_args: ['-Wl,--start-group', '-lasan', '-Wl,--end-group'],
-    # objects: [ variant_t_inc_opt_o ],
+    objects: [variant_t_main_opt_o, variant_t_inc_opt_o],
 )
 
 variant_t_exe_no_opt_sanitize = executable(
     'variant_t_no_opt_sanitize',
-    [variant_t_main, variant_t_src],
     include_directories: [variant_t_inc, common_inc],
     install: true,
     cpp_args: ['-O0', '-g', '-fsanitize=address'],
     dependencies: [asandep, bench, thread],
     link_args: ['-Wl,--start-group', '-lasan', '-Wl,--end-group'],
-    # objects: [ variant_t_inc_opt_o ],
+    objects: [variant_t_main_no_opt_o, variant_t_inc_no_opt_o],
 )
 
 # executable(
