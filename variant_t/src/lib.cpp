@@ -1,8 +1,6 @@
 #include "lib.h"
 
-namespace variant_t {
-
-} // namespace variant_t
+namespace variant_t {} // namespace variant_t
 // variant_t/src/dev_impl.cpp
 
 namespace variant_t {
@@ -74,3 +72,27 @@ Port createSerialPort(std::string dev) noexcept { return SerialPort(dev); }
 
 } // namespace variant_t
 // variant_t/src/dev_factory.cpp end
+
+namespace variant_t {
+
+using namespace std;
+using namespace common;
+
+vup VarianttPortsInitRandom(common::vu32& v) {
+    using namespace variant_t;
+    using Ports = std::vector<Port>;
+
+    Ports ports;
+    for (uint32_t i = 0; i < 50; ++i) {
+        ports.push_back(createTcpPort("localhost", 2404));
+    }
+    for (uint32_t i = 50; i < 100; ++i) {
+        ports.push_back(createSerialPort("/dev/ttyUSB0"));
+    }
+
+    rreorder(ports, v);
+
+    return ports;
+}
+
+} // namespace variant_t

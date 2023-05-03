@@ -116,3 +116,20 @@ Port createSerialPort(std::string dev) noexcept;
 
 #endif
 // variant_t/include/dev_factory.h end
+
+#ifndef _MACRO_variant_t_LIB_H_
+#define _MACRO_variant_t_LIB_H_
+
+#include "common/include/lib.h"
+
+namespace variant_t {
+
+using vup = std::vector<variant_t::Port>;
+
+// GEN_PROTO_BEGIN
+vup VarianttPortsInitRandom(common::vu32& v);
+// GEN_PROTO_END
+
+} // namespace variant_t
+
+#endif
