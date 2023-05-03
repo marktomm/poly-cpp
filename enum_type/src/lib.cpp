@@ -34,8 +34,6 @@ void SerialPort::Write(BufferData const& data) noexcept {
 // enum_type/src/dev_impl.cpp end
 // enum_type/src/dev_algo.cpp
 
-#include <iostream>
-
 namespace Enum {
 
 void read(TcpPort const& port, BufferData& data) noexcept { port.Read(data); }
@@ -137,7 +135,7 @@ int getRandom12() { return static_cast<int>(random()) % randomRange12; }
 const int randomRange13 = 2; // Give me a number between 0 and 2.
 int getRandom13() { return static_cast<int>(random()) % randomRange13; }
 
-vector<uint32_t> GetGlobalRandIntVec() {
+vu32 GetGlobalRandIntVec() {
     static bool setupDone = false;
     static vector<uint32_t> v(100);
     if (setupDone) {
@@ -151,7 +149,7 @@ vector<uint32_t> GetGlobalRandIntVec() {
     return v;
 }
 
-vector<unique_ptr<Enum::Port> > EnumPortsInitRandom(vector<uint32_t>& v) {
+vup EnumPortsInitRandom(vu32& v) {
     using namespace Enum;
     using Ports = vector<unique_ptr<Port> >;
 
@@ -166,7 +164,7 @@ vector<unique_ptr<Enum::Port> > EnumPortsInitRandom(vector<uint32_t>& v) {
     return ports;
 }
 
-std::vector<bool> GetGlobalRandBoolVec() {
+vb GetGlobalRandBoolVec() {
     static bool randomDone = false;
     static std::vector<bool> bools(100);
 
@@ -190,5 +188,12 @@ std::size_t GetNextGlobalIndex() {
     static std::size_t it = 0;
     return (++it == 100 ? it = 1 : it);
 }
+
+void emptyFn(){};
+
+void emptyFnInt() {
+    int x = 1;
+    escape(&x);
+};
 
 } // namespace enum_type

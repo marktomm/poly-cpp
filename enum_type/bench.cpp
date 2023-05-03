@@ -33,13 +33,6 @@ static void BM_B2_EnumTcpPortHeapCall(benchmark::State& state);
 static void BM_B3_EnumVectorGlobalItUpFnCall(benchmark::State& state);
 // GEN_PROTO_END
 
-void emptyFn(){};
-
-void emptyFnInt() {
-    int x = 1;
-    benchmark::DoNotOptimize(x);
-};
-
 static void BM_00_RelativeNoopBase(benchmark::State& state) {
     for (auto _ : state) {
     }
