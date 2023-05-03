@@ -48,20 +48,20 @@ if bench.found()
 
     benchmark('benchmarks_benchmark_google_opt', benchmark_google_opt_exe, timeout: 0)
 
-    # benchmark_google_no_opt_exe = executable(
-    #     'benchmarks_google_no_opt',
-    #     [benchmark_test, benchmarks_common_src],
-    #     objects: objectsArrayNoOpt,
-    #     include_directories: includesArray,
-    #     dependencies: [bench, thread],
-    #     cpp_args: ['-O0', '-g'],
-    # )
+    benchmark_google_no_opt_exe = executable(
+        'benchmarks_google_no_opt',
+        [benchmark_test, benchmarks_common_src],
+        objects: objectsArrayNoOpt,
+        include_directories: includesArray,
+        dependencies: [bench, thread],
+        cpp_args: ['-O0', '-g'],
+    )
 
-    # benchmark(
-    #     'benchmarks_google_no_opt',
-    #     benchmark_google_no_opt_exe,
-    #     timeout: 0,
-    # )
+    benchmark(
+        'benchmarks_google_no_opt',
+        benchmark_google_no_opt_exe,
+        timeout: 0,
+    )
 endif
 
 # benchmark_tr18015_test = ['src/benchmark_tr18015.cpp']
