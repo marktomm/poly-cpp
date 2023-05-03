@@ -131,7 +131,7 @@ unique_ptr<Port> createSerialPort(string dev) noexcept {
 
 namespace enum_type {
 
-vup EnumPortsInitRandom(vu32& v) {
+vup EnumPortsInitRandom(common::vu32& v) {
     using namespace Enum;
     using Ports = vector<unique_ptr<Port> >;
 

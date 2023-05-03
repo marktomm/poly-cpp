@@ -62,7 +62,7 @@ namespace oop {
 using namespace std;
 using namespace common;
 
-vup OopPortsInitRandom(vu32& v) {
+vup OopPortsInitRandom(common::vu32& v) {
     using namespace oop;
     using Ports = vector<unique_ptr<Port> >;
 
