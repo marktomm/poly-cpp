@@ -13,7 +13,6 @@ using BufferData = uint32_t;
 #ifndef _OOP_DEV_BASE_H_
 #define _OOP_DEV_BASE_H_
 
-
 #include <string>
 
 namespace oop {
@@ -34,7 +33,6 @@ public:
 // oop/include/dev_impl.h
 #ifndef _OOP_DEV_IMPL_H_
 #define _OOP_DEV_IMPL_H_
-
 
 #include <cstdint>
 
@@ -82,7 +80,6 @@ private:
 #ifndef _OOP_DEV_EXT_H_
 #define _OOP_DEV_EXT_H_
 
-
 #include <memory>
 #include <vector>
 
@@ -102,7 +99,6 @@ void writePorts(std::vector<std::unique_ptr<Port> >&,
 #ifndef _OOP_DEV_FACTORY_H_
 #define _OOP_DEV_FACTORY_H_
 
-
 #include <memory>
 #include <string>
 
@@ -118,3 +114,26 @@ std::unique_ptr<Port> createSerialPort(std::string dev) noexcept;
 
 #endif
 // oop/include/dev_factory.h end
+
+#ifndef _MACRO_oop_LIB_H_
+#define _MACRO_oop_LIB_H_
+namespace oop {
+
+using vb = std::vector<bool>;
+using vu32 = std::vector<uint32_t>;
+using vup = std::vector<std::unique_ptr<oop::Port> >;
+
+// GEN_PROTO_BEGIN
+int getRandom12();
+int getRandom13();
+std::size_t GetNextGlobalIndex();
+vb GetGlobalRandBoolVec();
+void emptyFn();
+void emptyFnInt();
+vu32 GetGlobalRandIntVec();
+vup OopPortsInitRandom(vu32& v);
+// GEN_PROTO_END
+
+} // namespace oop
+
+#endif
