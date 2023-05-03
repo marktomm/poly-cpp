@@ -12,7 +12,7 @@ clock_t TimeDur::GetDur() const noexcept { return tdur_; }
 #include <algorithm>
 #include <random>
 
-std::vector<uint32_t> setup() {
+std::vector<uint32_t> GetGlobalRandIntVec() {
     static bool setupDone = false;
     static std::vector<uint32_t> v(100);
     if (setupDone) {

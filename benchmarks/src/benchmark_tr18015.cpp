@@ -11,7 +11,7 @@ int main(int argc, char** argv) {
     using namespace std;
     ostream& out = cout;
 
-    vector<uint32_t> vr = setup();
+    vector<uint32_t> vr = GetGlobalRandIntVec();
     doNotOptimize(vr.data());
     vector<TimeDur> vtd;
 

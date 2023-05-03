@@ -11,7 +11,12 @@ trimFwdSlashes() {
 ARG1=$1
 ARG1=$(trimFwdSlashes ${ARG1})
 
-./gen_bench.sh ${ARG1}
+isBenchmarks=$([[ -n "${ARG1}" && "${ARG1}" == 'benchmarks' ]] && echo 0 || echo 1)
+isBenchmarksFunc() {
+    return $isBenchmarks
+}
+
+isBenchmarksFunc || ./gen_bench.sh ${ARG1}
 ./_build.sh
 
 ./builddir/${ARG1}/${ARG1}_benchmark_google_opt --benchmark_filter='BM_[01]' --benchmark_format=csv 2>&1  | ./plot.sh ${ARG1} && mv ${ARG1}/bench.png ${ARG1}/${ARG1}_opt_01.png || true

@@ -30,26 +30,4 @@ private:
 #include <memory>
 #include <vector>
 
-/**
- * Generate random static vector of indices
- */
-std::vector<uint32_t> setup();
-
-std::vector<std::unique_ptr<Enum::Port> >
-EnumPortsInitRandom(std::vector<uint32_t>& v);
-
-std::vector<std::unique_ptr<oop::Port> >
-OopPortsInitRandom(std::vector<uint32_t>& v);
-
-std::vector<std::unique_ptr<visitor::Port> >
-VisitPortsInitRandom(std::vector<uint32_t>& v);
-
-std::vector<std::unique_ptr<strategy::Port> >
-StrategyPortsInitRandom(std::vector<uint32_t>& v);
-
-std::vector<variant_t::Port> VarianttPortsInitRandom(std::vector<uint32_t>& v);
-
-std::vector<type_erasure_up::Readable>
-TypeErasureUpPortsInitRandom(std::vector<uint32_t>& v);
-
 #endif
