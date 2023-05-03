@@ -2,9 +2,7 @@
 
 set -e
 
-# other_script_output=$(./poly_list.sh)
-
 while IFS= read -r line; do
-    ./rplot.sh ${line}
+    ./rplot.sh ${line} ${1}
 done <<< "$(./poly_list.sh)"
-./rplot.sh ${line} benchmarks
+./rplot.sh ${line} benchmarks ${1}
