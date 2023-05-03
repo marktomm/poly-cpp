@@ -9,7 +9,7 @@ temp_csv="$(mktemp)"
 # Convert scientific notation to decimal notation
 awk -F, 'NF >= 3 && $1 ~ /^"BM/ {printf "%s,%f\n", $1, $3}' | sed 's/_/ /g' > "${temp_csv}"
 # awk -F, 'NF >= 3 && $1 ~ /^"BM/ {printf "%f,%s\n", $3, $1}' | sed 's/_/ /g' > "${temp_csv}"
-cat ${temp_csv}
+
 num_lines=$(wc -l < "${temp_csv}")
 # Create the gnuplot script to generate the graph
 gnuplot_script="$(mktemp)"

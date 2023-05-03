@@ -12,13 +12,13 @@ static void BM_00_RelativeNoopBase(benchmark::State& state);
 static void BM_01_RelativeInt(benchmark::State& state);
 static void BM_02_RelativeEmptyFn(benchmark::State& state);
 static void BM_03_RelativeEmptyFnInt(benchmark::State& state);
-static void BM_04_RelativePauseResume(benchmark::State& state);
 static void BM_05_RelativeManual(benchmark::State& state);
 static void BM_06_RelativeManualBatch(benchmark::State& state);
 static void BM_07_RelativeVectorIfAccessStatic(benchmark::State& state);
 static void BM_08_RelativeVectorIfAccessGlobalIt(benchmark::State& state);
 static void BM_09_RelativeGetIfRandom13(benchmark::State& state);
 static void BM_10_RelativeGetIfRandom12(benchmark::State& state);
+static void BM_24_RelativePauseResume(benchmark::State& state);
 static void BM_A1_EnumTcpPortStack(benchmark::State& state);
 static void BM_A2_EnumTcpPortHeap(benchmark::State& state);
 static void BM_A3_EnumTcpPortHeapCtorManual(benchmark::State& state);
@@ -57,7 +57,7 @@ static void BM_03_RelativeEmptyFnInt(benchmark::State& state) {
     }
 }
 
-static void BM_04_RelativePauseResume(benchmark::State& state) {
+static void BM_24_RelativePauseResume(benchmark::State& state) {
     for (auto _ : state) {
         state.PauseTiming();
         state.ResumeTiming();
@@ -274,13 +274,13 @@ BENCHMARK(BM_00_RelativeNoopBase);
 BENCHMARK(BM_01_RelativeInt);
 BENCHMARK(BM_02_RelativeEmptyFn);
 BENCHMARK(BM_03_RelativeEmptyFnInt);
-BENCHMARK(BM_04_RelativePauseResume);
 BENCHMARK(BM_05_RelativeManual)->UseManualTime();
 BENCHMARK(BM_06_RelativeManualBatch)->UseManualTime();
 BENCHMARK(BM_07_RelativeVectorIfAccessStatic);
 BENCHMARK(BM_08_RelativeVectorIfAccessGlobalIt);
 BENCHMARK(BM_09_RelativeGetIfRandom13);
 BENCHMARK(BM_10_RelativeGetIfRandom12);
+BENCHMARK(BM_24_RelativePauseResume);
 BENCHMARK(BM_A1_EnumTcpPortStack);
 BENCHMARK(BM_A2_EnumTcpPortHeap);
 BENCHMARK(BM_A3_EnumTcpPortHeapCtorManual)->UseManualTime();
