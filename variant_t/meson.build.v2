@@ -16,6 +16,7 @@ variant_t_exe = executable(
     include_directories: [variant_t_inc, common_inc],
     dependencies: [bench, thread],
     install: true,
+    objects: [common_inc_opt_o],
 )
 
 variant_t_exe_no_opt = executable(
@@ -25,6 +26,7 @@ variant_t_exe_no_opt = executable(
     dependencies: [bench, thread],
     install: true,
     cpp_args: ['-O0', '-g'],
+    objects: [common_inc_opt_o],
 )
 
 variant_t_inc_opt_o = variant_t_exe.extract_objects(
@@ -54,7 +56,7 @@ variant_t_exe_sanitize = executable(
     cpp_args: ['-O3', '-fsanitize=address'],
     dependencies: [asandep, bench, thread],
     link_args: ['-Wl,--start-group', '-lasan', '-Wl,--end-group'],
-    objects: [variant_t_main_opt_o, variant_t_inc_opt_o],
+    objects: [variant_t_main_opt_o, variant_t_inc_opt_o, common_inc_opt_o],
 )
 
 variant_t_exe_no_opt_sanitize = executable(
@@ -64,24 +66,16 @@ variant_t_exe_no_opt_sanitize = executable(
     cpp_args: ['-O0', '-g', '-fsanitize=address'],
     dependencies: [asandep, bench, thread],
     link_args: ['-Wl,--start-group', '-lasan', '-Wl,--end-group'],
-    objects: [variant_t_main_no_opt_o, variant_t_inc_no_opt_o],
+    objects: [variant_t_main_no_opt_o, variant_t_inc_no_opt_o, common_inc_opt_o],
 )
-
-# executable(
-#     'variant_t_simple',
-#     [variant_t_simple],
-#     objects: [variant_t_inc_opt_o],
-#     include_directories: [variant_t_inc, common_inc],
-#     install: true,
-# )
 
 if bench.found()
     variant_t_benchmark_test = ['bench.cpp']
 
     variant_t_benchmark_google_opt_exe = executable(
         'variant_t_benchmark_google_opt',
-        [variant_t_benchmark_test, common_src],
-        objects: variant_t_inc_opt_o,
+        [variant_t_benchmark_test],
+        objects: [variant_t_inc_opt_o, common_inc_opt_o],
         include_directories: [variant_t_inc, common_inc],
         dependencies: [bench, thread],
     )
@@ -95,8 +89,8 @@ if bench.found()
 
     variant_t_benchmark_google_no_opt_exe = executable(
         'variant_t_benchmark_google_no_opt',
-        [variant_t_benchmark_test, common_src],
-        objects: variant_t_inc_no_opt_o,
+        [variant_t_benchmark_test],
+        objects: [variant_t_inc_no_opt_o, common_inc_opt_o],
         include_directories: [variant_t_inc, common_inc],
         dependencies: [bench, thread],
         cpp_args: ['-O0', '-g'],

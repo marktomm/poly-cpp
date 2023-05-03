@@ -16,6 +16,7 @@ type_erasure_up_exe = executable(
     include_directories: [type_erasure_up_inc, common_inc],
     dependencies: [bench, thread],
     install: true,
+    objects: [common_inc_opt_o],
 )
 
 type_erasure_up_exe_no_opt = executable(
@@ -25,6 +26,7 @@ type_erasure_up_exe_no_opt = executable(
     dependencies: [bench, thread],
     install: true,
     cpp_args: ['-O0', '-g'],
+    objects: [common_inc_opt_o],
 )
 
 type_erasure_up_inc_opt_o = type_erasure_up_exe.extract_objects(
@@ -54,7 +56,11 @@ type_erasure_up_exe_sanitize = executable(
     cpp_args: ['-O3', '-fsanitize=address'],
     dependencies: [asandep, bench, thread],
     link_args: ['-Wl,--start-group', '-lasan', '-Wl,--end-group'],
-    objects: [type_erasure_up_main_opt_o, type_erasure_up_inc_opt_o],
+    objects: [
+        type_erasure_up_main_opt_o,
+        type_erasure_up_inc_opt_o,
+        common_inc_opt_o,
+    ],
 )
 
 type_erasure_up_exe_no_opt_sanitize = executable(
@@ -64,24 +70,20 @@ type_erasure_up_exe_no_opt_sanitize = executable(
     cpp_args: ['-O0', '-g', '-fsanitize=address'],
     dependencies: [asandep, bench, thread],
     link_args: ['-Wl,--start-group', '-lasan', '-Wl,--end-group'],
-    objects: [type_erasure_up_main_no_opt_o, type_erasure_up_inc_no_opt_o],
+    objects: [
+        type_erasure_up_main_no_opt_o,
+        type_erasure_up_inc_no_opt_o,
+        common_inc_opt_o,
+    ],
 )
-
-# executable(
-#     'type_erasure_up_simple',
-#     [type_erasure_up_simple],
-#     objects: [type_erasure_up_inc_opt_o],
-#     include_directories: [type_erasure_up_inc, common_inc],
-#     install: true,
-# )
 
 if bench.found()
     type_erasure_up_benchmark_test = ['bench.cpp']
 
     type_erasure_up_benchmark_google_opt_exe = executable(
         'type_erasure_up_benchmark_google_opt',
-        [type_erasure_up_benchmark_test, common_src],
-        objects: type_erasure_up_inc_opt_o,
+        [type_erasure_up_benchmark_test],
+        objects: [type_erasure_up_inc_opt_o, common_inc_opt_o],
         include_directories: [type_erasure_up_inc, common_inc],
         dependencies: [bench, thread],
     )
@@ -95,8 +97,8 @@ if bench.found()
 
     type_erasure_up_benchmark_google_no_opt_exe = executable(
         'type_erasure_up_benchmark_google_no_opt',
-        [type_erasure_up_benchmark_test, common_src],
-        objects: type_erasure_up_inc_no_opt_o,
+        [type_erasure_up_benchmark_test],
+        objects: [type_erasure_up_inc_no_opt_o, common_inc_opt_o],
         include_directories: [type_erasure_up_inc, common_inc],
         dependencies: [bench, thread],
         cpp_args: ['-O0', '-g'],

@@ -48,6 +48,7 @@ ${ARG1}_exe = executable(
     include_directories: [${ARG1}_inc, common_inc],
     dependencies: [bench, thread],
     install: true,
+    objects: [common_inc_opt_o],
 )
 
 ${ARG1}_exe_no_opt = executable(
@@ -57,6 +58,7 @@ ${ARG1}_exe_no_opt = executable(
     dependencies: [bench, thread],
     install: true,
     cpp_args: ['-O0', '-g'],
+    objects: [common_inc_opt_o],
 )
 
 ${ARG1}_inc_opt_o = ${ARG1}_exe.extract_objects(
@@ -86,7 +88,7 @@ ${ARG1}_exe_sanitize = executable(
     cpp_args: ['-O3', '-fsanitize=address'],
     dependencies: [asandep, bench, thread],
     link_args: ['-Wl,--start-group', '-lasan', '-Wl,--end-group'],
-    objects: [${ARG1}_main_opt_o, ${ARG1}_inc_opt_o],
+    objects: [${ARG1}_main_opt_o, ${ARG1}_inc_opt_o, common_inc_opt_o],
 )
 
 ${ARG1}_exe_no_opt_sanitize = executable(
@@ -96,24 +98,16 @@ ${ARG1}_exe_no_opt_sanitize = executable(
     cpp_args: ['-O0', '-g', '-fsanitize=address'],
     dependencies: [asandep, bench, thread],
     link_args: ['-Wl,--start-group', '-lasan', '-Wl,--end-group'],
-    objects: [${ARG1}_main_no_opt_o, ${ARG1}_inc_no_opt_o],
+    objects: [${ARG1}_main_no_opt_o, ${ARG1}_inc_no_opt_o, common_inc_opt_o],
 )
-
-# executable(
-#     '${ARG1}_simple',
-#     [${ARG1}_simple],
-#     objects: [${ARG1}_inc_opt_o],
-#     include_directories: [${ARG1}_inc, common_inc],
-#     install: true,
-# )
 
 if bench.found()
     ${ARG1}_benchmark_test = ['bench.cpp']
 
     ${ARG1}_benchmark_google_opt_exe = executable(
         '${ARG1}_benchmark_google_opt',
-        [${ARG1}_benchmark_test, common_src],
-        objects: ${ARG1}_inc_opt_o,
+        [${ARG1}_benchmark_test],
+        objects: [${ARG1}_inc_opt_o, common_inc_opt_o],
         include_directories: [${ARG1}_inc, common_inc],
         dependencies: [bench, thread],
     )
@@ -127,8 +121,8 @@ if bench.found()
 
     ${ARG1}_benchmark_google_no_opt_exe = executable(
         '${ARG1}_benchmark_google_no_opt',
-        [${ARG1}_benchmark_test, common_src],
-        objects: ${ARG1}_inc_no_opt_o,
+        [${ARG1}_benchmark_test],
+        objects: [${ARG1}_inc_no_opt_o, common_inc_opt_o],
         include_directories: [${ARG1}_inc, common_inc],
         dependencies: [bench, thread],
         cpp_args: ['-O0', '-g'],

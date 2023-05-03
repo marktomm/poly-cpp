@@ -19,8 +19,10 @@ cpp_prog = find_program(cpp.get_id())
 bench = dependency('benchmark', required: false)
 thread = dependency('threads')
 
-common_inc = include_directories('common/', './')
-common_src = []
+# common_inc = include_directories('common/', './')
+# common_src = []
+
+subdir('common')
 
 subdir('oop')
 subdir('visitor')
@@ -31,4 +33,3 @@ subdir('type_erasure_up')
 subdir('enum_type')
 
 # subdir('benchmarks')
-subdir('common')
