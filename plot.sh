@@ -11,6 +11,7 @@ awk -F, 'NF >= 3 && $1 ~ /^"BM/ {printf "%s,%f\n", $1, $3}' | sed 's/_/ /g' > "$
 # awk -F, 'NF >= 3 && $1 ~ /^"BM/ {printf "%f,%s\n", $3, $1}' | sed 's/_/ /g' > "${temp_csv}"
 
 num_lines=$(wc -l < "${temp_csv}")
+if [[ ${num_lines} == 0 ]]; then exit 1; fi
 # Create the gnuplot script to generate the graph
 gnuplot_script="$(mktemp)"
 cat > "${gnuplot_script}" << EOL
