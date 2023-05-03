@@ -3,6 +3,7 @@
 
 using namespace oop;
 using namespace std;
+using namespace common;
 
 // GEN_PROTO_BEGIN
 static void BM_A1_OopTcpPortStack(benchmark::State& state);

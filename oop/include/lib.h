@@ -117,21 +117,15 @@ std::unique_ptr<Port> createSerialPort(std::string dev) noexcept;
 
 #ifndef _MACRO_oop_LIB_H_
 #define _MACRO_oop_LIB_H_
+
+#include "common/include/lib.h"
+
 namespace oop {
 
-using vb = std::vector<bool>;
-using vu32 = std::vector<uint32_t>;
 using vup = std::vector<std::unique_ptr<oop::Port> >;
 
 // GEN_PROTO_BEGIN
-int getRandom12();
-int getRandom13();
-std::size_t GetNextGlobalIndex();
-vb GetGlobalRandBoolVec();
-void emptyFn();
-void emptyFnInt();
-vu32 GetGlobalRandIntVec();
-vup OopPortsInitRandom(vu32& v);
+vup OopPortsInitRandom(common::vu32& v);
 // GEN_PROTO_END
 
 } // namespace oop

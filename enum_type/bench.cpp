@@ -6,6 +6,7 @@
 using namespace Enum;
 using namespace enum_type;
 using namespace std;
+using namespace common;
 
 // GEN_PROTO_BEGIN
 static void BM_00_RelativeNoopBase(benchmark::State& state);
