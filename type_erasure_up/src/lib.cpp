@@ -72,3 +72,28 @@ Readable createSerialPort(std::string dev) noexcept { return SerialPort(dev); }
 
 } // namespace type_erasure_up
 // type_erasure_up/src/dev_factory.cpp end
+
+namespace type_erasure_up {
+
+using namespace std;
+using namespace common;
+using namespace type_erasure_up;
+
+vup TypeErasureUpPortsInitRandom(common::vu32& v) {
+
+    using Ports = std::vector<Readable>;
+
+    Ports ports;
+    for (uint32_t i = 0; i < 50; ++i) {
+        ports.push_back(createTcpPort("localhost", 2404));
+    }
+    for (uint32_t i = 50; i < 100; ++i) {
+        ports.push_back(createSerialPort("/dev/ttyUSB0"));
+    }
+
+    rreorder(ports, v);
+
+    return ports;
+}
+
+} // namespace type_erasure_up

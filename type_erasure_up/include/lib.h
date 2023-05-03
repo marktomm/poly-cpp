@@ -183,3 +183,21 @@ Readable createSerialPort(std::string dev) noexcept;
 
 #endif
 // type_erasure_up/include/dev_factory.h end
+
+#ifndef _MACRO_type_erasure_up_LIB_H_
+#define _MACRO_type_erasure_up_LIB_H_
+
+#include "common/include/lib.h"
+
+namespace type_erasure_up {
+
+using vup = std::vector<Readable>;
+
+// GEN_PROTO_BEGIN
+void swap(Readable& a, Readable& b);
+vup TypeErasureUpPortsInitRandom(common::vu32& v);
+// GEN_PROTO_END
+
+} // namespace type_erasure_up
+
+#endif
