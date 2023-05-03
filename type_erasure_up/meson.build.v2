@@ -56,11 +56,7 @@ type_erasure_up_exe_sanitize = executable(
     cpp_args: ['-O3', '-fsanitize=address'],
     dependencies: [asandep, bench, thread],
     link_args: ['-Wl,--start-group', '-lasan', '-Wl,--end-group'],
-    objects: [
-        type_erasure_up_main_opt_o,
-        type_erasure_up_inc_opt_o,
-        common_inc_opt_o,
-    ],
+    objects: [type_erasure_up_main_opt_o, type_erasure_up_inc_opt_o, common_inc_opt_o],
 )
 
 type_erasure_up_exe_no_opt_sanitize = executable(
@@ -70,11 +66,7 @@ type_erasure_up_exe_no_opt_sanitize = executable(
     cpp_args: ['-O0', '-g', '-fsanitize=address'],
     dependencies: [asandep, bench, thread],
     link_args: ['-Wl,--start-group', '-lasan', '-Wl,--end-group'],
-    objects: [
-        type_erasure_up_main_no_opt_o,
-        type_erasure_up_inc_no_opt_o,
-        common_inc_opt_o,
-    ],
+    objects: [type_erasure_up_main_no_opt_o, type_erasure_up_inc_no_opt_o, common_inc_opt_o],
 )
 
 if bench.found()
@@ -132,6 +124,7 @@ gen_asm = custom_target(
     command: [
         cpp_prog,
         '-I' + meson.current_source_dir() + '/include/',
+        '-I' + meson.current_source_dir() + '/../',
         '-S',
         '-masm=intel',
         '-o', '@OUTPUT@',
@@ -147,6 +140,7 @@ gen_asm_opt = custom_target(
     command: [
         cpp_prog,
         '-O3', '-I' + meson.current_source_dir() + '/include/',
+        '-I' + meson.current_source_dir() + '/../',
         '-S',
         '-masm=intel',
         '-o', '@OUTPUT@',
@@ -162,6 +156,7 @@ gen_asm_lib = custom_target(
     command: [
         cpp_prog,
         '-I' + meson.current_source_dir() + '/include/',
+        '-I' + meson.current_source_dir() + '/../',
         '-S',
         '-masm=intel',
         '-o', '@OUTPUT@',
@@ -177,6 +172,7 @@ gen_asm_lib_opt = custom_target(
     command: [
         cpp_prog,
         '-O3', '-I' + meson.current_source_dir() + '/include/',
+        '-I' + meson.current_source_dir() + '/../',
         '-S',
         '-masm=intel',
         '-o', '@OUTPUT@',

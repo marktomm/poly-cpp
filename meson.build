@@ -24,6 +24,8 @@ thread = dependency('threads')
 
 subdir('common')
 
+common_inc = include_directories('./', 'common/include')
+
 subdir('oop')
 subdir('visitor')
 subdir('variant_t')
