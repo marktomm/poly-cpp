@@ -161,3 +161,20 @@ std::unique_ptr<Port> createSerialPort(std::string dev) noexcept;
 
 #endif
 // visitor/include/dev_factory.h end
+
+#ifndef _MACRO_visitor_LIB_H_
+#define _MACRO_visitor_LIB_H_
+
+#include "common/include/lib.h"
+
+namespace visitor {
+
+using vup = std::vector<std::unique_ptr<visitor::Port> >;
+
+// GEN_PROTO_BEGIN
+vup VisitPortsInitRandom(common::vu32& v);
+// GEN_PROTO_END
+
+} // namespace visitor
+
+#endif

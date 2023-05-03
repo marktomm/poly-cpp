@@ -1,8 +1,6 @@
 #include "lib.h"
 
-namespace visitor {
-
-} // namespace visitor
+namespace visitor {} // namespace visitor
 // visitor/src/dev_impl.cpp
 
 namespace visitor {
@@ -93,3 +91,25 @@ std::unique_ptr<Port> createSerialPort(std::string dev) noexcept {
 
 } // namespace visitor
 // visitor/src/dev_factory.cpp end
+
+namespace visitor {
+
+using namespace std;
+using namespace common;
+
+vup VisitPortsInitRandom(common::vu32& v) {
+    using namespace visitor;
+    using Ports = std::vector<std::unique_ptr<Port> >;
+
+    Ports ports(100);
+    for (uint32_t i = 0; i < 50; ++i) {
+        ports[v[i]] = createTcpPort("localhost", 2404);
+    }
+    for (uint32_t i = 50; i < 100; ++i) {
+        ports[v[i]] = createSerialPort("/dev/ttyUSB0");
+    }
+
+    return ports;
+}
+
+} // namespace visitor
