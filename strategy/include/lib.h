@@ -166,3 +166,20 @@ std::unique_ptr<Port> createSerialPort(std::string dev, ReadSerialPortStrategy,
 
 #endif
 // strategy/include/dev_factory.h end
+
+#ifndef _MACRO_strategy_LIB_H_
+#define _MACRO_strategy_LIB_H_
+
+#include "common/include/lib.h"
+
+namespace strategy {
+
+using vup = std::vector<std::unique_ptr<strategy::Port> >;
+
+// GEN_PROTO_BEGIN
+vup StrategyPortsInitRandom(common::vu32& v);
+// GEN_PROTO_END
+
+} // namespace strategy
+
+#endif

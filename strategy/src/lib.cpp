@@ -83,3 +83,32 @@ createSerialPort(std::string dev, ReadSerialPortStrategy strategy,
 
 } // namespace strategy
 // strategy/src/dev_factory.cpp end
+
+#include <algorithm>
+#include <random>
+
+namespace strategy {
+
+using namespace std;
+using namespace common;
+
+vup StrategyPortsInitRandom(common::vu32& v) {
+    using namespace strategy;
+    using Ports = std::vector<std::unique_ptr<Port> >;
+
+    Ports ports(100);
+    for (uint32_t i = 0; i < 50; ++i) {
+        ports[v[i]] =
+            createTcpPort("localhost", 2404, SyslogReadTcpPortStrategy{},
+                          SyncWriteTcpPortStrategy{});
+    }
+    for (uint32_t i = 50; i < 100; ++i) {
+        ports[v[i]] =
+            createSerialPort("/dev/ttyUSB0", SyslogReadSerialPortStrategy{},
+                             SyncWriteSerialPortStrategy{});
+    }
+
+    return ports;
+}
+
+} // namespace strategy

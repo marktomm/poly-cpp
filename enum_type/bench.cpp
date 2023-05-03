@@ -29,9 +29,9 @@ static void BM_A6_EnumCreateTcpPortUpFn(benchmark::State& state);
 static void BM_A8_EnumCreateTcpPortUpFnCtorManual(benchmark::State& state);
 static void BM_A9_EnumCreateTcpPortUpFnDtorManual(benchmark::State& state);
 static void BM_B0_EnumCreateTcpPortUpFnDtorManual(benchmark::State& state);
-static void BM_B1_EnumTcpPortStackCall(benchmark::State& state);
-static void BM_B2_EnumTcpPortHeapCall(benchmark::State& state);
-static void BM_B3_EnumVectorGlobalItUpFnCall(benchmark::State& state);
+static void BM_Y1_EnumTcpPortStackCall(benchmark::State& state);
+static void BM_Y2_EnumTcpPortHeapCall(benchmark::State& state);
+static void BM_Y3_EnumVectorGlobalItUpFnCall(benchmark::State& state);
 // GEN_PROTO_END
 
 static void BM_00_RelativeNoopBase(benchmark::State& state) {
@@ -244,7 +244,7 @@ static void BM_B0_EnumCreateTcpPortUpFnDtorManual(benchmark::State& state) {
     }
 }
 
-static void BM_B1_EnumTcpPortStackCall(benchmark::State& state) {
+static void BM_Y1_EnumTcpPortStackCall(benchmark::State& state) {
     TcpPort p = TcpPort("localhost", 2404);
     for (auto _ : state) {
         writePort(&p, BufferData{0x0B});
@@ -252,7 +252,7 @@ static void BM_B1_EnumTcpPortStackCall(benchmark::State& state) {
     benchmark::DoNotOptimize(p);
 }
 
-static void BM_B2_EnumTcpPortHeapCall(benchmark::State& state) {
+static void BM_Y2_EnumTcpPortHeapCall(benchmark::State& state) {
     Port* p = new TcpPort{"localhost", 2404};
     for (auto _ : state) {
         writePort(p, BufferData{0x0C});
@@ -260,7 +260,7 @@ static void BM_B2_EnumTcpPortHeapCall(benchmark::State& state) {
     benchmark::DoNotOptimize(p);
 }
 
-static void BM_B3_EnumVectorGlobalItUpFnCall(benchmark::State& state) {
+static void BM_Y3_EnumVectorGlobalItUpFnCall(benchmark::State& state) {
     auto intVec = GetGlobalRandIntVec();
     auto v = EnumPortsInitRandom(intVec);
     for (auto _ : state) {
@@ -291,9 +291,9 @@ BENCHMARK(BM_A6_EnumCreateTcpPortUpFn);
 BENCHMARK(BM_A8_EnumCreateTcpPortUpFnCtorManual)->UseManualTime();
 BENCHMARK(BM_A9_EnumCreateTcpPortUpFnDtorManual)->UseManualTime();
 BENCHMARK(BM_B0_EnumCreateTcpPortUpFnDtorManual)->UseManualTime();
-BENCHMARK(BM_B1_EnumTcpPortStackCall);
-BENCHMARK(BM_B2_EnumTcpPortHeapCall);
-BENCHMARK(BM_B3_EnumVectorGlobalItUpFnCall);
+BENCHMARK(BM_Y1_EnumTcpPortStackCall);
+BENCHMARK(BM_Y2_EnumTcpPortHeapCall);
+BENCHMARK(BM_Y3_EnumVectorGlobalItUpFnCall);
 // GEN_BENCHMARK_END
 
 // Run the benchmark
