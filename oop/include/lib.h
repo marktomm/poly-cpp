@@ -1,4 +1,4 @@
-// ./common/types.h
+// ./common/include/lib.h
 #ifndef _COMMON_TYPES_H_
 #define _COMMON_TYPES_H_
 
@@ -8,7 +8,7 @@ using MutableBuffer = uint32_t;
 using BufferData = uint32_t;
 
 #endif
-// ./common/types.h end
+// ./common/include/lib.h end
 // oop/include/dev_base.h
 #ifndef _OOP_DEV_BASE_H_
 #define _OOP_DEV_BASE_H_

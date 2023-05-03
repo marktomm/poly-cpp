@@ -1,4 +1,4 @@
-// ./common/types.h
+// ./common/include/lib.h
 #ifndef _COMMON_TYPES_H_
 #define _COMMON_TYPES_H_
 
@@ -8,11 +8,10 @@ using MutableBuffer = uint32_t;
 using BufferData = uint32_t;
 
 #endif
-// ./common/types.h end
+// ./common/include/lib.h end
 // variant_t/include/dev_impl.h
 #ifndef _VARIANT_DEV_IMPL_H_
 #define _VARIANT_DEV_IMPL_H_
-
 
 #include <string>
 
@@ -57,7 +56,6 @@ private:
 #ifndef _VARIANT_DEV_ALGO_H_
 #define _VARIANT_DEV_ALGO_H_
 
-
 namespace variant_t {
 
 class Read {
@@ -79,7 +77,6 @@ public:
 // variant_t/include/dev_ctx.h
 #ifndef _VARIANT_DEV_EXT_H_
 #define _VARIANT_DEV_EXT_H_
-
 
 #include <variant>
 
@@ -103,7 +100,6 @@ void writePorts(std::vector<Port>&, WriteData const&) noexcept;
 // variant_t/include/dev_factory.h
 #ifndef _VARIANT_T_DEV_FACTORY_H_
 #define _VARIANT_T_DEV_FACTORY_H_
-
 
 #include <memory>
 #include <string>

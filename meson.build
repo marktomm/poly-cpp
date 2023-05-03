@@ -31,3 +31,4 @@ subdir('type_erasure_up')
 subdir('enum_type')
 
 # subdir('benchmarks')
+subdir('common')

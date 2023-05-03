@@ -21,7 +21,7 @@ test -d $1 || {
 APP_ROOT=.
 SUB=$(trimFwdSlashes ${1})
 OUTPUT=${SUB}/amalgamation.cpp
-REGEX='"dev.*\.h\|common/.*\.h\|include.*types.h"'
+REGEX='"dev.*\.h\|common/.*\.h\|include.*types.h"\|include\/lib.h"'
 
 rm -f ${outputMain} ${outputLib} ${outputBench} ${outputApi} ${OUTPUT}
 
@@ -31,15 +31,8 @@ fn() {
     echo "// ${1} end" >> ${2}
 }
 
-fn ${APP_ROOT}/common/types.h ${OUTPUT}
-fn ${SUB}/include/dev_base.h ${OUTPUT}
-fn ${SUB}/src/dev_base.cpp ${OUTPUT}
-fn ${SUB}/include/dev_impl.h ${OUTPUT}
-fn ${SUB}/src/dev_impl.cpp ${OUTPUT}
-fn ${SUB}/include/dev_algo.h ${OUTPUT}
-fn ${SUB}/src/dev_algo.cpp ${OUTPUT}
-fn ${SUB}/include/dev_ctx.h ${OUTPUT}
-fn ${SUB}/src/dev_ctx.cpp ${OUTPUT}
-fn ${SUB}/include/dev_factory.h ${OUTPUT}
-fn ${SUB}/src/dev_factory.cpp ${OUTPUT}
-fn ${SUB}/src/user.cpp ${OUTPUT}
+fn ${APP_ROOT}/common/include/lib.h ${OUTPUT}
+fn ${APP_ROOT}/common/src/lib.cpp ${OUTPUT}
+fn ${SUB}/include/lib.h ${OUTPUT}
+fn ${SUB}/src/lib.cpp ${OUTPUT}
+fn ${SUB}/src/main.cpp ${OUTPUT}

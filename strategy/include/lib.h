@@ -1,4 +1,4 @@
-// ./common/types.h
+// ./common/include/lib.h
 #ifndef _COMMON_TYPES_H_
 #define _COMMON_TYPES_H_
 
@@ -8,11 +8,10 @@ using MutableBuffer = uint32_t;
 using BufferData = uint32_t;
 
 #endif
-// ./common/types.h end
+// ./common/include/lib.h end
 // strategy/include/dev_base.h
 #ifndef _STRATEGY_DEV_BASE_H_
 #define _STRATEGY_DEV_BASE_H_
-
 
 #include <functional>
 #include <string>
@@ -46,7 +45,6 @@ public:
 // strategy/include/dev_impl.h
 #ifndef _STRATEGY_DEV_IMPL_H_
 #define _STRATEGY_DEV_IMPL_H_
-
 
 #include <cstdint>
 
@@ -101,7 +99,6 @@ private:
 #ifndef _STRATEGY_DEV_ALGO_H_
 #define _STRATEGY_DEV_ALGO_H_
 
-
 namespace strategy {
 
 class SyslogReadTcpPortStrategy {
@@ -132,7 +129,6 @@ public:
 #ifndef _STRATEGY_DEV_EXT_H_
 #define _STRATEGY_DEV_EXT_H_
 
-
 #include <memory>
 #include <vector>
 
@@ -151,7 +147,6 @@ void writePorts(std::vector<std::unique_ptr<Port> > const&,
 // strategy/include/dev_factory.h
 #ifndef _STRATEGY_DEV_FACTORY_H_
 #define _STRATEGY_DEV_FACTORY_H_
-
 
 #include <memory>
 #include <string>

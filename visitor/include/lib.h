@@ -1,4 +1,4 @@
-// ./common/types.h
+// ./common/include/lib.h
 #ifndef _COMMON_TYPES_H_
 #define _COMMON_TYPES_H_
 
@@ -8,7 +8,7 @@ using MutableBuffer = uint32_t;
 using BufferData = uint32_t;
 
 #endif
-// ./common/types.h end
+// ./common/include/lib.h end
 // visitor/include/dev_base.h
 #ifndef _VISITOR_DEV_BASE_H_
 #define _VISITOR_DEV_BASE_H_
@@ -34,7 +34,6 @@ public:
 // visitor/include/dev_impl.h
 #ifndef _VISITOR_DEV_IMPL_H_
 #define _VISITOR_DEV_IMPL_H_
-
 
 #include <cstdint>
 
@@ -94,7 +93,6 @@ public:
 #ifndef _VISITOR_DEV_ALGO_H_
 #define _VISITOR_DEV_ALGO_H_
 
-
 namespace visitor {
 
 class Read final: public Port::Visitor {
@@ -129,7 +127,6 @@ private:
 #ifndef _VISITOR_DEV_EXT_H_
 #define _VISITOR_DEV_EXT_H_
 
-
 #include <memory>
 #include <vector>
 
@@ -148,7 +145,6 @@ void writePorts(std::vector<std::unique_ptr<Port> >&,
 // visitor/include/dev_factory.h
 #ifndef _VISITOR_DEV_FACTORY_H_
 #define _VISITOR_DEV_FACTORY_H_
-
 
 #include <memory>
 #include <string>
