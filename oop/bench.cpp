@@ -14,9 +14,9 @@ static void BM_A6_OopCreateTcpPortUpFn(benchmark::State& state);
 static void BM_A8_OopCreateTcpPortUpFnCtorManual(benchmark::State& state);
 static void BM_A9_OopCreateTcpPortUpFnDtorManual(benchmark::State& state);
 static void BM_B0_OopCreateTcpPortUpFnDtorManual(benchmark::State& state);
-static void BM_B1_OopTcpPortStackCall(benchmark::State& state);
-static void BM_B2_OopTcpPortHeapCall(benchmark::State& state);
-static void BM_B3_OopVectorGlobalItUpFnCall(benchmark::State& state);
+static void BM_Y1_OopTcpPortStackCall(benchmark::State& state);
+static void BM_Y2_OopTcpPortHeapCall(benchmark::State& state);
+static void BM_Y3_OopVectorGlobalItUpFnCall(benchmark::State& state);
 // GEN_PROTO_END
 
 #include <chrono>
@@ -138,7 +138,7 @@ static void BM_B0_OopCreateTcpPortUpFnDtorManual(benchmark::State& state) {
     }
 }
 
-static void BM_B1_OopTcpPortStackCall(benchmark::State& state) {
+static void BM_Y1_OopTcpPortStackCall(benchmark::State& state) {
     TcpPort p = TcpPort("localhost", 2404);
     for (auto _ : state) {
         p.Write(BufferData{0x0B});
@@ -146,7 +146,7 @@ static void BM_B1_OopTcpPortStackCall(benchmark::State& state) {
     benchmark::DoNotOptimize(p);
 }
 
-static void BM_B2_OopTcpPortHeapCall(benchmark::State& state) {
+static void BM_Y2_OopTcpPortHeapCall(benchmark::State& state) {
     Port* p = new TcpPort{"localhost", 2404};
     for (auto _ : state) {
         p->Write(BufferData{0x0C});
@@ -154,7 +154,7 @@ static void BM_B2_OopTcpPortHeapCall(benchmark::State& state) {
     benchmark::DoNotOptimize(p);
 }
 
-static void BM_B3_OopVectorGlobalItUpFnCall(benchmark::State& state) {
+static void BM_Y3_OopVectorGlobalItUpFnCall(benchmark::State& state) {
     auto intVec = GetGlobalRandIntVec();
     auto v = OopPortsInitRandom(intVec);
     for (auto _ : state) {
@@ -174,9 +174,9 @@ BENCHMARK(BM_A6_OopCreateTcpPortUpFn);
 BENCHMARK(BM_A8_OopCreateTcpPortUpFnCtorManual)->UseManualTime();
 BENCHMARK(BM_A9_OopCreateTcpPortUpFnDtorManual)->UseManualTime();
 BENCHMARK(BM_B0_OopCreateTcpPortUpFnDtorManual)->UseManualTime();
-BENCHMARK(BM_B1_OopTcpPortStackCall);
-BENCHMARK(BM_B2_OopTcpPortHeapCall);
-BENCHMARK(BM_B3_OopVectorGlobalItUpFnCall);
+BENCHMARK(BM_Y1_OopTcpPortStackCall);
+BENCHMARK(BM_Y2_OopTcpPortHeapCall);
+BENCHMARK(BM_Y3_OopVectorGlobalItUpFnCall);
 // GEN_BENCHMARK_END
 
 // Run the benchmark
