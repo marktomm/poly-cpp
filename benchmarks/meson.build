@@ -1,4 +1,4 @@
-benchmarks_common_src = ['src/common.cpp']
+benchmarks_common_src = []
 
 benchmarks_inc = include_directories('include')
 
