@@ -131,7 +131,13 @@ unique_ptr<Port> createSerialPort(string dev) noexcept {
 
 namespace enum_type {
 
-vector<uint32_t> setup() {
+const int randomRange12 = 2; // Give me a number between 0 and 2.
+const int errorInt = 0;      // Stop every time the number is 0.
+int getRandom12() { return static_cast<int>(random()) % randomRange12; }
+const int randomRange13 = 2; // Give me a number between 0 and 2.
+int getRandom13() { return static_cast<int>(random()) % randomRange13; }
+
+vector<uint32_t> GetGlobalRandIntVec() {
     static bool setupDone = false;
     static vector<uint32_t> v(100);
     if (setupDone) {
@@ -158,6 +164,31 @@ vector<unique_ptr<Enum::Port> > EnumPortsInitRandom(vector<uint32_t>& v) {
     }
 
     return ports;
+}
+
+std::vector<bool> GetGlobalRandBoolVec() {
+    static bool randomDone = false;
+    static std::vector<bool> bools(100);
+
+    if (randomDone) {
+        return bools;
+    }
+    auto v = GetGlobalRandIntVec();
+
+    for (uint32_t i = 0; i < 50; ++i) {
+        bools[v[i]] = true;
+    }
+    for (uint32_t i = 51; i < 100; ++i) {
+        bools[v[i]] = false;
+    }
+
+    randomDone = true;
+    return bools;
+}
+
+std::size_t GetNextGlobalIndex() {
+    static std::size_t it = 0;
+    return (++it == 100 ? it = 1 : it);
 }
 
 } // namespace enum_type

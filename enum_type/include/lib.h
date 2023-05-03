@@ -139,11 +139,16 @@ std::unique_ptr<Port> createSerialPort(std::string dev) noexcept;
 #ifndef _MACRO_enum_type_LIB_H_
 #define _MACRO_enum_type_LIB_H_
 namespace enum_type {
-std::vector<uint32_t> setup();
+int getRandom12();
+int getRandom13();
+
+std::vector<uint32_t> GetGlobalRandIntVec();
+std::vector<bool> GetGlobalRandBoolVec();
 
 std::vector<std::unique_ptr<Enum::Port> >
 EnumPortsInitRandom(std::vector<uint32_t>& v);
 
+std::size_t GetNextGlobalIndex();
 } // namespace enum_type
 
 #endif
