@@ -95,4 +95,12 @@ vup VarianttPortsInitRandom(common::vu32& v) {
     return ports;
 }
 
+std::string GetStatus::operator()(TcpPort const&) const noexcept {
+    return "noop";
+}
+
+std::string GetStatus::operator()(Firewall const&) const noexcept {
+    return "noop";
+}
+
 } // namespace variant_t

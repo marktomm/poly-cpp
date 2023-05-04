@@ -130,6 +130,23 @@ using vup = std::vector<variant_t::Port>;
 vup VarianttPortsInitRandom(common::vu32& v);
 // GEN_PROTO_END
 
+class Firewall {
+public:
+    explicit Firewall(std::string ip) noexcept: ip_{ip} {}
+    ~Firewall() = default;
+
+private:
+    std::string ip_;
+};
+
+using Network = std::variant<TcpPort, Firewall>;
+
+class GetStatus {
+public:
+    std::string operator()(TcpPort const& tcpPort) const noexcept;
+    std::string operator()(Firewall const& firewall) const noexcept;
+};
+
 } // namespace variant_t
 
 #endif
