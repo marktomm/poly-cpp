@@ -46,7 +46,11 @@ if bench.found()
         dependencies: [bench, thread],
     )
 
-    benchmark('benchmarks_benchmark_google_opt', benchmark_google_opt_exe, timeout: 0)
+    benchmark(
+        'benchmarks_benchmark_google_opt',
+        benchmark_google_opt_exe,
+        timeout: 0,
+    )
 
     benchmark_google_no_opt_exe = executable(
         'benchmarks_google_no_opt',
