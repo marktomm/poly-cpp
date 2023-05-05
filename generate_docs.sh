@@ -45,6 +45,8 @@ function doDocs(){
             -e 's/^GENERATE_LATEX *=.*/GENERATE_LATEX = NO/g' \
             -e 's/^GENERATE_TREEVIEW *=.*/GENERATE_TREEVIEW = NO/g' \
             -e 's/^EXTRACT_ALL *=.*/EXTRACT_ALL = YES/g' \
+            -e 's/^TEMPLATE_RELATIONS *=.*/EXTRACT_ALL = YES/g' \
+            -e 's/^EXTRACT_TEMPLATES *=.*/EXTRACT_ALL = YES/g' \
             -e 's/^EXTRACT_PRIVATE *=.*/EXTRACT_PRIVATE = YES/g' \
             -e 's/^EXTRACT_STATIC *=.*/EXTRACT_STATIC = YES/g' \
             -e 's/^EXTRACT_PRIV_VIRTUAL *=.*/EXTRACT_PRIV_VIRTUAL = YES/g' \
