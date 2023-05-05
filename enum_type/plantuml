@@ -1,0 +1,20 @@
+@startuml class Port {
+    + Port(PortType pt)noexcept
+        + GetType()const noexcept:PortType -
+                            type_:PortType
+}
+
+class TcpPort {
+}
+
+class SerialPort {
+}
+
+    enum PortType {
+        tcp serial end_
+    }
+
+    TcpPort-- |
+    > Port SerialPort-- | > Port
+
+                              @enduml

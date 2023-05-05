@@ -1,0 +1,19 @@
+@startuml
+class Network {
+  std::variant<TcpPort, Firewall>
+}
+
+class Port {
+  std::variant<TcpPort, SerialPort>
+}
+
+class TcpPort
+class SerialPort
+class Firewall
+
+TcpPort -- Network : variant<>
+Firewall -- Network : variant<>
+
+TcpPort -- Port : variant<>
+SerialPort -- Port : variant<>
+@enduml
