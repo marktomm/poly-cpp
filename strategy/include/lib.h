@@ -18,16 +18,12 @@ using BufferData = uint32_t;
 
 namespace strategy {
 
+class Port;
 class TcpPort;
 class SerialPort;
 
-using ReadTcpPortStrategy = std::function<void(TcpPort const&, BufferData&)>;
-using ReadSerialPortStrategy =
-    std::function<void(SerialPort const&, BufferData&)>;
-
-using WriteTcpPortStrategy = std::function<void(TcpPort&, BufferData const&)>;
-using WriteSerialPortStrategy =
-    std::function<void(SerialPort&, BufferData const&)>;
+using ReadBaseStrategy = std::function<void(BufferData&)>;
+using WriteBaseStrategy = std::function<void(BufferData const&)>;
 
 class Port {
 public:
@@ -36,6 +32,9 @@ public:
 
     virtual void Read(BufferData&) const noexcept = 0;
     virtual void Write(BufferData const&) noexcept = 0;
+
+    virtual void SetReadStrat(ReadBaseStrategy) noexcept = 0;
+    virtual void SetWriteStrat(WriteBaseStrategy) noexcept = 0;
 };
 
 } // namespace strategy
@@ -52,42 +51,47 @@ namespace strategy {
 
 class TcpPort: public Port {
 public:
-    explicit TcpPort(std::string ip, uint16_t pn, ReadTcpPortStrategy strategy,
-                     WriteTcpPortStrategy wStrat) noexcept: ip_{ip},
-                                                            port_{pn},
-                                                            strategy_{strategy},
-                                                            wStrat_{wStrat},
-                                                            buf_{} {}
+    explicit TcpPort(std::string ip, uint16_t pn, ReadBaseStrategy strategy,
+                     WriteBaseStrategy wStrat) noexcept: ip_{ip},
+                                                         port_{pn},
+                                                         strategy_{strategy},
+                                                         wStrat_{wStrat},
+                                                         buf_{} {}
     ~TcpPort() = default;
 
     void Read(BufferData&) const noexcept override;
     void Write(BufferData const&) noexcept override;
 
+    void SetReadStrat(ReadBaseStrategy) noexcept override;
+    void SetWriteStrat(WriteBaseStrategy) noexcept override;
+
 private:
     std::string ip_;
     uint16_t port_;
-    ReadTcpPortStrategy strategy_;
-    WriteTcpPortStrategy wStrat_;
+    ReadBaseStrategy strategy_;
+    WriteBaseStrategy wStrat_;
     MutableBuffer buf_;
 };
 
 class SerialPort: public Port {
 public:
-    explicit SerialPort(std::string dev, ReadSerialPortStrategy strategy,
-                        WriteSerialPortStrategy wStrat) noexcept
-        : dev_{dev},
-          strategy_{strategy},
-          wStrat_{wStrat},
-          buf_{} {}
+    explicit SerialPort(std::string dev, ReadBaseStrategy strategy,
+                        WriteBaseStrategy wStrat) noexcept: dev_{dev},
+                                                            strategy_{strategy},
+                                                            wStrat_{wStrat},
+                                                            buf_{} {}
     ~SerialPort() = default;
 
     void Read(BufferData&) const noexcept override;
     void Write(BufferData const&) noexcept override;
 
+    void SetReadStrat(ReadBaseStrategy) noexcept override;
+    void SetWriteStrat(WriteBaseStrategy) noexcept override;
+
 private:
     std::string dev_;
-    ReadSerialPortStrategy strategy_;
-    WriteSerialPortStrategy wStrat_;
+    ReadBaseStrategy strategy_;
+    WriteBaseStrategy wStrat_;
     MutableBuffer buf_;
 };
 
@@ -101,24 +105,19 @@ private:
 
 namespace strategy {
 
-class SyslogReadTcpPortStrategy {
+class SyslogReadStrategy {
 public:
-    void operator()(TcpPort const&, BufferData&) const noexcept;
+    void operator()(BufferData&) const noexcept;
 };
 
-class SyslogReadSerialPortStrategy {
+class SyncWriteStrategy {
 public:
-    void operator()(SerialPort const&, BufferData&) const noexcept;
+    void operator()(BufferData const&) const noexcept;
 };
 
-class SyncWriteTcpPortStrategy {
+class UnbufferedWriteStrategy {
 public:
-    void operator()(TcpPort&, BufferData const&) const noexcept;
-};
-
-class SyncWriteSerialPortStrategy {
-public:
-    void operator()(SerialPort&, BufferData const&) const noexcept;
+    void operator()(BufferData const&) const noexcept;
 };
 
 } // namespace strategy
@@ -156,11 +155,11 @@ void writePorts(std::vector<std::unique_ptr<Port> > const&,
 namespace strategy {
 
 std::unique_ptr<Port> createTcpPort(std::string ip, uint16_t port,
-                                    ReadTcpPortStrategy,
-                                    WriteTcpPortStrategy) noexcept;
+                                    ReadBaseStrategy,
+                                    WriteBaseStrategy) noexcept;
 
-std::unique_ptr<Port> createSerialPort(std::string dev, ReadSerialPortStrategy,
-                                       WriteSerialPortStrategy) noexcept;
+std::unique_ptr<Port> createSerialPort(std::string dev, ReadBaseStrategy,
+                                       WriteBaseStrategy) noexcept;
 
 } // namespace strategy
 

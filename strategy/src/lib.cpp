@@ -5,13 +5,21 @@ namespace strategy {} // namespace strategy
 
 namespace strategy {
 
-void TcpPort::Read(BufferData& output) const noexcept { output = buf_; }
+void TcpPort::Read(BufferData& output) const noexcept { strategy_(output); }
 
-void TcpPort::Write(BufferData const& data) noexcept { buf_ += data; }
+void TcpPort::Write(BufferData const& data) noexcept { wStrat_(data); }
 
-void SerialPort::Read(BufferData& output) const noexcept { output = buf_; }
+void SerialPort::Read(BufferData& output) const noexcept { strategy_(output); }
 
-void SerialPort::Write(BufferData const& data) noexcept { buf_ += data; }
+void SerialPort::Write(BufferData const& data) noexcept { wStrat_(data); }
+
+void TcpPort::SetReadStrat(ReadBaseStrategy s) noexcept { strategy_ = s; }
+
+void TcpPort::SetWriteStrat(WriteBaseStrategy s) noexcept { wStrat_ = s; }
+
+void SerialPort::SetReadStrat(ReadBaseStrategy s) noexcept { strategy_ = s; }
+
+void SerialPort::SetWriteStrat(WriteBaseStrategy s) noexcept { wStrat_ = s; }
 
 } // namespace strategy
 // strategy/src/dev_impl.cpp end
@@ -20,25 +28,19 @@ void SerialPort::Write(BufferData const& data) noexcept { buf_ += data; }
 #include <iostream>
 
 namespace strategy {
+static void escape(void* p) { asm volatile("" : : "g"(p) : "memory"); }
 
-void SyslogReadTcpPortStrategy::operator()(TcpPort const& p,
-                                           BufferData& output) const noexcept {
-    p.Read(output);
+void SyslogReadStrategy::operator()(BufferData& output) const noexcept {
+    escape(&output);
 }
 
-void SyslogReadSerialPortStrategy::operator()(
-    SerialPort const& p, BufferData& output) const noexcept {
-    p.Read(output);
+void SyncWriteStrategy::operator()(BufferData const& data) const noexcept {
+    escape(&const_cast<BufferData&>(data));
 }
 
-void SyncWriteTcpPortStrategy::operator()(
-    TcpPort& p, BufferData const& data) const noexcept {
-    p.Write(data);
-}
-
-void SyncWriteSerialPortStrategy::operator()(
-    SerialPort& p, BufferData const& data) const noexcept {
-    p.Write(data);
+void UnbufferedWriteStrategy::operator()(
+    BufferData const& data) const noexcept {
+    escape(&const_cast<BufferData&>(data));
 }
 
 } // namespace strategy
@@ -70,14 +72,14 @@ void writePorts(std::vector<std::unique_ptr<Port> > const& ports,
 namespace strategy {
 
 std::unique_ptr<Port> createTcpPort(std::string ip, uint16_t port,
-                                    ReadTcpPortStrategy strategy,
-                                    WriteTcpPortStrategy wStrat) noexcept {
+                                    ReadBaseStrategy strategy,
+                                    WriteBaseStrategy wStrat) noexcept {
     return std::make_unique<TcpPort>(ip, port, strategy, wStrat);
 }
 
-std::unique_ptr<Port>
-createSerialPort(std::string dev, ReadSerialPortStrategy strategy,
-                 WriteSerialPortStrategy wStrat) noexcept {
+std::unique_ptr<Port> createSerialPort(std::string dev,
+                                       ReadBaseStrategy strategy,
+                                       WriteBaseStrategy wStrat) noexcept {
     return std::make_unique<SerialPort>(dev, strategy, wStrat);
 }
 
@@ -98,14 +100,12 @@ vup StrategyPortsInitRandom(common::vu32& v) {
 
     Ports ports(100);
     for (uint32_t i = 0; i < 50; ++i) {
-        ports[v[i]] =
-            createTcpPort("localhost", 2404, SyslogReadTcpPortStrategy{},
-                          SyncWriteTcpPortStrategy{});
+        ports[v[i]] = createTcpPort("localhost", 2404, SyslogReadStrategy{},
+                                    SyncWriteStrategy{});
     }
     for (uint32_t i = 50; i < 100; ++i) {
-        ports[v[i]] =
-            createSerialPort("/dev/ttyUSB0", SyslogReadSerialPortStrategy{},
-                             SyncWriteSerialPortStrategy{});
+        ports[v[i]] = createSerialPort("/dev/ttyUSB0", SyslogReadStrategy{},
+                                       SyncWriteStrategy{});
     }
 
     return ports;
