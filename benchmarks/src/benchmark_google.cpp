@@ -115,8 +115,10 @@ static void BM_Y0_Enum(benchmark::State& state) {
     using namespace enum_type;
     auto intVec = GetGlobalRandIntVec();
     auto v = EnumPortsInitRandom(intVec);
+    std::size_t it = 0;
     for (auto _ : state) {
-        auto p = v[GetNextGlobalIndex()].get();
+        auto x = ++it == 100 ? it = 1 : it;
+        auto p = v[x].get();
         writePort(p, BufferData{0xD});
         benchmark::DoNotOptimize(p);
     }
@@ -126,8 +128,10 @@ static void BM_Y1_Oop(benchmark::State& state) {
     using namespace oop;
     auto intVec = GetGlobalRandIntVec();
     auto v = OopPortsInitRandom(intVec);
+    std::size_t it = 0;
     for (auto _ : state) {
-        auto p = v[GetNextGlobalIndex()].get();
+        auto x = ++it == 100 ? it = 1 : it;
+        auto p = v[x].get();
         p->Write(BufferData{0x0D});
         benchmark::DoNotOptimize(p);
     }
@@ -137,8 +141,10 @@ static void BM_Y2_Strategy(benchmark::State& state) {
     using namespace strategy;
     auto intVec = GetGlobalRandIntVec();
     auto v = StrategyPortsInitRandom(intVec);
+    std::size_t it = 0;
     for (auto _ : state) {
-        auto p = v[GetNextGlobalIndex()].get();
+        auto x = ++it == 100 ? it = 1 : it;
+        auto p = v[x].get();
         p->Write(BufferData{0x0D});
         benchmark::DoNotOptimize(p);
     }
@@ -148,8 +154,10 @@ static void BM_Y3_Visitor(benchmark::State& state) {
     using namespace visitor;
     auto intVec = GetGlobalRandIntVec();
     auto v = VisitPortsInitRandom(intVec);
+    std::size_t it = 0;
     for (auto _ : state) {
-        auto p = v[GetNextGlobalIndex()].get();
+        auto x = ++it == 100 ? it = 1 : it;
+        auto p = v[x].get();
         p->accept(Write{BufferData{0x0D}});
         benchmark::DoNotOptimize(p);
     }
@@ -159,9 +167,13 @@ static void BM_Y4_Variantt(benchmark::State& state) {
     using namespace variant_t;
     auto intVec = GetGlobalRandIntVec();
     auto v = VarianttPortsInitRandom(intVec);
+    std::size_t it = 0;
+    auto w = Write{};
+    auto wd = WriteData{static_cast<uint32_t>(0x0D)};
     for (auto _ : state) {
-        auto p = v[GetNextGlobalIndex()];
-        visit(Write{}, p, WriteData{static_cast<uint32_t>(0x0D)});
+        auto x = ++it == 100 ? it = 1 : it;
+        auto& p = v.at(x);
+        visit(w, p, wd);
         benchmark::DoNotOptimize(p);
     }
 }
@@ -170,8 +182,10 @@ static void BM_Y5_TypeErUp(benchmark::State& state) {
     using namespace type_erasure_up;
     auto intVec = GetGlobalRandIntVec();
     auto v = TypeErasureUpPortsInitRandom(intVec);
+    std::size_t it = 0;
     for (auto _ : state) {
-        auto p = v[GetNextGlobalIndex()];
+        auto x = ++it == 100 ? it = 1 : it;
+        auto& p = v.at(x); // get ref
         write(p, BufferData{0x0D});
         benchmark::DoNotOptimize(p);
     }
