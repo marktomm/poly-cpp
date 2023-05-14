@@ -1,0 +1,43 @@
+@startuml
+
+class Readable {
+    +Readable(T x) noexcept
+    +Readable(Readable const& rhs)
+    +Readable(Readable&&) noexcept
+    +operator=(Readable const& rhs) : Readable&
+    +operator=(Readable&&) noexcept : Readable&
+    +swap(Readable& rhs)
+    -concept_t* _copy() const
+    -void _read(BufferData&) const noexcept
+    -void _write(BufferData const&) noexcept
+    -_self: std::unique_ptr<concept_t>
+}
+
+class TcpPort {
+    +TcpPort(std::string ip, uint16_t pn) noexcept
+    +~TcpPort()
+    +Read(BufferData&) const noexcept
+    +Write(BufferData const&) noexcept
+    -ip_: std::string
+    -port_: uint16_t
+    -buf_: MutableBuffer
+}
+
+class SerialPort {
+    +SerialPort(std::string dev) noexcept
+    +~SerialPort()
+    +Read(BufferData&) const noexcept
+    +Write(BufferData const&) noexcept
+    -dev_: std::string
+    -buf_: MutableBuffer
+} [write(SerialPort&, BufferData const&) noexcept]
+}
+
+Readable <|.. model: Template
+model ..|> concept_t: Inherits
+TcpPort ..|> Readable: External Polymorphism
+SerialPort ..|> Readable: External Polymorphism
+
+
+
+@enduml
