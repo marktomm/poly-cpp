@@ -3,3 +3,5 @@
 /build
 amalgamation.cpp
 *.png
+out
+
