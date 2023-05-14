@@ -152,8 +152,8 @@ static void BM_A3_EnumTcpPortHeapCtorManual(benchmark::State& state) {
             chrono::duration_cast<chrono::nanoseconds>(end - start).count();
 
         state.SetIterationTime(static_cast<double>(elapsed) / 1e9);
-        delete p;
         benchmark::DoNotOptimize(p);
+        delete p;
     }
 }
 
@@ -164,6 +164,7 @@ static void BM_A4_EnumTcpPortHeapDtorManual(benchmark::State& state) {
         {
             p = new TcpPort("localhost", 2404);
             start = chrono::high_resolution_clock::now();
+            benchmark::DoNotOptimize(p);
             delete p;
         }
 
@@ -172,8 +173,6 @@ static void BM_A4_EnumTcpPortHeapDtorManual(benchmark::State& state) {
             chrono::duration_cast<chrono::nanoseconds>(end - start).count();
 
         state.SetIterationTime(static_cast<double>(elapsed) / 1e9);
-
-        benchmark::DoNotOptimize(p);
     }
 }
 
