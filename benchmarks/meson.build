@@ -53,7 +53,7 @@ if bench.found()
     )
 
     benchmark_google_no_opt_exe = executable(
-        'benchmarks_google_no_opt',
+        'benchmarks_benchmark_google_no_opt',
         [benchmark_test, benchmarks_common_src],
         objects: objectsArrayNoOpt,
         include_directories: includesArray,
@@ -62,7 +62,7 @@ if bench.found()
     )
 
     benchmark(
-        'benchmarks_google_no_opt',
+        'benchmarks_benchmark_google_no_opt',
         benchmark_google_no_opt_exe,
         timeout: 0,
     )
