@@ -84,10 +84,10 @@ vup TypeErasureUpPortsInitRandom(common::vu32& v) {
     using Ports = std::vector<Readable>;
 
     Ports ports;
-    for (uint32_t i = 0; i < 50; ++i) {
+    for (uint32_t i = 0; i < common::VCOUNTHALF; ++i) {
         ports.push_back(createTcpPort("localhost", 2404));
     }
-    for (uint32_t i = 50; i < 100; ++i) {
+    for (uint32_t i = common::VCOUNTHALF; i < common::VCOUNT; ++i) {
         ports.push_back(createSerialPort("/dev/ttyUSB0"));
     }
 

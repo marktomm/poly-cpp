@@ -98,12 +98,12 @@ vup StrategyPortsInitRandom(common::vu32& v) {
     using namespace strategy;
     using Ports = std::vector<std::unique_ptr<Port> >;
 
-    Ports ports(100);
-    for (uint32_t i = 0; i < 50; ++i) {
+    Ports ports(common::VCOUNT);
+    for (uint32_t i = 0; i < common::VCOUNTHALF; ++i) {
         ports[v[i]] = createTcpPort("localhost", 2404, SyslogReadStrategy{},
                                     SyncWriteStrategy{});
     }
-    for (uint32_t i = 50; i < 100; ++i) {
+    for (uint32_t i = common::VCOUNTHALF; i < common::VCOUNT; ++i) {
         ports[v[i]] = createSerialPort("/dev/ttyUSB0", SyslogReadStrategy{},
                                        SyncWriteStrategy{});
     }

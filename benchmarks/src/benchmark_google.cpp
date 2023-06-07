@@ -117,7 +117,7 @@ static void BM_Y0_Enum(benchmark::State& state) {
     auto v = EnumPortsInitRandom(intVec);
     std::size_t it = 0;
     for (auto _ : state) {
-        auto x = ++it == 100 ? it = 0 : it;
+        auto x = ++it == common::VCOUNT ? it = 0 : it;
         auto p = v[x].get();
         writePort(p, BufferData{0xD});
         benchmark::DoNotOptimize(p);
@@ -130,7 +130,7 @@ static void BM_Y1_Oop(benchmark::State& state) {
     auto container = OopPortsInitRandom(intVec);
     std::size_t it = 0;
     for (auto _ : state) {
-        auto x = ++it == 100 ? it = 0 : it;
+        auto x = ++it == common::VCOUNT ? it = 0 : it;
         auto p = container[x].get();
         p->Write(BufferData{0x0D});
         benchmark::DoNotOptimize(p);
@@ -143,7 +143,7 @@ static void BM_Y2_Strategy(benchmark::State& state) {
     auto v = StrategyPortsInitRandom(intVec);
     std::size_t it = 0;
     for (auto _ : state) {
-        auto x = ++it == 100 ? it = 0 : it;
+        auto x = ++it == common::VCOUNT ? it = 0 : it;
         auto p = v[x].get();
         p->Write(BufferData{0x0D});
         benchmark::DoNotOptimize(p);
@@ -156,7 +156,7 @@ static void BM_Y3_Visitor(benchmark::State& state) {
     auto v = VisitPortsInitRandom(intVec);
     std::size_t it = 0;
     for (auto _ : state) {
-        auto x = ++it == 100 ? it = 0 : it;
+        auto x = ++it == common::VCOUNT ? it = 0 : it;
         auto p = v[x].get();
         p->accept(Write{BufferData{0x0D}});
         benchmark::DoNotOptimize(p);
@@ -171,7 +171,7 @@ static void BM_Y4_Variantt(benchmark::State& state) {
     auto w = Write{};
     auto wd = WriteData{static_cast<uint32_t>(0x0D)};
     for (auto _ : state) {
-        auto x = ++it == 100 ? it = 0 : it;
+        auto x = ++it == common::VCOUNT ? it = 0 : it;
         auto& p = v.at(x);
         visit(w, p, wd);
         benchmark::DoNotOptimize(p);
@@ -184,7 +184,7 @@ static void BM_Y5_TypeErUp(benchmark::State& state) {
     auto v = TypeErasureUpPortsInitRandom(intVec);
     std::size_t it = 0;
     for (auto _ : state) {
-        auto x = ++it == 100 ? it = 0 : it;
+        auto x = ++it == common::VCOUNT ? it = 0 : it;
         auto& p = v.at(x); // get ref
         write(p, BufferData{0x0D});
         benchmark::DoNotOptimize(p);

@@ -16,7 +16,7 @@ int getRandom13() { return static_cast<int>(random()) % randomRange13; }
 
 vu32 GetGlobalRandIntVec() {
     static bool setupDone = false;
-    static vector<uint32_t> v(100);
+    static vector<uint32_t> v(common::VCOUNT);
     if (setupDone) {
         return v;
     }
@@ -30,17 +30,17 @@ vu32 GetGlobalRandIntVec() {
 
 vb GetGlobalRandBoolVec() {
     static bool randomDone = false;
-    static std::vector<bool> bools(100);
+    static std::vector<bool> bools(common::VCOUNT);
 
     if (randomDone) {
         return bools;
     }
     auto v = GetGlobalRandIntVec();
 
-    for (uint32_t i = 0; i < 50; ++i) {
+    for (uint32_t i = 0; i < common::VCOUNTHALF; ++i) {
         bools[v[i]] = true;
     }
-    for (uint32_t i = 51; i < 100; ++i) {
+    for (uint32_t i = common::VCOUNTHALF; i < common::VCOUNT; ++i) {
         bools[v[i]] = false;
     }
 
@@ -50,7 +50,7 @@ vb GetGlobalRandBoolVec() {
 
 std::size_t GetNextGlobalIndex() {
     static std::size_t it = 0;
-    return (++it == 100 ? it = 1 : it);
+    return (++it == common::VCOUNT ? it = 1 : it);
 }
 
 void emptyFn(){};

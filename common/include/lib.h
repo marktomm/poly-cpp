@@ -33,6 +33,9 @@ void rreorder(std::vector<T>& v, vu32 const& order) {
     }
 }
 
+const uint32_t VCOUNT = 100000;
+const uint32_t VCOUNTHALF = VCOUNT / 2;
+
 }; // namespace common
 
 #endif
