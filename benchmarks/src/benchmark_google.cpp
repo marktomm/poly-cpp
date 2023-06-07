@@ -127,11 +127,11 @@ static void BM_Y0_Enum(benchmark::State& state) {
 static void BM_Y1_Oop(benchmark::State& state) {
     using namespace oop;
     auto intVec = GetGlobalRandIntVec();
-    auto v = OopPortsInitRandom(intVec);
+    auto container = OopPortsInitRandom(intVec);
     std::size_t it = 0;
     for (auto _ : state) {
         auto x = ++it == 100 ? it = 0 : it;
-        auto p = v[x].get();
+        auto p = container[x].get();
         p->Write(BufferData{0x0D});
         benchmark::DoNotOptimize(p);
     }

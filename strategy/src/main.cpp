@@ -16,7 +16,6 @@ int main() {
     readPorts(ports, data);
 
     SerialPort p1("/dev/ttyUSB1", SyslogReadStrategy{}, SyncWriteStrategy{});
-
     p1.SetWriteStrat(UnbufferedWriteStrategy{});
 
     return 0;
